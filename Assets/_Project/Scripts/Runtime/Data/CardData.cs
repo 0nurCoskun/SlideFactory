@@ -2,8 +2,13 @@ using UnityEngine;
 
 /// <summary>
 /// Bir kartın "o anki hali"ni temsil eden veri kaynağı.
-/// Örn: "Ham Demir Cevheri" bir CardData'dır. Sağa atılınca "Demir Külçesi" (başka bir CardData) olur.
-/// "Demir Külçesi" sola atılınca "Demir Kılıç" (isFinalProduct = true olan CardData) olur.
+/// Örn: "Ham Demir Cevheri" bir CardData'dır. Dökümhane'ye atılınca "Demir Külçesi" (başka bir CardData) olur.
+/// "Demir Külçesi" Atölye'ye atılınca "Demir Kılıç" (isFinalProduct = true olan CardData) olur.
+///
+/// ÖNEMLİ: Kart artık YÖNE değil, İSTASYONA göre işlenir. Çünkü istasyonların ekrandaki
+/// yönü (Sağ/Sol/Yukarı/Aşağı) StationAssignmentManager tarafından sürekli karıştırılıyor.
+/// Bu sayede "Demir Külçesi Atölye'ye gitmeli" kuralı hep sabit kalır, sadece Atölye'nin
+/// o an hangi yönde durduğu değişir.
 ///
 /// Bu tasarımda her üretim aşaması AYRI bir CardData asset'idir.
 /// Bu sayede designer, Inspector üzerinden yeni tarifler eklerken kod yazmaz,
@@ -19,24 +24,30 @@ public class CardData : ScriptableObject
     public Sprite icon;
 
     [Header("Üretim Durumu")]
-    [Tooltip("True ise bu kart zincirin son ürünüdür. Doğru yöne atılınca desteden tamamen silinir.")]
+    [Tooltip("True ise bu kart zincirin son ürünüdür. Doğru istasyona atılınca desteden tamamen silinir.")]
     public bool isFinalProduct = false;
 
-    [Header("Yön Eşleşmeleri (Recipe)")]
-    [Tooltip("Bu kart hangi yöne atılırsa neye dönüşür? Listede olmayan bir yön 'yanlış hamle' sayılır.")]
-    public DirectionOutcome[] outcomes;
+    [Header("Yanlış Hamle Cezası")]
+    [Tooltip("Bu kart yanlış istasyona atılırsa, HANGİ karta sıfırlanacağını belirtir. " +
+             "Eğer bu kart zaten zincirin başlangıcı (Ham hali) ise BOŞ bırak - " +
+             "kendi kendine sıfırlanmaya çalışmaz, zaten en baştadır.")]
+    public CardData rawStageVersion;
+
+    [Header("İstasyon Eşleşmeleri (Recipe)")]
+    [Tooltip("Bu kart hangi istasyona atılırsa neye dönüşür? Listede olmayan bir istasyon 'yanlış hamle' sayılır ve kart Ham haline sıfırlanır.")]
+    public StationOutcome[] outcomes;
 
     /// <summary>
-    /// Verilen yön için bir sonuç tanımlı mı diye bakar.
+    /// Verilen istasyon için bir sonuç tanımlı mı diye bakar.
     /// </summary>
-    /// <returns>Yön tanımlıysa true, tanımlı değilse false (GameManager bunu "yanlış hamle" olarak yorumlar).</returns>
-    public bool TryGetOutcome(SwipeDirection direction, out CardData resultCard)
+    /// <returns>İstasyon tanımlıysa true, tanımlı değilse false (GameManager bunu "yanlış hamle" olarak yorumlar).</returns>
+    public bool TryGetOutcome(StationData station, out CardData resultCard)
     {
-        if (outcomes != null)
+        if (outcomes != null && station != null)
         {
             foreach (var outcome in outcomes)
             {
-                if (outcome.direction == direction)
+                if (outcome.station == station)
                 {
                     resultCard = outcome.resultCard;
                     return true;
@@ -50,13 +61,13 @@ public class CardData : ScriptableObject
 }
 
 /// <summary>
-/// Tek bir "yön -> sonuç" eşleşmesi.
-/// resultCard null bırakılırsa, o yön kartı "çöpe" gönderir (imha eder) ama yine de geçerli bir hamledir.
+/// Tek bir "istasyon -> sonuç" eşleşmesi.
+/// resultCard null bırakılırsa, bu istasyon kartı "çöpe" gönderir (imha eder) ama yine de geçerli bir hamledir.
 /// </summary>
 [System.Serializable]
-public class DirectionOutcome
+public class StationOutcome
 {
-    public SwipeDirection direction;
-    [Tooltip("Boş bırakılırsa bu yöne atılan kart imha edilir (çöp).")]
+    public StationData station;
+    [Tooltip("Boş bırakılırsa bu istasyona atılan kart imha edilir (çöp).")]
     public CardData resultCard;
 }

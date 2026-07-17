@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_DogranmisDomates
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: sliced_tomato
+  displayName: "Do\u011Franm\u0131\u015F Domates"
+  description: 
+  icon: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: ce8f20a69adbd53428eb4ef53db9ad2a, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: 1c2feb179c123a0408a5637a72c3bb00, type: 2}
+    resultCard: {fileID: 11400000, guid: f68081a25577ca54abbd1bef222210c6, type: 2}

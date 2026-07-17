@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_Gozluk
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: glasses
+  displayName: "G\xF6zl\xFCk"
+  description: 
+  icon: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: 36f079b37ea1a8b48823cf92317ef014, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: 4a218ebdc7c42ee4da45949aa8bc64b4, type: 2}
+    resultCard: {fileID: 11400000, guid: c943828069815da4099a5863f5d343e4, type: 2}

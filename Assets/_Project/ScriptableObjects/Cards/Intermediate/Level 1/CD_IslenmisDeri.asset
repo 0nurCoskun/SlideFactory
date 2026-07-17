@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_IslenmisDeri
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: processed_leather
+  displayName: "\u0130\u015Flenmi\u015F Deri"
+  description: 
+  icon: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 0}
+  outcomes:
+  - station: {fileID: 11400000, guid: 7e8d9034e35fe6048b20dd19328126fa, type: 2}
+    resultCard: {fileID: 11400000, guid: 824a324e41c94284fb071ee28ec24923, type: 2}
