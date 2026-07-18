@@ -1,0 +1,115 @@
+using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
+using TMPro;
+
+/// <summary>
+/// Level başında (ve "?" butonuna her basıldığında) o level'ın üretim zincirini
+/// gösteren paneli yönetir. Panel açıkken oyun duraklar (süre/istasyon karışması
+/// donar, swipe'lar yok sayılır), panel kapanınca kaldığı yerden devam eder.
+///
+/// İlk açılışta (level daha hiç başlamamışken) panel kapatıldığında level
+/// FİİLEN BAŞLAR (GameManager.BeginLevelPlay()). Sonraki her açılışta ise
+/// sadece duraklatma/devam ettirme yapılır (GameManager.PauseLevel/ResumeLevel).
+/// </summary>
+public class RecipePreviewView : MonoBehaviour
+{
+    [Header("Bağımlılık")]
+    [SerializeField] private GameManager gameManager;
+
+    [Header("Panel")]
+    [SerializeField] private GameObject panelRoot;
+    [SerializeField] private Transform chainListContainer;
+    [Tooltip("Her bir zincir satırı için kullanılacak TMP_Text prefab'ı.")]
+    [SerializeField] private TMP_Text chainRowPrefab;
+
+    [Header("Görünüm")]
+    [SerializeField] private string stepSeparator = "  →  ";
+    [SerializeField] private string stationWrapFormat = "[{0}]"; // istasyon ismini köşeli parantez içine alır
+
+    private bool _hasPopulatedOnce;
+
+    private void Start()
+    {
+        // İlk açılış: level henüz başlamadığı için oyun zaten duraklamış durumda
+        // sayılır (GameManager.BeginLevelPlay() hiç çağrılmadı) - burada ekstra
+        // bir PauseLevel() çağırmaya gerek yok, sadece paneli gösteriyoruz.
+        PopulateChains();
+        panelRoot.SetActive(true);
+    }
+
+    /// <summary>Oyun sırasındaki "?" (Recipe'yi tekrar göster) butonuna bağlanacak.</summary>
+    public void OnShowRecipeButtonPressed()
+    {
+        if (!_hasPopulatedOnce) PopulateChains();
+        panelRoot.SetActive(true);
+        // Bilerek PauseLevel() ÇAĞRILMIYOR - süre ve istasyon karışması akmaya devam etsin,
+        // oyuncu "hile" yaparak süreyi durdurup rahatça bakamasın.
+    }
+
+    /// <summary>Panel içindeki "Kapat / Başla" butonuna bağlanacak.</summary>
+    public void OnCloseButtonPressed()
+    {
+        panelRoot.SetActive(false);
+
+        if (!gameManager.HasBegun)
+        {
+            gameManager.BeginLevelPlay();
+        }
+        else
+        {
+            gameManager.ResumeLevel();
+        }
+    }
+
+    private void PopulateChains()
+    {
+        if (chainListContainer == null || chainRowPrefab == null || gameManager == null) return;
+
+        foreach (Transform child in chainListContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        LevelData level = gameManager.ActiveLevel;
+        if (level == null || level.initialDeck == null) return;
+
+        // Aynı ham madde türünden destede birden fazla olabilir (örn. 3x Ham Odun) -
+        // bu durumda zinciri sadece BİR KERE göstermek yeterli, 3 kere tekrar etmesin.
+        HashSet<CardData> alreadyShown = new HashSet<CardData>();
+
+        foreach (CardData rawCard in level.initialDeck)
+        {
+            if (rawCard == null || alreadyShown.Contains(rawCard)) continue;
+            alreadyShown.Add(rawCard);
+
+            List<ProductionChainUtility.ChainStep> steps = ProductionChainUtility.BuildChain(rawCard);
+            string line = BuildChainDisplayText(steps);
+
+            TMP_Text row = Instantiate(chainRowPrefab, chainListContainer);
+            row.text = line;
+            row.gameObject.SetActive(true);
+        }
+
+        _hasPopulatedOnce = true;
+    }
+
+    private string BuildChainDisplayText(List<ProductionChainUtility.ChainStep> steps)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < steps.Count; i++)
+        {
+            sb.Append(steps[i].Card != null ? steps[i].Card.displayName : "???");
+
+            if (steps[i].StationToNext != null)
+            {
+                sb.Append(stepSeparator);
+                sb.Append(string.Format(stationWrapFormat, steps[i].StationToNext.displayName));
+                sb.Append(stepSeparator);
+            }
+        }
+
+        return sb.ToString();
+    }
+}

@@ -68,6 +68,22 @@ public class StationAssignmentManager : MonoBehaviour
         _isRunning = false;
     }
 
+    /// <summary>
+    /// Recipe önizleme paneli gibi bir sebeple oyunu geçici durdurmak için.
+    /// StopAssigning()'den farkı: geri sayım durumu KORUNUR, panel kapanınca
+    /// StartAssigning() gibi anında yeniden karıştırmaz, kaldığı yerden devam eder.
+    /// </summary>
+    public void PauseAssigning()
+    {
+        _isRunning = false;
+    }
+
+    /// <summary>Duraklatılan karışma geri sayımını kaldığı yerden devam ettirir.</summary>
+    public void ResumeAssigning()
+    {
+        _isRunning = true;
+    }
+
     private void Update()
     {
         if (!_isRunning) return;

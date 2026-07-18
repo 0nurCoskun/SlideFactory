@@ -200,7 +200,14 @@ public class CardView : MonoBehaviour
         cardRectTransform.localScale = Vector3.zero;
 
         if (iconImage != null) iconImage.sprite = card.Data.icon;
-        if (nameText != null) nameText.text = card.Data.displayName;
+        if (nameText != null)
+        {
+            nameText.text = card.Data.displayName;
+            // Obje bu frame'de inaktiften aktife geçtiyse TMP bazen mesh'i
+            // hemen yeniden çizmiyor (text doğru ama görsel güncellenmiyor).
+            // Bu satır o ilk kare gecikmesini zorla düzeltir.
+            nameText.ForceMeshUpdate();
+        }
 
         _activeSequence?.Kill();
         _activeSequence = DOTween.Sequence();

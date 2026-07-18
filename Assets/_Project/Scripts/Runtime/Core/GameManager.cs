@@ -66,11 +66,18 @@ public class GameManager : MonoBehaviour
     }
 
     private LevelData _activeLevel;
+    private bool _hasBegun;
+    private bool _isPaused;
 
-    private void Start()
+    /// <summary>RecipePreviewView gibi dışarıdaki sistemlerin okuyabilmesi için.</summary>
+    public LevelData ActiveLevel => _activeLevel;
+    public bool HasBegun => _hasBegun;
+
+    private void Awake()
     {
-        _levelEnded = false;
-
+        // ÖNEMLİ: Bu bilerek Awake'te, Start()'ta değil - çünkü RecipePreviewView
+        // kendi Start()'ında ActiveLevel'ı okumak zorunda ve Awake'lerin TÜMÜ,
+        // herhangi bir Start()'tan önce garantili olarak biter.
         _activeLevel = LevelSession.SelectedLevel != null ? LevelSession.SelectedLevel : fallbackLevelData;
 
         if (_activeLevel == null)
@@ -79,6 +86,33 @@ public class GameManager : MonoBehaviour
                             "ne de Fallback Level Data Inspector'da atanmış. Oyun başlatılamıyor.");
             return;
         }
+
+        // Level henüz FİİLEN başlamasa da (BeginLevelPlay çağrılmadan), süre değerini
+        // erkenden bildiriyoruz - böylece Recipe Preview paneli açıkken TimerView
+        // "00:00" değil, level'ın gerçek süresini gösterebiliyor. Sayaç bu noktada
+        // AKMIYOR, sadece görüntülenecek başlangıç değeri hazırlanıyor.
+        levelTimerManager?.Configure(_activeLevel.levelDuration);
+    }
+
+    private void Start()
+    {
+        _levelEnded = false;
+        _hasBegun = false;
+        _isPaused = false;
+
+        // Deste/süre/istasyon karışması ARTIK BURADA BAŞLAMIYOR.
+        // RecipePreviewView, oyuncu üretim zinciri ekranını kapattığında
+        // BeginLevelPlay()'i çağırır - level ancak o zaman fiilen başlar.
+    }
+
+    /// <summary>
+    /// RecipePreviewView, oyuncu ilk kez üretim zinciri ekranını kapattığında bunu çağırır.
+    /// Level'ı fiilen başlatır (deste kurulur, süre ve istasyon karışması akmaya başlar).
+    /// </summary>
+    public void BeginLevelPlay()
+    {
+        if (_hasBegun || _activeLevel == null) return;
+        _hasBegun = true;
 
         BuildInitialDeck();
         DrawNextCard();
@@ -93,11 +127,39 @@ public class GameManager : MonoBehaviour
         levelTimerManager?.StartTimer();
     }
 
+    /// <summary>
+    /// Oyuncu oyun sırasında "?" butonuyla üretim zincirini tekrar açtığında çağrılır.
+    /// Süreyi ve istasyon karışmasını DONDURUR (sıfırlamaz), swipe'ları da geçici olarak yok sayar.
+    /// </summary>
+    public void PauseLevel()
+    {
+        if (!_hasBegun || _levelEnded) return;
+        _isPaused = true;
+        stationAssignmentManager?.PauseAssigning();
+        levelTimerManager?.PauseTimer();
+    }
+
+    /// <summary>Duraklatılan level'ı kaldığı yerden devam ettirir.</summary>
+    public void ResumeLevel()
+    {
+        if (!_hasBegun || _levelEnded) return;
+        _isPaused = false;
+        stationAssignmentManager?.ResumeAssigning();
+        levelTimerManager?.ResumeTimer();
+    }
+
     private void BuildInitialDeck()
     {
         _deck.Clear();
         foreach (var data in _activeLevel.initialDeck)
         {
+            if (data == null)
+            {
+                Debug.LogWarning("[GameManager] Initial Deck listesinde boş (None) bir slot bulundu, atlanıyor. " +
+                                  "LevelData asset'indeki Initial Deck listesini kontrol et.");
+                continue;
+            }
+
             _deck.Enqueue(new CardInstance(data));
         }
     }
@@ -122,7 +184,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HandleSwipe(SwipeDirection direction)
     {
-        if (_levelEnded || _currentCard == null || direction == SwipeDirection.None) return;
+        if (_levelEnded || _isPaused || !_hasBegun || _currentCard == null || direction == SwipeDirection.None) return;
 
         // Kural sonucu ne olursa olsun (doğru/yanlış/final) görsel katman
         // "kart bu yöne fırlatıldı" bilgisini burada alır.

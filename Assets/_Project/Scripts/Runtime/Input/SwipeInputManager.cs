@@ -1,7 +1,9 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 [Serializable] public class SwipeDirectionEvent : UnityEvent<SwipeDirection> { }
 [Serializable] public class DragDeltaEvent : UnityEvent<Vector2> { }
@@ -18,6 +20,10 @@ using UnityEngine.InputSystem;
 public class SwipeInputManager : MonoBehaviour
 {
     [Header("Ayarlar")]
+    [Tooltip("Swipe'ın başlayabileceği alan. Boş bırakılırsa ekranın HER YERİNDEN swipe başlar. " +
+             "Sadece kart üzerinden başlasın istiyorsan, buraya Card'ın RectTransform'unu ata.")]
+    [SerializeField] private RectTransform swipeTargetArea;
+
     [Tooltip("Bir hamlenin geçerli sayılması için minimum piksel mesafesi.")]
     [SerializeField] private float minSwipeDistance = 80f;
 
@@ -65,7 +71,7 @@ public class SwipeInputManager : MonoBehaviour
 
     private void HandleTouchInput()
     {
-        var touch = Touchscreen.current.primaryTouch;
+        TouchControl touch = Touchscreen.current.primaryTouch;
         UnityEngine.InputSystem.TouchPhase phase = touch.phase.ReadValue();
 
         switch (phase)
@@ -86,6 +92,19 @@ public class SwipeInputManager : MonoBehaviour
 
     private void BeginDrag(Vector2 screenPos)
     {
+        // Parmak/mouse bir UI elemanının (buton, panel vb.) üzerindeyse swipe başlatma.
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        // Dokunma, belirlenen hedef alanın (genelde Card'ın kendisi) DIŞINDAYSA swipe başlatma.
+        // Bu sayede oyuncu ekranın herhangi bir yerinden değil, sadece kartı tutarak kaydırabilir.
+        if (swipeTargetArea != null && !RectTransformUtility.RectangleContainsScreenPoint(swipeTargetArea, screenPos, null))
+        {
+            return;
+        }
+
         _startPos = screenPos;
         _isDragging = true;
         OnDragStarted?.Invoke();

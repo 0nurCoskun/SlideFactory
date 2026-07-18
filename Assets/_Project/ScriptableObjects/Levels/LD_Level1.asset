@@ -15,8 +15,8 @@ MonoBehaviour:
   levelId: level1
   displayName: Level 1
   initialDeck:
-  - {fileID: 11400000, guid: 83ca777d9f716114f91aa537b903b294, type: 2}
   - {fileID: 11400000, guid: 83f32f1b3f7d59043b47d8fa7af1becc, type: 2}
+  - {fileID: 11400000, guid: 83ca777d9f716114f91aa537b903b294, type: 2}
   - {fileID: 11400000, guid: f782fa5cb225d81418a74251cf25fca9, type: 2}
   - {fileID: 11400000, guid: f782fa5cb225d81418a74251cf25fca9, type: 2}
   - {fileID: 11400000, guid: 83f32f1b3f7d59043b47d8fa7af1becc, type: 2}

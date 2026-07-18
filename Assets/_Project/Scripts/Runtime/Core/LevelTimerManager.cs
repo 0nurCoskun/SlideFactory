@@ -29,10 +29,15 @@ public class LevelTimerManager : MonoBehaviour
     /// <summary>
     /// GameManager, seçilen LevelData'daki süreyle bu sistemi çalıştırmadan
     /// önce yapılandırır. StartTimer()'dan ÖNCE çağrılmalıdır.
+    ///
+    /// ÖNEMLİ: Bu metod _remainingTime'ı da hemen ayarlar (sayaç henüz AKMAYA
+    /// başlamaz, _isRunning hâlâ false) - bu sayede Recipe Preview paneli
+    /// gösterilirken bile UI, "00:00" değil, level'ın gerçek süresini gösterebilir.
     /// </summary>
     public void Configure(float duration)
     {
         levelDuration = duration;
+        _remainingTime = duration;
     }
 
     public void StartTimer()
@@ -44,6 +49,21 @@ public class LevelTimerManager : MonoBehaviour
     public void StopTimer()
     {
         _isRunning = false;
+    }
+
+    /// <summary>
+    /// Recipe önizleme paneli gibi bir sebeple oyunu geçici durdurmak için.
+    /// StopTimer()'dan farkı: kalan süre KORUNUR, sıfırlanmaz.
+    /// </summary>
+    public void PauseTimer()
+    {
+        _isRunning = false;
+    }
+
+    /// <summary>Duraklatılan süreyi kaldığı yerden devam ettirir.</summary>
+    public void ResumeTimer()
+    {
+        _isRunning = true;
     }
 
     private void Update()
