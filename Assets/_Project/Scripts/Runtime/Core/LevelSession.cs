@@ -10,4 +10,11 @@
 public static class LevelSession
 {
     public static LevelData SelectedLevel;
+
+    /// <summary>
+    /// Pause menüsündeki "Level Select" butonuna basılınca true yapılır.
+    /// MainMenuController, sahne açılışında bunu kontrol edip MainMenuPanel yerine
+    /// direkt LevelSelectPanel'i gösterir.
+    /// </summary>
+    public static bool OpenLevelSelectDirectly;
 }

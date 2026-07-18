@@ -14,7 +14,15 @@ public class MainMenuController : MonoBehaviour
 
     private void Awake()
     {
-        ShowMainMenuPanel();
+        if (LevelSession.OpenLevelSelectDirectly)
+        {
+            LevelSession.OpenLevelSelectDirectly = false;
+            ShowLevelSelectPanel();
+        }
+        else
+        {
+            ShowMainMenuPanel();
+        }
     }
 
     /// <summary>Play butonuna bağlanacak - Level Select ekranını açar.</summary>
