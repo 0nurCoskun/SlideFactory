@@ -27,6 +27,10 @@ public class RecipePreviewView : MonoBehaviour
     [SerializeField] private string stepSeparator = "  →  ";
     [SerializeField] private string stationWrapFormat = "[{0}]"; // istasyon ismini köşeli parantez içine alır
 
+    [Header("Panel Açıkken Gizlenecek Butonlar")]
+    [Tooltip("Pause ve Show Recipe (?) butonları gibi - panel açıkken gizlenip, kapanınca tekrar gösterilir.")]
+    [SerializeField] private GameObject[] gameplayOnlyButtons;
+
     private bool _hasPopulatedOnce;
 
     private void Start()
@@ -36,6 +40,7 @@ public class RecipePreviewView : MonoBehaviour
         // bir PauseLevel() çağırmaya gerek yok, sadece paneli gösteriyoruz.
         PopulateChains();
         panelRoot.SetActive(true);
+        SetGameplayButtonsVisible(false);
     }
 
     /// <summary>Oyun sırasındaki "?" (Recipe'yi tekrar göster) butonuna bağlanacak.</summary>
@@ -43,6 +48,7 @@ public class RecipePreviewView : MonoBehaviour
     {
         if (!_hasPopulatedOnce) PopulateChains();
         panelRoot.SetActive(true);
+        SetGameplayButtonsVisible(false);
         // Bilerek PauseLevel() ÇAĞRILMIYOR - süre ve istasyon karışması akmaya devam etsin,
         // oyuncu "hile" yaparak süreyi durdurup rahatça bakamasın.
     }
@@ -51,6 +57,7 @@ public class RecipePreviewView : MonoBehaviour
     public void OnCloseButtonPressed()
     {
         panelRoot.SetActive(false);
+        SetGameplayButtonsVisible(true);
 
         if (!gameManager.HasBegun)
         {
@@ -59,6 +66,16 @@ public class RecipePreviewView : MonoBehaviour
         else
         {
             gameManager.ResumeLevel();
+        }
+    }
+
+    private void SetGameplayButtonsVisible(bool visible)
+    {
+        if (gameplayOnlyButtons == null) return;
+
+        foreach (GameObject button in gameplayOnlyButtons)
+        {
+            if (button != null) button.SetActive(visible);
         }
     }
 
@@ -106,7 +123,12 @@ public class RecipePreviewView : MonoBehaviour
             {
                 sb.Append(stepSeparator);
                 sb.Append(string.Format(stationWrapFormat, steps[i].StationToNext.displayName));
-                sb.Append(stepSeparator);
+            }
+
+            // Son adım değilse, bir sonraki adımı YENİ SATIRA yaz (okunması daha kolay olsun diye).
+            if (i < steps.Count - 1)
+            {
+                sb.Append('\n');
             }
         }
 

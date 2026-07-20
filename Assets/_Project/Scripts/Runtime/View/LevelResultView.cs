@@ -18,6 +18,10 @@ public class LevelResultView : MonoBehaviour
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
 
+    [Header("Next Level Butonu (WinPanel içinde)")]
+    [Tooltip("Son level'da otomatik gizlenir (LevelData.nextLevel boşsa).")]
+    [SerializeField] private GameObject nextLevelButton;
+
     [Header("Giriş Animasyonu")]
     [SerializeField] private float popDuration = 0.4f;
     [SerializeField] private Ease popEase = Ease.OutBack;
@@ -54,6 +58,9 @@ public class LevelResultView : MonoBehaviour
     private void HandleLevelWon()
     {
         ShowPanel(winPanel);
+
+        bool hasNextLevel = gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.nextLevel != null;
+        if (nextLevelButton != null) nextLevelButton.SetActive(hasNextLevel);
     }
 
     private void HandleLevelFailed()
@@ -81,5 +88,15 @@ public class LevelResultView : MonoBehaviour
     public void OnMainMenuButtonPressed()
     {
         SceneManager.LoadScene(mainMenuSceneName);
+    }
+
+    /// <summary>WinPanel içindeki Next Level butonuna bağlanacak.</summary>
+    public void OnNextLevelButtonPressed()
+    {
+        LevelData next = gameManager?.ActiveLevel?.nextLevel;
+        if (next == null) return; // güvenlik - buton zaten gizli olmalıydı
+
+        LevelSession.SelectedLevel = next;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

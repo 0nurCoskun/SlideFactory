@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_Silikon
+  m_Name: CD_KoyuJole
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: silicon
-  displayName: Silikon
+  cardId: dark_jelly
+  displayName: "Koyu J\xF6le"
   description: 
   icon: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 11400000}
+  rawStageVersion: {fileID: 11400000, guid: 026bc21d9d4e8a24a96b400b1e5d149f, type: 2}
   outcomes:
-  - station: {fileID: 11400000, guid: 20382308d83bdbe43936fbbde8c1ef23, type: 2}
-    resultCard: {fileID: 11400000, guid: 323381a3b723f8847a6f05f1132053ac, type: 2}
+  - station: {fileID: 11400000, guid: 27e137bd280749e4196aecf3ae49d38b, type: 2}
+    resultCard: {fileID: 11400000, guid: fd5d0f32946106d428af862a5c300c51, type: 2}

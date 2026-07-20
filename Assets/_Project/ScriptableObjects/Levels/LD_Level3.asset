@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelId: level3
   displayName: Level 3
+  requiredPreviousLevel: {fileID: 11400000, guid: 24c403dd03c1cfb4cbef8ecdaa40386f, type: 2}
+  nextLevel: {fileID: 11400000, guid: 0275b885ff7a4414e9ef27f33380c579, type: 2}
   initialDeck:
   - {fileID: 11400000, guid: 36f079b37ea1a8b48823cf92317ef014, type: 2}
   - {fileID: 11400000, guid: c11d6237a954bd94fbc13e200f0c3c7d, type: 2}
-  - {fileID: 11400000, guid: 36f079b37ea1a8b48823cf92317ef014, type: 2}
   - {fileID: 11400000, guid: 1feaa9eef9059a5488ae39cfcca5de46, type: 2}
-  - {fileID: 11400000, guid: 1feaa9eef9059a5488ae39cfcca5de46, type: 2}
-  - {fileID: 11400000, guid: c11d6237a954bd94fbc13e200f0c3c7d, type: 2}
-  - {fileID: 11400000, guid: c11d6237a954bd94fbc13e200f0c3c7d, type: 2}
   - {fileID: 11400000, guid: 36f079b37ea1a8b48823cf92317ef014, type: 2}
+  - {fileID: 11400000, guid: c11d6237a954bd94fbc13e200f0c3c7d, type: 2}
+  - {fileID: 11400000, guid: 1feaa9eef9059a5488ae39cfcca5de46, type: 2}
+  - {fileID: 11400000, guid: 36f079b37ea1a8b48823cf92317ef014, type: 2}
+  - {fileID: 11400000, guid: c11d6237a954bd94fbc13e200f0c3c7d, type: 2}
   - {fileID: 11400000, guid: 1feaa9eef9059a5488ae39cfcca5de46, type: 2}
   levelDuration: 75
   stationsForLevel:

@@ -257,8 +257,13 @@ public class GameManager : MonoBehaviour
         levelTimerManager?.StopTimer();
 
         if (won)
+        {
+            LevelProgress.MarkLevelCompleted(_activeLevel);
             OnLevelWon?.Invoke();
+        }
         else
+        {
             OnLevelFailed?.Invoke();
+        }
     }
 }

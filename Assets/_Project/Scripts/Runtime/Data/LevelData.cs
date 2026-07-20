@@ -12,6 +12,15 @@ public class LevelData : ScriptableObject
     public string levelId;
     public string displayName;
 
+    [Header("İlerleme / Kilit")]
+    [Tooltip("Bu level'ın açılması için hangi level'ın tamamlanmış olması gerekiyor? " +
+             "Boş bırakılırsa (ilk level için) her zaman açık olur.")]
+    public LevelData requiredPreviousLevel;
+
+    [Tooltip("Win panelindeki 'Sonraki Level' butonunun yükleyeceği level. " +
+             "Son level ise boş bırak - buton otomatik gizlenir.")]
+    public LevelData nextLevel;
+
     [Header("Deste")]
     [Tooltip("Bu level'da destede bulunacak ham kartlar.")]
     public List<CardData> initialDeck;

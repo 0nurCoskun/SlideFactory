@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_Silikon
+  m_Name: CD_GeceCicegi
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: silicon
-  displayName: Silikon
+  cardId: night_flower
+  displayName: "Gece \xC7i\xE7e\u011Fi"
   description: 
   icon: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:
-  - station: {fileID: 11400000, guid: 20382308d83bdbe43936fbbde8c1ef23, type: 2}
-    resultCard: {fileID: 11400000, guid: 323381a3b723f8847a6f05f1132053ac, type: 2}
+  - station: {fileID: 11400000, guid: 7380fb2f8a982c54f9af941721e07ae3, type: 2}
+    resultCard: {fileID: 11400000, guid: 3d5b669d3621f9b429eb9c25d9ffbf7f, type: 2}

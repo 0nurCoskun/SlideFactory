@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelId: level2
   displayName: Level 2
+  requiredPreviousLevel: {fileID: 11400000, guid: f283f351a41dc184b80405d4b35097c7, type: 2}
+  nextLevel: {fileID: 11400000, guid: eac69bc7efc55864d9ee9487b8ed74d3, type: 2}
   initialDeck:
   - {fileID: 11400000, guid: ffcdb4c5548721b40af22a2ea9b73db8, type: 2}
   - {fileID: 11400000, guid: bac706e74892bd04eb3bc9c19814ae04, type: 2}
-  - {fileID: 11400000, guid: ffcdb4c5548721b40af22a2ea9b73db8, type: 2}
   - {fileID: 11400000, guid: ce8f20a69adbd53428eb4ef53db9ad2a, type: 2}
+  - {fileID: 11400000, guid: ffcdb4c5548721b40af22a2ea9b73db8, type: 2}
   - {fileID: 11400000, guid: bac706e74892bd04eb3bc9c19814ae04, type: 2}
   - {fileID: 11400000, guid: ce8f20a69adbd53428eb4ef53db9ad2a, type: 2}
   - {fileID: 11400000, guid: ffcdb4c5548721b40af22a2ea9b73db8, type: 2}
