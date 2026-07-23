@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_FriedNachoChips
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: fried_nacho
+  displayName: Fried Nacho Chips
+  description: 
+  icon: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: a77849760eb1ff34dbc3fee054b2b4dd, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: dbd89f82feb774b4db6804d816eaf388, type: 2}
+    resultCard: {fileID: 11400000, guid: 92b9a94b755f0684c905c907a468e25f, type: 2}

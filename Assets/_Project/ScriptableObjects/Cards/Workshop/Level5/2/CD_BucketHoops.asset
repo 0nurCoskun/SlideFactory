@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_BucketHoops
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: bucket
+  displayName: Iron Bucket Hoops
+  description: 
+  icon: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: 66a256ca099bd8a4b9204bbdf31f5709, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: c8639379f0b5ac143abad00a5b926483, type: 2}
+    resultCard: {fileID: 11400000, guid: 1f3b883402e773743a6d614c25d2c821, type: 2}

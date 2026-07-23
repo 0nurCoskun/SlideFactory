@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_ChickenTender
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: chicken_tender
+  displayName: Chicken Tender
+  description: 
+  icon: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000}
+  outcomes:
+  - station: {fileID: 11400000, guid: c96dfc000a2e14a4eae3b2092db6832e, type: 2}
+    resultCard: {fileID: 11400000, guid: c75499da451adc049827d06d41e3d2f4, type: 2}

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5073be1ff16d1654ebc8b3cbcd923edf, type: 3}
+  m_Name: LD_kLevel7
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  levelId: level7k
+  displayName: Level 7
+  requiredPreviousLevel: {fileID: 11400000, guid: 820f9a97f706f424cae493a99054479c, type: 2}
+  nextLevel: {fileID: 11400000, guid: e720e925023cafd41898ddd489aef40e, type: 2}
+  initialDeck:
+  - {fileID: 11400000, guid: 810393bb7e078ea44b965136ca131420, type: 2}
+  - {fileID: 11400000, guid: 9ccd6e981b9d618479121548175fba99, type: 2}
+  - {fileID: 11400000, guid: bdc52c4eda4a0ca47a547eec7309a781, type: 2}
+  - {fileID: 11400000, guid: 810393bb7e078ea44b965136ca131420, type: 2}
+  - {fileID: 11400000, guid: 9ccd6e981b9d618479121548175fba99, type: 2}
+  - {fileID: 11400000, guid: bdc52c4eda4a0ca47a547eec7309a781, type: 2}
+  - {fileID: 11400000, guid: 810393bb7e078ea44b965136ca131420, type: 2}
+  - {fileID: 11400000, guid: 9ccd6e981b9d618479121548175fba99, type: 2}
+  - {fileID: 11400000, guid: bdc52c4eda4a0ca47a547eec7309a781, type: 2}
+  - {fileID: 11400000, guid: 810393bb7e078ea44b965136ca131420, type: 2}
+  - {fileID: 11400000, guid: 9ccd6e981b9d618479121548175fba99, type: 2}
+  - {fileID: 11400000, guid: bdc52c4eda4a0ca47a547eec7309a781, type: 2}
+  levelDuration: 90
+  stationsForLevel:
+  - {fileID: 11400000, guid: d3c5a44c7e5b00047a19d8d750c79e78, type: 2}
+  - {fileID: 11400000, guid: 67c12031cdc434441bb62c367a6aed9c, type: 2}
+  - {fileID: 11400000, guid: c08d441cffe376e4ab75d1b712641c58, type: 2}
+  - {fileID: 11400000, guid: 47f96ea30de42b24496b9eb3ee0bd4f6, type: 2}
+  minStationShuffleInterval: 3
+  maxStationShuffleInterval: 4

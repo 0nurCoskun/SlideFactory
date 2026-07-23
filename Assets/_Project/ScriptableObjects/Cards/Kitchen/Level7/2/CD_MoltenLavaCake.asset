@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_MoltenLavaCake
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: molten_lava_cake
+  displayName: Molten Lava Cake
+  description: 
+  icon: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: 9ccd6e981b9d618479121548175fba99, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: c08d441cffe376e4ab75d1b712641c58, type: 2}
+    resultCard: {fileID: 11400000, guid: d4f6e5adf8c725841b9eeaca7df99f5d, type: 2}

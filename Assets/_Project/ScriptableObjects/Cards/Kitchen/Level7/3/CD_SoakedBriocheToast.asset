@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_SoakedBriocheToast
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: soaked_brioche_toast
+  displayName: Soaked Brioche Toast
+  description: 
+  icon: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: 810393bb7e078ea44b965136ca131420, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: 47f96ea30de42b24496b9eb3ee0bd4f6, type: 2}
+    resultCard: {fileID: 11400000, guid: 43741c714b5a8d140adac0dddace1725, type: 2}
