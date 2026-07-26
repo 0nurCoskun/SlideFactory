@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_ChiseledGranite
+  m_Name: CD_WoodenLast
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: chiseled_granite_vessel
-  displayName: Chiseled Granite Vessel
+  cardId: wooden_last
+  displayName: Wooden Last
   description: 
   icon: {fileID: 0}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 11400000, guid: d4fcb878f922e9e40ae79431fcfcb65c, type: 2}
+  rawStageVersion: {fileID: 11400000}
   outcomes:
-  - station: {fileID: 11400000, guid: 2e0563ca49c31fc4ea4a4df8bc0d80d9, type: 2}
-    resultCard: {fileID: 11400000, guid: 03b3ecc7a9caeea499a2c8a4ca686bcf, type: 2}
+  - station: {fileID: 11400000, guid: b10d953d223059344bdc6144873f90b8, type: 2}
+    resultCard: {fileID: 11400000, guid: 2221385d39dae9d41b43b8beed6eba39, type: 2}

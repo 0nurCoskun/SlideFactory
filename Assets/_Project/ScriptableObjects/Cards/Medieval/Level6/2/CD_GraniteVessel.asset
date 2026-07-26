@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_CarvedMarble
+  m_Name: CD_GraniteVessel
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: carved_marble_stamp
-  displayName: Carved Marble Stamp Handle
+  cardId: granite_vessel
+  displayName: Granite Vessel
   description: 
   icon: {fileID: 0}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 11400000, guid: 0054b781d1c290449b2e374d6908c4c8, type: 2}
+  rawStageVersion: {fileID: 11400000, guid: d4fcb878f922e9e40ae79431fcfcb65c, type: 2}
   outcomes:
-  - station: {fileID: 11400000, guid: 77683b81a1b4ac6469e4fab7daa95531, type: 2}
-    resultCard: {fileID: 11400000, guid: 567737604577e194f984a0587e146441, type: 2}
+  - station: {fileID: 11400000, guid: 2e0563ca49c31fc4ea4a4df8bc0d80d9, type: 2}
+    resultCard: {fileID: 11400000, guid: 03b3ecc7a9caeea499a2c8a4ca686bcf, type: 2}

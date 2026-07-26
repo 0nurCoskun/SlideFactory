@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_Vest
+  m_Name: CD_BrassCompass
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: 
-  displayName: 
+  cardId: brass_compass
+  displayName: Brass Compass
   description: 
   icon: {fileID: 0}
-  isFinalProduct: 1
-  rawStageVersion: {fileID: 0}
-  outcomes: []
+  fontAsset: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: e6b46188e3bfcfa418b6f0a3a4ab42e4, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: 5b7763d606e7925488260646b718065b, type: 2}
+    resultCard: {fileID: 11400000, guid: aa2e85e158f92aa428d9f6bdd163fbe4, type: 2}

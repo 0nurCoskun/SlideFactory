@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_GlassLens
+  m_Name: CD_Helm
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: glass_lens
-  displayName: Blown Glass Lens Casing
+  cardId: helm
+  displayName: Helm
   description: 
   icon: {fileID: 0}
-  isFinalProduct: 0
-  rawStageVersion: {fileID: 11400000, guid: e6b46188e3bfcfa418b6f0a3a4ab42e4, type: 2}
-  outcomes:
-  - station: {fileID: 11400000, guid: 77683b81a1b4ac6469e4fab7daa95531, type: 2}
-    resultCard: {fileID: 11400000, guid: 0a1723dd51efcc142b18e8fde082cdbb, type: 2}
+  fontAsset: {fileID: 0}
+  isFinalProduct: 1
+  rawStageVersion: {fileID: 0}
+  outcomes: []

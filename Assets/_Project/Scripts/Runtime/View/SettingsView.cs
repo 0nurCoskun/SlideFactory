@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// Ayarlar panelindeki müzik/SFX ses slider'larını AudioManager'a bağlar.
@@ -14,6 +15,9 @@ public class SettingsView : MonoBehaviour
     [Header("Slider'lar")]
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
+    [Header("Text'ler")]
+    [SerializeField] private TMP_Text musicVolumeText;
+    [SerializeField] private TMP_Text sfxVolumeText;
 
     private void Awake()
     {
@@ -37,12 +41,14 @@ public class SettingsView : MonoBehaviour
     public void OnMusicSliderChanged(float value)
     {
         AudioManager.Instance?.SetMusicVolume(value);
+        if (musicVolumeText != null) musicVolumeText.text = Mathf.RoundToInt(AudioManager.Instance.MusicVolume * 100).ToString() + "%";
     }
 
     /// <summary>SFX Volume slider'ının OnValueChanged()'ine bağlanacak.</summary>
     public void OnSfxSliderChanged(float value)
     {
         AudioManager.Instance?.SetSfxVolume(value);
+        if (sfxVolumeText != null) sfxVolumeText.text = Mathf.RoundToInt(AudioManager.Instance.SfxVolume * 100).ToString() + "%";
     }
 
     private void SyncSlidersWithCurrentSettings()

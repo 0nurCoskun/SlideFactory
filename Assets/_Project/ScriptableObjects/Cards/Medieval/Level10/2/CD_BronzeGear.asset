@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_ChiliOil
+  m_Name: CD_BronzeGear
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: chili_oil
-  displayName: Chili Oil
+  cardId: bronze_gear
+  displayName: Bronze Gear
   description: 
   icon: {fileID: 0}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 11400000}
+  rawStageVersion: {fileID: 11400000, guid: a832823063b9f2949910680343f7b814, type: 2}
   outcomes:
-  - station: {fileID: 11400000, guid: d3c5a44c7e5b00047a19d8d750c79e78, type: 2}
-    resultCard: {fileID: 11400000, guid: 83cb1184be2137f4382d366dc6216232, type: 2}
+  - station: {fileID: 11400000, guid: 922879fb6f2099748b93c1c007ab6390, type: 2}
+    resultCard: {fileID: 11400000, guid: 4d86df35010e5704c9f334e7507ea280, type: 2}

@@ -27,6 +27,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56b5b25c9040c714fb2a94b0e23e84a9, type: 2}
   - {fileID: 11400000, guid: f00360f3e410ccb42a57130f53503a0d, type: 2}
   levelDuration: 60
-  stationsForLevel: []
+  stationsForLevel:
+  - {fileID: 11400000, guid: 8bbcdf122ec1ae6448b7d0b833495c23, type: 2}
+  - {fileID: 11400000, guid: 2934d16b88d8d694b8955f386b09d1f0, type: 2}
+  - {fileID: 11400000, guid: 2e0563ca49c31fc4ea4a4df8bc0d80d9, type: 2}
+  - {fileID: 11400000, guid: 08d3e476b099af845b6d97c747070880, type: 2}
   minStationShuffleInterval: 3
   maxStationShuffleInterval: 4

@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_GlassShielded
+  m_Name: CD_BrassSignet
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: glass_shielded_altar
-  displayName: Glass Shielded Altar Lamp
+  cardId: brass_signet
+  displayName: Brass Signet
   description: 
   icon: {fileID: 0}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 11400000, guid: d4fcb878f922e9e40ae79431fcfcb65c, type: 2}
+  rawStageVersion: {fileID: 11400000, guid: 0054b781d1c290449b2e374d6908c4c8, type: 2}
   outcomes:
-  - station: {fileID: 11400000, guid: 77683b81a1b4ac6469e4fab7daa95531, type: 2}
-    resultCard: {fileID: 11400000, guid: da3c85bc0c4774449a1810a5ea083d40, type: 2}
+  - station: {fileID: 11400000, guid: 5b7763d606e7925488260646b718065b, type: 2}
+    resultCard: {fileID: 11400000, guid: ae7d018ad09ed3f4cad9341e18f40b2e, type: 2}

@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9464aac88ebeeaf4abcedfd322f129e4, type: 2}
   - {fileID: 11400000, guid: f49b0f1c6d1d2614e82be8fc8ee528e9, type: 2}
   - {fileID: 11400000, guid: a77849760eb1ff34dbc3fee054b2b4dd, type: 2}
-  levelDuration: 75
+  levelDuration: 115
   stationsForLevel:
   - {fileID: 11400000, guid: 47f96ea30de42b24496b9eb3ee0bd4f6, type: 2}
   - {fileID: 11400000, guid: ae8989187216a1d4dad80da6d529f3bc, type: 2}
