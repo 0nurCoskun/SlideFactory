@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: CD_Mince
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardId: mince
-  displayName: mince
+  displayName: Mince
   description: 
   icon: {fileID: 0}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: bac706e74892bd04eb3bc9c19814ae04, type: 2}
   outcomes:

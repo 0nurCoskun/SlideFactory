@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// Bir kartın "o anki hali"ni temsil eden veri kaynağı.
@@ -22,6 +23,7 @@ public class CardData : ScriptableObject
     public string displayName;
     [TextArea] public string description;
     public Sprite icon;
+    public TextMeshProUGUI fontAsset;
 
     [Header("Üretim Durumu")]
     [Tooltip("True ise bu kart zincirin son ürünüdür. Doğru istasyona atılınca desteden tamamen silinir.")]

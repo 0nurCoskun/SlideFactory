@@ -199,7 +199,7 @@ public class CardView : MonoBehaviour
         cardRectTransform.localRotation = Quaternion.identity;
         cardRectTransform.localScale = Vector3.zero;
 
-        if (iconImage != null) iconImage.sprite = card.Data.icon;
+
         if (nameText != null)
         {
             nameText.text = card.Data.displayName;

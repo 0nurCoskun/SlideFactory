@@ -15,7 +15,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 12408, guid: 0000000000000000e000000000000000, type: 0}
-  svgType: 0
+  svgType: 1
   texturedSpriteMeshType: 0
   svgPixelsPerUnit: 100
   gradientResolution: 64
@@ -46,7 +46,7 @@ ScriptedImporter:
   useSVGPixelsPerUnit: 0
   spriteData:
     TessellationDetail: 0
-    SpriteName: icon_arrow_forward_white.svgSprite
+    SpriteName: icon_arrow_forward_white.svg
     SpritePivot: {x: 0.5, y: 0.5}
     SpriteAlignment: 0
     SpriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -54,7 +54,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 64.86561
-      height: 39.210896
+      width: 256
+      height: 155
     SpriteID: 227a65486f087224e83ebb88505645d1
     PhysicsOutlines: []

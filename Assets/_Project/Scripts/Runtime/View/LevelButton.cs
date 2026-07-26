@@ -23,6 +23,7 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private GameObject lockIcon;
 
     private Button _button;
+    public LevelData LevelData => levelData;
 
     private void Awake()
     {

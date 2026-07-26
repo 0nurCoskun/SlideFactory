@@ -5,10 +5,16 @@ using UnityEngine;
 /// AppBootstrap gibi singleton + DontDestroyOnLoad - sahne değişse bile hayatta kalır,
 /// bu yüzden Level Select'te başlayan müzik Game sahnesine geçince kesilmez (istersen).
 ///
+/// Ses seviyeleri PlayerPrefs ile KALICI olarak saklanır - oyuncu ayarları değiştirip
+/// oyunu kapatıp açsa bile tercihleri korunur.
+///
 /// Sahnede tek bir GameObject'e (örn. "_AudioManager") eklenir, SADECE ilk açılan sahnede.
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
+    private const string SfxVolumeKey = "settings_sfx_volume";
+    private const string MusicVolumeKey = "settings_music_volume";
+
     public static AudioManager Instance { get; private set; }
 
     [Header("Audio Source'lar")]
@@ -19,9 +25,12 @@ public class AudioManager : MonoBehaviour
     [Tooltip("Tüm butonlar için varsayılan tıklama sesi. Bir buton farklı bir ses istiyorsa UIButtonSound üzerinden override edilebilir.")]
     [SerializeField] private AudioClip defaultButtonClickClip;
 
-    [Header("Varsayılan Ses Seviyeleri")]
+    [Header("Varsayılan Ses Seviyeleri (ilk açılışta, PlayerPrefs boşsa kullanılır)")]
     [Range(0f, 1f)][SerializeField] private float sfxVolume = 1f;
     [Range(0f, 1f)][SerializeField] private float musicVolume = 0.6f;
+
+    public float SfxVolume => sfxVolume;
+    public float MusicVolume => musicVolume;
 
     private void Awake()
     {
@@ -33,6 +42,10 @@ public class AudioManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // Kayıtlı bir ayar varsa onu kullan, yoksa Inspector'daki varsayılanı kullan.
+        sfxVolume = PlayerPrefs.GetFloat(SfxVolumeKey, sfxVolume);
+        musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, musicVolume);
 
         if (sfxSource != null) sfxSource.volume = sfxVolume;
         if (musicSource != null)
@@ -77,11 +90,17 @@ public class AudioManager : MonoBehaviour
     {
         sfxVolume = Mathf.Clamp01(volume);
         if (sfxSource != null) sfxSource.volume = sfxVolume;
+
+        PlayerPrefs.SetFloat(SfxVolumeKey, sfxVolume);
+        PlayerPrefs.Save();
     }
 
     public void SetMusicVolume(float volume)
     {
         musicVolume = Mathf.Clamp01(volume);
         if (musicSource != null) musicSource.volume = musicVolume;
+
+        PlayerPrefs.SetFloat(MusicVolumeKey, musicVolume);
+        PlayerPrefs.Save();
     }
 }

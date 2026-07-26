@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: CD_Dough
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardId: dough
-  displayName: dough
+  displayName: Dough
   description: 
   icon: {fileID: 0}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: ffcdb4c5548721b40af22a2ea9b73db8, type: 2}
   outcomes:
