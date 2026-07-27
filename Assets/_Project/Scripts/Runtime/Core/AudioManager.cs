@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
 {
     private const string SfxVolumeKey = "settings_sfx_volume";
     private const string MusicVolumeKey = "settings_music_volume";
+    private const string MusicMutedKey = "settings_music_muted";
 
     public static AudioManager Instance { get; private set; }
 
@@ -31,6 +32,7 @@ public class AudioManager : MonoBehaviour
 
     public float SfxVolume => sfxVolume;
     public float MusicVolume => musicVolume;
+    public bool IsMusicMuted { get; private set; }
 
     private void Awake()
     {
@@ -46,12 +48,14 @@ public class AudioManager : MonoBehaviour
         // Kayıtlı bir ayar varsa onu kullan, yoksa Inspector'daki varsayılanı kullan.
         sfxVolume = PlayerPrefs.GetFloat(SfxVolumeKey, sfxVolume);
         musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, musicVolume);
+        IsMusicMuted = PlayerPrefs.GetInt(MusicMutedKey, 0) == 1;
 
         if (sfxSource != null) sfxSource.volume = sfxVolume;
         if (musicSource != null)
         {
             musicSource.volume = musicVolume;
             musicSource.loop = true;
+            musicSource.mute = IsMusicMuted;
         }
     }
 
@@ -101,6 +105,21 @@ public class AudioManager : MonoBehaviour
         if (musicSource != null) musicSource.volume = musicVolume;
 
         PlayerPrefs.SetFloat(MusicVolumeKey, musicVolume);
+        PlayerPrefs.Save();
+    }
+
+    /// <summary>
+    /// Müziği açıp kapatır. AudioSource.mute kullanıyoruz (volume'u SIFIRLAMIYORUZ) -
+    /// bu sayede tekrar açıldığında oyuncunun ayarladığı ses seviyesi AYNEN korunur,
+    /// "eski haline dönme" isteğin tam olarak bu şekilde karşılanıyor.
+    /// </summary>
+    public void ToggleMusicMute()
+    {
+        IsMusicMuted = !IsMusicMuted;
+
+        if (musicSource != null) musicSource.mute = IsMusicMuted;
+
+        PlayerPrefs.SetInt(MusicMutedKey, IsMusicMuted ? 1 : 0);
         PlayerPrefs.Save();
     }
 }

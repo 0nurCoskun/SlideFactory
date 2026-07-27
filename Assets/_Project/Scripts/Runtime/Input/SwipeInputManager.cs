@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
+using UnityEngine.InputSystem.EnhancedTouch;
+using EnhancedTouch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 [Serializable] public class SwipeDirectionEvent : UnityEvent<SwipeDirection> { }
 [Serializable] public class DragDeltaEvent : UnityEvent<Vector2> { }
@@ -40,10 +41,24 @@ public class SwipeInputManager : MonoBehaviour
     private Vector2 _startPos;
     private bool _isDragging;
 
+    private void Awake()
+    {
+        // Ham (raw) Touchscreen.current.primaryTouch okumak, bazı cihazlarda/frame'lerde
+        // "Began" fazının parmak sabit dururken bile TEKRAR TEKRAR rapor edilmesine yol
+        // açabiliyor (BeginDrag'in sürekli tetiklenip ses/animasyonun tekrarlanması bu
+        // yüzdendi). EnhancedTouch API, faz takibini çerçeve çerçeve GÜVENİLİR yapıyor.
+        EnhancedTouchSupport.Enable();
+    }
+
+    private void OnDestroy()
+    {
+        EnhancedTouchSupport.Disable();
+    }
+
     private void Update()
     {
         // Dokunmatik cihaz varsa ve aktif bir dokunuş varsa touch, yoksa mouse (editör/PC) kullan.
-        if (Touchscreen.current != null && Touchscreen.current.touches.Count > 0)
+        if (EnhancedTouch.activeTouches.Count > 0)
         {
             HandleTouchInput();
         }
@@ -71,27 +86,30 @@ public class SwipeInputManager : MonoBehaviour
 
     private void HandleTouchInput()
     {
-        TouchControl touch = Touchscreen.current.primaryTouch;
-        UnityEngine.InputSystem.TouchPhase phase = touch.phase.ReadValue();
+        EnhancedTouch touch = EnhancedTouch.activeTouches[0];
 
-        switch (phase)
+        switch (touch.phase)
         {
             case UnityEngine.InputSystem.TouchPhase.Began:
-                BeginDrag(touch.position.ReadValue());
+                BeginDrag(touch.screenPosition);
                 break;
             case UnityEngine.InputSystem.TouchPhase.Moved:
             case UnityEngine.InputSystem.TouchPhase.Stationary:
-                if (_isDragging) UpdateDrag(touch.position.ReadValue());
+                if (_isDragging) UpdateDrag(touch.screenPosition);
                 break;
             case UnityEngine.InputSystem.TouchPhase.Ended:
             case UnityEngine.InputSystem.TouchPhase.Canceled:
-                if (_isDragging) EndDrag(touch.position.ReadValue());
+                if (_isDragging) EndDrag(touch.screenPosition);
                 break;
         }
     }
 
     private void BeginDrag(Vector2 screenPos)
     {
+        // Zaten bir sürükleme sürüyorsa tekrar başlatma - bu, kök sebep ne olursa olsun
+        // (ses/animasyonun tekrar tekrar tetiklenmesine karşı) ek bir güvenlik katmanı.
+        if (_isDragging) return;
+
         // Parmak/mouse bir UI elemanının (buton, panel vb.) üzerindeyse swipe başlatma.
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
