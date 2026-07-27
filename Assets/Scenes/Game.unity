@@ -4743,7 +4743,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioTriggerView
   gameManager: {fileID: 415136257}
   swipeInputManager: {fileID: 1313664592}
-  cardTouchClip: {fileID: 8300000, guid: f5d099c7a40edb844a583ee1693ea567, type: 3}
+  cardTouchClip: {fileID: 8300000, guid: f463e3bee0c233441906aee0b38661e8, type: 3}
+  cardSwipeClip: {fileID: 8300000, guid: 2c11fffca07d1a242a50882b345f9d3b, type: 3}
   correctSwipeClip: {fileID: 8300000, guid: f64ab1f9953f79344995a101decf9830, type: 3}
   wrongSwipeClip: {fileID: 8300000, guid: e759c65f76c80834abc572593f946008, type: 3}
   cardCompletedClip: {fileID: 8300000, guid: 6e7f23ef945c235438595e89d6332d46, type: 3}
@@ -7045,7 +7046,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 700}
+  m_SizeDelta: {x: 650, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1864500182
 GameObject:
