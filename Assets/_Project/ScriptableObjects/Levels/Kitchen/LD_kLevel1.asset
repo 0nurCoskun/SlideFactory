@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5073be1ff16d1654ebc8b3cbcd923edf, type: 3}
   m_Name: LD_kLevel1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelId: level2k
-  displayName: Level 2
+  levelId: level1k
+  displayName: Level 1
   requiredPreviousLevel: {fileID: 0}
   nextLevel: {fileID: 11400000, guid: ed60be4d3a9230448a4a992d2bb0e4b0, type: 2}
   initialDeck:
