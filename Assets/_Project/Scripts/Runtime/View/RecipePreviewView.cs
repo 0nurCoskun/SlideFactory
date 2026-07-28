@@ -16,6 +16,8 @@ public class RecipePreviewView : MonoBehaviour
 {
     [Header("Bağımlılık")]
     [SerializeField] private GameManager gameManager;
+    [Tooltip("Level ilk kez başlarken deste karma animasyonunu oynatır. Boş bırakılırsa direkt BeginLevelPlay() çağrılır.")]
+    [SerializeField] private DeckShuffleView deckShuffleView;
 
     [Header("Panel")]
     [SerializeField] private GameObject panelRoot;
@@ -61,7 +63,14 @@ public class RecipePreviewView : MonoBehaviour
 
         if (!gameManager.HasBegun)
         {
-            gameManager.BeginLevelPlay();
+            if (deckShuffleView != null)
+            {
+                deckShuffleView.PlayShuffleThenBeginLevel();
+            }
+            else
+            {
+                gameManager.BeginLevelPlay();
+            }
         }
         else
         {

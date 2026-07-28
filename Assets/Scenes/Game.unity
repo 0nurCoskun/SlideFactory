@@ -1036,6 +1036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecipePreviewView
   gameManager: {fileID: 415136257}
+  deckShuffleView: {fileID: 737959513}
   panelRoot: {fileID: 1820436394}
   chainListContainer: {fileID: 599565578}
   chainRowPrefab: {fileID: 3118269131240521995, guid: 8e57bcfee55e8424bb0fa0cd54d6f315, type: 3}
@@ -2724,6 +2725,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727789076}
   m_CullTransparentMesh: 1
+--- !u!1 &737959512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737959514}
+  - component: {fileID: 737959513}
+  m_Layer: 0
+  m_Name: _DeckShuffleView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &737959513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737959512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12cde914a88229b49bf5959961adb39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeckShuffleView
+  gameManager: {fileID: 415136257}
+  targetPosition: {fileID: 1852288289}
+  shuffleCardPrefab: {fileID: 2882252936369216022, guid: 7b762a93cd89c3544ae37ce558d77d4a, type: 3}
+  shuffleCardsParent: {fileID: 1716488013}
+  shuffleCardCount: 27
+  perCardFlyDuration: 0.3
+  staggerDelay: 0.03
+  spawnDistance: 1500
+  maxEntryRotation: 25
+  cardShuffleSound: {fileID: 8300000, guid: 158dd8cbb4b939441b4c3bce7c7d6b13, type: 3}
+--- !u!4 &737959514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737959512}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 603.78894, y: 919.0502, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767843703
 GameObject:
   m_ObjectHideFlags: 0
@@ -4008,6 +4063,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1852288289}
+  - {fileID: 1716488013}
   - {fileID: 1863723049}
   m_Father: {fileID: 688798534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6123,6 +6179,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716072096}
   m_CullTransparentMesh: 1
+--- !u!1 &1716488012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716488013}
+  m_Layer: 0
+  m_Name: ShuffleCardsParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1716488013
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716488012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1169301665}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1746561234
 GameObject:
   m_ObjectHideFlags: 0
@@ -8566,3 +8657,4 @@ SceneRoots:
   - {fileID: 331570911}
   - {fileID: 1864500184}
   - {fileID: 1808244742}
+  - {fileID: 737959514}
