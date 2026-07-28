@@ -35,7 +35,7 @@ public class DeckShuffleView : MonoBehaviour
     /// <summary>RecipePreviewView, level ilk kez başlarken bunu çağırır (BeginLevelPlay yerine).</summary>
     public void PlayShuffleThenBeginLevel()
     {
-        AudioManager.Instance?.PlaySFX(cardShuffleSound);
+        AudioManager.Instance.PlaySFX(cardShuffleSound);
 
         List<RectTransform> spawnedCards = new List<RectTransform>();
         Sequence masterSequence = DOTween.Sequence();
