@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     public event Action<CardInstance> OnCardCompleted;              // Kart son ürüne dönüştü ve desteden düştü
     public event Action<SwipeDirection, StationData> OnInvalidSwipe; // Yanlış istasyona atıldı, kart Ham'a sıfırlandı
     public event Action OnDeckEmptied;                               // Deste bitti (henüz "level kazanıldı" ile karıştırma - süre de kontrol edilir)
-    public event Action OnLevelWon;                                  // Süre bitmeden deste tamamlandı
+    public event Action<int> OnLevelWon;                             // Süre bitmeden deste tamamlandı - kaç yıldız kazanıldığını da taşır
     public event Action OnLevelFailed;                               // Süre bitti ama deste hâlâ dolu
 
     /// <summary>
@@ -258,12 +258,30 @@ public class GameManager : MonoBehaviour
 
         if (won)
         {
+            int stars = CalculateStars();
             LevelProgress.MarkLevelCompleted(_activeLevel);
-            OnLevelWon?.Invoke();
+            LevelProgress.SetStarsIfHigher(_activeLevel, stars);
+            OnLevelWon?.Invoke(stars);
         }
         else
         {
             OnLevelFailed?.Invoke();
         }
+    }
+
+    /// <summary>
+    /// Kalan sürenin toplam süreye oranına göre 1-3 arası yıldız hesaplar.
+    /// Bu metod sadece won=true durumunda çağrıldığı için her zaman EN AZ 1 yıldız garantiler.
+    /// </summary>
+    private int CalculateStars()
+    {
+        if (levelTimerManager == null || _activeLevel == null || _activeLevel.levelDuration <= 0f)
+            return 1;
+
+        float remainingRatio = levelTimerManager.RemainingTime / _activeLevel.levelDuration;
+
+        if (remainingRatio >= _activeLevel.threeStarRemainingRatio) return 3;
+        if (remainingRatio >= _activeLevel.twoStarRemainingRatio) return 2;
+        return 1;
     }
 }

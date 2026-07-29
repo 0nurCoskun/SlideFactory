@@ -22,6 +22,11 @@ public class LevelResultView : MonoBehaviour
     [Tooltip("Son level'da otomatik gizlenir (LevelData.nextLevel boşsa).")]
     [SerializeField] private GameObject nextLevelButton;
 
+    [Header("Yıldız Görselleri (WinPanel içinde, soldan sağa 1-2-3 sırasıyla)")]
+    [SerializeField] private UnityEngine.UI.Image[] starImages;
+    [SerializeField] private Sprite filledStarSprite;
+    [SerializeField] private Sprite emptyStarSprite;
+
     [Header("Giriş Animasyonu")]
     [SerializeField] private float popDuration = 0.4f;
     [SerializeField] private Ease popEase = Ease.OutBack;
@@ -55,12 +60,24 @@ public class LevelResultView : MonoBehaviour
         }
     }
 
-    private void HandleLevelWon()
+    private void HandleLevelWon(int stars)
     {
         ShowPanel(winPanel);
+        UpdateStarDisplay(stars);
 
         bool hasNextLevel = gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.nextLevel != null;
         if (nextLevelButton != null) nextLevelButton.SetActive(hasNextLevel);
+    }
+
+    private void UpdateStarDisplay(int stars)
+    {
+        if (starImages == null) return;
+
+        for (int i = 0; i < starImages.Length; i++)
+        {
+            if (starImages[i] == null) continue;
+            starImages[i].sprite = (i < stars) ? filledStarSprite : emptyStarSprite;
+        }
     }
 
     private void HandleLevelFailed()

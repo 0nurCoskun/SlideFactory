@@ -29,6 +29,12 @@ public class LevelData : ScriptableObject
     [Tooltip("Bölümün toplam süresi (saniye).")]
     public float levelDuration = 90f;
 
+    [Header("Yıldız Eşikleri (kalan sürenin toplam süreye oranı)")]
+    [Tooltip("Kalan süre oranı bu değerin ÜSTÜNDEYSE 3 yıldız verilir. Örn: 0.5 = süresinin yarısından fazlası kalmışsa.")]
+    [Range(0f, 1f)] public float threeStarRemainingRatio = 0.5f;
+    [Tooltip("Kalan süre oranı bu değerin ÜSTÜNDEYSE (ama 3 yıldız eşiğinin altındaysa) 2 yıldız verilir.")]
+    [Range(0f, 1f)] public float twoStarRemainingRatio = 0.2f;
+
     [Header("İstasyon Karışması")]
     [Tooltip("TAM OLARAK 4 istasyon olmalı - bu level'da hangi istasyonlar kullanılacak.")]
     public StationData[] stationsForLevel;

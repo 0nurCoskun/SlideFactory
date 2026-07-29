@@ -77,7 +77,7 @@ public class AudioTriggerView : MonoBehaviour
         AudioManager.Instance?.PlaySFX(wrongSwipeClip);
     }
 
-    private void HandleLevelWon()
+    private void HandleLevelWon(int stars)
     {
         AudioManager.Instance?.PlaySFX(levelWonClip);
     }

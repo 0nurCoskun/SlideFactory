@@ -22,17 +22,28 @@ public class LevelButton : MonoBehaviour
     [Tooltip("Level kilitliyse aktif edilecek bir kilit ikonu/overlay. Boş bırakılabilir.")]
     [SerializeField] private GameObject lockIcon;
 
+    [Header("Yıldız Gösterimi (opsiyonel)")]
+    [Tooltip("Level hiç tamamlanmamışsa (0 yıldız) tüm bu konteyner gizlenir.")]
+    [SerializeField] private GameObject starsContainer;
+    [SerializeField] private Image[] starImages;
+    [SerializeField] private Sprite filledStarSprite;
+    [SerializeField] private Sprite emptyStarSprite;
+
     private Button _button;
-    public LevelData LevelData => levelData;
+    private CanvasGroup _canvasGroup;
+
+    public LevelData LevelData => levelData; // dışarıdan okunabilir ama değiştirilemez
 
     private void Awake()
     {
         _button = GetComponent<Button>();
+        _canvasGroup = GetComponent<CanvasGroup>(); // yoksa null kalır, aşağıda null kontrolü var
     }
 
     private void OnEnable()
     {
         RefreshLockState();
+        RefreshStarDisplay();
     }
 
     private void RefreshLockState()
@@ -41,6 +52,34 @@ public class LevelButton : MonoBehaviour
 
         if (_button != null) _button.interactable = unlocked;
         if (lockIcon != null) lockIcon.SetActive(!unlocked);
+
+        // CanvasGroup varsa, kilitliyken TÜM pointer event'lerini (OnPointerDown/Up
+        // dahil, kendi yazdığın custom script'ler dahil) tek satırda engeller.
+        if (_canvasGroup != null)
+        {
+            _canvasGroup.blocksRaycasts = unlocked;
+            _canvasGroup.interactable = unlocked;
+        }
+    }
+
+    private void RefreshStarDisplay()
+    {
+        if (starsContainer == null || levelData == null) return;
+
+        int stars = LevelProgress.GetStars(levelData);
+
+        // Hiç tamamlanmamışsa (0 yıldız), yıldız satırını tamamen gizle -
+        // henüz oynanmamış bir level'da boş yıldız göstermek gereksiz görsel gürültü.
+        bool hasAnyStars = stars > 0;
+        starsContainer.SetActive(hasAnyStars);
+
+        if (!hasAnyStars || starImages == null) return;
+
+        for (int i = 0; i < starImages.Length; i++)
+        {
+            if (starImages[i] == null) continue;
+            starImages[i].sprite = (i < stars) ? filledStarSprite : emptyStarSprite;
+        }
     }
 
     /// <summary>Button'un OnClick()'ine bağlanacak.</summary>

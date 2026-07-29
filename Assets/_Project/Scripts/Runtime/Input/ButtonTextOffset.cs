@@ -19,7 +19,8 @@ public class ButtonTextOffset : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (LevelProgress.IsLevelUnlocked(GetComponent<LevelButton>()?.LevelData) == false && GetComponent<LevelButton>() != null)
+        LevelButton levelButton = GetComponent<LevelButton>();
+        if (levelButton != null && LevelProgress.IsLevelUnlocked(levelButton.LevelData) == false)
             return;
         if (textTransform != null)
             textTransform.anchoredPosition = originalPosition + offset;
@@ -27,7 +28,8 @@ public class ButtonTextOffset : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (LevelProgress.IsLevelUnlocked(GetComponent<LevelButton>()?.LevelData) == false && GetComponent<LevelButton>() != null)
+        LevelButton levelButton = GetComponent<LevelButton>();
+        if (levelButton != null && LevelProgress.IsLevelUnlocked(levelButton.LevelData) == false)
             return;
         if (textTransform != null)
             textTransform.anchoredPosition = originalPosition;
