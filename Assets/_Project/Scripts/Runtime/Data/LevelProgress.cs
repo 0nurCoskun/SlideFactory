@@ -10,6 +10,7 @@ public static class LevelProgress
 {
     private const string CompletedKeyPrefix = "level_completed_";
     private const string StarsKeyPrefix = "level_stars_";
+    private const string PendingStarRevealKeyPrefix = "level_stars_pending_reveal_";
 
     /// <summary>Her LevelData'nın kayıt için kullanacağı benzersiz kimlik. levelId boşsa asset ismini kullanır.</summary>
     private static string GetLevelIdentifier(LevelData level)
@@ -40,18 +41,48 @@ public static class LevelProgress
     /// <summary>
     /// Yeni kazanılan yıldız sayısı, önceki EN YÜKSEK skordan fazlaysa kaydeder.
     /// Böylece oyuncu bir level'ı daha düşük yıldızla tekrar oynarsa, önceki
-    /// yüksek skoru KAYBETMEZ.
+    /// yüksek skoru KAYBETMEZ. Skor GERÇEKTEN yükseldiyse (yeni bir "highscore"),
+    /// bunu bir de "pending reveal" olarak işaretler - LevelButton, Level Select
+    /// ekranına dönüldüğünde bunu görüp yıldızları BİR KERELİĞİNE animasyonla gösterir.
     /// </summary>
-    public static void SetStarsIfHigher(LevelData level, int stars)
+    /// <returns>Skor gerçekten yükseldiyse true, yoksa false.</returns>
+    public static bool SetStarsIfHigher(LevelData level, int stars)
     {
-        if (level == null) return;
+        if (level == null) return false;
 
         int current = GetStars(level);
         if (stars > current)
         {
-            PlayerPrefs.SetInt(StarsKeyPrefix + GetLevelIdentifier(level), stars);
+            string identifier = GetLevelIdentifier(level);
+            PlayerPrefs.SetInt(StarsKeyPrefix + identifier, stars);
+            PlayerPrefs.SetInt(PendingStarRevealKeyPrefix + identifier, 1);
             PlayerPrefs.Save();
+            return true;
         }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Bu level için henüz Level Select ekranında "gösterilmemiş" (animasyonla
+    /// açıklanmamış) yeni bir yıldız rekoru var mı? LevelButton bunu OnEnable'da
+    /// kontrol eder.
+    /// </summary>
+    public static bool HasPendingStarReveal(LevelData level)
+    {
+        if (level == null) return false;
+        return PlayerPrefs.GetInt(PendingStarRevealKeyPrefix + GetLevelIdentifier(level), 0) == 1;
+    }
+
+    /// <summary>
+    /// LevelButton, yeni yıldız animasyonunu oynattıktan sonra bunu çağırır -
+    /// böylece aynı rekor bir daha asla tekrar animasyonla gösterilmez.
+    /// </summary>
+    public static void ClearPendingStarReveal(LevelData level)
+    {
+        if (level == null) return;
+        PlayerPrefs.DeleteKey(PendingStarRevealKeyPrefix + GetLevelIdentifier(level));
+        PlayerPrefs.Save();
     }
 
     /// <summary>

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 /// <summary>
 /// Level Select ekranındaki HER BUTONA ayrı ayrı eklenir. Her buton kendi
@@ -32,6 +33,13 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private Image[] starImages;
     [SerializeField] private Sprite filledStarSprite;
     [SerializeField] private Sprite emptyStarSprite;
+
+    [Header("Yeni Yıldız Animasyonu (highscore - opsiyonel)")]
+    [Tooltip("Bu level'da YENİ bir yıldız rekoru kırılmışsa (LevelProgress.HasPendingStarReveal), " +
+             "Level Select ekranına dönüldüğünde yıldızlar anında değil bu animasyonla, BİR KERELİĞİNE belirir.")]
+    [SerializeField] private float starPopDuration = 0.35f;
+    [SerializeField] private float starStagger = 0.15f;
+    [SerializeField] private Ease starPopEase = Ease.OutBack;
 
     private Button _button;
     private CanvasGroup _canvasGroup;
@@ -78,10 +86,47 @@ public class LevelButton : MonoBehaviour
 
         if (!hasAnyStars || starImages == null) return;
 
+        if (LevelProgress.HasPendingStarReveal(levelData))
+        {
+            // Bu level'da YENİ bir rekor var ve henüz kimseye gösterilmedi -
+            // hemen tüketiyoruz (ClearPendingStarReveal) ki panel her açılıp
+            // kapandığında tekrar tekrar oynamasın, sadece BİR KEZ oynasın.
+            LevelProgress.ClearPendingStarReveal(levelData);
+            AnimateStars(stars);
+        }
+        else
+        {
+            SetStarsInstant(stars);
+        }
+    }
+
+    /// <summary>Butonlar küçük olduğu için yıldızlar burada WinPanel'dekinden daha küçük (0.5) hedef scale'e sahip.</summary>
+    private static readonly Vector3 TargetStarScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+    private void SetStarsInstant(int stars)
+    {
         for (int i = 0; i < starImages.Length; i++)
         {
             if (starImages[i] == null) continue;
+            starImages[i].transform.DOKill();
+            starImages[i].transform.localScale = TargetStarScale;
             starImages[i].sprite = (i < stars) ? filledStarSprite : emptyStarSprite;
+        }
+    }
+
+    private void AnimateStars(int stars)
+    {
+        for (int i = 0; i < starImages.Length; i++)
+        {
+            Image starImage = starImages[i];
+            if (starImage == null) continue;
+
+            starImage.sprite = (i < stars) ? filledStarSprite : emptyStarSprite;
+
+            Transform starTransform = starImage.transform;
+            starTransform.DOKill();
+            starTransform.localScale = Vector3.zero;
+            starTransform.DOScale(TargetStarScale, starPopDuration).SetEase(starPopEase).SetDelay(i * starStagger);
         }
     }
 

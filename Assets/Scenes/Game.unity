@@ -2312,6 +2312,11 @@ MonoBehaviour:
   emptyStarSprite: {fileID: 2393088594474520240, guid: 14ca0f10d1646e94f9ecd72fbe286efe, type: 3}
   popDuration: 0.4
   popEase: 27
+  starStartDelay: 0.15
+  starPopDuration: 0.35
+  starStagger: 0.15
+  starPopEase: 27
+  starPopSound: {fileID: 0}
   mainMenuSceneName: MainMenu
 --- !u!4 &559262971
 Transform:
