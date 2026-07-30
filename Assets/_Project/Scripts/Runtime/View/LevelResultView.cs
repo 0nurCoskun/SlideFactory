@@ -31,6 +31,17 @@ public class LevelResultView : MonoBehaviour
     [SerializeField] private float popDuration = 0.4f;
     [SerializeField] private Ease popEase = Ease.OutBack;
 
+    [Header("Yıldız Giriş Animasyonu (WinPanel açıldıktan sonra)")]
+    [Tooltip("Panel'in kendi pop animasyonu bitince, yıldızlar patlamaya başlamadan önceki ek bekleme.")]
+    [SerializeField] private float starStartDelay = 0.15f;
+    [Tooltip("Her bir yıldızın kendi pop (0 -> 1 scale) süresi.")]
+    [SerializeField] private float starPopDuration = 0.35f;
+    [Tooltip("Yıldızlar arasındaki gecikme - art arda, tek tek patlasınlar diye.")]
+    [SerializeField] private float starStagger = 0.15f;
+    [SerializeField] private Ease starPopEase = Ease.OutBack;
+    [Tooltip("Sadece KAZANILAN yıldızlar patladığında çalınır (boş yıldızlar sessiz belirir).")]
+    [SerializeField] private AudioClip starPopSound;
+
     [Header("Sahne İsimleri")]
     [Tooltip("Restart'a basınca mevcut sahne yeniden yüklenir - bu alanı doldurmana gerek yok.")]
     [SerializeField] private string mainMenuSceneName = "MainMenu";
@@ -63,20 +74,42 @@ public class LevelResultView : MonoBehaviour
     private void HandleLevelWon(int stars)
     {
         ShowPanel(winPanel);
-        UpdateStarDisplay(stars);
+        AnimateStars(stars);
 
         bool hasNextLevel = gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.nextLevel != null;
         if (nextLevelButton != null) nextLevelButton.SetActive(hasNextLevel);
     }
 
-    private void UpdateStarDisplay(int stars)
+    /// <summary>
+    /// Doğru sprite'ı (dolu/boş) hemen atar ama görsel olarak scale 0'da gizli tutar,
+    /// sonra panel pop animasyonu bitince yıldızları tek tek (staggered) "patlatır".
+    /// Kazanılan yıldızlar patlarken ayrıca starPopSound çalınır.
+    /// </summary>
+    private void AnimateStars(int stars)
     {
         if (starImages == null) return;
 
+        Sequence starSequence = DOTween.Sequence();
+
         for (int i = 0; i < starImages.Length; i++)
         {
-            if (starImages[i] == null) continue;
-            starImages[i].sprite = (i < stars) ? filledStarSprite : emptyStarSprite;
+            UnityEngine.UI.Image starImage = starImages[i];
+            if (starImage == null) continue;
+
+            bool earned = i < stars;
+            starImage.sprite = earned ? filledStarSprite : emptyStarSprite;
+
+            Transform starTransform = starImage.transform;
+            starTransform.DOKill();
+            starTransform.localScale = Vector3.zero;
+
+            float startTime = popDuration + starStartDelay + i * starStagger;
+            starSequence.Insert(startTime, starTransform.DOScale(Vector3.one, starPopDuration).SetEase(starPopEase));
+
+            if (earned)
+            {
+                starSequence.InsertCallback(startTime, () => AudioManager.Instance?.PlaySFX(starPopSound));
+            }
         }
     }
 
