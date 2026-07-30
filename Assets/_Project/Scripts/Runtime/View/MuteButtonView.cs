@@ -14,6 +14,16 @@ public class MuteButtonView : MonoBehaviour
     [SerializeField] private Sprite mutedSprite;   // "kapalı" (off) ikonu
     [SerializeField] private Sprite unmutedSprite; // "açık" (on) ikonu
 
+    private void Start()
+    {
+        // OnEnable yerine bilerek Start() kullanılıyor: AudioManager'ın Awake()'i
+        // (PlayerPrefs'ten mute durumunu okuyan yer) sahne hiyerarşisindeki sıraya göre
+        // bu OnEnable'dan SONRA çalışabiliyordu - bu durumda AudioManager.Instance hâlâ
+        // null olduğu için sprite hiç güncellenmiyordu. Start() sahnedeki TÜM Awake()'ler
+        // bittikten sonra çalıştığı için bu sıralama sorunu ortadan kalkıyor.
+        RefreshSprite();
+    }
+
     private void OnEnable()
     {
         RefreshSprite();

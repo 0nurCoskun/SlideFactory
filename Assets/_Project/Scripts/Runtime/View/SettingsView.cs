@@ -41,14 +41,14 @@ public class SettingsView : MonoBehaviour
     public void OnMusicSliderChanged(float value)
     {
         AudioManager.Instance?.SetMusicVolume(value);
-        if (musicVolumeText != null) musicVolumeText.text = Mathf.RoundToInt(AudioManager.Instance.MusicVolume * 100).ToString() + "%";
+        UpdateMusicText();
     }
 
     /// <summary>SFX Volume slider'ının OnValueChanged()'ine bağlanacak.</summary>
     public void OnSfxSliderChanged(float value)
     {
         AudioManager.Instance?.SetSfxVolume(value);
-        if (sfxVolumeText != null) sfxVolumeText.text = Mathf.RoundToInt(AudioManager.Instance.SfxVolume * 100).ToString() + "%";
+        UpdateSfxText();
     }
 
     private void SyncSlidersWithCurrentSettings()
@@ -58,7 +58,24 @@ public class SettingsView : MonoBehaviour
         // SetValueWithoutNotify kullanıyoruz - yoksa slider'ın değerini elle
         // ayarlamak OnValueChanged'i tetikler ve AudioManager'a gereksiz bir
         // "değişiklik" bildirimi gider (zararsız ama gereksiz bir PlayerPrefs.Save() olur).
+        // Bu yüzden yüzde text'lerini de burada AYRICA güncellememiz gerekiyor -
+        // OnValueChanged tetiklenmediği için text'ler kendiliğinden güncellenmiyordu.
         if (musicVolumeSlider != null) musicVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.MusicVolume);
         if (sfxVolumeSlider != null) sfxVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.SfxVolume);
+
+        UpdateMusicText();
+        UpdateSfxText();
+    }
+
+    private void UpdateMusicText()
+    {
+        if (musicVolumeText == null || AudioManager.Instance == null) return;
+        musicVolumeText.text = Mathf.RoundToInt(AudioManager.Instance.MusicVolume * 100) + "%";
+    }
+
+    private void UpdateSfxText()
+    {
+        if (sfxVolumeText == null || AudioManager.Instance == null) return;
+        sfxVolumeText.text = Mathf.RoundToInt(AudioManager.Instance.SfxVolume * 100) + "%";
     }
 }
