@@ -18,6 +18,10 @@ public class LevelButton : MonoBehaviour
     [Header("Sahne")]
     [SerializeField] private string gameSceneName = "Game";
 
+    [Header("Level Bilgi Paneli")]
+    [Tooltip("Atanırsa, tıklanınca direkt sahne açmak yerine önce bu bilgi paneli gösterilir.")]
+    [SerializeField] private LevelInfoPanelView levelInfoPanelView;
+
     [Header("Kilit Görseli (opsiyonel)")]
     [Tooltip("Level kilitliyse aktif edilecek bir kilit ikonu/overlay. Boş bırakılabilir.")]
     [SerializeField] private GameObject lockIcon;
@@ -31,8 +35,7 @@ public class LevelButton : MonoBehaviour
 
     private Button _button;
     private CanvasGroup _canvasGroup;
-
-    public LevelData LevelData => levelData; // dışarıdan okunabilir ama değiştirilemez
+    public LevelData LevelData => levelData;
 
     private void Awake()
     {
@@ -98,7 +101,16 @@ public class LevelButton : MonoBehaviour
             return;
         }
 
-        LevelSession.SelectedLevel = levelData;
-        SceneManager.LoadScene(gameSceneName);
+        if (levelInfoPanelView != null)
+        {
+            // Direkt sahne açmak yerine önce bilgi panelini göster - Play/Geri
+            // kararı artık o panelde, sahne açma sorumluluğu da ona devredildi.
+            levelInfoPanelView.ShowForLevel(levelData);
+        }
+        else
+        {
+            LevelSession.SelectedLevel = levelData;
+            SceneManager.LoadScene(gameSceneName);
+        }
     }
 }

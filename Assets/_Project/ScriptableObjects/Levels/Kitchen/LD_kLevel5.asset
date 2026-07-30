@@ -26,11 +26,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 01a3314697bfac646aaac97e1a1eee77, type: 2}
   - {fileID: 11400000, guid: 0d19e9257c492e44c9725e5d77c48a26, type: 2}
   - {fileID: 11400000, guid: f89a84cd1daaddd45855f839d4def6a2, type: 2}
-  levelDuration: 130
+  levelDuration: 140
+  threeStarRemainingRatio: 0.5
+  twoStarRemainingRatio: 0.2
   stationsForLevel:
   - {fileID: 11400000, guid: 9a1bc71d44577a24fa0b3dc9bb7d8f21, type: 2}
   - {fileID: 11400000, guid: bb1253f6b0f2bef4988da40fd57f4b07, type: 2}
   - {fileID: 11400000, guid: eea045cebf62f4e4d9279a736d48000d, type: 2}
   - {fileID: 11400000, guid: aa8b306249a2e18419740ed4bf84f7eb, type: 2}
-  minStationShuffleInterval: 3
-  maxStationShuffleInterval: 4
+  minStationShuffleInterval: 4
+  maxStationShuffleInterval: 6

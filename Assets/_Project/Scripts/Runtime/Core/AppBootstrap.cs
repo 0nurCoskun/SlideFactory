@@ -16,8 +16,9 @@ public class AppBootstrap : MonoBehaviour
     public static AppBootstrap Instance { get; private set; }
 
     [Header("Performans")]
-    [Tooltip("Hedef FPS. vSync açıkken bu değer görmezden gelinir, bu yüzden vSync ayrıca kapatılıyor.")]
-    [SerializeField] private int targetFrameRate = 60;
+    [Tooltip("Cihazın kendi ekran yenileme hızı (60/90/120Hz vb.) OTOMATİK okunup hedeflenir. " +
+             "Bu değer sadece o okuma başarısız olursa (nadir bazı cihazlarda) devreye giren yedek değerdir.")]
+    [SerializeField] private int fallbackFrameRate = 60;
 
     [Header("Ekran")]
     [Tooltip("Oyun dikey formatta tasarlandığı için varsayılan Portrait.")]
@@ -46,7 +47,26 @@ public class AppBootstrap : MonoBehaviour
     private void ApplyPerformanceSettings()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = targetFrameRate;
+        Application.targetFrameRate = GetAdaptiveTargetFrameRate();
+    }
+
+    /// <summary>
+    /// Sabit bir değer (örn. 60 veya 120) yazmak yerine, cihazın EKRANININ gerçekten
+    /// desteklediği yenileme hızını okuyup onu hedefliyoruz. Böylece:
+    /// - 120Hz ekranlı bir telefonda oyun 120'ye çıkabiliyor (daha akıcı swipe hissi),
+    /// - 60Hz ekranlı eski/bütçe bir telefonda gereksiz yere 120'ye zorlanmıyor
+    ///   (zaten ekran gösteremeyeceği için boşa batarya/ısı harcanır).
+    /// </summary>
+    private int GetAdaptiveTargetFrameRate()
+    {
+        double refreshRate = Screen.currentResolution.refreshRateRatio.value;
+
+        if (refreshRate <= 0)
+        {
+            return fallbackFrameRate;
+        }
+
+        return Mathf.RoundToInt((float)refreshRate);
     }
 
     private void ApplyScreenSettings()
