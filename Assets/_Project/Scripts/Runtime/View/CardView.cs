@@ -20,6 +20,8 @@ public class CardView : MonoBehaviour
     [Header("Görsel Referanslar")]
     [SerializeField] private RectTransform cardRectTransform;
     [SerializeField] private Image iconImage;
+    [Tooltip("Kartın CardData.icon alanındaki görseli gösteren küçük ikon. Icon atanmamış kartlarda gizlenir.")]
+    [SerializeField] private Image iconArtImage;
     [SerializeField] private TMP_Text nameText;
 
     [Header("Sürükleme Ayarları")]
@@ -257,6 +259,13 @@ public class CardView : MonoBehaviour
         cardRectTransform.localRotation = Quaternion.identity;
         cardRectTransform.localScale = Vector3.zero;
 
+
+        if (iconArtImage != null)
+        {
+            bool hasIcon = card.Data.icon != null;
+            iconArtImage.sprite = card.Data.icon;
+            iconArtImage.gameObject.SetActive(hasIcon);
+        }
 
         if (nameText != null)
         {

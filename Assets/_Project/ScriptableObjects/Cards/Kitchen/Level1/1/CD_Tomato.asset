@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: tomato
   displayName: Tomato Crate
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 3286163911610860551, guid: 3e2ee79fb5f0bba4c825baee5d1c41c3, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:
