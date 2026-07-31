@@ -41,8 +41,10 @@ public class RecipePreviewView : MonoBehaviour
     private Tween _containerTween;
 
     [Header("Görünüm")]
-    [SerializeField] private string stepSeparator = "  →  ";
-    [SerializeField] private string stationWrapFormat = "[{0}]"; // istasyon ismini köşeli parantez içine alır
+    [SerializeField] private string chainIndexFormat = "<b>{0}.</b>  "; // her zincirin başına 1., 2., ... eklenir - oyuncu zincirleri birbirinden kolayca ayırsın
+    [SerializeField] private string cardNameFormat = "<b>{0}</b>";
+    [SerializeField] private string stepSeparator = "  <b><size=115%>→</size></b>  ";
+    [SerializeField] private string stationWrapFormat = "<color=#A6551A><b>[{0}]</b></color>"; // istasyon ismini köşeli parantez içine alır, vurgu rengiyle
 
     [Header("Panel Açıkken Gizlenecek Butonlar")]
     [Tooltip("Pause ve Show Recipe (?) butonları gibi - panel açıkken gizlenip, kapanınca tekrar gösterilir.")]
@@ -167,6 +169,7 @@ public class RecipePreviewView : MonoBehaviour
         // Aynı ham madde türünden destede birden fazla olabilir (örn. 3x Ham Odun) -
         // bu durumda zinciri sadece BİR KERE göstermek yeterli, 3 kere tekrar etmesin.
         HashSet<CardData> alreadyShown = new HashSet<CardData>();
+        int chainNumber = 1;
 
         foreach (CardData rawCard in level.initialDeck)
         {
@@ -174,7 +177,8 @@ public class RecipePreviewView : MonoBehaviour
             alreadyShown.Add(rawCard);
 
             List<ProductionChainUtility.ChainStep> steps = ProductionChainUtility.BuildChain(rawCard);
-            string line = BuildChainDisplayText(steps);
+            string line = BuildChainDisplayText(steps, chainNumber);
+            chainNumber++;
 
             TMP_Text row = Instantiate(chainRowPrefab, chainListContainer);
             row.text = line;
@@ -184,13 +188,15 @@ public class RecipePreviewView : MonoBehaviour
         _hasPopulatedOnce = true;
     }
 
-    private string BuildChainDisplayText(List<ProductionChainUtility.ChainStep> steps)
+    private string BuildChainDisplayText(List<ProductionChainUtility.ChainStep> steps, int chainNumber)
     {
         StringBuilder sb = new StringBuilder();
+        sb.Append(string.Format(chainIndexFormat, chainNumber));
 
         for (int i = 0; i < steps.Count; i++)
         {
-            sb.Append(steps[i].Card != null ? steps[i].Card.displayName : "???");
+            string cardName = steps[i].Card != null ? steps[i].Card.displayName : "???";
+            sb.Append(string.Format(cardNameFormat, cardName));
 
             if (steps[i].StationToNext != null)
             {
@@ -198,10 +204,11 @@ public class RecipePreviewView : MonoBehaviour
                 sb.Append(string.Format(stationWrapFormat, steps[i].StationToNext.displayName));
             }
 
-            // Son adım değilse, bir sonraki adımı YENİ SATIRA yaz (okunması daha kolay olsun diye).
+            // Son adım değilse, bir sonraki adımı YENİ SATIRA (ve zincirin numarasıyla hizalı girintiye) yaz.
             if (i < steps.Count - 1)
             {
                 sb.Append('\n');
+                sb.Append("      ");
             }
         }
 
