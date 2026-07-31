@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using DG.Tweening;
 
 /// <summary>
 /// Level Select'te bir level butonuna basılınca AÇILAN, Recipe Preview'dan ÖNCE
@@ -14,6 +15,20 @@ public class LevelInfoPanelView : MonoBehaviour
 {
     [Header("Panel")]
     [SerializeField] private GameObject infoPanel;
+
+    [Header("Açılış Animasyonu")]
+    [Tooltip("LevelInfoPanel altındaki, aşağıdan yukarı kayarak açılacak asıl içerik kutusu.")]
+    [SerializeField] private RectTransform levelInfoContainer;
+    [Tooltip("Kartın dinlenme pozisyonunun ne kadar aşağısından yukarı kayarak geleceği.")]
+    [SerializeField] private float slideDistance = 800f;
+    [SerializeField] private float showDuration = 0.35f;
+    [SerializeField] private Ease showEase = Ease.OutBack;
+    [SerializeField] private float hideDuration = 0.25f;
+    [SerializeField] private Ease hideEase = Ease.InBack;
+
+    private Vector2 _containerRestPos;
+    private bool _containerRestPosCaptured;
+    private Tween _containerTween;
 
     [Header("Bilgi Metinleri")]
     [SerializeField] private TMP_Text levelNameText;
@@ -33,6 +48,11 @@ public class LevelInfoPanelView : MonoBehaviour
         if (infoPanel != null) infoPanel.SetActive(false);
     }
 
+    private void OnDisable()
+    {
+        _containerTween?.Kill();
+    }
+
     /// <summary>LevelButton bunu çağırır - direkt sahne açmak yerine önce bu paneli gösterir.</summary>
     public void ShowForLevel(LevelData level)
     {
@@ -42,6 +62,27 @@ public class LevelInfoPanelView : MonoBehaviour
         PopulateInfo(level);
 
         if (infoPanel != null) infoPanel.SetActive(true);
+
+        PlayShowAnimation();
+    }
+
+    private void EnsureContainerRestPosCaptured()
+    {
+        if (_containerRestPosCaptured || levelInfoContainer == null) return;
+
+        _containerRestPos = levelInfoContainer.anchoredPosition;
+        _containerRestPosCaptured = true;
+    }
+
+    private void PlayShowAnimation()
+    {
+        if (levelInfoContainer == null) return;
+
+        EnsureContainerRestPosCaptured();
+
+        _containerTween?.Kill();
+        levelInfoContainer.anchoredPosition = _containerRestPos + Vector2.down * slideDistance;
+        _containerTween = levelInfoContainer.DOAnchorPos(_containerRestPos, showDuration).SetEase(showEase);
     }
 
     private void PopulateInfo(LevelData level)
@@ -111,8 +152,24 @@ public class LevelInfoPanelView : MonoBehaviour
     /// <summary>Panel içindeki Geri butonuna bağlanacak - Level Select ekranına döner.</summary>
     public void OnBackButtonPressed()
     {
-        if (infoPanel != null) infoPanel.SetActive(false);
         // Level Select paneli hiç kapatılmadı, bu panel sadece onun ÜSTÜNDE
         // duruyordu - kapanınca otomatik olarak Level Select tekrar görünür olur.
+        if (levelInfoContainer == null)
+        {
+            if (infoPanel != null) infoPanel.SetActive(false);
+            return;
+        }
+
+        EnsureContainerRestPosCaptured();
+
+        _containerTween?.Kill();
+        _containerTween = levelInfoContainer
+            .DOAnchorPos(_containerRestPos + Vector2.down * slideDistance, hideDuration)
+            .SetEase(hideEase)
+            .OnComplete(() =>
+            {
+                if (infoPanel != null) infoPanel.SetActive(false);
+                levelInfoContainer.anchoredPosition = _containerRestPos;
+            });
     }
 }

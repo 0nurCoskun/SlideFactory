@@ -19855,6 +19855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelInfoPanelView
   infoPanel: {fileID: 697470076}
+  levelInfoContainer: {fileID: 1080656790}
   levelNameText: {fileID: 1335827029}
   rawMaterialCountText: {fileID: 1250013659}
   stationShuffleText: {fileID: 48102737}
