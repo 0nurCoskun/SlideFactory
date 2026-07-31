@@ -36,11 +36,22 @@ public class TutorialFlowView : MonoBehaviour
     [SerializeField] private string wrongSwipeHint = "Oops! Wrong station - the card went back to raw. Watch the station labels!";
     [SerializeField] private string correctSwipeHint = "Nice! Correct swipes move the card forward. Stations reshuffle over time, so stay alert!";
 
+    [Header("Tarif ('?') Butonu Shake Uyarısı")]
+    [Tooltip("Yanlış swipe'ta dikkat çekmesi için sallanacak 'Show Recipe (?)' butonu. Oyuncu butona her bastığında (StopRecipeButtonShake Inspector'da OnClick'e bağlanmalı) sallanma durur; sonraki yanlış swipe'ta tekrar başlar.")]
+    [SerializeField] private RectTransform showRecipeButtonTransform;
+    [SerializeField] private float shakeDuration = 0.5f;
+    [SerializeField] private float shakeStrength = 15f;
+    [SerializeField] private int shakeVibrato = 10;
+
     private bool _isTutorialActive;
     private bool _hasShownFirstCardHint;
     private bool _hasShownWrongHint;
     private bool _hasShownCorrectHint;
     private Sequence _hintSequence;
+
+    private Vector2 _showRecipeButtonRestPos;
+    private bool _showRecipeButtonRestPosCaptured;
+    private Tween _showRecipeButtonShakeTween;
 
     private void Awake()
     {
@@ -77,6 +88,7 @@ public class TutorialFlowView : MonoBehaviour
         gameManager.OnLevelWon -= HandleLevelWon;
 
         _hintSequence?.Kill();
+        _showRecipeButtonShakeTween?.Kill();
     }
 
     private void HandleCardChanged(CardInstance card)
@@ -88,9 +100,13 @@ public class TutorialFlowView : MonoBehaviour
 
     private void HandleInvalidSwipe(SwipeDirection direction, StationData station)
     {
-        if (_hasShownWrongHint) return;
-        _hasShownWrongHint = true;
-        ShowHint(wrongSwipeHint);
+        if (!_hasShownWrongHint)
+        {
+            _hasShownWrongHint = true;
+            ShowHint(wrongSwipeHint);
+        }
+
+        TriggerRecipeButtonShake();
     }
 
     private void HandleCardProcessed(CardInstance card, CardData resultData)
@@ -128,6 +144,39 @@ public class TutorialFlowView : MonoBehaviour
         {
             SceneManager.LoadScene(mainMenuSceneName);
         }
+    }
+
+    private void EnsureShowRecipeButtonRestPosCaptured()
+    {
+        if (_showRecipeButtonRestPosCaptured || showRecipeButtonTransform == null) return;
+
+        _showRecipeButtonRestPos = showRecipeButtonTransform.anchoredPosition;
+        _showRecipeButtonRestPosCaptured = true;
+    }
+
+    private void TriggerRecipeButtonShake()
+    {
+        if (showRecipeButtonTransform == null) return;
+
+        EnsureShowRecipeButtonRestPosCaptured();
+
+        showRecipeButtonTransform.anchoredPosition = _showRecipeButtonRestPos;
+        _showRecipeButtonShakeTween?.Kill();
+        _showRecipeButtonShakeTween = showRecipeButtonTransform
+            .DOShakeAnchorPos(shakeDuration, shakeStrength, shakeVibrato)
+            .SetLoops(-1)
+            .SetEase(Ease.Linear);
+    }
+
+    /// <summary>"?" (Show Recipe) butonunun OnClick listesine, RecipePreviewView.OnShowRecipeButtonPressed
+    /// ile BİRLİKTE bağlanmalı - oyuncu butona basınca sallanmayı durdurup normale döndürür.</summary>
+    public void StopRecipeButtonShake()
+    {
+        if (showRecipeButtonTransform == null) return;
+
+        _showRecipeButtonShakeTween?.Kill();
+        _showRecipeButtonShakeTween = null;
+        showRecipeButtonTransform.anchoredPosition = _showRecipeButtonRestPos;
     }
 
     private void ShowHint(string text, bool autoHide = true)
