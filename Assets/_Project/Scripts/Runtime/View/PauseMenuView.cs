@@ -43,13 +43,26 @@ public class PauseMenuView : MonoBehaviour
     public void OnLevelSelectButtonPressed()
     {
         LevelSession.OpenLevelSelectDirectly = true;
-        SceneManager.LoadScene(mainMenuSceneName);
+        LoadMainMenu();
     }
 
     /// <summary>Pause menüsündeki Main Menu butonuna bağlanacak.</summary>
     public void OnMainMenuButtonPressed()
     {
         LevelSession.OpenLevelSelectDirectly = false;
-        SceneManager.LoadScene(mainMenuSceneName);
+        LoadMainMenu();
+    }
+
+    /// <summary>Ekranı karartıp MainMenu sahnesini açar (SceneFader yoksa anlık geçiş yapar).</summary>
+    private void LoadMainMenu()
+    {
+        if (SceneFader.Instance != null)
+        {
+            SceneFader.Instance.FadeToScene(mainMenuSceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(mainMenuSceneName);
+        }
     }
 }
