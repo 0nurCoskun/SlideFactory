@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 /// <summary>
 /// Level başında (ve "?" butonuna her basıldığında) o level'ın üretim zincirini
@@ -25,6 +26,20 @@ public class RecipePreviewView : MonoBehaviour
     [Tooltip("Her bir zincir satırı için kullanılacak TMP_Text prefab'ı.")]
     [SerializeField] private TMP_Text chainRowPrefab;
 
+    [Header("Açılış/Kapanış Animasyonu")]
+    [Tooltip("panelRoot altındaki, aşağıdan yukarı kayarak açılıp kapanışta geri aşağı kayacak asıl içerik kutusu (RecipePanel).")]
+    [SerializeField] private RectTransform recipePanelContainer;
+    [Tooltip("Kartın dinlenme pozisyonunun ne kadar aşağısından yukarı kayarak geleceği.")]
+    [SerializeField] private float slideDistance = 800f;
+    [SerializeField] private float showDuration = 0.35f;
+    [SerializeField] private Ease showEase = Ease.OutBack;
+    [SerializeField] private float hideDuration = 0.25f;
+    [SerializeField] private Ease hideEase = Ease.InBack;
+
+    private Vector2 _containerRestPos;
+    private bool _containerRestPosCaptured;
+    private Tween _containerTween;
+
     [Header("Görünüm")]
     [SerializeField] private string stepSeparator = "  →  ";
     [SerializeField] private string stationWrapFormat = "[{0}]"; // istasyon ismini köşeli parantez içine alır
@@ -35,6 +50,11 @@ public class RecipePreviewView : MonoBehaviour
 
     private bool _hasPopulatedOnce;
 
+    private void OnDisable()
+    {
+        _containerTween?.Kill();
+    }
+
     private void Start()
     {
         // İlk açılış: level henüz başlamadığı için oyun zaten duraklamış durumda
@@ -43,6 +63,7 @@ public class RecipePreviewView : MonoBehaviour
         PopulateChains();
         panelRoot.SetActive(true);
         SetGameplayButtonsVisible(false);
+        PlayShowAnimation();
     }
 
     /// <summary>Oyun sırasındaki "?" (Recipe'yi tekrar göster) butonuna bağlanacak.</summary>
@@ -51,6 +72,7 @@ public class RecipePreviewView : MonoBehaviour
         if (!_hasPopulatedOnce) PopulateChains();
         panelRoot.SetActive(true);
         SetGameplayButtonsVisible(false);
+        PlayShowAnimation();
         // Bilerek PauseLevel() ÇAĞRILMIYOR - süre ve istasyon karışması akmaya devam etsin,
         // oyuncu "hile" yaparak süreyi durdurup rahatça bakamasın.
     }
@@ -58,7 +80,49 @@ public class RecipePreviewView : MonoBehaviour
     /// <summary>Panel içindeki "Kapat / Başla" butonuna bağlanacak.</summary>
     public void OnCloseButtonPressed()
     {
+        PlayHideAnimation();
+    }
+
+    private void EnsureContainerRestPosCaptured()
+    {
+        if (_containerRestPosCaptured || recipePanelContainer == null) return;
+
+        _containerRestPos = recipePanelContainer.anchoredPosition;
+        _containerRestPosCaptured = true;
+    }
+
+    private void PlayShowAnimation()
+    {
+        if (recipePanelContainer == null) return;
+
+        EnsureContainerRestPosCaptured();
+
+        _containerTween?.Kill();
+        recipePanelContainer.anchoredPosition = _containerRestPos + Vector2.down * slideDistance;
+        _containerTween = recipePanelContainer.DOAnchorPos(_containerRestPos, showDuration).SetEase(showEase);
+    }
+
+    private void PlayHideAnimation()
+    {
+        if (recipePanelContainer == null)
+        {
+            CloseAndResumeGame();
+            return;
+        }
+
+        EnsureContainerRestPosCaptured();
+
+        _containerTween?.Kill();
+        _containerTween = recipePanelContainer
+            .DOAnchorPos(_containerRestPos + Vector2.down * slideDistance, hideDuration)
+            .SetEase(hideEase)
+            .OnComplete(CloseAndResumeGame);
+    }
+
+    private void CloseAndResumeGame()
+    {
         panelRoot.SetActive(false);
+        if (recipePanelContainer != null) recipePanelContainer.anchoredPosition = _containerRestPos;
         SetGameplayButtonsVisible(true);
 
         if (!gameManager.HasBegun)

@@ -1188,6 +1188,7 @@ MonoBehaviour:
   gameManager: {fileID: 415136257}
   deckShuffleView: {fileID: 737959513}
   panelRoot: {fileID: 1820436394}
+  recipePanelContainer: {fileID: 431172785}
   chainListContainer: {fileID: 599565578}
   chainRowPrefab: {fileID: 3118269131240521995, guid: 8e57bcfee55e8424bb0fa0cd54d6f315, type: 3}
   stepSeparator: "  \u2192  "
