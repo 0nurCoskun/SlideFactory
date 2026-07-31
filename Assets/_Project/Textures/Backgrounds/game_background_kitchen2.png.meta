@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 85433cdeba032414b8bc3ab9dfdd5e16
+guid: 794f51e082cefdc499f9493736f1b26e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7046088390105274248
-    second: game_background_0
+      213: 672997118670092754
+    second: game_background_kitchen2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: game_background_0
+      name: game_background_kitchen2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8879a3c1f0cb8c160800000000000000
-      internalID: 7046088390105274248
+      spriteID: 2d931315057f65900800000000000000
+      internalID: 672997118670092754
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      game_background_0: 7046088390105274248
+      game_background_kitchen2_0: 672997118670092754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

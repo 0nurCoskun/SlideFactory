@@ -39,9 +39,17 @@ public class CardView : MonoBehaviour
     [SerializeField] private float entranceDuration = 0.35f;
     [SerializeField] private Ease entranceEase = Ease.OutBack;
 
+    [Header("Yanlış Swipe - Desteye Geri Dönüş Ayarları")]
+    [Tooltip("Kart yanlış istasyona fırlatıldığında, istasyondan desteye geri dönerken oynayan animasyonun süresi.")]
+    [SerializeField] private float wrongSwipeReturnDuration = 0.3f;
+    [SerializeField] private Ease wrongSwipeReturnEase = Ease.InOutQuad;
+    [Tooltip("Geri dönüş sırasında kartın küçülerek desteye 'yutuluyormuş' hissi vermesi için hedef ölçek.")]
+    [SerializeField] private float wrongSwipeReturnScale = 0.6f;
+
     private Vector2 _centerAnchoredPos;
     private bool _centerPosCaptured;
     private bool _isAnimatingExit;
+    private bool _isInvalidSwipe;
     private CardInstance _pendingNextCard;
     private bool _hasPendingCard;
     private Sequence _activeSequence;
@@ -77,6 +85,7 @@ public class CardView : MonoBehaviour
         if (gameManager != null)
         {
             gameManager.OnSwipeResolved += HandleSwipeResolved;
+            gameManager.OnInvalidSwipe += HandleInvalidSwipe;
             gameManager.OnCardChanged += HandleCardChanged;
             gameManager.OnDeckEmptied += HandleDeckEmptied;
         }
@@ -93,6 +102,7 @@ public class CardView : MonoBehaviour
         if (gameManager != null)
         {
             gameManager.OnSwipeResolved -= HandleSwipeResolved;
+            gameManager.OnInvalidSwipe -= HandleInvalidSwipe;
             gameManager.OnCardChanged -= HandleCardChanged;
             gameManager.OnDeckEmptied -= HandleDeckEmptied;
         }
@@ -131,6 +141,7 @@ public class CardView : MonoBehaviour
     private void HandleSwipeResolved(SwipeDirection direction)
     {
         _isAnimatingExit = true;
+        _isInvalidSwipe = false;
 
         EnsureCenterPositionCaptured();
 
@@ -144,8 +155,25 @@ public class CardView : MonoBehaviour
         _activeSequence.OnComplete(HandleExitAnimationComplete);
     }
 
+    /// <summary>
+    /// GameManager, OnSwipeResolved'dan hemen sonra (aynı frame'de, DrawNextCard çağrılmadan önce)
+    /// yanlış istasyona atıldığını bildiriyorsa bu event tetiklenir. Fırlatma animasyonu bittiğinde
+    /// kartın yeni bir kart olarak değil, istasyondan desteye geri dönen aynı kart gibi
+    /// davranması için bayrağı burada işaretliyoruz.
+    /// </summary>
+    private void HandleInvalidSwipe(SwipeDirection direction, StationData station)
+    {
+        _isInvalidSwipe = true;
+    }
+
     private void HandleExitAnimationComplete()
     {
+        if (_isInvalidSwipe)
+        {
+            PlayReturnToDeckAnimation();
+            return;
+        }
+
         _isAnimatingExit = false;
 
         if (_hasPendingCard)
@@ -156,6 +184,36 @@ public class CardView : MonoBehaviour
         else
         {
             // Deck boşsa (OnDeckEmptied zaten HandleDeckEmptied'de ayrıca ele alınıyor)
+            gameObject.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Yanlış swipe sonrası kart istasyona gitti; şimdi merkeze (deste konumuna) küçülerek
+    /// geri dönüyor - oyuncuya "bu hamle yanlıştı, kart desteye geri döndü" hissini verir.
+    /// </summary>
+    private void PlayReturnToDeckAnimation()
+    {
+        _activeSequence?.Kill();
+        _activeSequence = DOTween.Sequence();
+        _activeSequence.Append(cardRectTransform.DOAnchorPos(_centerAnchoredPos, wrongSwipeReturnDuration).SetEase(wrongSwipeReturnEase));
+        _activeSequence.Join(cardRectTransform.DOLocalRotate(Vector3.zero, wrongSwipeReturnDuration).SetEase(wrongSwipeReturnEase));
+        _activeSequence.Join(cardRectTransform.DOScale(Vector3.one * wrongSwipeReturnScale, wrongSwipeReturnDuration).SetEase(wrongSwipeReturnEase));
+        _activeSequence.OnComplete(HandleReturnAnimationComplete);
+    }
+
+    private void HandleReturnAnimationComplete()
+    {
+        _isAnimatingExit = false;
+        _isInvalidSwipe = false;
+
+        if (_hasPendingCard)
+        {
+            ShowCard(_pendingNextCard);
+            _hasPendingCard = false;
+        }
+        else
+        {
             gameObject.SetActive(false);
         }
     }
