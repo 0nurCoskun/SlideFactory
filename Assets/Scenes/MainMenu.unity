@@ -3520,8 +3520,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 523747135}
-        m_TargetAssemblyTypeName: SettingsView, Assembly-CSharp
+      - m_Target: {fileID: 1588260150}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnSettingsButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -5150,7 +5150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e0b90e2f5fc56459857d493e958cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsView
-  settingsPanel: {fileID: 2077694855}
   musicVolumeSlider: {fileID: 697960761}
   sfxVolumeSlider: {fileID: 1573755629}
   musicVolumeText: {fileID: 1312998764}
@@ -7535,9 +7534,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 523747135}
-        m_TargetAssemblyTypeName: SettingsView, Assembly-CSharp
-        m_MethodName: OnCloseButtonPressed
+      - m_Target: {fileID: 1588260150}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: OnSettingsBackButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17004,8 +17003,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4a7abb345644846862f0f9b67be857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
-  mainMenuPanel: {fileID: 1335779254}
-  levelSelectPanel: {fileID: 1031809090}
+  mainMenuPanel: {fileID: 1335779255}
+  levelSelectPanel: {fileID: 1031809091}
+  settingsPanel: {fileID: 2077694856}
+  settingsView: {fileID: 523747135}
 --- !u!1 &1593294264
 GameObject:
   m_ObjectHideFlags: 0

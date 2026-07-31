@@ -4,14 +4,13 @@ using TMPro;
 
 /// <summary>
 /// Ayarlar panelindeki müzik/SFX ses slider'larını AudioManager'a bağlar.
-/// Panel her açıldığında slider'lar, AudioManager'daki GÜNCEL (kayıtlı) değerlerle
-/// senkronize edilir - böylece oyuncu daha önce ne ayarladıysa onu görür.
+/// Panelin AÇILIP KAPANMASI artık MainMenuController tarafından (geçiş animasyonuyla
+/// birlikte) yönetiliyor - bu script sadece slider senkronizasyonundan sorumlu.
+/// Panel her açıldığında MainMenuController, RefreshSliders()'ı çağırarak slider'ları
+/// AudioManager'daki GÜNCEL (kayıtlı) değerlerle senkronize eder.
 /// </summary>
 public class SettingsView : MonoBehaviour
 {
-    [Header("Panel")]
-    [SerializeField] private GameObject settingsPanel;
-
     [Header("Slider'lar")]
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private Slider sfxVolumeSlider;
@@ -19,22 +18,10 @@ public class SettingsView : MonoBehaviour
     [SerializeField] private TMP_Text musicVolumeText;
     [SerializeField] private TMP_Text sfxVolumeText;
 
-    private void Awake()
+    /// <summary>MainMenuController, Settings paneli açılırken bunu çağırır.</summary>
+    public void RefreshSliders()
     {
-        if (settingsPanel != null) settingsPanel.SetActive(false);
-    }
-
-    /// <summary>Ayarlar butonuna bağlanacak.</summary>
-    public void OnSettingsButtonPressed()
-    {
-        if (settingsPanel != null) settingsPanel.SetActive(true);
         SyncSlidersWithCurrentSettings();
-    }
-
-    /// <summary>Ayarlar panelindeki Kapat butonuna bağlanacak.</summary>
-    public void OnCloseButtonPressed()
-    {
-        if (settingsPanel != null) settingsPanel.SetActive(false);
     }
 
     /// <summary>Music Volume slider'ının OnValueChanged()'ine bağlanacak.</summary>
