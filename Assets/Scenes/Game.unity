@@ -4000,7 +4000,7 @@ MonoBehaviour:
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -4047,9 +4047,9 @@ RectTransform:
   - {fileID: 897778089}
   m_Father: {fileID: 994040656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 650}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: 900, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117073047
@@ -5864,9 +5864,9 @@ RectTransform:
   - {fileID: 205307729}
   m_Father: {fileID: 994040656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 380}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -550}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542941352
@@ -7264,6 +7264,9 @@ MonoBehaviour:
   snapBackEase: 27
   entranceDuration: 0.35
   entranceEase: 27
+  wrongSwipeReturnDuration: 0.3
+  wrongSwipeReturnEase: 7
+  wrongSwipeReturnScale: 0.6
 --- !u!1 &1855560904
 GameObject:
   m_ObjectHideFlags: 0
@@ -8774,10 +8777,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 994040656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -700}
-  m_SizeDelta: {x: 1080, y: 700}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 1080, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061290348
 MonoBehaviour:
