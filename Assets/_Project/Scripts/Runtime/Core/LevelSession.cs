@@ -17,4 +17,11 @@ public static class LevelSession
     /// direkt LevelSelectPanel'i gösterir.
     /// </summary>
     public static bool OpenLevelSelectDirectly;
+
+    /// <summary>
+    /// Tutorial level bittiğinde TutorialFlowView tarafından true yapılır.
+    /// MainMenuController, sahne açılışında bunu kontrol edip MainMenuPanel'i
+    /// bir giriş animasyonuyla gösterir (sadece anlık göstermek yerine).
+    /// </summary>
+    public static bool ReturnFromTutorialToMenu;
 }

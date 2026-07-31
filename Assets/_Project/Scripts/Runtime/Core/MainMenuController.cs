@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 /// <summary>
@@ -26,9 +27,17 @@ public class MainMenuController : MonoBehaviour
     [Tooltip("Settings paneli açılırken slider'ları güncel değerlerle senkronize etmek için.")]
     [SerializeField] private SettingsView settingsView;
 
+    [Header("Tutorial")]
+    [SerializeField] private LevelData tutorialLevelData;
+    [SerializeField] private string gameSceneName = "Game";
+
     [Header("Geçiş Animasyonu")]
     [SerializeField] private float transitionDuration = 0.4f;
     [SerializeField] private Ease transitionEase = Ease.OutCubic;
+
+    [Header("Tutorial'dan Dönüş Animasyonu")]
+    [SerializeField] private float returnFromTutorialDuration = 0.4f;
+    [SerializeField] private Ease returnFromTutorialEase = Ease.OutBack;
 
     private bool _isTransitioning;
 
@@ -39,10 +48,47 @@ public class MainMenuController : MonoBehaviour
             LevelSession.OpenLevelSelectDirectly = false;
             ShowInstant(levelSelectPanel, mainMenuPanel, settingsPanel);
         }
+        else if (LevelSession.ReturnFromTutorialToMenu)
+        {
+            LevelSession.ReturnFromTutorialToMenu = false;
+            ShowInstant(mainMenuPanel, levelSelectPanel, settingsPanel);
+            PlayReturnFromTutorialAnimation();
+        }
         else
         {
             ShowInstant(mainMenuPanel, levelSelectPanel, settingsPanel);
         }
+    }
+
+    /// <summary>Tutorial butonuna bağlanacak - ekranı karartıp Tutorial level'ı Game sahnesinde açar.</summary>
+    public void OnTutorialButtonPressed()
+    {
+        if (tutorialLevelData == null)
+        {
+            Debug.LogError("[MainMenuController] tutorialLevelData atanmamış.");
+            return;
+        }
+
+        LevelSession.SelectedLevel = tutorialLevelData;
+
+        if (SceneFader.Instance != null)
+        {
+            SceneFader.Instance.FadeToScene(gameSceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(gameSceneName);
+        }
+    }
+
+    /// <summary>MainMenuPanel, tutorial'dan dönüldüğünde anlık göstermek yerine bir pop-in animasyonu oynatır.</summary>
+    private void PlayReturnFromTutorialAnimation()
+    {
+        if (mainMenuPanel == null) return;
+
+        mainMenuPanel.DOKill();
+        mainMenuPanel.localScale = Vector3.zero;
+        mainMenuPanel.DOScale(Vector3.one, returnFromTutorialDuration).SetEase(returnFromTutorialEase);
     }
 
     /// <summary>Play butonuna bağlanacak - Level Select ekranını sağdan içeri kaydırarak açar.</summary>

@@ -73,6 +73,9 @@ public class LevelResultView : MonoBehaviour
 
     private void HandleLevelWon(int stars)
     {
+        // Tutorial level'da Win paneli gösterilmez - TutorialFlowView kendi tamamlanma akışını yönetir.
+        if (gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.isTutorial) return;
+
         ShowPanel(winPanel);
         AnimateStars(stars);
 
@@ -115,6 +118,9 @@ public class LevelResultView : MonoBehaviour
 
     private void HandleLevelFailed()
     {
+        // Tutorial'da bu event zaten tetiklenmemeli (GameManager engelliyor) ama ekstra güvenlik katmanı.
+        if (gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.isTutorial) return;
+
         ShowPanel(losePanel);
     }
 

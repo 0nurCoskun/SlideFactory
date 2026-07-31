@@ -42,4 +42,10 @@ public class LevelData : ScriptableObject
     public float minStationShuffleInterval = 3f;
     [Tooltip("İki karışma arasındaki maksimum süre (saniye).")]
     public float maxStationShuffleInterval = 4f;
+
+    [Header("Tutorial")]
+    [Tooltip("True ise bu level bir öğretici (tutorial). Süre bitince level KAYBEDİLMEZ (sayaç sıfırdan başlar), " +
+             "kazanılınca LevelProgress'e (tamamlanma/yıldız) hiçbir şey yazılmaz ve normal Win/Lose panelleri " +
+             "gösterilmez - TutorialFlowView akışı devralır.")]
+    public bool isTutorial;
 }

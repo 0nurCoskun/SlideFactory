@@ -245,6 +245,13 @@ public class GameManager : MonoBehaviour
     {
         if (_levelEnded) return; // deste zaten bitmiş, level zaten kazanılmışsa süre bitmesi önemsiz
 
+        if (_activeLevel != null && _activeLevel.isTutorial)
+        {
+            // Tutorial'da süre bitmesi KAYBETMEK anlamına gelmez - sayaç sıfırdan devam eder.
+            levelTimerManager?.StartTimer();
+            return;
+        }
+
         EndLevel(won: false);
     }
 
@@ -259,8 +266,13 @@ public class GameManager : MonoBehaviour
         if (won)
         {
             int stars = CalculateStars();
-            LevelProgress.MarkLevelCompleted(_activeLevel);
-            LevelProgress.SetStarsIfHigher(_activeLevel, stars);
+
+            if (_activeLevel != null && !_activeLevel.isTutorial)
+            {
+                LevelProgress.MarkLevelCompleted(_activeLevel);
+                LevelProgress.SetStarsIfHigher(_activeLevel, stars);
+            }
+
             OnLevelWon?.Invoke(stars);
         }
         else
