@@ -124,7 +124,6 @@ public class RecipePreviewView : MonoBehaviour
     private void CloseAndResumeGame()
     {
         panelRoot.SetActive(false);
-        if (recipePanelContainer != null) recipePanelContainer.anchoredPosition = _containerRestPos;
         SetGameplayButtonsVisible(true);
 
         if (!gameManager.HasBegun)

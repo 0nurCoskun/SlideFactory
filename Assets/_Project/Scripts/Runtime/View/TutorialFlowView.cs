@@ -174,6 +174,8 @@ public class TutorialFlowView : MonoBehaviour
     {
         if (showRecipeButtonTransform == null) return;
 
+        EnsureShowRecipeButtonRestPosCaptured();
+
         _showRecipeButtonShakeTween?.Kill();
         _showRecipeButtonShakeTween = null;
         showRecipeButtonTransform.anchoredPosition = _showRecipeButtonRestPos;
