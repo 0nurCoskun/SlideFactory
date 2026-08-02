@@ -18,9 +18,9 @@ public class AppBootstrap : MonoBehaviour
     [Header("Performans")]
     [Tooltip("Sabit, güvenilir bir hedef. Cihazın panel Hz'ini Screen API'siyle tahmin " +
              "etmeye ÇALIŞMIYORUZ artık (Android'de erken/yanlış düşük değer okuyup gerçek " +
-             "bir bug'a yol açtı). Bu değer sadece Swappy'e (androidUseSwappy) 'panel'i " +
-             "bu hıza çıkar' talebini iletmek için üst sınır görevi görür; cihaz daha " +
-             "düşük bir maksimuma sahipse zaten ona düşer.")]
+             "bir bug'a yol açtı). Bu değer Window.setFrameRate() ile Android'e doğrudan " +
+             "iletilir (RequestHighDisplayRefreshRateOnAndroid); cihaz daha düşük bir " +
+             "maksimuma sahipse zaten ona düşer.")]
     [SerializeField] private int targetFrameRate = 120;
 
     [Header("Ekran")]
@@ -49,18 +49,14 @@ public class AppBootstrap : MonoBehaviour
 
     private void ApplyPerformanceSettings()
     {
-        // vSyncCount=1 ile test ettiğimizde bile ana menü fiziksel panelde gerçekten
-        // 30Hz'e düşüyordu (Profiler'da doğrulandı) - yani sorun Unity'nin kendi
-        // kendine uyuması değil, Android'in adaptif yenileme hızı denetleyicisinin
-        // (SurfaceFlinger) "düşük hareketli" gördüğü menü içeriği için paneli bilerek
-        // düşük Hz'de sürmesiydi. vSyncCount tek başına sadece "panel o an ne
-        // hızdaysa ona göre bekle" der, panelden daha YÜKSEK bir hız TALEP ETMEZ.
-        //
-        // Android'den yüksek Hz'i açıkça talep eden mekanizma Swappy (androidUseSwappy,
-        // bkz. Player Settings > Android > Optimized Frame Pacing) - bunu daha önce
-        // kapatmıştık ki bu hataydı. Şimdi vSyncCount=0 + sabit/güvenilir bir
-        // targetFrameRate ile geri açıyoruz ki Swappy bu hedefi Android'in Frame Rate
-        // API'sine iletip paneli gerçekten hızlandırabilsin.
+        // Logcat'te doğrudan görüldü: Swappy (androidUseSwappy) kendi kendine
+        // setFrameRate(120) İLE setFrameRate(30) arasında gidip geliyordu - yani
+        // ana menüdeki geçici bir yavaşlamayı (asset yükleme/GC/ilk shader derlemesi)
+        // ölçüp "bu cihaz sadece 30 kaldırabilir" diye düşünüp kendi isteğini
+        // düşürüyordu. Swappy'yi (ProjectSettings'te androidUseSwappy=0) kapalı
+        // tutuyoruz ki bu otomatik/değişken davranış devre dışı kalsın; tek yenileme
+        // hızı talebi RequestHighDisplayRefreshRateOnAndroid()'deki TEK SEFERLİK,
+        // sabit Window.setFrameRate() çağrısı olsun.
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = targetFrameRate;
 
@@ -68,11 +64,11 @@ public class AppBootstrap : MonoBehaviour
     }
 
     /// <summary>
-    /// Swappy'nin kendi iç mantığı bile ana menüde 120Hz'i her zaman garanti etmedi
-    /// (Profiler'da doğrulandı: panel gerçekten 30Hz'e düşüyordu). Android'in bu
-    /// isteği en doğrudan ilettiği yer Window.setFrameRate() (API 30+, bkz.
-    /// developer.android.com/games/optimize/display-refresh-rate-change) - Swappy'nin
-    /// dolaylı/aşamalı talebi yerine SurfaceFlinger'a doğrudan çağrılıyor.
+    /// Swappy açıkken kendi setFrameRate çağrılarının 120 ile 30 arasında gidip
+    /// geldiği logcat'te doğrudan görüldü (kendi iç ölçümüne göre otomatik
+    /// düşürüyordu). Bunun yerine Android'in Frame Rate API'sini (Window.setFrameRate,
+    /// API 30+, bkz. developer.android.com/games/optimize/display-refresh-rate-change)
+    /// TEK SEFERLİK ve SABİT bir değerle biz çağırıyoruz ki kimse sonradan düşürmesin.
     ///
     /// Not: Google'ın kendi dokümantasyonu bile bu çağrının GARANTİ olmadığını
     /// belirtiyor ("the system might still limit the refresh rate"), bu yüzden
@@ -84,6 +80,15 @@ public class AppBootstrap : MonoBehaviour
         try
         {
             const int AndroidApiLevel30_R = 30; // Window.setFrameRate API 30'da eklendi.
+
+            // Bu iki değeri artık TAHMİN ETMİYORUZ: cihazdaki gerçek logcat çıktısında
+            // Swappy'nin kendi setFrameRate çağrılarını "Default, OnlySeamless" olarak
+            // gördük, yani FRAME_RATE_COMPATIBILITY_DEFAULT = 0 ve
+            // CHANGE_FRAME_RATE_ONLY_IF_SEAMLESS = 0 olduğu doğrulandı.
+            // (Önceki denemede bu sabiti android.view.Window sınıfından okumaya
+            // çalışmıştık ve NoSuchFieldError almıştık - sabit aslında android.view.Surface
+            // sınıfında tanımlı; Window.setFrameRate ise aynı int değerini kabul ediyor.)
+            const int FrameRateCompatibilityDefault = 0;
             const int ChangeFrameRateOnlyIfSeamless = 0;
 
             using (AndroidJavaClass versionClass = new AndroidJavaClass("android.os.Build$VERSION"))
@@ -98,10 +103,8 @@ public class AppBootstrap : MonoBehaviour
             using (AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
             using (AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
             using (AndroidJavaObject window = activity.Call<AndroidJavaObject>("getWindow"))
-            using (AndroidJavaClass windowClass = new AndroidJavaClass("android.view.Window"))
             {
-                int compatibilityDefault = windowClass.GetStatic<int>("FRAME_RATE_COMPATIBILITY_DEFAULT");
-                window.Call("setFrameRate", (float)targetFrameRate, compatibilityDefault, ChangeFrameRateOnlyIfSeamless);
+                window.Call("setFrameRate", (float)targetFrameRate, FrameRateCompatibilityDefault, ChangeFrameRateOnlyIfSeamless);
             }
         }
         catch (System.Exception ex)
