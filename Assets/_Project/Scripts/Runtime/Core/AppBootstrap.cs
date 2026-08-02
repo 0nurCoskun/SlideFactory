@@ -15,6 +15,14 @@ public class AppBootstrap : MonoBehaviour
     // yeniden yaratılmasını engellemek için basit bir singleton koruması.
     public static AppBootstrap Instance { get; private set; }
 
+    [Header("Performans")]
+    [Tooltip("Sabit, güvenilir bir hedef. Cihazın panel Hz'ini Screen API'siyle tahmin " +
+             "etmeye ÇALIŞMIYORUZ artık (Android'de erken/yanlış düşük değer okuyup gerçek " +
+             "bir bug'a yol açtı). Bu değer sadece Swappy'e (androidUseSwappy) 'panel'i " +
+             "bu hıza çıkar' talebini iletmek için üst sınır görevi görür; cihaz daha " +
+             "düşük bir maksimuma sahipse zaten ona düşer.")]
+    [SerializeField] private int targetFrameRate = 120;
+
     [Header("Ekran")]
     [Tooltip("Oyun dikey formatta tasarlandığı için varsayılan Portrait.")]
     [SerializeField] private ScreenOrientation screenOrientation = ScreenOrientation.Portrait;
@@ -41,22 +49,20 @@ public class AppBootstrap : MonoBehaviour
 
     private void ApplyPerformanceSettings()
     {
-        // Application.targetFrameRate + vSyncCount=0 kombinasyonu, hedefi Screen
-        // API'sinden (Screen.currentResolution/Screen.resolutions) okuyarak
-        // hesaplamaya çalıştığımızda ciddi bir soruna yol açtı: Android'de bu API
-        // bazen erken/yanlış bir düşük değer (örn. 30Hz) raporluyor, Unity de
-        // Application.targetFrameRate'i o düşük değere göre ayarlayıp her frame'in
-        // büyük kısmını "WaitForTargetFPS" içinde bilinçli olarak uyuyarak
-        // geçiriyordu (Profiler'da doğrulandı: ~33ms'lik frame'in ~27ms'si bekleme).
-        // Bunun sonucu ana menüde gerçek 15-30fps'e düşüyorduk, panelin kendisi
-        // 120Hz çalışsa bile.
+        // vSyncCount=1 ile test ettiğimizde bile ana menü fiziksel panelde gerçekten
+        // 30Hz'e düşüyordu (Profiler'da doğrulandı) - yani sorun Unity'nin kendi
+        // kendine uyuması değil, Android'in adaptif yenileme hızı denetleyicisinin
+        // (SurfaceFlinger) "düşük hareketli" gördüğü menü içeriği için paneli bilerek
+        // düşük Hz'de sürmesiydi. vSyncCount tek başına sadece "panel o an ne
+        // hızdaysa ona göre bekle" der, panelden daha YÜKSEK bir hız TALEP ETMEZ.
         //
-        // Çözüm: yenileme hızını YAZILIMDA tahmin etmeye çalışmak yerine, gerçek
-        // donanım vsync sinyaline senkronize oluyoruz (vSyncCount=1). Böylece
-        // Unity hiçbir zaman kendi kendine düşük bir hedefe göre uyumuyor;
-        // ekran o an gerçekten hangi hızda çalışıyorsa (60/90/120/adaptif) ona
-        // göre kare basıyoruz.
-        QualitySettings.vSyncCount = 1;
+        // Android'den yüksek Hz'i açıkça talep eden mekanizma Swappy (androidUseSwappy,
+        // bkz. Player Settings > Android > Optimized Frame Pacing) - bunu daha önce
+        // kapatmıştık ki bu hataydı. Şimdi vSyncCount=0 + sabit/güvenilir bir
+        // targetFrameRate ile geri açıyoruz ki Swappy bu hedefi Android'in Frame Rate
+        // API'sine iletip paneli gerçekten hızlandırabilsin.
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = targetFrameRate;
     }
 
     private void ApplyScreenSettings()
