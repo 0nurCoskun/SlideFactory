@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Wheat Sack
   description: 
   icon: {fileID: 0}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:
