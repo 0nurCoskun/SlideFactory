@@ -52,21 +52,36 @@ public class AppBootstrap : MonoBehaviour
 
     /// <summary>
     /// Sabit bir değer (örn. 60 veya 120) yazmak yerine, cihazın EKRANININ gerçekten
-    /// desteklediği yenileme hızını okuyup onu hedefliyoruz. Böylece:
+    /// desteklediği EN YÜKSEK yenileme hızını okuyup onu hedefliyoruz. Böylece:
     /// - 120Hz ekranlı bir telefonda oyun 120'ye çıkabiliyor (daha akıcı swipe hissi),
+    /// - 90Hz'i geçemeyen bir ekranda 90 hedefleniyor,
     /// - 60Hz ekranlı eski/bütçe bir telefonda gereksiz yere 120'ye zorlanmıyor
     ///   (zaten ekran gösteremeyeceği için boşa batarya/ısı harcanır).
+    ///
+    /// Android'de Screen.currentResolution çoğu zaman cihazın o anki (genelde 60Hz)
+    /// ekran moduna denk gelir, cihazın desteklediği maksimuma değil - bu yüzden
+    /// Screen.resolutions listesindeki TÜM modlara bakıp en yükseğini alıyoruz.
     /// </summary>
     private int GetAdaptiveTargetFrameRate()
     {
-        double refreshRate = Screen.currentResolution.refreshRateRatio.value;
+        double highestRefreshRate = Screen.currentResolution.refreshRateRatio.value;
 
-        if (refreshRate <= 0)
+        Resolution[] resolutions = Screen.resolutions;
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            double candidate = resolutions[i].refreshRateRatio.value;
+            if (candidate > highestRefreshRate)
+            {
+                highestRefreshRate = candidate;
+            }
+        }
+
+        if (highestRefreshRate <= 0)
         {
             return fallbackFrameRate;
         }
 
-        return Mathf.RoundToInt((float)refreshRate);
+        return Mathf.RoundToInt((float)highestRefreshRate);
     }
 
     private void ApplyScreenSettings()
