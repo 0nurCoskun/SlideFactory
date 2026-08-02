@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Oyunun kart kurallarıyla HİÇBİR ilgisi olmayan, sadece uygulama başlarken
@@ -40,8 +42,41 @@ public class AppBootstrap : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        ApplyPerformanceSettings();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         ApplyScreenSettings();
+        StartCoroutine(ApplyPerformanceSettingsDelayed());
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Uygulama açılışında Screen.resolutions/currentResolution bazı Android
+        // cihazlarda henüz gerçek ekran modunu yansıtmıyor (işletim sistemi ilk
+        // birkaç frame'de düşük güç moduyla açılıp asıl desteklenen yenileme hızına
+        // sonradan geçiyor). Bu yüzden her sahne geçişinde ölçümü tekrarlıyoruz;
+        // ilk ölçüm yanlışsa (örn. menüde 30fps hissi), bir sonraki sahne geçişinde
+        // kendi kendine düzeliyor.
+        StartCoroutine(ApplyPerformanceSettingsDelayed());
+    }
+
+    private IEnumerator ApplyPerformanceSettingsDelayed()
+    {
+        // Ekranın gerçek desteklenen mod listesini (Screen.resolutions) doğru
+        // raporlaması için birkaç frame bekliyoruz; Awake anında okumak
+        // (özellikle soğuk açılışta) çoğu zaman yanlış/düşük bir değer veriyor.
+        yield return null;
+        yield return null;
+        yield return new WaitForEndOfFrame();
+
+        ApplyPerformanceSettings();
     }
 
     private void ApplyPerformanceSettings()
