@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Oyunun kart kurallarıyla HİÇBİR ilgisi olmayan, sadece uygulama başlarken
@@ -16,11 +14,6 @@ public class AppBootstrap : MonoBehaviour
     // Sahneler arası (MainMenu -> Level1 -> Level2 ...) geçişlerde her sahnede
     // yeniden yaratılmasını engellemek için basit bir singleton koruması.
     public static AppBootstrap Instance { get; private set; }
-
-    [Header("Performans")]
-    [Tooltip("Cihazın kendi ekran yenileme hızı (60/90/120Hz vb.) OTOMATİK okunup hedeflenir. " +
-             "Bu değer sadece o okuma başarısız olursa (nadir bazı cihazlarda) devreye giren yedek değerdir.")]
-    [SerializeField] private int fallbackFrameRate = 60;
 
     [Header("Ekran")]
     [Tooltip("Oyun dikey formatta tasarlandığı için varsayılan Portrait.")]
@@ -42,81 +35,28 @@ public class AppBootstrap : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-
-        ApplyScreenSettings();
-        StartCoroutine(ApplyPerformanceSettingsDelayed());
-    }
-
-    private void OnDestroy()
-    {
-        if (Instance == this)
-        {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // Uygulama açılışında Screen.resolutions/currentResolution bazı Android
-        // cihazlarda henüz gerçek ekran modunu yansıtmıyor (işletim sistemi ilk
-        // birkaç frame'de düşük güç moduyla açılıp asıl desteklenen yenileme hızına
-        // sonradan geçiyor). Bu yüzden her sahne geçişinde ölçümü tekrarlıyoruz;
-        // ilk ölçüm yanlışsa (örn. menüde 30fps hissi), bir sonraki sahne geçişinde
-        // kendi kendine düzeliyor.
-        StartCoroutine(ApplyPerformanceSettingsDelayed());
-    }
-
-    private IEnumerator ApplyPerformanceSettingsDelayed()
-    {
-        // Ekranın gerçek desteklenen mod listesini (Screen.resolutions) doğru
-        // raporlaması için birkaç frame bekliyoruz; Awake anında okumak
-        // (özellikle soğuk açılışta) çoğu zaman yanlış/düşük bir değer veriyor.
-        yield return null;
-        yield return null;
-        yield return new WaitForEndOfFrame();
-
         ApplyPerformanceSettings();
+        ApplyScreenSettings();
     }
 
     private void ApplyPerformanceSettings()
     {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = GetAdaptiveTargetFrameRate();
-    }
-
-    /// <summary>
-    /// Sabit bir değer (örn. 60 veya 120) yazmak yerine, cihazın EKRANININ gerçekten
-    /// desteklediği EN YÜKSEK yenileme hızını okuyup onu hedefliyoruz. Böylece:
-    /// - 120Hz ekranlı bir telefonda oyun 120'ye çıkabiliyor (daha akıcı swipe hissi),
-    /// - 90Hz'i geçemeyen bir ekranda 90 hedefleniyor,
-    /// - 60Hz ekranlı eski/bütçe bir telefonda gereksiz yere 120'ye zorlanmıyor
-    ///   (zaten ekran gösteremeyeceği için boşa batarya/ısı harcanır).
-    ///
-    /// Android'de Screen.currentResolution çoğu zaman cihazın o anki (genelde 60Hz)
-    /// ekran moduna denk gelir, cihazın desteklediği maksimuma değil - bu yüzden
-    /// Screen.resolutions listesindeki TÜM modlara bakıp en yükseğini alıyoruz.
-    /// </summary>
-    private int GetAdaptiveTargetFrameRate()
-    {
-        double highestRefreshRate = Screen.currentResolution.refreshRateRatio.value;
-
-        Resolution[] resolutions = Screen.resolutions;
-        for (int i = 0; i < resolutions.Length; i++)
-        {
-            double candidate = resolutions[i].refreshRateRatio.value;
-            if (candidate > highestRefreshRate)
-            {
-                highestRefreshRate = candidate;
-            }
-        }
-
-        if (highestRefreshRate <= 0)
-        {
-            return fallbackFrameRate;
-        }
-
-        return Mathf.RoundToInt((float)highestRefreshRate);
+        // Application.targetFrameRate + vSyncCount=0 kombinasyonu, hedefi Screen
+        // API'sinden (Screen.currentResolution/Screen.resolutions) okuyarak
+        // hesaplamaya çalıştığımızda ciddi bir soruna yol açtı: Android'de bu API
+        // bazen erken/yanlış bir düşük değer (örn. 30Hz) raporluyor, Unity de
+        // Application.targetFrameRate'i o düşük değere göre ayarlayıp her frame'in
+        // büyük kısmını "WaitForTargetFPS" içinde bilinçli olarak uyuyarak
+        // geçiriyordu (Profiler'da doğrulandı: ~33ms'lik frame'in ~27ms'si bekleme).
+        // Bunun sonucu ana menüde gerçek 15-30fps'e düşüyorduk, panelin kendisi
+        // 120Hz çalışsa bile.
+        //
+        // Çözüm: yenileme hızını YAZILIMDA tahmin etmeye çalışmak yerine, gerçek
+        // donanım vsync sinyaline senkronize oluyoruz (vSyncCount=1). Böylece
+        // Unity hiçbir zaman kendi kendine düşük bir hedefe göre uyumuyor;
+        // ekran o an gerçekten hangi hızda çalışıyorsa (60/90/120/adaptif) ona
+        // göre kare basıyoruz.
+        QualitySettings.vSyncCount = 1;
     }
 
     private void ApplyScreenSettings()
