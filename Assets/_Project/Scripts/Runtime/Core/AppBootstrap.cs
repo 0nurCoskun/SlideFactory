@@ -63,6 +63,52 @@ public class AppBootstrap : MonoBehaviour
         // API'sine iletip paneli gerçekten hızlandırabilsin.
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = targetFrameRate;
+
+        RequestHighDisplayRefreshRateOnAndroid();
+    }
+
+    /// <summary>
+    /// Swappy'nin kendi iç mantığı bile ana menüde 120Hz'i her zaman garanti etmedi
+    /// (Profiler'da doğrulandı: panel gerçekten 30Hz'e düşüyordu). Android'in bu
+    /// isteği en doğrudan ilettiği yer Window.setFrameRate() (API 30+, bkz.
+    /// developer.android.com/games/optimize/display-refresh-rate-change) - Swappy'nin
+    /// dolaylı/aşamalı talebi yerine SurfaceFlinger'a doğrudan çağrılıyor.
+    ///
+    /// Not: Google'ın kendi dokümantasyonu bile bu çağrının GARANTİ olmadığını
+    /// belirtiyor ("the system might still limit the refresh rate"), bu yüzden
+    /// bu sadece elimizdeki EN GÜÇLÜ sinyal - kesin çözüm garantisi değil.
+    /// </summary>
+    private void RequestHighDisplayRefreshRateOnAndroid()
+    {
+#if UNITY_ANDROID && !UNITY_EDITOR
+        try
+        {
+            const int AndroidApiLevel30_R = 30; // Window.setFrameRate API 30'da eklendi.
+            const int ChangeFrameRateOnlyIfSeamless = 0;
+
+            using (AndroidJavaClass versionClass = new AndroidJavaClass("android.os.Build$VERSION"))
+            {
+                int sdkInt = versionClass.GetStatic<int>("SDK_INT");
+                if (sdkInt < AndroidApiLevel30_R)
+                {
+                    return;
+                }
+            }
+
+            using (AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+            using (AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
+            using (AndroidJavaObject window = activity.Call<AndroidJavaObject>("getWindow"))
+            using (AndroidJavaClass windowClass = new AndroidJavaClass("android.view.Window"))
+            {
+                int compatibilityDefault = windowClass.GetStatic<int>("FRAME_RATE_COMPATIBILITY_DEFAULT");
+                window.Call("setFrameRate", (float)targetFrameRate, compatibilityDefault, ChangeFrameRateOnlyIfSeamless);
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogWarning($"AppBootstrap: Window.setFrameRate isteği başarısız oldu, Swappy/vSync yoluna güveniliyor. {ex}");
+        }
+#endif
     }
 
     private void ApplyScreenSettings()
