@@ -26,32 +26,52 @@ public class StationLabelsView : MonoBehaviour
     [SerializeField] private float pulseScale = 1.15f;
     [SerializeField] private float pulseDuration = 0.2f;
 
+    private IReadOnlyDictionary<SwipeDirection, StationData> _currentAssignment;
+
     private void OnEnable()
     {
         if (stationAssignmentManager != null)
             stationAssignmentManager.OnStationsShuffled += HandleStationsShuffled;
+
+        if (LocalizationManager.Instance != null)
+            LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
     }
 
     private void OnDisable()
     {
         if (stationAssignmentManager != null)
             stationAssignmentManager.OnStationsShuffled -= HandleStationsShuffled;
+
+        if (LocalizationManager.Instance != null)
+            LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
     }
 
     private void HandleStationsShuffled(IReadOnlyDictionary<SwipeDirection, StationData> assignment)
     {
-        UpdateLabel(upLabel, assignment, SwipeDirection.Up);
-        UpdateLabel(downLabel, assignment, SwipeDirection.Down);
-        UpdateLabel(leftLabel, assignment, SwipeDirection.Left);
-        UpdateLabel(rightLabel, assignment, SwipeDirection.Right);
+        _currentAssignment = assignment;
+
+        UpdateLabel(upLabel, assignment, SwipeDirection.Up, animate: true);
+        UpdateLabel(downLabel, assignment, SwipeDirection.Down, animate: true);
+        UpdateLabel(leftLabel, assignment, SwipeDirection.Left, animate: true);
+        UpdateLabel(rightLabel, assignment, SwipeDirection.Right, animate: true);
     }
 
-    private void UpdateLabel(TMP_Text label, IReadOnlyDictionary<SwipeDirection, StationData> assignment, SwipeDirection direction)
+    private void HandleLanguageChanged(LocalizationManager.Language language)
+    {
+        if (_currentAssignment == null) return;
+
+        UpdateLabel(upLabel, _currentAssignment, SwipeDirection.Up, animate: false);
+        UpdateLabel(downLabel, _currentAssignment, SwipeDirection.Down, animate: false);
+        UpdateLabel(leftLabel, _currentAssignment, SwipeDirection.Left, animate: false);
+        UpdateLabel(rightLabel, _currentAssignment, SwipeDirection.Right, animate: false);
+    }
+
+    private void UpdateLabel(TMP_Text label, IReadOnlyDictionary<SwipeDirection, StationData> assignment, SwipeDirection direction, bool animate)
     {
         if (label == null) return;
 
         string newText = assignment.TryGetValue(direction, out StationData station) && station != null
-            ? station.displayName
+            ? GameLocalization.GetStationName(station)
             : string.Empty;
 
         // Metin gerçekten değiştiyse pulse animasyonu oyna - her karışmada
@@ -59,7 +79,7 @@ public class StationLabelsView : MonoBehaviour
         bool changed = label.text != newText;
         label.text = newText;
 
-        if (changed)
+        if (animate && changed)
         {
             label.transform.DOKill();
             label.transform.localScale = Vector3.one;

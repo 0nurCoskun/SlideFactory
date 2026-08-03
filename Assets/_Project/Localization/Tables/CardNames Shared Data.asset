@@ -1,0 +1,972 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: CardNames Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: CardNames
+  m_TableCollectionNameGuidString: 3cc8582d4f9178f4181e29087708fc3a
+  m_Entries:
+  - m_Id: 6325026816
+    m_Key: lava_stones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6530547712
+    m_Key: meteor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154048
+    m_Key: night_flower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154049
+    m_Key: flower_essence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154050
+    m_Key: lava_dust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154051
+    m_Key: meteorites
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154052
+    m_Key: boiling_liquid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154053
+    m_Key: dark_jelly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154054
+    m_Key: enhanced_liquid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154055
+    m_Key: phoenix_elixir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154056
+    m_Key: shadow_essence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154057
+    m_Key: thunder_stone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154058
+    m_Key: raw_meat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154059
+    m_Key: tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154060
+    m_Key: wheat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154061
+    m_Key: dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154062
+    m_Key: mince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154063
+    m_Key: sliced_tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154064
+    m_Key: bread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154065
+    m_Key: cooked_meatball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154066
+    m_Key: tomato_sauce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154067
+    m_Key: pastry_dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154068
+    m_Key: raw_beef
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154069
+    m_Key: cooked_bolognese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154070
+    m_Key: seasoned_patty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154071
+    m_Key: warm_cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154072
+    m_Key: baked_lasagna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154073
+    m_Key: choco_shuffle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154074
+    m_Key: gourmet_burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154075
+    m_Key: garlic_butter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154076
+    m_Key: raw_steak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154077
+    m_Key: tart_base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154078
+    m_Key: crispy_shell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154079
+    m_Key: marinated_steak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154080
+    m_Key: melted_glaze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154081
+    m_Key: baked_salmon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154082
+    m_Key: fruit_tart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154083
+    m_Key: seared_steak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154084
+    m_Key: olive_oil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154085
+    m_Key: raw_bacon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154086
+    m_Key: risotto_rice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154087
+    m_Key: crispy_bacon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154088
+    m_Key: panko_ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154089
+    m_Key: aromatic_emulsion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154090
+    m_Key: bacon_ragu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154091
+    m_Key: baked_foccacia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154092
+    m_Key: crispy_ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154093
+    m_Key: arancini
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154094
+    m_Key: focaccia_platter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154095
+    m_Key: stuffed_calzone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154096
+    m_Key: chili_oil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154097
+    m_Key: flour_dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154098
+    m_Key: raw_chicken_wings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154099
+    m_Key: fried_chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154100
+    m_Key: raw_dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154101
+    m_Key: spicy_beef_filling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154102
+    m_Key: beefsalsa_layer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154103
+    m_Key: crispy_dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154104
+    m_Key: szechuan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154105
+    m_Key: asian_fusion_taco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154106
+    m_Key: glazed_dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154107
+    m_Key: kung_pao_bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154108
+    m_Key: burger_bun_dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154109
+    m_Key: marinated_ribs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154110
+    m_Key: raw_tortilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154111
+    m_Key: fried_nacho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154112
+    m_Key: smoked_ribs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154113
+    m_Key: baked_brioche_bun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154114
+    m_Key: cheesy_nacho_layer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154115
+    m_Key: crispy_shredded_pork
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154116
+    m_Key: toasted_bun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154117
+    m_Key: bistro_burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154118
+    m_Key: loaded_bbq_wrap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902784
+    m_Key: loaded_nacho_boat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902785
+    m_Key: heavy_cream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902786
+    m_Key: raw_cocoa_butter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902787
+    m_Key: sweet_pastry_dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902788
+    m_Key: chilled_custard_dip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902789
+    m_Key: molten_lava_cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902790
+    m_Key: shaped_tart_shell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902791
+    m_Key: baked_golden_shell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902792
+    m_Key: chilled_crust_cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902793
+    m_Key: soaked_brioche_toast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902794
+    m_Key: caramelized_french_toast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902795
+    m_Key: ice_cream_tart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902796
+    m_Key: molten_cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902797
+    m_Key: chicken_tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902798
+    m_Key: fresh_bell_pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902799
+    m_Key: raw_sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902800
+    m_Key: tahini_sauce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902801
+    m_Key: breaded_tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902802
+    m_Key: charrded_pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902803
+    m_Key: par_fried_sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902804
+    m_Key: sauced_wrap_base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902805
+    m_Key: crsipy_chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902806
+    m_Key: falafel_wrap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902807
+    m_Key: gourmet_steak_bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902808
+    m_Key: smoked_bbq_sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902809
+    m_Key: oaxaca_cheese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902810
+    m_Key: raw_masa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902811
+    m_Key: salsa_roja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902812
+    m_Key: smoked_beef
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902813
+    m_Key: cheesy_base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902814
+    m_Key: nacho_platter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902815
+    m_Key: pressed_masa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902816
+    m_Key: shredded_beef
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902817
+    m_Key: barbacoa_bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902818
+    m_Key: birria_taco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902819
+    m_Key: fiesta_nachos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902820
+    m_Key: warm_tortilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902821
+    m_Key: crispy_tofu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902822
+    m_Key: raw_chicken_slice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902823
+    m_Key: raw_dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902824
+    m_Key: fried_tofu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902825
+    m_Key: seared_chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902826
+    m_Key: spicy_sauce_base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902827
+    m_Key: steamed_bao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902828
+    m_Key: crispy_katsu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902829
+    m_Key: glazed_bao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902830
+    m_Key: pan_seared_dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902831
+    m_Key: sauced_tofu_bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902832
+    m_Key: crispy_bao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902833
+    m_Key: steamed_loaded_dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902834
+    m_Key: teriyaki_katsu_bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902835
+    m_Key: wok_tossed_ramen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902836
+    m_Key: leather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902837
+    m_Key: raw_iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902838
+    m_Key: raw_wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902839
+    m_Key: iron_ingot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902840
+    m_Key: processed_leather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902841
+    m_Key: processed_wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902842
+    m_Key: iron_sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902843
+    m_Key: leather_armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902844
+    m_Key: wooden_shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902845
+    m_Key: iron_core
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902846
+    m_Key: layered_wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902847
+    m_Key: raw_hide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902848
+    m_Key: iron_grip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902849
+    m_Key: leather_strap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902850
+    m_Key: shield_base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902851
+    m_Key: iron_core_grip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902852
+    m_Key: runed_leather_strap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902853
+    m_Key: leather_bound_shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902854
+    m_Key: copper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902855
+    m_Key: steel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902856
+    m_Key: wool
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902857
+    m_Key: copper_bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902858
+    m_Key: fabric
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902859
+    m_Key: steel_bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902860
+    m_Key: helm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902861
+    m_Key: horse_shoe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902862
+    m_Key: vest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902863
+    m_Key: raw_arcane_crystal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902864
+    m_Key: copper_ingot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902865
+    m_Key: iron_lump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902866
+    m_Key: claw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902867
+    m_Key: crystal_core
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902868
+    m_Key: needle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902869
+    m_Key: hook
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902870
+    m_Key: syringe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902871
+    m_Key: wooden_horn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902872
+    m_Key: leather_horn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902873
+    m_Key: tree_injector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902874
+    m_Key: winch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902875
+    m_Key: hemp_fiber_bundle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902876
+    m_Key: high_carbon_steel_ingot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902877
+    m_Key: raw_iron_lump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902878
+    m_Key: hemp_cord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902879
+    m_Key: bucket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902880
+    m_Key: forged_steel_prod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902881
+    m_Key: rope_handled_wooden_chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902882
+    m_Key: strung_steel_prod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902883
+    m_Key: wooden_bucket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902884
+    m_Key: arbalest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902885
+    m_Key: merchants_trunk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902886
+    m_Key: water_bucket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902887
+    m_Key: crude_glass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902888
+    m_Key: raw_granite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902889
+    m_Key: raw_marble
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902890
+    m_Key: glass_lens
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902891
+    m_Key: granite_vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902892
+    m_Key: marble_stamp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902893
+    m_Key: altar_lamp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902894
+    m_Key: brass_compass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902895
+    m_Key: brass_signet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902896
+    m_Key: mariners
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902897
+    m_Key: noble_signet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902898
+    m_Key: sanctuary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902899
+    m_Key: flexible_wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902900
+    m_Key: raw_tar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902901
+    m_Key: wood_log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902902
+    m_Key: iron_rim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902903
+    m_Key: wooden_ladder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902904
+    m_Key: tar_swab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902905
+    m_Key: wooden_bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902906
+    m_Key: fire_arrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902907
+    m_Key: fireproof_ladder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902908
+    m_Key: heavy_shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902909
+    m_Key: reinforced_bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902910
+    m_Key: metal_buckle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902911
+    m_Key: thread_needle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902912
+    m_Key: wooden_last
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902913
+    m_Key: carved_heel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902914
+    m_Key: sewn_lining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902915
+    m_Key: tanned_leather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902916
+    m_Key: fur_cloak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902917
+    m_Key: leather_boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902918
+    m_Key: studded_belt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902919
+    m_Key: waterskin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902920
+    m_Key: forging_hammer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902921
+    m_Key: iron_ore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902922
+    m_Key: leather_wrap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874304
+    m_Key: whetstone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874305
+    m_Key: blunt_axe_head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874306
+    m_Key: harness_straps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874307
+    m_Key: sharpened_tip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874308
+    m_Key: battle_axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874309
+    m_Key: knight_sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874310
+    m_Key: plate_armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874311
+    m_Key: steel_spear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874312
+    m_Key: bronze_scrap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874313
+    m_Key: hemp_fiber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874314
+    m_Key: harness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874315
+    m_Key: oak_trunk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874316
+    m_Key: bronze_gear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874317
+    m_Key: heavy_cables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874318
+    m_Key: mounted_frame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874319
+    m_Key: peeled_log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874320
+    m_Key: iron_capped
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874321
+    m_Key: torsion_winch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874322
+    m_Key: tower_frame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874323
+    m_Key: wooden_firing_bed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874324
+    m_Key: armored_siege_tower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874325
+    m_Key: flaming_balista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874326
+    m_Key: heavy_battering_ram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874327
+    m_Key: siege_catapult
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8951245186363818139
+  references:
+    version: 2
+    RefIds:
+    - rid: 8951245186363818139
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1785779956437

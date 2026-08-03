@@ -1,0 +1,967 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: CardNames_tr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: tr
+  m_SharedData: {fileID: 11400000, guid: 3cc8582d4f9178f4181e29087708fc3a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6325026816
+    m_Localized: "Lav Ta\u015Flar\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6530547712
+    m_Localized: "Meteor Kayas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154048
+    m_Localized: "Gece \xC7i\xE7e\u011Fi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154049
+    m_Localized: "\xC7i\xE7ek \xD6z\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154050
+    m_Localized: Lav Tozu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154051
+    m_Localized: Meteorlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154052
+    m_Localized: "Kaynayan S\u0131v\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154053
+    m_Localized: "Karanl\u0131k J\xF6le"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154054
+    m_Localized: "G\xFC\xE7lendirilmi\u015F S\u0131v\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154055
+    m_Localized: "Anka Ku\u015Fu \u0130ksiri"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154056
+    m_Localized: "G\xF6lge \xD6z\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154057
+    m_Localized: "G\xF6kg\xFCr\xFClt\xFCs\xFC Ta\u015F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154058
+    m_Localized: Ham Et
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154059
+    m_Localized: "Domates Kasas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154060
+    m_Localized: "Bu\u011Fday \xC7uval\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154061
+    m_Localized: Hamur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154062
+    m_Localized: "K\u0131yma"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154063
+    m_Localized: "Dilimlenmi\u015F Domates"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154064
+    m_Localized: Ekmek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154065
+    m_Localized: "Pi\u015Fmi\u015F K\xF6fte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154066
+    m_Localized: Domates Sosu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154067
+    m_Localized: "Milf\xF6y Hamuru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154068
+    m_Localized: Ham Dana Eti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154069
+    m_Localized: "Pi\u015Fmi\u015F Bolonez"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154070
+    m_Localized: "Baharatl\u0131 K\xF6fte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154071
+    m_Localized: "Il\u0131k Kek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154072
+    m_Localized: "F\u0131r\u0131nlanm\u0131\u015F Lazanya"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154073
+    m_Localized: "\xC7ikolatal\u0131 Sufle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154074
+    m_Localized: Gurme Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154075
+    m_Localized: "Sar\u0131msakl\u0131 Tereya\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154076
+    m_Localized: Ham Biftek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154077
+    m_Localized: "Tart Taban\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154078
+    m_Localized: "\xC7\u0131t\u0131r Kabuk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154079
+    m_Localized: "Marine Edilmi\u015F Biftek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154080
+    m_Localized: "Eritilmi\u015F S\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154081
+    m_Localized: "F\u0131r\u0131nlanm\u0131\u015F Somon"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154082
+    m_Localized: Meyveli Tart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154083
+    m_Localized: "M\xFCh\xFCrlenmi\u015F Biftek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154084
+    m_Localized: "Zeytinya\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154085
+    m_Localized: "Ham Past\u0131rma"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154086
+    m_Localized: Risotto Pirinci
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154087
+    m_Localized: "\xC7\u0131t\u0131r Past\u0131rma"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154088
+    m_Localized: Panko Topu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154089
+    m_Localized: "Aromatik Em\xFClsiyon"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154090
+    m_Localized: "Past\u0131rma Rag\xF9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154091
+    m_Localized: "F\u0131r\u0131nlanm\u0131\u015F Focaccia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154092
+    m_Localized: "\xC7\u0131t\u0131r Top"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154093
+    m_Localized: Arancini
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154094
+    m_Localized: "Focaccia Taba\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154095
+    m_Localized: Dolgulu Calzone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154096
+    m_Localized: "Ac\u0131 Biber Ya\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154097
+    m_Localized: Un Hamuru
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154098
+    m_Localized: "Ham Tavuk Kanad\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154099
+    m_Localized: "K\u0131zarm\u0131\u015F Tavuk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154100
+    m_Localized: "Ham Mant\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154101
+    m_Localized: "Ac\u0131l\u0131 Dana Eti Harc\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154102
+    m_Localized: "Dana Eti ve Salsa Katman\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154103
+    m_Localized: "\xC7\u0131t\u0131r Mant\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154104
+    m_Localized: Sichuan Soteleme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154105
+    m_Localized: "Asya F\xFCzyon Taco"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154106
+    m_Localized: "S\u0131rl\u0131 Mant\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154107
+    m_Localized: "Kung Pao K\xE2sesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154108
+    m_Localized: "Burger Ekme\u011Fi Hamuru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154109
+    m_Localized: "Marine Edilmi\u015F Kaburga"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154110
+    m_Localized: "Ham Tortilla \u015Eeritleri"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154111
+    m_Localized: "K\u0131zarm\u0131\u015F Nacho Cipsi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154112
+    m_Localized: "F\xFCme Kaburga"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154113
+    m_Localized: "F\u0131r\u0131nlanm\u0131\u015F Brio\u015F Ekme\u011Fi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154114
+    m_Localized: "Peynirli Nacho Katman\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154115
+    m_Localized: "\xC7\u0131t\u0131r Telli Domuz Eti"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154116
+    m_Localized: "K\u0131zart\u0131lm\u0131\u015F Ekmek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154117
+    m_Localized: "\xC7\u0131t\u0131r Bistro Burger"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154118
+    m_Localized: "Dolgun BBQ D\xFCr\xFCm"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902784
+    m_Localized: Dolgun Nacho Teknesi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902785
+    m_Localized: "A\u011F\u0131r Krema"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902786
+    m_Localized: "Ham Kakao Ya\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902787
+    m_Localized: "Tatl\u0131 Milf\xF6y Hamuru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902788
+    m_Localized: "So\u011Futulmu\u015F Krema Sos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902789
+    m_Localized: Lav Kek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902790
+    m_Localized: "\u015Eekillendirilmi\u015F Tart Kabu\u011Fu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902791
+    m_Localized: "F\u0131r\u0131nlanm\u0131\u015F Alt\u0131n Kabuk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902792
+    m_Localized: "So\u011Futulmu\u015F Kabuklu Pasta"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902793
+    m_Localized: "Islat\u0131lm\u0131\u015F Brio\u015F Tost"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902794
+    m_Localized: "Karamelize Frans\u0131z Tostu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902795
+    m_Localized: "Dondurmal\u0131 Tart"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902796
+    m_Localized: "Ak\u0131\u015Fkan Kek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902797
+    m_Localized: "Tavuk \u015Eeridi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902798
+    m_Localized: "Taze Dolmal\u0131k Biber"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902799
+    m_Localized: Ham Sosis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902800
+    m_Localized: Tahin Sosu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902801
+    m_Localized: "Galetal\u0131 Tavuk \u015Eeridi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902802
+    m_Localized: "Kavrulmu\u015F Biber"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902803
+    m_Localized: "\xD6n K\u0131zart\u0131lm\u0131\u015F Sosis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902804
+    m_Localized: "Soslu D\xFCr\xFCm Taban\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902805
+    m_Localized: "\xC7\u0131t\u0131r Tavuk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902806
+    m_Localized: "Falafel D\xFCr\xFCm"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902807
+    m_Localized: "Gurme Biftek K\xE2sesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902808
+    m_Localized: "F\xFCme BBQ Sosis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902809
+    m_Localized: Oaxaca Peyniri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902810
+    m_Localized: Ham Masa Hamuru
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902811
+    m_Localized: Salsa Roja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902812
+    m_Localized: "F\xFCme Dana Eti"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902813
+    m_Localized: Peynirli Taban
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902814
+    m_Localized: "Nacho Taba\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902815
+    m_Localized: "Preslenmi\u015F Masa Hamuru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902816
+    m_Localized: Telli Dana Eti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902817
+    m_Localized: "Barbacoa K\xE2sesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902818
+    m_Localized: Birria Taco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902819
+    m_Localized: Fiesta Nachos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902820
+    m_Localized: "Il\u0131k Tortilla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902821
+    m_Localized: "\xC7\u0131t\u0131r Tofu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902822
+    m_Localized: Ham Tavuk Dilimi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902823
+    m_Localized: Ham Hamur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902824
+    m_Localized: "K\u0131zarm\u0131\u015F Tofu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902825
+    m_Localized: "M\xFCh\xFCrlenmi\u015F Tavuk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902826
+    m_Localized: "Ac\u0131l\u0131 Sos Taban\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902827
+    m_Localized: "Buharda Pi\u015Fmi\u015F Bao"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902828
+    m_Localized: "\xC7\u0131t\u0131r Katsu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902829
+    m_Localized: "S\u0131rl\u0131 Bao"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902830
+    m_Localized: "Tavada K\u0131zart\u0131lm\u0131\u015F Mant\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902831
+    m_Localized: "Soslu Tofu K\xE2sesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902832
+    m_Localized: "\xC7\u0131t\u0131r Bao"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902833
+    m_Localized: "Buharda Pi\u015Fmi\u015F Dolgun Mant\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902834
+    m_Localized: "Teriyaki Katsu K\xE2sesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902835
+    m_Localized: Wokta Sote Ramen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902836
+    m_Localized: Deri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902837
+    m_Localized: Ham Demir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902838
+    m_Localized: "Ham Ah\u015Fap"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902839
+    m_Localized: "Demir K\xFCl\xE7e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902840
+    m_Localized: "\u0130\u015Flenmi\u015F Deri"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902841
+    m_Localized: "\u0130\u015Flenmi\u015F Ah\u015Fap"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902842
+    m_Localized: "Demir K\u0131l\u0131\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902843
+    m_Localized: "Deri Z\u0131rh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902844
+    m_Localized: "Ah\u015Fap Kalkan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902845
+    m_Localized: "Demir \u0130\xE7 \xC7ekirdek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902846
+    m_Localized: "Katmanl\u0131 Ah\u015Fap"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902847
+    m_Localized: Ham Post
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902848
+    m_Localized: Demir Sap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902849
+    m_Localized: "Deri Kay\u0131\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902850
+    m_Localized: "Kalkan Taban\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902851
+    m_Localized: "Demir \xC7ekirdekli Sap"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902852
+    m_Localized: "Runik Deri Kay\u0131\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902853
+    m_Localized: "Deri Kapl\u0131 Kalkan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902854
+    m_Localized: "Ham Bak\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902855
+    m_Localized: "\xC7elik"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902856
+    m_Localized: "Ham Y\xFCn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902857
+    m_Localized: "Bak\u0131r K\xFCl\xE7e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902858
+    m_Localized: "Kuma\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902859
+    m_Localized: "\xC7elik \xC7ubuk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902860
+    m_Localized: "Mi\u011Ffer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902861
+    m_Localized: Nal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902862
+    m_Localized: Yelek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902863
+    m_Localized: Ham Arkane Kristali
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902864
+    m_Localized: "\u0130\u015Flenmemi\u015F Bak\u0131r K\xFCl\xE7e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902865
+    m_Localized: "Ham Demir K\xFCl\xE7esi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902866
+    m_Localized: "D\xF6vme Kanca Pen\xE7e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902867
+    m_Localized: "Rezonans Kristal \xC7ekirde\u011Fi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902868
+    m_Localized: "Bak\u0131r G\xFCbreleme \u0130\u011Fnesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902869
+    m_Localized: "Vin\xE7 Kancas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902870
+    m_Localized: "B\xFCy\xFCl\xFC Botanik\xE7i \u015E\u0131r\u0131ngas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902871
+    m_Localized: "Ah\u015Fap Rezonans Borusu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902872
+    m_Localized: "Sava\u015F \xC7a\u011Fr\u0131 Borusu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902873
+    m_Localized: "Arkane A\u011Fa\xE7 Enjekt\xF6r\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902874
+    m_Localized: "Deri Kavramal\u0131 Vin\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902875
+    m_Localized: Kenevir Lifi Demeti
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902876
+    m_Localized: "Y\xFCksek Karbonlu \xC7elik K\xFCl\xE7e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902877
+    m_Localized: "Ham Demir K\xFCl\xE7esi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902878
+    m_Localized: "\xD6r\xFClm\xFC\u015F Kenevir \u0130pi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902879
+    m_Localized: "Demir \xC7emberli Kova"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902880
+    m_Localized: "D\xF6vme \xC7elik U\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902881
+    m_Localized: "\u0130p Sapl\u0131 Ah\u015Fap Sand\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902882
+    m_Localized: "Ba\u011Flanm\u0131\u015F \xC7elik U\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902883
+    m_Localized: "Bitmemi\u015F Ah\u015Fap Kova"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902884
+    m_Localized: Arbalet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902885
+    m_Localized: "G\xFC\xE7lendirilmi\u015F T\xFCccar Sand\u0131\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902886
+    m_Localized: "Deri Kapl\u0131 Su Kovas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902887
+    m_Localized: Ham Cam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902888
+    m_Localized: Ham Granit Levha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902889
+    m_Localized: Ham Mermer Blok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902890
+    m_Localized: Cam Mercek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902891
+    m_Localized: Granit Kap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902892
+    m_Localized: "Mermer M\xFCh\xFCr"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902893
+    m_Localized: "Adak Lambas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902894
+    m_Localized: "Pirin\xE7 Pusula"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902895
+    m_Localized: "Pirin\xE7 M\xFCh\xFCr Y\xFCz\xFCk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902896
+    m_Localized: "Denizci S\u0131v\u0131 Pusulas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902897
+    m_Localized: "Asil M\xFCh\xFCr Y\xFCz\xFCk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902898
+    m_Localized: Kutsal Emanet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902899
+    m_Localized: "Esnek Ah\u015Fap"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902900
+    m_Localized: Ham Katran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902901
+    m_Localized: "Odun K\xFCt\xFC\u011F\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902902
+    m_Localized: Demir Jant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902903
+    m_Localized: "Ah\u015Fap Merdiven"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902904
+    m_Localized: "Katran F\u0131r\xE7as\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902905
+    m_Localized: "Ah\u015Fap Yay"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902906
+    m_Localized: "Ate\u015F Oku"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902907
+    m_Localized: Yanmaz Merdiven
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902908
+    m_Localized: "A\u011F\u0131r Kalkan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902909
+    m_Localized: "G\xFC\xE7lendirilmi\u015F Yay"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902910
+    m_Localized: Metal Toka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902911
+    m_Localized: "\u0130plik ve \u0130\u011Fne"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902912
+    m_Localized: "Ah\u015Fap Kal\u0131p"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902913
+    m_Localized: "Oyulmu\u015F Topuk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902914
+    m_Localized: "Dikilmi\u015F Astar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902915
+    m_Localized: "Tabaklanm\u0131\u015F Deri"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902916
+    m_Localized: "K\xFCrk Pelerin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902917
+    m_Localized: "Deri \xC7izme"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902918
+    m_Localized: "Z\u0131mbal\u0131 Kemer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902919
+    m_Localized: Su Tulumu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902920
+    m_Localized: "D\xF6vme \xC7ekici"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902921
+    m_Localized: Demir Cevheri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902922
+    m_Localized: "Deri Sarg\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874304
+    m_Localized: "Bile\u011Fi Ta\u015F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874305
+    m_Localized: "K\xF6relmi\u015F Balta Ba\u015F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874306
+    m_Localized: "Ko\u015Fum Kay\u0131\u015Flar\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874307
+    m_Localized: "Bilenmi\u015F U\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874308
+    m_Localized: "Sava\u015F Baltas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874309
+    m_Localized: "\u015E\xF6valye K\u0131l\u0131c\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874310
+    m_Localized: "Levha Z\u0131rh"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874311
+    m_Localized: "\xC7elik M\u0131zrak"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874312
+    m_Localized: Bronz Hurda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874313
+    m_Localized: Kenevir Lifi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874314
+    m_Localized: "Ba\u011Flama Ko\u015Fum Tak\u0131m\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874315
+    m_Localized: "Me\u015Fe K\xFCt\xFC\u011F\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874316
+    m_Localized: "Bronz Di\u015Fli"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874317
+    m_Localized: "A\u011F\u0131r Kablolar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874318
+    m_Localized: "Monte Edilmi\u015F \u0130skelet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874319
+    m_Localized: "Soyulmu\u015F K\xFCt\xFCk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874320
+    m_Localized: "Demir U\xE7lu K\xFCt\xFCk"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874321
+    m_Localized: "Burulmal\u0131 Vin\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874322
+    m_Localized: "Kule \u0130skeleti"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874323
+    m_Localized: "Ah\u015Fap At\u0131\u015F Yata\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874324
+    m_Localized: "Z\u0131rhl\u0131 Ku\u015Fatma Kulesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874325
+    m_Localized: "Alevli Manc\u0131n\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874326
+    m_Localized: "A\u011F\u0131r Ko\xE7 Ba\u015F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874327
+    m_Localized: "Ku\u015Fatma Manc\u0131n\u0131\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

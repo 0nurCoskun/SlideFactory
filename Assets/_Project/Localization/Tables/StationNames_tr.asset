@@ -1,0 +1,203 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StationNames_tr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: tr
+  m_SharedData: {fileID: 11400000, guid: cbe3582f7490e884c8da373f794a5286, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 3598729216
+    m_Localized: Kazan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700736
+    m_Localized: "Kristalizasyon T\xFCp\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700737
+    m_Localized: "\u0130mbik"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700738
+    m_Localized: Havan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700739
+    m_Localized: "F\u0131r\u0131n Tezgah\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700740
+    m_Localized: "K\xF6m\xFCr Izgara"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700741
+    m_Localized: "So\u011Fuk Dondurma Tezgah\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700742
+    m_Localized: "Kesim Tezgah\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700743
+    m_Localized: "Derin Ya\u011F Frit\xF6z\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700744
+    m_Localized: "Hamur \u0130stasyonu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700745
+    m_Localized: Izgara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700746
+    m_Localized: "Y\xFCksek Is\u0131 Wok"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700747
+    m_Localized: Mikser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700748
+    m_Localized: "F\u0131r\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255168
+    m_Localized: "Paketleme \u0130stasyonu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255169
+    m_Localized: "Tabaklama Bar\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255170
+    m_Localized: "Haz\u0131rl\u0131k Tezgah\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255171
+    m_Localized: Sos Dispenseri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255172
+    m_Localized: "Sote \u0130stasyonu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255173
+    m_Localized: "T\xFCts\xFCleyici"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255174
+    m_Localized: "Buharlay\u0131c\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255175
+    m_Localized: Ocak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255176
+    m_Localized: Tortilla Presi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255177
+    m_Localized: Marangozhane
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255178
+    m_Localized: "Debba\u011Fhane"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255179
+    m_Localized: "R\xFCn Ustas\u0131 Suna\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255180
+    m_Localized: "\xD6rs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255181
+    m_Localized: "Montaj Tezgah\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255182
+    m_Localized: "Kesim \u0130stasyonu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255183
+    m_Localized: "D\xF6k\xFCm At\xF6lyesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255184
+    m_Localized: "Y\xFCksek F\u0131r\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255185
+    m_Localized: "Bile\u011Fi \xC7ark\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3686809600
+    m_Localized: "Dokuma Tezgah\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3686809601
+    m_Localized: "Ya\u011F Presi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198208
+    m_Localized: "Boya At\xF6lyesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198209
+    m_Localized: "Halat At\xF6lyesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198210
+    m_Localized: "B\u0131\xE7k\u0131hane"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198211
+    m_Localized: "Diki\u015F Masas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198212
+    m_Localized: "Diki\u015F Makinesi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198213
+    m_Localized: "Kundurac\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198214
+    m_Localized: "Eritme Oca\u011F\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198215
+    m_Localized: "Kay\u0131\u015F Presi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364032
+    m_Localized: "Tekerlek\xE7i"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364033
+    m_Localized: "\xC7al\u0131\u015Fma Tezgah\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364034
+    m_Localized: "At\xF6lye"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

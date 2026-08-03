@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_tr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: tr
+  m_SharedData: {fileID: 11400000, guid: 934743546a7e87749b796cd57aae4666, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2059419648
+    m_Localized: "\xD6\u011Fretici tamamland\u0131! Art\u0131k ger\xE7ek oyuna haz\u0131rs\u0131n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585472
+    m_Localized: "Kart\u0131, o kenarda g\xF6sterilen istasyona do\u011Fru kayd\u0131r.
+      Yanl\u0131\u015F istasyon mu? Sorun de\u011Fil - kart sadece s\u0131f\u0131rlan\u0131r!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585473
+    m_Localized: "Hata! Yanl\u0131\u015F istasyon - kart ham haline geri d\xF6nd\xFC.
+      \u0130stasyon etiketlerini takip et!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585474
+    m_Localized: "Harika! Do\u011Fru kayd\u0131rmalar kart\u0131 ilerletir. \u0130stasyonlar
+      zamanla yer de\u011Fi\u015Ftirir, dikkatli ol!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585475
+    m_Localized: 'Ham Madde: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585476
+    m_Localized: "\u0130stasyon Kar\u0131\u015Fmas\u0131: {0}-{1}sn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585477
+    m_Localized: "S\xFCre Limiti: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585478
+    m_Localized: ": {0} i\xE7inde bitir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585479
+    m_Localized: ": {0} i\xE7inde bitir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585480
+    m_Localized: Devam Et
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585481
+    m_Localized: Duraklat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585482
+    m_Localized: "Yeniden Ba\u015Fla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585483
+    m_Localized: "Ana Men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585484
+    m_Localized: Seviyeler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585485
+    m_Localized: Ayarlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585486
+    m_Localized: Oyna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585487
+    m_Localized: "\xC7\u0131k\u0131\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585488
+    m_Localized: Geri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585489
+    m_Localized: "M\xFCzik"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585490
+    m_Localized: Efekt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585491
+    m_Localized: "\u0130lerlemeyi S\u0131f\u0131rla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585492
+    m_Localized: Tarifler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585493
+    m_Localized: Kapat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585494
+    m_Localized: Sonraki Seviye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585495
+    m_Localized: Tebrikler!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585496
+    m_Localized: "S\xFCre Doldu!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585497
+    m_Localized: Malzemeler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585498
+    m_Localized: "Seviye Ad\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585499
+    m_Localized: "\u0130stasyon Kar\u0131\u015Fmas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585500
+    m_Localized: "Toplam S\xFCre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585501
+    m_Localized: "\xDC\xE7 Y\u0131ld\u0131z S\xFCresi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585502
+    m_Localized: "\u0130ki Y\u0131ld\u0131z S\xFCresi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585503
+    m_Localized: "\xD6\u011Fretici"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585504
+    m_Localized: Mutfak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585505
+    m_Localized: "Orta \xC7a\u011F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585506
+    m_Localized: Dil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585507
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585508
+    m_Localized: "T\xFCrk\xE7e"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

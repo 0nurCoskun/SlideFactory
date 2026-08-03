@@ -55,6 +55,7 @@ public class CardView : MonoBehaviour
     private CardInstance _pendingNextCard;
     private bool _hasPendingCard;
     private Sequence _activeSequence;
+    private CardData _currentCardData;
 
     private void Awake()
     {
@@ -91,6 +92,11 @@ public class CardView : MonoBehaviour
             gameManager.OnCardChanged += HandleCardChanged;
             gameManager.OnDeckEmptied += HandleDeckEmptied;
         }
+
+        if (LocalizationManager.Instance != null)
+        {
+            LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+        }
     }
 
     private void OnDisable()
@@ -109,7 +115,17 @@ public class CardView : MonoBehaviour
             gameManager.OnDeckEmptied -= HandleDeckEmptied;
         }
 
+        if (LocalizationManager.Instance != null)
+        {
+            LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
+        }
+
         _activeSequence?.Kill();
+    }
+
+    private void HandleLanguageChanged(LocalizationManager.Language language)
+    {
+        RefreshNameText();
     }
 
     // --- Sürükleme sırasında canlı takip (DOTween kullanılmaz, direkt transform) ---
@@ -267,18 +283,23 @@ public class CardView : MonoBehaviour
             iconArtImage.gameObject.SetActive(hasIcon);
         }
 
-        if (nameText != null)
-        {
-            nameText.text = card.Data.displayName;
-            // Obje bu frame'de inaktiften aktife geçtiyse TMP bazen mesh'i
-            // hemen yeniden çizmiyor (text doğru ama görsel güncellenmiyor).
-            // Bu satır o ilk kare gecikmesini zorla düzeltir.
-            nameText.ForceMeshUpdate();
-        }
+        _currentCardData = card.Data;
+        RefreshNameText();
 
         _activeSequence?.Kill();
         _activeSequence = DOTween.Sequence();
         _activeSequence.Append(cardRectTransform.DOScale(Vector3.one, entranceDuration).SetEase(entranceEase));
+    }
+
+    private void RefreshNameText()
+    {
+        if (nameText == null || _currentCardData == null) return;
+
+        nameText.text = GameLocalization.GetCardName(_currentCardData);
+        // Obje bu frame'de inaktiften aktife geçtiyse TMP bazen mesh'i
+        // hemen yeniden çizmiyor (text doğru ama görsel güncellenmiyor).
+        // Bu satır o ilk kare gecikmesini zorla düzeltir.
+        nameText.ForceMeshUpdate();
     }
 
     private static Vector2 DirectionToVector(SwipeDirection direction)

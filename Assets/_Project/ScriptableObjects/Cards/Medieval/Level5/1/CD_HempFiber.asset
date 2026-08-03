@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
   m_Name: CD_HempFiber
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: hemp_fiber
+  cardId: hemp_fiber_bundle
   displayName: Hemp Fiber Bundle
   description: 
   icon: {fileID: 0}

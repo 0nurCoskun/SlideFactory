@@ -1,0 +1,203 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StationNames_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: cbe3582f7490e884c8da373f794a5286, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 3598729216
+    m_Localized: Cauldron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700736
+    m_Localized: Crystallaziton Tube
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700737
+    m_Localized: Distiller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700738
+    m_Localized: Mortar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700739
+    m_Localized: Bakery Bench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700740
+    m_Localized: Charcoal Grill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700741
+    m_Localized: Cold Freezing Bench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700742
+    m_Localized: Cutting Table
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700743
+    m_Localized: Deep Fryer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700744
+    m_Localized: Dough Station
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700745
+    m_Localized: Grill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700746
+    m_Localized: High Heat Wok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700747
+    m_Localized: Mixer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700748
+    m_Localized: Oven
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255168
+    m_Localized: Packer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255169
+    m_Localized: Plating Bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255170
+    m_Localized: Prep Counter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255171
+    m_Localized: Sauce Dispenser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255172
+    m_Localized: Saute Station
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255173
+    m_Localized: Smoker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255174
+    m_Localized: Steam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255175
+    m_Localized: Stove
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255176
+    m_Localized: Tortilla Press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255177
+    m_Localized: Carpentry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255178
+    m_Localized: Tannery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255179
+    m_Localized: Runesmith Altar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255180
+    m_Localized: Anvil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255181
+    m_Localized: Assembly Bench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255182
+    m_Localized: Cutting Station
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255183
+    m_Localized: Foundry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255184
+    m_Localized: Furnace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255185
+    m_Localized: Grindstone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3686809600
+    m_Localized: Loom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3686809601
+    m_Localized: Oil Press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198208
+    m_Localized: Paint Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198209
+    m_Localized: Ropewalk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198210
+    m_Localized: Sawmill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198211
+    m_Localized: Sewing Desk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198212
+    m_Localized: Sewing Machine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198213
+    m_Localized: Shoemaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198214
+    m_Localized: Smelter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198215
+    m_Localized: Strap Press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364032
+    m_Localized: Wheelwright
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364033
+    m_Localized: Workbench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364034
+    m_Localized: Workshop
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
