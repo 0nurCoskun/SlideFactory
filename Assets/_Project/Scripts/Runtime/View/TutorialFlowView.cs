@@ -27,14 +27,12 @@ public class TutorialFlowView : MonoBehaviour
     [SerializeField] private float hintDisplayDuration = 4.5f;
 
     [Header("Tamamlanma")]
-    [SerializeField] private string completionText = "Tutorial complete! You're ready to play for real.";
     [SerializeField] private float delayBeforeReturn = 1.8f;
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
-    [Header("İpucu Metinleri")]
-    [SerializeField] private string firstCardHint = "Swipe the card toward the station shown on that edge. Wrong station? No worries - it just resets!";
-    [SerializeField] private string wrongSwipeHint = "Oops! Wrong station - the card went back to raw. Watch the station labels!";
-    [SerializeField] private string correctSwipeHint = "Nice! Correct swipes move the card forward. Stations reshuffle over time, so stay alert!";
+    // İpucu metinleri artık "UI" String Table'dan (Assets/_Project/Localization/UIStrings.json
+    // kaynaklı) GameLocalization.GetUIString ile çekiliyor - bkz. tutorial_completion,
+    // tutorial_hint_first_card, tutorial_hint_wrong_swipe, tutorial_hint_correct_swipe.
 
     [Header("Tarif ('?') Butonu Shake Uyarısı")]
     [Tooltip("Yanlış swipe'ta dikkat çekmesi için sallanacak 'Show Recipe (?)' butonu. Oyuncu butona her bastığında (StopRecipeButtonShake Inspector'da OnClick'e bağlanmalı) sallanma durur; sonraki yanlış swipe'ta tekrar başlar.")]
@@ -95,7 +93,7 @@ public class TutorialFlowView : MonoBehaviour
     {
         if (_hasShownFirstCardHint) return;
         _hasShownFirstCardHint = true;
-        ShowHint(firstCardHint);
+        ShowHint(GameLocalization.GetUIString("tutorial_hint_first_card"));
     }
 
     private void HandleInvalidSwipe(SwipeDirection direction, StationData station)
@@ -103,7 +101,7 @@ public class TutorialFlowView : MonoBehaviour
         if (!_hasShownWrongHint)
         {
             _hasShownWrongHint = true;
-            ShowHint(wrongSwipeHint);
+            ShowHint(GameLocalization.GetUIString("tutorial_hint_wrong_swipe"));
         }
 
         TriggerRecipeButtonShake();
@@ -123,12 +121,12 @@ public class TutorialFlowView : MonoBehaviour
     {
         if (_hasShownCorrectHint) return;
         _hasShownCorrectHint = true;
-        ShowHint(correctSwipeHint);
+        ShowHint(GameLocalization.GetUIString("tutorial_hint_correct_swipe"));
     }
 
     private void HandleLevelWon(int stars)
     {
-        ShowHint(completionText, autoHide: false);
+        ShowHint(GameLocalization.GetUIString("tutorial_completion"), autoHide: false);
         Invoke(nameof(ReturnToMainMenu), delayBeforeReturn);
     }
 

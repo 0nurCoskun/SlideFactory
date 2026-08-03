@@ -15,9 +15,10 @@ MonoBehaviour:
   cardId: heavy_cream
   displayName: Heavy Cream
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 4189537800007821376, guid: 75eb8cfd2520b6649ac88d465cc12447, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 0}
+  rawStageVersion: {fileID: 11400000}
   outcomes:
   - station: {fileID: 11400000, guid: c08d441cffe376e4ab75d1b712641c58, type: 2}
     resultCard: {fileID: 11400000, guid: 8ff4aa30ae7fae6408ddf89e6b465b35, type: 2}

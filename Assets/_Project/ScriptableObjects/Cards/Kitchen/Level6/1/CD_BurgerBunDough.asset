@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: burger_bun_dough
   displayName: Burger Bun Dough
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 5848005285421614229, guid: 24c28b7250e6b4443bfb0e37bc565304, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: raw_steak
   displayName: Raw Steak
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 2494269248803344630, guid: 598cff456a0cbf74aae09721f4ce5609, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

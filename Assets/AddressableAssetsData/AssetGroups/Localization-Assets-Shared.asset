@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-Assets-Shared
+  m_GUID: 688ff35bbd11e4049a2dd4fc95fa11c0
+  m_SerializeEntries:
+  - m_GUID: 3cc8582d4f9178f4181e29087708fc3a
+    m_Address: Assets/_Project/Localization/Tables/CardNames Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51e7c6f6ed2a2ed4b966e65394892831
+    m_Address: Assets/_Project/Localization/Tables/LevelNames Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 934743546a7e87749b796cd57aae4666
+    m_Address: Assets/_Project/Localization/Tables/UI Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbe3582f7490e884c8da373f794a5286
+    m_Address: Assets/_Project/Localization/Tables/StationNames Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 34223db5401981e40a052c9227945900, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7a5391086376afc4ab8277f6ff024130, type: 2}
+    - {fileID: 11400000, guid: 8d5c0d568d4aac941b64f2c5231e73b2, type: 2}
+    m_SchemaDisplayOrder:
+    - Localization-Assets-Shared_BundledAssetGroupSchema
+    - Localization-Assets-Shared_ContentUpdateGroupSchema
+  m_IncludeInBuild: 1
+  m_IncludeInBuildMigrated: 1

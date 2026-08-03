@@ -52,9 +52,23 @@ public class RecipePreviewView : MonoBehaviour
 
     private bool _hasPopulatedOnce;
 
+    private void OnEnable()
+    {
+        if (LocalizationManager.Instance != null)
+            LocalizationManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+    }
+
     private void OnDisable()
     {
+        if (LocalizationManager.Instance != null)
+            LocalizationManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
+
         _containerTween?.Kill();
+    }
+
+    private void HandleLanguageChanged(LocalizationManager.Language language)
+    {
+        if (_hasPopulatedOnce) PopulateChains();
     }
 
     private void Start()
@@ -194,13 +208,13 @@ public class RecipePreviewView : MonoBehaviour
 
         for (int i = 0; i < steps.Count; i++)
         {
-            string cardName = steps[i].Card != null ? steps[i].Card.displayName : "???";
+            string cardName = steps[i].Card != null ? GameLocalization.GetCardName(steps[i].Card) : "???";
             sb.Append(string.Format(cardNameFormat, cardName));
 
             if (steps[i].StationToNext != null)
             {
                 sb.Append(stepSeparator);
-                sb.Append(string.Format(stationWrapFormat, steps[i].StationToNext.displayName));
+                sb.Append(string.Format(stationWrapFormat, GameLocalization.GetStationName(steps[i].StationToNext)));
             }
 
             // Son adım değilse, bir sonraki adımı YENİ SATIRA (ve zincirin numarasıyla hizalı girintiye) yaz.

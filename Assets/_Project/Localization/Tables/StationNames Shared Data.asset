@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StationNames Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: StationNames
+  m_TableCollectionNameGuidString: cbe3582f7490e884c8da373f794a5286
+  m_Entries:
+  - m_Id: 3598729216
+    m_Key: cauldron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700736
+    m_Key: crystallization
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700737
+    m_Key: distiller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700738
+    m_Key: mortar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700739
+    m_Key: bakery_bench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700740
+    m_Key: charcoal_grill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700741
+    m_Key: cold_freezing_bench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700742
+    m_Key: cutting_table
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700743
+    m_Key: deep_fryer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700744
+    m_Key: dough_station
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700745
+    m_Key: grill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700746
+    m_Key: high_heat_wok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700747
+    m_Key: mixer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3619700748
+    m_Key: oven
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255168
+    m_Key: packer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255169
+    m_Key: plating_bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255170
+    m_Key: prep_counter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255171
+    m_Key: sauce_dispenser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255172
+    m_Key: saute_station
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255173
+    m_Key: smoker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255174
+    m_Key: steam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255175
+    m_Key: stove
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255176
+    m_Key: tortilla_press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255177
+    m_Key: carpentry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255178
+    m_Key: tannery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255179
+    m_Key: altar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255180
+    m_Key: anvil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255181
+    m_Key: assembly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255182
+    m_Key: cutting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255183
+    m_Key: foundry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255184
+    m_Key: furnace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3653255185
+    m_Key: grindstone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3686809600
+    m_Key: loom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3686809601
+    m_Key: oil_press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198208
+    m_Key: paint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198209
+    m_Key: ropewalk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198210
+    m_Key: sawmill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198211
+    m_Key: sewing_desk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198212
+    m_Key: sewing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198213
+    m_Key: shoemaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198214
+    m_Key: smelter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3695198215
+    m_Key: strap_press
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364032
+    m_Key: wheelwright
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364033
+    m_Key: workbench
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3720364034
+    m_Key: workshop
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8951245186363818140
+  references:
+    version: 2
+    RefIds:
+    - rid: 8951245186363818140
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1785779957205

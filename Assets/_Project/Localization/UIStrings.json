@@ -1,0 +1,67 @@
+{
+  "tutorial_completion": {
+    "en": "Tutorial complete! You're ready to play for real.",
+    "tr": "Öğretici tamamlandı! Artık gerçek oyuna hazırsın."
+  },
+  "tutorial_hint_first_card": {
+    "en": "Swipe the card toward the station shown on that edge. Wrong station? No worries - it just resets!",
+    "tr": "Kartı, o kenarda gösterilen istasyona doğru kaydır. Yanlış istasyon mu? Sorun değil - kart sadece sıfırlanır!"
+  },
+  "tutorial_hint_wrong_swipe": {
+    "en": "Oops! Wrong station - the card went back to raw. Watch the station labels!",
+    "tr": "Hata! Yanlış istasyon - kart ham haline geri döndü. İstasyon etiketlerini takip et!"
+  },
+  "tutorial_hint_correct_swipe": {
+    "en": "Nice! Correct swipes move the card forward. Stations reshuffle over time, so stay alert!",
+    "tr": "Harika! Doğru kaydırmalar kartı ilerletir. İstasyonlar zamanla yer değiştirir, dikkatli ol!"
+  },
+  "level_info_raw_materials": {
+    "en": "Raw Materials: {0}",
+    "tr": "Ham Madde: {0}"
+  },
+  "level_info_station_shuffle": {
+    "en": "Station Shuffle: {0}-{1}s",
+    "tr": "İstasyon Karışması: {0}-{1}sn"
+  },
+  "level_info_time_limit": {
+    "en": "Time Limit: {0}",
+    "tr": "Süre Limiti: {0}"
+  },
+  "level_info_three_star_finish": {
+    "en": ": finish within {0}",
+    "tr": ": {0} içinde bitir"
+  },
+  "level_info_two_star_finish": {
+    "en": ": finish within {0}",
+    "tr": ": {0} içinde bitir"
+  },
+  "ui_resume": { "en": "Resume", "tr": "Devam Et" },
+  "ui_pause": { "en": "Pause", "tr": "Duraklat" },
+  "ui_restart": { "en": "Restart", "tr": "Yeniden Başla" },
+  "ui_main_menu": { "en": "Main Menu", "tr": "Ana Menü" },
+  "ui_levels": { "en": "Levels", "tr": "Seviyeler" },
+  "ui_settings": { "en": "Settings", "tr": "Ayarlar" },
+  "ui_play": { "en": "Play", "tr": "Oyna" },
+  "ui_quit": { "en": "Quit", "tr": "Çıkış" },
+  "ui_back": { "en": "Back", "tr": "Geri" },
+  "ui_music": { "en": "Music", "tr": "Müzik" },
+  "ui_sfx": { "en": "SFX", "tr": "Efekt" },
+  "ui_reset_progress": { "en": "Reset Progress", "tr": "İlerlemeyi Sıfırla" },
+  "ui_recipes": { "en": "Recipes", "tr": "Tarifler" },
+  "ui_close": { "en": "Close", "tr": "Kapat" },
+  "ui_next_level": { "en": "Next Level", "tr": "Sonraki Seviye" },
+  "ui_win_text": { "en": "Well done!", "tr": "Tebrikler!" },
+  "ui_lose_text": { "en": "Time's Out!", "tr": "Süre Doldu!" },
+  "ui_ingredients": { "en": "Ingredients", "tr": "Malzemeler" },
+  "ui_level_name_label": { "en": "Level Name", "tr": "Seviye Adı" },
+  "ui_station_shuffle_label": { "en": "Station Shuffle", "tr": "İstasyon Karışması" },
+  "ui_total_duration_label": { "en": "Total Duration", "tr": "Toplam Süre" },
+  "ui_three_star_time_label": { "en": "Three Star Time", "tr": "Üç Yıldız Süresi" },
+  "ui_two_star_time_label": { "en": "Two Star Time", "tr": "İki Yıldız Süresi" },
+  "ui_tutorial_label": { "en": "Tutorial", "tr": "Öğretici" },
+  "ui_kitchen": { "en": "Kitchen", "tr": "Mutfak" },
+  "ui_medieval": { "en": "Medieval", "tr": "Orta Çağ" },
+  "ui_language": { "en": "Language", "tr": "Dil" },
+  "ui_language_english": { "en": "English", "tr": "English" },
+  "ui_language_turkish": { "en": "Turkish", "tr": "Türkçe" }
+}

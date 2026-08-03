@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: molten_lava_cake
   displayName: Molten Lava Cake
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 2968187183182496412, guid: b742145ed93d81649b4c1d7c1e0a7e34, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 9ccd6e981b9d618479121548175fba99, type: 2}
   outcomes:

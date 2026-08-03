@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: fried_nacho
   displayName: Fried Nacho Chips
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -6767617529614164080, guid: 7a76bf217a6a6804eab6f8aed3f18cd4, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: a77849760eb1ff34dbc3fee054b2b4dd, type: 2}
   outcomes:

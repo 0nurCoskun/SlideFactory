@@ -1,0 +1,967 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: CardNames_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 3cc8582d4f9178f4181e29087708fc3a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6325026816
+    m_Localized: Lava Stones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6530547712
+    m_Localized: Meteor Boulder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154048
+    m_Localized: Night Flower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154049
+    m_Localized: Flower Essence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154050
+    m_Localized: Lava Dust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154051
+    m_Localized: Meteorites
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154052
+    m_Localized: Boiling Liquid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154053
+    m_Localized: Dark Jelly
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154054
+    m_Localized: Enhanced Liquid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154055
+    m_Localized: Phoenix Elixir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154056
+    m_Localized: Shadow Essence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154057
+    m_Localized: Thunder Stone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154058
+    m_Localized: Raw Meat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154059
+    m_Localized: Tomato Crate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154060
+    m_Localized: Wheat Sack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154061
+    m_Localized: Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154062
+    m_Localized: Mince
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154063
+    m_Localized: Sliced Tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154064
+    m_Localized: Bread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154065
+    m_Localized: Cooked Meatball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154066
+    m_Localized: Tomato Sauce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154067
+    m_Localized: Pastry Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154068
+    m_Localized: Raw Beef
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154069
+    m_Localized: Cooked Bolognese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154070
+    m_Localized: Seasoned Patty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154071
+    m_Localized: Warm Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154072
+    m_Localized: Baked Lasagna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154073
+    m_Localized: Choco Souffle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154074
+    m_Localized: Gourmet Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154075
+    m_Localized: Garlic Butter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154076
+    m_Localized: Raw Steak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154077
+    m_Localized: Tart Base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154078
+    m_Localized: Crispy Shell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154079
+    m_Localized: MarinatedSteak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154080
+    m_Localized: Melted Glaze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154081
+    m_Localized: Baked Salmon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154082
+    m_Localized: Fruit Tart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154083
+    m_Localized: Seared Steak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154084
+    m_Localized: Olive Oil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154085
+    m_Localized: Raw Bacon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154086
+    m_Localized: Risotto Rice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154087
+    m_Localized: Crispy Bacon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154088
+    m_Localized: Panko Ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154089
+    m_Localized: Aromatic Emulsion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154090
+    m_Localized: "Bacon Rag\xF9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154091
+    m_Localized: Baked Focaccia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154092
+    m_Localized: Crispy Ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154093
+    m_Localized: Arancini
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154094
+    m_Localized: Focaccia Platter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154095
+    m_Localized: Stuffed Calzone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154096
+    m_Localized: Chili Oil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154097
+    m_Localized: Flour Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154098
+    m_Localized: Raw Chicken Wings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154099
+    m_Localized: Fried Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154100
+    m_Localized: Raw Dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154101
+    m_Localized: Spicy Beef Filling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154102
+    m_Localized: Beef & Salsa Layer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154103
+    m_Localized: Crispy Dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154104
+    m_Localized: Szechuan Stir-Fry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154105
+    m_Localized: Asian Fusion Taco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154106
+    m_Localized: Glazed Dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154107
+    m_Localized: Kung Pao Bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154108
+    m_Localized: Burger Bun Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154109
+    m_Localized: Marinated Ribs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154110
+    m_Localized: Raw Tortilla Strips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154111
+    m_Localized: Fried Nacho Chips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154112
+    m_Localized: Smoked Ribs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154113
+    m_Localized: Baked Brioche Bun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154114
+    m_Localized: Cheesy Nacho Layer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154115
+    m_Localized: Crispy Shredded Pork
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154116
+    m_Localized: Toasted Bun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154117
+    m_Localized: Crunchy Bistro Burger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6673154118
+    m_Localized: Loaded BBQ Wrap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902784
+    m_Localized: Loaded Nacho Boat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902785
+    m_Localized: Heavy Cream
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902786
+    m_Localized: Raw Cocoa Butter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902787
+    m_Localized: Sweet Pastry Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902788
+    m_Localized: Chilled Custard Dip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902789
+    m_Localized: Molten Lava Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902790
+    m_Localized: Shaped Tart Shell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902791
+    m_Localized: Baked Golden Shell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902792
+    m_Localized: Chilled Crust Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902793
+    m_Localized: Soaked Brioche Toast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902794
+    m_Localized: Caramelized French Toast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902795
+    m_Localized: Ice Cream Tart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902796
+    m_Localized: Molten Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902797
+    m_Localized: Chicken Tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902798
+    m_Localized: Fresh Bell Pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902799
+    m_Localized: Raw Sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902800
+    m_Localized: Tahini Sauce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902801
+    m_Localized: Breaded Tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902802
+    m_Localized: Charred Pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902803
+    m_Localized: Par-Fried Sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902804
+    m_Localized: Sauced Wrap Base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902805
+    m_Localized: Crispy Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902806
+    m_Localized: Falafel Wrap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902807
+    m_Localized: Gourmet Steak Bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902808
+    m_Localized: Smoked BBQ Sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902809
+    m_Localized: Oaxaca Cheese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902810
+    m_Localized: Raw Masa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902811
+    m_Localized: Salsa Roja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902812
+    m_Localized: Smoked Beef
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902813
+    m_Localized: Cheesy Base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902814
+    m_Localized: Nacho Platter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902815
+    m_Localized: Pressed Masa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902816
+    m_Localized: Shredded Beef
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902817
+    m_Localized: Barbacoa Bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902818
+    m_Localized: Birria Taco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902819
+    m_Localized: Fiesta Nachos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902820
+    m_Localized: Warm Tortilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902821
+    m_Localized: Crispy Tofu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902822
+    m_Localized: Raw Chicken Slice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902823
+    m_Localized: Raw Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902824
+    m_Localized: Fried Tofu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902825
+    m_Localized: Seared Chicken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902826
+    m_Localized: Spicy Sauce Base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902827
+    m_Localized: Steamed Bao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902828
+    m_Localized: Crispy Katsu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902829
+    m_Localized: Glazed Bao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902830
+    m_Localized: Pan Seared Dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902831
+    m_Localized: Sauced Tofu Bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902832
+    m_Localized: Crispy Bao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902833
+    m_Localized: Steamed Loaded Dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902834
+    m_Localized: Teriyaki Katsu Bowl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902835
+    m_Localized: Wok Tossed Ramen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902836
+    m_Localized: Leather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902837
+    m_Localized: Raw Iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902838
+    m_Localized: Raw Wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902839
+    m_Localized: Iron Ingot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902840
+    m_Localized: Processed Leather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902841
+    m_Localized: Processed Wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902842
+    m_Localized: Iron Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902843
+    m_Localized: Leather Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902844
+    m_Localized: Wooden Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902845
+    m_Localized: Iron Inner Core
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902846
+    m_Localized: Layered Wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902847
+    m_Localized: Raw Hide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902848
+    m_Localized: Iron Grip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902849
+    m_Localized: Leather Strap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902850
+    m_Localized: Shield Base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902851
+    m_Localized: Iron Core Grip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902852
+    m_Localized: Runed Leather Strap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902853
+    m_Localized: Leather Bound Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902854
+    m_Localized: Raw Copper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902855
+    m_Localized: Steel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902856
+    m_Localized: Raw Wool
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902857
+    m_Localized: Copper Bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902858
+    m_Localized: Fabric
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902859
+    m_Localized: Steel Bar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902860
+    m_Localized: Helm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902861
+    m_Localized: Horse Shoe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902862
+    m_Localized: Vest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902863
+    m_Localized: Raw Arcane Crystal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902864
+    m_Localized: Unrefined Copper Ingot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902865
+    m_Localized: Raw Iron Lump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902866
+    m_Localized: Forged Grappling Claw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902867
+    m_Localized: Resonating Crystal Core
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902868
+    m_Localized: Copper Fertilizer Needle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902869
+    m_Localized: Winch-Mounted Hook
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902870
+    m_Localized: Enchanted Botanist's Syringe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902871
+    m_Localized: Wooden Resonator Horn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902872
+    m_Localized: War-Caller's Leather Horn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902873
+    m_Localized: Arcane Tree Injector
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902874
+    m_Localized: Leather-Grip Grappling Winch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902875
+    m_Localized: Hemp Fiber Bundle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902876
+    m_Localized: High-Carbon Steel Ingot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902877
+    m_Localized: Raw Iron Lump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902878
+    m_Localized: Braided Hemp Cord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902879
+    m_Localized: Iron Bucket Hoops
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902880
+    m_Localized: Forged Steel Prod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902881
+    m_Localized: Rope-Handled Wooden Chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902882
+    m_Localized: Strung Steel Prod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902883
+    m_Localized: Unfinished Wooden Bucket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902884
+    m_Localized: Arbalest Crossbow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902885
+    m_Localized: Reinforced Merchant's Trunk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902886
+    m_Localized: Leather-Sealed Water Bucket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902887
+    m_Localized: Crude Glass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902888
+    m_Localized: Raw Granite Slab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902889
+    m_Localized: Raw Marble Block
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902890
+    m_Localized: Glass Lens
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902891
+    m_Localized: Granite Vessel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902892
+    m_Localized: Marble Stamp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902893
+    m_Localized: Altar Lamp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902894
+    m_Localized: Brass Compass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902895
+    m_Localized: Brass Signet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902896
+    m_Localized: Mariner's Liquid Compass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902897
+    m_Localized: Noble Signet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902898
+    m_Localized: Sanctuary Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902899
+    m_Localized: Flexible Wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902900
+    m_Localized: Raw Tar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902901
+    m_Localized: Wood Log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902902
+    m_Localized: Iron Rim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902903
+    m_Localized: Wooden Ladder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902904
+    m_Localized: Tar Swab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902905
+    m_Localized: Wooden Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902906
+    m_Localized: Fire Arrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902907
+    m_Localized: Fireproof Ladder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902908
+    m_Localized: Heavy Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902909
+    m_Localized: Reinforced Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902910
+    m_Localized: Metal Buckle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902911
+    m_Localized: Thread & Needle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902912
+    m_Localized: Wooden Last
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902913
+    m_Localized: Carved Heel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902914
+    m_Localized: Sewn Lining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902915
+    m_Localized: Tanned Leather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902916
+    m_Localized: Fur Cloak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902917
+    m_Localized: Leather Boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902918
+    m_Localized: Studded Belt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902919
+    m_Localized: Waterskin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902920
+    m_Localized: Forging Hammer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902921
+    m_Localized: Iron Ore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6710902922
+    m_Localized: Leather Wrap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874304
+    m_Localized: Whetstone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874305
+    m_Localized: Blunt Axe Head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874306
+    m_Localized: Harness Straps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874307
+    m_Localized: Sharpened Tip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874308
+    m_Localized: Battle Axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874309
+    m_Localized: Knight Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874310
+    m_Localized: Plate Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874311
+    m_Localized: Steel Spear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874312
+    m_Localized: Bronze Scrap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874313
+    m_Localized: Hemp Fiber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874314
+    m_Localized: Mounting Harness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874315
+    m_Localized: Oak Trunk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874316
+    m_Localized: Bronze Gear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874317
+    m_Localized: Heavy Cables
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874318
+    m_Localized: Mounted Frame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874319
+    m_Localized: Peeled Log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874320
+    m_Localized: Iron Capped Log
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874321
+    m_Localized: Torsion Winch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874322
+    m_Localized: Tower Frame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874323
+    m_Localized: Wooden Firing Bed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874324
+    m_Localized: Armored Siege Tower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874325
+    m_Localized: Flaming Ballista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874326
+    m_Localized: Heavy Battering Ram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6731874327
+    m_Localized: Siege Catapult
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: seasoned_patty
   displayName: Seasoned Patty
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -3510734380478021236, guid: c54feb6f688ae6b489c6cbfffba0d1a0, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 8abb93fe44da02f41a2681d29aa19ed1, type: 2}
   outcomes:

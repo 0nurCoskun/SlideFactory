@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: sweet_pastry_dough
   displayName: Sweet Pastry Dough
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -8803755292873394471, guid: 8b8bc62d0e788c54dac2f7a3f2eb6e1d, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

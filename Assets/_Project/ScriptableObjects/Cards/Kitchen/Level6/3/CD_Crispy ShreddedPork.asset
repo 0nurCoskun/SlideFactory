@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: crispy_shredded_pork
   displayName: Crispy Shredded Pork
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 8587846416940172702, guid: 917c5c16eb50f3f42809c7bef122d151, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: f49b0f1c6d1d2614e82be8fc8ee528e9, type: 2}
   outcomes:

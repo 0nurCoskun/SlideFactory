@@ -87,19 +87,22 @@ public class LevelInfoPanelView : MonoBehaviour
 
     private void PopulateInfo(LevelData level)
     {
-        if (levelNameText != null) levelNameText.text = level.displayName;
+        if (levelNameText != null) levelNameText.text = GameLocalization.GetLevelName(level);
 
         int uniqueRawCount = CountUniqueRawMaterials(level);
-        if (rawMaterialCountText != null) rawMaterialCountText.text = $"Raw Materials: {uniqueRawCount}";
+        if (rawMaterialCountText != null) rawMaterialCountText.text = GameLocalization.GetUIString("level_info_raw_materials", uniqueRawCount);
 
         if (stationShuffleText != null)
         {
-            stationShuffleText.text = $"Station Shuffle: {level.minStationShuffleInterval:0.#}-{level.maxStationShuffleInterval:0.#}s";
+            stationShuffleText.text = GameLocalization.GetUIString(
+                "level_info_station_shuffle",
+                level.minStationShuffleInterval.ToString("0.#"),
+                level.maxStationShuffleInterval.ToString("0.#"));
         }
 
         if (totalDurationText != null)
         {
-            totalDurationText.text = $"Time Limit: {FormatSeconds(level.levelDuration)}";
+            totalDurationText.text = GameLocalization.GetUIString("level_info_time_limit", FormatSeconds(level.levelDuration));
         }
 
         // Yıldız eşiği "kalan süre oranı" olarak tutuluyor (LevelData'da), burada
@@ -108,14 +111,14 @@ public class LevelInfoPanelView : MonoBehaviour
         {
             float maxRemainingForThreeStars = level.levelDuration * level.threeStarRemainingRatio;
             float timeLimitForThreeStars = level.levelDuration - maxRemainingForThreeStars;
-            threeStarTimeText.text = $": finish within {FormatSeconds(timeLimitForThreeStars)}";
+            threeStarTimeText.text = GameLocalization.GetUIString("level_info_three_star_finish", FormatSeconds(timeLimitForThreeStars));
         }
 
         if (twoStarTimeText != null)
         {
             float maxRemainingForTwoStars = level.levelDuration * level.twoStarRemainingRatio;
             float timeLimitForTwoStars = level.levelDuration - maxRemainingForTwoStars;
-            twoStarTimeText.text = $": finish within {FormatSeconds(timeLimitForTwoStars)}";
+            twoStarTimeText.text = GameLocalization.GetUIString("level_info_two_star_finish", FormatSeconds(timeLimitForTwoStars));
         }
     }
 

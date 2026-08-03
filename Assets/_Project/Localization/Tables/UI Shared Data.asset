@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 934743546a7e87749b796cd57aae4666
+  m_Entries:
+  - m_Id: 2059419648
+    m_Key: tutorial_completion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585472
+    m_Key: tutorial_hint_first_card
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585473
+    m_Key: tutorial_hint_wrong_swipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585474
+    m_Key: tutorial_hint_correct_swipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585475
+    m_Key: level_info_raw_materials
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585476
+    m_Key: level_info_station_shuffle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585477
+    m_Key: level_info_time_limit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585478
+    m_Key: level_info_three_star_finish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585479
+    m_Key: level_info_two_star_finish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585480
+    m_Key: ui_resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585481
+    m_Key: ui_pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585482
+    m_Key: ui_restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585483
+    m_Key: ui_main_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585484
+    m_Key: ui_levels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585485
+    m_Key: ui_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585486
+    m_Key: ui_play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585487
+    m_Key: ui_quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585488
+    m_Key: ui_back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585489
+    m_Key: ui_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585490
+    m_Key: ui_sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585491
+    m_Key: ui_reset_progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585492
+    m_Key: ui_recipes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585493
+    m_Key: ui_close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585494
+    m_Key: ui_next_level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585495
+    m_Key: ui_win_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585496
+    m_Key: ui_lose_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585497
+    m_Key: ui_ingredients
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585498
+    m_Key: ui_level_name_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585499
+    m_Key: ui_station_shuffle_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585500
+    m_Key: ui_total_duration_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585501
+    m_Key: ui_three_star_time_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585502
+    m_Key: ui_two_star_time_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585503
+    m_Key: ui_tutorial_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585504
+    m_Key: ui_kitchen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585505
+    m_Key: ui_medieval
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585506
+    m_Key: ui_language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585507
+    m_Key: ui_language_english
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2084585508
+    m_Key: ui_language_turkish
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8951245186363818142
+  references:
+    version: 2
+    RefIds:
+    - rid: 8951245186363818142
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1785779957634

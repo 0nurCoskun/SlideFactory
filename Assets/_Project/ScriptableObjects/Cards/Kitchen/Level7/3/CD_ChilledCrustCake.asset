@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: chilled_crust_cake
   displayName: Chilled Crust Cake
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -9218296779187085273, guid: 47d1d948b077c9f4e83ef2d7a2278c55, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 9ccd6e981b9d618479121548175fba99, type: 2}
   outcomes:

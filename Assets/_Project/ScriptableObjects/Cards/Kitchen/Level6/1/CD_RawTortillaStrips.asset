@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: raw_tortilla
   displayName: Raw Tortilla Strips
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 1065000391643099843, guid: 8174d5a68fad65f4e9cfbbeb81ea89e8, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

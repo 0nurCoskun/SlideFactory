@@ -18,10 +18,41 @@ public class SettingsView : MonoBehaviour
     [SerializeField] private TMP_Text musicVolumeText;
     [SerializeField] private TMP_Text sfxVolumeText;
 
+    [Header("Dil Seçimi")]
+    [Tooltip("Seçili dilde vurgulanacak (ör. rengi/ölçeği değişecek) İngilizce butonu üzerindeki işaret objesi.")]
+    [SerializeField] private GameObject englishSelectedMark;
+    [Tooltip("Seçili dilde vurgulanacak Türkçe butonu üzerindeki işaret objesi.")]
+    [SerializeField] private GameObject turkishSelectedMark;
+
     /// <summary>MainMenuController, Settings paneli açılırken bunu çağırır.</summary>
     public void RefreshSliders()
     {
         SyncSlidersWithCurrentSettings();
+        RefreshLanguageSelector();
+    }
+
+    /// <summary>Dil satırındaki "English" butonunun OnClick()'ine bağlanacak.</summary>
+    public void OnEnglishButtonPressed()
+    {
+        LocalizationManager.Instance?.SetLanguage(LocalizationManager.Language.English);
+        RefreshLanguageSelector();
+    }
+
+    /// <summary>Dil satırındaki "Türkçe" butonunun OnClick()'ine bağlanacak.</summary>
+    public void OnTurkishButtonPressed()
+    {
+        LocalizationManager.Instance?.SetLanguage(LocalizationManager.Language.Turkish);
+        RefreshLanguageSelector();
+    }
+
+    private void RefreshLanguageSelector()
+    {
+        if (LocalizationManager.Instance == null) return;
+
+        bool isTurkish = LocalizationManager.Instance.CurrentLanguage == LocalizationManager.Language.Turkish;
+
+        if (englishSelectedMark != null) englishSelectedMark.SetActive(!isTurkish);
+        if (turkishSelectedMark != null) turkishSelectedMark.SetActive(isTurkish);
     }
 
     /// <summary>Music Volume slider'ının OnValueChanged()'ine bağlanacak.</summary>
