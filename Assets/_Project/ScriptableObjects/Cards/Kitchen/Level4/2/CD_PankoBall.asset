@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: panko_ball
   displayName: Panko Ball
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 317348568362760199, guid: 971d1879e5fcf9a45bfa79159e77e07d, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 74edb927d1a859041b23e74dc2596736, type: 2}
   outcomes:

@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: fried_chicken
   displayName: Fried Chicken
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 7656106158968777865, guid: 4925f59915c22a84f9c8cbc5218df551, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: f89a84cd1daaddd45855f839d4def6a2, type: 2}
   outcomes:

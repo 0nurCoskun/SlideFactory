@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: bacon_ragu
   displayName: "Bacon Rag\xF9"
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 8503650582386188870, guid: 9bbf97807de9ba449a2edf6477f56f58, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: b647bd5482ec5ff44b4d6651cdd05f3d, type: 2}
   outcomes:

@@ -15,9 +15,10 @@ MonoBehaviour:
   cardId: chilled_custard_dip
   displayName: Chilled Custard Dip
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -5225051978584950505, guid: 7232186ae4c7bfc4c981951ee5100efa, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 0}
+  rawStageVersion: {fileID: 11400000, guid: 810393bb7e078ea44b965136ca131420, type: 2}
   outcomes:
   - station: {fileID: 11400000, guid: d3c5a44c7e5b00047a19d8d750c79e78, type: 2}
     resultCard: {fileID: 11400000, guid: a1fd3e74bf3e9bd448e1d06a36a7941e, type: 2}

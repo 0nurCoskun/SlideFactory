@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: cheesy_nacho_layer
   displayName: Cheesy Nacho Layer
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -5972331334743664532, guid: 4ce25730a65a8f5488bfede633c6c722, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: a77849760eb1ff34dbc3fee054b2b4dd, type: 2}
   outcomes:

@@ -15,9 +15,10 @@ MonoBehaviour:
   cardId: raw_cocoa_butter
   displayName: Raw Cocoa Butter
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 5612819302889713396, guid: 8269b27b894c0074cb333cd18832d433, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 0}
+  rawStageVersion: {fileID: 11400000}
   outcomes:
   - station: {fileID: 11400000, guid: 67c12031cdc434441bb62c367a6aed9c, type: 2}
     resultCard: {fileID: 11400000, guid: f39bad3642a14064ab2b75d04fea742c, type: 2}
