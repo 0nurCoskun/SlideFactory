@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: salsa_roja
   displayName: Salsa Roja
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -4483546551045967904, guid: 9025b4821e1e7ee4c8c7f21b6398e7c2, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: breaded_tender
   displayName: Breaded Tender
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 3906846368824687616, guid: 1ce91f79447409b4ab36b4b531436007, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: b0fc50b5e896df1429cc0b3b48ba6e90, type: 2}
   outcomes:

@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: fried_tofu
   displayName: Fried Tofu
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 5589378769499999872, guid: b478c6f794db2b646afb1d80bef24b8a, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 8285dbf9de34e27438d66ca2e59c7384, type: 2}
   outcomes:

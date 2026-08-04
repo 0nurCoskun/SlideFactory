@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: pressed_masa
   displayName: Pressed Masa
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 5040811751942244991, guid: 616937e0edfa2644ebac11aa4819acec, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 4037665c2953ad2489901888751a3650, type: 2}
   outcomes:

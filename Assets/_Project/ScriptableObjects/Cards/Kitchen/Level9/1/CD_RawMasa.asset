@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: raw_masa
   displayName: Raw Masa
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 4716349384259283326, guid: 92ab30fe979f9cc4084b222f4ae1292e, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

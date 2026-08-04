@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: chili_oil
   displayName: Chili Oil
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: -6194903408320955778, guid: f66797b79769ab04ba0ad1396e200f4b, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: fresh_bell_pepper
   displayName: Fresh Bell Pepper
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 8618248870752767418, guid: 70345ee89dfaba4489ddc0df71b3806e, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:
