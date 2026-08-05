@@ -11,10 +11,16 @@ public static class LevelProgress
     private const string CompletedKeyPrefix = "level_completed_";
     private const string StarsKeyPrefix = "level_stars_";
     private const string PendingStarRevealKeyPrefix = "level_stars_pending_reveal_";
+    private const string LastPlayedLevelKey = "level_last_played_id";
 
-    /// <summary>Her LevelData'nın kayıt için kullanacağı benzersiz kimlik. levelId boşsa asset ismini kullanır.</summary>
-    private static string GetLevelIdentifier(LevelData level)
+    /// <summary>
+    /// Her LevelData'nın kayıt için kullanacağı benzersiz kimlik. levelId boşsa asset ismini kullanır.
+    /// LevelCatalog da "en son oynanan level" kaydını çözmek için AYNI kuralı kullanmak
+    /// zorunda olduğu için public.
+    /// </summary>
+    public static string GetLevelIdentifier(LevelData level)
     {
+        if (level == null) return string.Empty;
         return !string.IsNullOrEmpty(level.levelId) ? level.levelId : level.name;
     }
 
@@ -97,7 +103,33 @@ public static class LevelProgress
         return IsLevelCompleted(level.requiredPreviousLevel);
     }
 
-    /// <summary>Test/debug amaçlı - tüm ilerlemeyi (tamamlama + yıldız kayıtları dahil) sıfırlar.</summary>
+    /// <summary>
+    /// Oyuncunun EN SON hangi level'ı açtığını kaydeder. GameManager, level sahnesi
+    /// açılırken bunu çağırır - böylece Level Select ekranı bir dahaki açılışında
+    /// oyuncuyu 1. sayfaya değil, kaldığı sayfaya götürebiliyor.
+    ///
+    /// Tutorial KAYDEDİLMEZ: katalogda yer almadığı için bir sayfaya karşılık gelmiyor,
+    /// ayrıca ilerleme kaydı tutmama kuralıyla da tutarlı (bkz. GameManager'daki
+    /// isTutorial kontrolü).
+    /// </summary>
+    public static void SetLastPlayedLevel(LevelData level)
+    {
+        if (level == null || level.isTutorial) return;
+
+        PlayerPrefs.SetString(LastPlayedLevelKey, GetLevelIdentifier(level));
+        PlayerPrefs.Save();
+    }
+
+    /// <summary>Hiç level oynanmamışsa boş string döner.</summary>
+    public static string GetLastPlayedLevelId()
+    {
+        return PlayerPrefs.GetString(LastPlayedLevelKey, string.Empty);
+    }
+
+    /// <summary>
+    /// Test/debug amaçlı - tüm ilerlemeyi (tamamlama + yıldız kayıtları dahil) sıfırlar.
+    /// DeleteAll kullandığı için "en son oynanan level" kaydı da kendiliğinden silinir.
+    /// </summary>
     public static void ResetAllProgress()
     {
         PlayerPrefs.DeleteAll();

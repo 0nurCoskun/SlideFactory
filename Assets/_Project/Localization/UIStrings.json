@@ -61,6 +61,7 @@
   "ui_tutorial_label": { "en": "Tutorial", "tr": "Öğretici" },
   "ui_kitchen": { "en": "Kitchen", "tr": "Mutfak" },
   "ui_medieval": { "en": "Medieval", "tr": "Orta Çağ" },
+  "ui_alchemist": { "en": "Alchemist", "tr": "Simyacı" },
   "ui_language": { "en": "Language", "tr": "Dil" },
   "ui_language_english": { "en": "English", "tr": "English" },
   "ui_language_turkish": { "en": "Turkish", "tr": "Türkçe" }

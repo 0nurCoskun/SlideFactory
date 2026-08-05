@@ -36,3 +36,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1c2feb179c123a0408a5637a72c3bb00, type: 2}
   minStationShuffleInterval: 6
   maxStationShuffleInterval: 8
+  isTutorial: 0

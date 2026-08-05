@@ -87,6 +87,12 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        // Level Select ekranı, panel her açıldığında bu kaydı okuyup doğrudan
+        // oyuncunun kaldığı sayfaya atlıyor. Buraya yazmak TÜM giriş yollarını tek
+        // noktadan kapsıyor: level butonu, bilgi panelindeki Play, kazanma panelindeki
+        // "Sonraki Level" ve Restart. (Tutorial, metodun içinde eleniyor.)
+        LevelProgress.SetLastPlayedLevel(_activeLevel);
+
         // Level henüz FİİLEN başlamasa da (BeginLevelPlay çağrılmadan), süre değerini
         // erkenden bildiriyoruz - böylece Recipe Preview paneli açıkken TimerView
         // "00:00" değil, level'ın gerçek süresini gösterebiliyor. Sayaç bu noktada

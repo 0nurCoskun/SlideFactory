@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4197cab7f4044bd4d82d7fcdfa4796e2, type: 3}
+  m_Name: LevelCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::LevelCatalog
+  chapters:
+  - chapterId: Kitchen
+    titleLocalizationKey: ui_kitchen
+    pageBackground: {fileID: 0}
+    levels:
+    - {fileID: 11400000, guid: 24c403dd03c1cfb4cbef8ecdaa40386f, type: 2}
+    - {fileID: 11400000, guid: ed60be4d3a9230448a4a992d2bb0e4b0, type: 2}
+    - {fileID: 11400000, guid: 5336ec0f8ea658742a125c12cf8e05cf, type: 2}
+    - {fileID: 11400000, guid: 72ecb5df2eac74d4c8ebbebabcf35848, type: 2}
+    - {fileID: 11400000, guid: 183b5cae8340e15479044aacbd0f1d76, type: 2}
+    - {fileID: 11400000, guid: 820f9a97f706f424cae493a99054479c, type: 2}
+    - {fileID: 11400000, guid: 21aea73a5b181264ca9f6e496763eaa8, type: 2}
+    - {fileID: 11400000, guid: e720e925023cafd41898ddd489aef40e, type: 2}
+    - {fileID: 11400000, guid: efda2c6d46412cc4f9f56c96b4804031, type: 2}
+    - {fileID: 11400000, guid: 1e597c50382f20044986d8afd5a2815f, type: 2}
+  - chapterId: Medieval
+    titleLocalizationKey: ui_medieval
+    pageBackground: {fileID: 0}
+    levels:
+    - {fileID: 11400000, guid: f283f351a41dc184b80405d4b35097c7, type: 2}
+    - {fileID: 11400000, guid: 6b5f964e88cfae74b8e85da9b820045d, type: 2}
+    - {fileID: 11400000, guid: 1df06b3af50371a468e8ee78b6bf1a00, type: 2}
+    - {fileID: 11400000, guid: dde6a44a85005eb4eb9df82c4d4bda29, type: 2}
+    - {fileID: 11400000, guid: d897fa5fa077bda409d5a1536375166c, type: 2}
+    - {fileID: 11400000, guid: 11a2c9365a0c20546937b43abe037d3f, type: 2}
+    - {fileID: 11400000, guid: a2606cb55a86b494ea21a6626ca4c2d5, type: 2}
+    - {fileID: 11400000, guid: 7f781d17d54b55043a9088fe30f69578, type: 2}
+    - {fileID: 11400000, guid: 971bec14e539fa547a146f51580efb78, type: 2}
+    - {fileID: 11400000, guid: fedf8d09b5af2b8449c0ef5bdbee5417, type: 2}
+  - chapterId: Alchemist
+    titleLocalizationKey: ui_alchemist
+    pageBackground: {fileID: 0}
+    levels:
+    - {fileID: 11400000, guid: 0275b885ff7a4414e9ef27f33380c579, type: 2}
+  levelsPerPage: 10
