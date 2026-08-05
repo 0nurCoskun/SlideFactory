@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelId: level3a
   displayName: Level 3
-  requiredPreviousLevel: {fileID: 0}
+  requiredPreviousLevel: {fileID: 11400000, guid: fedf8d09b5af2b8449c0ef5bdbee5417, type: 2}
   nextLevel: {fileID: 0}
   initialDeck:
   - {fileID: 11400000, guid: 7484ade94cd579341a812e256889783a, type: 2}
@@ -27,6 +27,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 026bc21d9d4e8a24a96b400b1e5d149f, type: 2}
   - {fileID: 11400000, guid: 7ff9c51205e14874eb8be8e34f441836, type: 2}
   levelDuration: 75
+  threeStarRemainingRatio: 0.5
+  twoStarRemainingRatio: 0.2
   stationsForLevel:
   - {fileID: 11400000, guid: 7380fb2f8a982c54f9af941721e07ae3, type: 2}
   - {fileID: 11400000, guid: 972fc8a3ed125794cb38c2e42f381370, type: 2}
@@ -34,3 +36,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 27e137bd280749e4196aecf3ae49d38b, type: 2}
   minStationShuffleInterval: 3
   maxStationShuffleInterval: 4
+  isTutorial: 0

@@ -1,20 +1,32 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 
 /// <summary>
-/// Level Select ekranındaki HER BUTONA ayrı ayrı eklenir. Her buton kendi
-/// LevelData'sını taşır, tıklanınca LevelSession'a yazıp Game sahnesini açar.
+/// Level Select ekranındaki her butonun script'i. Her buton kendi LevelData'sını
+/// taşır, tıklanınca LevelSession'a yazıp Game sahnesini açar.
 ///
 /// Ayrıca bu level'ın KİLİTLİ olup olmadığını kontrol eder (LevelProgress
 /// üzerinden) - kilitliyse buton tıklanamaz hale gelir ve varsa bir kilit
 /// ikonu gösterilir.
+///
+/// Butonlar ARTIK SAHNEYE ELLE DİZİLMİYOR: LevelSelectView bir prefab'dan üretip
+/// Bind() ile hangi level'ı temsil edeceklerini söylüyor. Bu yüzden levelData
+/// prefab'da BOŞ durur ve OnEnable, henüz Bind edilmemiş bir butonda hiçbir şey
+/// yapmadan geri döner.
 /// </summary>
 public class LevelButton : MonoBehaviour
 {
     [Header("Bu Butonun Temsil Ettiği Level")]
+    [Tooltip("Runtime'da LevelSelectView tarafından Bind() ile atanır - prefab'da boş bırakılır.")]
     [SerializeField] private LevelData levelData;
+
+    [Header("Numara")]
+    [Tooltip("Butonun üzerindeki GLOBAL level numarası (1, 2, ... 200). Katalogdaki sıradan " +
+             "gelir; sadece rakam olduğu için çeviri gerektirmez.")]
+    [SerializeField] private TMP_Text numberText;
 
     [Header("Sahne")]
     [SerializeField] private string gameSceneName = "Game";
@@ -45,14 +57,46 @@ public class LevelButton : MonoBehaviour
     private CanvasGroup _canvasGroup;
     public LevelData LevelData => levelData;
 
-    private void Awake()
+    private bool _componentsCached;
+
+    private void Awake() => CacheComponents();
+
+    private void CacheComponents()
     {
+        if (_componentsCached) return;
+        _componentsCached = true;
+
         _button = GetComponent<Button>();
         _canvasGroup = GetComponent<CanvasGroup>(); // yoksa null kalır, aşağıda null kontrolü var
     }
 
     private void OnEnable()
     {
+        // Havuzdan yeni çıkmış/henüz Bind edilmemiş bir buton olabilir - Bind()
+        // zaten kendisi Refresh çağırıyor, burada bir şey yapmaya gerek yok.
+        if (levelData == null) return;
+
+        Refresh();
+    }
+
+    /// <summary>
+    /// LevelSelectView, bu butonu bir level'a bağlarken çağırır. Butonun sahnedeki
+    /// yerine değil, katalogdaki sıraya göre neyi temsil ettiğini belirleyen tek nokta.
+    /// </summary>
+    public void Bind(LevelData level, int displayNumber, LevelInfoPanelView infoPanel)
+    {
+        CacheComponents();
+
+        levelData = level;
+        if (infoPanel != null) levelInfoPanelView = infoPanel;
+        if (numberText != null) numberText.text = displayNumber.ToString();
+
+        Refresh();
+    }
+
+    private void Refresh()
+    {
+        CacheComponents();
         RefreshLockState();
         RefreshStarDisplay();
     }

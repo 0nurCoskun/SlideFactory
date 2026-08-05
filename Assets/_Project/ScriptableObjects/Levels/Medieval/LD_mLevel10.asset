@@ -15,7 +15,7 @@ MonoBehaviour:
   levelId: level10m
   displayName: Level 10
   requiredPreviousLevel: {fileID: 11400000, guid: 971bec14e539fa547a146f51580efb78, type: 2}
-  nextLevel: {fileID: 11400000, guid: 24c403dd03c1cfb4cbef8ecdaa40386f, type: 2}
+  nextLevel: {fileID: 11400000, guid: 0275b885ff7a4414e9ef27f33380c579, type: 2}
   initialDeck:
   - {fileID: 11400000, guid: a832823063b9f2949910680343f7b814, type: 2}
   - {fileID: 11400000, guid: a76585d791cbc244292d4c7743151bad, type: 2}
@@ -43,3 +43,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2934d16b88d8d694b8955f386b09d1f0, type: 2}
   minStationShuffleInterval: 3
   maxStationShuffleInterval: 4
+  isTutorial: 0
