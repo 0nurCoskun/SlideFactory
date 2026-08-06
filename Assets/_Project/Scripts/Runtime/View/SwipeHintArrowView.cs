@@ -3,11 +3,16 @@ using UnityEngine;
 using DG.Tweening;
 
 /// <summary>
-/// "Yardımcı ok" ipucu. Oyuncu hesitationDelay kadar hiç swipe yapmazsa, mevcut kartın
+/// "Yardımcı ok" ipucu. Oyuncu hesitationDelay kadar SWIPE YAPMAZSA, mevcut kartın
 /// gitmesi gereken istasyonun O ANKİ yönündeki ok yumuşakça belirir ve kendi yönünde
-/// nazikçe nabız atar. Oyuncu ekrana dokunur dokunmaz gizlenir; eşik altında bırakırsa
-/// beklemeden geri gelir. İstasyon-yön eşleşmesi 3-4 saniyede bir karıştığı için,
+/// nazikçe nabız atar. İstasyon-yön eşleşmesi 3-4 saniyede bir karıştığı için,
 /// GÖRÜNÜR bir ok OnStationsShuffled'da yeniden nişanlanır.
+///
+/// Sayacı SIFIRLAYAN tek şey gerçek bir hamledir (swipe / yeni kart). Sürükleme
+/// sayacı ne durdurur ne sıfırlar ve ok, parmak ekrandayken de belirebilir -
+/// BİLEREK böyle: kartı eline alıp kararsızca oynatan oyuncu, ipucuna en çok
+/// ihtiyacı olan oyuncudur. Sürüklerken sayacı dondurmak tam da yardım edilmesi
+/// gerekeni cezalandırırdı.
 ///
 /// Gecikme bilinçli: oyuncuya önce kendi bulma şansı veriliyor, ipucu ancak gerçekten
 /// takıldığında devreye giriyor.
@@ -62,8 +67,6 @@ public class SwipeHintArrowView : MonoBehaviour
     private readonly Dictionary<SwipeDirection, ArrowSlot> _slots = new Dictionary<SwipeDirection, ArrowSlot>();
 
     private float _idleTimer;
-    private bool _isDragging;
-    private bool _wasVisibleBeforeDrag;
     private SwipeDirection _visibleDirection = SwipeDirection.None;
 
     private Tween _fadeTween;
@@ -119,13 +122,11 @@ public class SwipeHintArrowView : MonoBehaviour
         if (stationAssignmentManager != null)
             stationAssignmentManager.OnStationsShuffled += HandleStationsShuffled;
 
-        // SwipeInputManager UnityEvent kullanıyor -> '+=' DEĞİL, AddListener
+        // SwipeInputManager UnityEvent kullanıyor -> '+=' DEĞİL, AddListener.
+        // Sadece OnSwipeDetected dinleniyor: OnDragStarted/OnDragCanceled bilerek
+        // dinlenmiyor, çünkü sürükleme ipucu sayacını etkilememeli.
         if (swipeInputManager != null)
-        {
-            swipeInputManager.OnDragStarted.AddListener(HandleDragStarted);
-            swipeInputManager.OnDragCanceled.AddListener(HandleDragCanceled);
             swipeInputManager.OnSwipeDetected.AddListener(HandleSwipeDetected);
-        }
     }
 
     private void OnDisable()
@@ -137,11 +138,7 @@ public class SwipeHintArrowView : MonoBehaviour
             stationAssignmentManager.OnStationsShuffled -= HandleStationsShuffled;
 
         if (swipeInputManager != null)
-        {
-            swipeInputManager.OnDragStarted.RemoveListener(HandleDragStarted);
-            swipeInputManager.OnDragCanceled.RemoveListener(HandleDragCanceled);
             swipeInputManager.OnSwipeDetected.RemoveListener(HandleSwipeDetected);
-        }
 
         // Proje genelinde Time.timeScale KULLANILMIYOR: tween'ler pause'ta bile akar.
         // Nabız tween'i SetLoops(-1) olduğu için DOTween onu asla kendiliğinden
@@ -150,8 +147,6 @@ public class SwipeHintArrowView : MonoBehaviour
         HideArrowInstantly();
 
         _idleTimer = 0f;
-        _isDragging = false;
-        _wasVisibleBeforeDrag = false;
     }
 
     private void Update()
@@ -164,10 +159,9 @@ public class SwipeHintArrowView : MonoBehaviour
             return;
         }
 
-        // Parmak ekrandayken sayaç DURUR ama SIFIRLANMAZ - oyuncu eşik altında
-        // bırakırsa ok yeniden hesitationDelay beklemeden geri gelebilsin diye.
-        if (_isDragging) return;
-
+        // Sürükleme BİLEREK sayacı etkilemiyor: parmak ekrandayken de sayaç işler ve
+        // süre dolduğunda ok belirir. Kartı eline alıp kararsızca oynatan oyuncu,
+        // ipucuna en çok ihtiyacı olandır.
         _idleTimer += Time.deltaTime;
 
         if (_visibleDirection != SwipeDirection.None) return;
@@ -312,39 +306,13 @@ public class SwipeHintArrowView : MonoBehaviour
 
     // --- SwipeInputManager event'leri ---
 
-    private void HandleDragStarted()
-    {
-        _isDragging = true;
-        _wasVisibleBeforeDrag = _visibleDirection != SwipeDirection.None;
-
-        // Parmak ekranda: ipucu anında çekilir, oyuncunun hamlesinin önüne geçmesin.
-        HideArrowInstantly();
-    }
-
-    private void HandleDragCanceled()
-    {
-        _isDragging = false;
-
-        if (!_wasVisibleBeforeDrag) return;
-        _wasVisibleBeforeDrag = false;
-
-        // Oyuncu eşiğin altında bıraktı: ok zaten görünüyorduysa hesitationDelay'i
-        // yeniden beklemeden hemen geri gelir. Sürükleme sırasında karışma olmuş
-        // olabileceği için hedef YENİDEN çözülüyor.
-        if (!IsHintAllowed()) return;
-        TryShowArrow();
-    }
-
     private void HandleSwipeDetected(SwipeDirection direction)
     {
-        // ÖNEMLİ: SwipeInputManager.EndDrag, GEÇERLİ bir swipe'ta OnDragCanceled'ı
-        // FIRLATMAZ - sadece OnSwipeDetected'ı fırlatır. Bu handler olmasaydı
-        // _isDragging sonsuza kadar true kalır ve ilk başarılı swipe'tan sonra ok
-        // bir daha HİÇ görünmezdi.
+        // Sayacı sıfırlayan TEK şey: gerçek bir hamle. Sürükleyip vazgeçmek
+        // (OnDragCanceled) bilerek dinlenmiyor - kararsız sürükleme sayacı
+        // sıfırlasaydı, oyuncu kartı oynattıkça ipucu hiç gelmezdi.
         // GameManager.OnSwipeResolved'a bağlanmıyor çünkü GameManager, level
         // duraklamışsa/bittiyse HandleSwipe'tan erken çıkıp o event'i hiç fırlatmıyor.
-        _isDragging = false;
-        _wasVisibleBeforeDrag = false;
         _idleTimer = 0f;
         HideArrowInstantly();
     }
