@@ -73,6 +73,15 @@ public class GameManager : MonoBehaviour
     public LevelData ActiveLevel => _activeLevel;
     public bool HasBegun => _hasBegun;
 
+    /// <summary>Level şu an duraklatılmış mı (Pause menüsü açık)? Oynanış sırasında
+    /// çalışan yardımcılar (örn. SwipeHintArrowView) bunu kontrol etmek zorunda -
+    /// PauseLevel/ResumeLevel hiçbir event fırlatmıyor.</summary>
+    public bool IsPaused => _isPaused;
+
+    /// <summary>Level bitti mi (kazanıldı ya da kaybedildi)? Bittikten sonra hiçbir
+    /// oynanış yardımcısı çalışmamalı.</summary>
+    public bool IsLevelEnded => _levelEnded;
+
     private void Awake()
     {
         // ÖNEMLİ: Bu bilerek Awake'te, Start()'ta değil - çünkü RecipePreviewView

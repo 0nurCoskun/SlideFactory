@@ -15,6 +15,44 @@ public static class ProductionChainUtility
         public StationData StationToNext; // null ise bu kart zincirin son ürünüdür
     }
 
+    /// <summary>
+    /// "Bir sonraki doğru adım" kuralının TEK tanımı: outcomes listesindeki
+    /// resultCard'ı DOLU olan İLK outcome kazanır. resultCard'ı boş olan (kartı çöpe
+    /// gönderen) outcome'lar atlanır - onlar geçerli hamledir ama zinciri İLERLETMEZ.
+    /// Bu yüzden CardData.TryGetOutcome bu iş için KULLANILAMAZ: o metod çöp
+    /// istasyonlarında da true döner.
+    /// </summary>
+    private static bool TryGetNextStep(CardData card, out StationData station, out CardData resultCard)
+    {
+        station = null;
+        resultCard = null;
+
+        if (card == null || card.isFinalProduct || card.outcomes == null) return false;
+
+        foreach (StationOutcome outcome in card.outcomes)
+        {
+            // StationOutcome bir CLASS olduğu için dizide boş (null) slot olabilir.
+            if (outcome == null || outcome.resultCard == null) continue;
+
+            station = outcome.station;
+            resultCard = outcome.resultCard;
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Verilen kartın ŞU AN hangi istasyona gitmesi gerektiğini söyler.
+    /// Yardımcı ok ipucu (SwipeHintArrowView) bunu kullanır.
+    /// Kart final ürünse, outcomes boşsa ya da tüm outcome'lar çöpse null döner.
+    /// </summary>
+    public static StationData GetNextStation(CardData card)
+    {
+        TryGetNextStep(card, out StationData station, out _);
+        return station;
+    }
+
     /// <summary>Verilen ham karttan başlayıp son ürüne kadar olan tüm adımları döndürür.</summary>
     public static List<ChainStep> BuildChain(CardData rawCard)
     {
@@ -24,27 +62,12 @@ public static class ProductionChainUtility
 
         while (current != null && safetyCounter < 20)
         {
-            StationData stationToNext = null;
-            CardData nextCard = null;
-
-            if (!current.isFinalProduct && current.outcomes != null)
-            {
-                foreach (var outcome in current.outcomes)
-                {
-                    // Çöpe giden (resultCard == null) outcome'ları atla, sadece
-                    // gerçek "ilerleme" sağlayan doğru yolu takip et.
-                    if (outcome.resultCard != null)
-                    {
-                        stationToNext = outcome.station;
-                        nextCard = outcome.resultCard;
-                        break;
-                    }
-                }
-            }
+            // Zincirin "doğru yol" kuralı artık TryGetNextStep'te, TEK noktada duruyor.
+            bool hasNext = TryGetNextStep(current, out StationData stationToNext, out CardData nextCard);
 
             steps.Add(new ChainStep { Card = current, StationToNext = stationToNext });
 
-            if (current.isFinalProduct || nextCard == null) break;
+            if (!hasNext) break;
 
             current = nextCard;
             safetyCounter++;

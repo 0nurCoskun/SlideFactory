@@ -101,6 +101,26 @@ public class StationAssignmentManager : MonoBehaviour
         return _currentAssignment.TryGetValue(direction, out StationData station) ? station : null;
     }
 
+    /// <summary>
+    /// GetStationForDirection'ın TERSİ: verilen istasyon ŞU AN hangi yönde duruyor?
+    /// Yardımcı ok ipucu (SwipeHintArrowView), kartın gitmesi gereken istasyonu
+    /// ekrandaki bir yöne çevirmek için bunu kullanır.
+    /// İstasyon null ise, henüz hiç karıştırma yapılmadıysa ya da istasyon bu
+    /// level'ın 4'lüsünde yoksa SwipeDirection.None döner.
+    /// </summary>
+    public SwipeDirection GetDirectionForStation(StationData station)
+    {
+        if (station == null) return SwipeDirection.None;
+
+        foreach (SwipeDirection direction in AllDirections)
+        {
+            if (_currentAssignment.TryGetValue(direction, out StationData assigned) && assigned == station)
+                return direction;
+        }
+
+        return SwipeDirection.None;
+    }
+
     private void ShuffleNow()
     {
         _shuffleTimer = 0f;
