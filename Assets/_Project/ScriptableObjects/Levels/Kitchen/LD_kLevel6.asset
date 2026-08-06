@@ -28,7 +28,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a77849760eb1ff34dbc3fee054b2b4dd, type: 2}
   levelDuration: 160
   threeStarRemainingRatio: 0.5
-  twoStarRemainingRatio: 0.2
+  twoStarRemainingRatio: 0.3
   stationsForLevel:
   - {fileID: 11400000, guid: 47f96ea30de42b24496b9eb3ee0bd4f6, type: 2}
   - {fileID: 11400000, guid: ae8989187216a1d4dad80da6d529f3bc, type: 2}

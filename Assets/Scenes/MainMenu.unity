@@ -7625,6 +7625,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252319706}
   m_CullTransparentMesh: 1
+--- !u!114 &1255058462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000000020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8beef5c6fb82c74db3987088349303a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonTextOffset
+  textTransform: {fileID: 3000000026}
+  offset: {x: 0, y: -6}
 --- !u!1 &1287879036
 GameObject:
   m_ObjectHideFlags: 0
@@ -8225,6 +8239,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388839431}
   m_CullTransparentMesh: 1
+--- !u!114 &1396305339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000000007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8beef5c6fb82c74db3987088349303a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonTextOffset
+  textTransform: {fileID: 3000000013}
+  offset: {x: 0, y: -6}
 --- !u!1 &1422984757
 GameObject:
   m_ObjectHideFlags: 0
@@ -11161,8 +11189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 55}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3000000005
 MonoBehaviour:
@@ -11276,6 +11304,7 @@ GameObject:
   - component: {fileID: 3000000011}
   - component: {fileID: 3000000009}
   - component: {fileID: 3000000010}
+  - component: {fileID: 1396305339}
   m_Layer: 0
   m_Name: EnglishButton
   m_TagString: Untagged
@@ -11324,7 +11353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11277a3f23988ec47908362d708edaa8, type: 3}
+  m_Sprite: {fileID: -7570784611016581936, guid: 2fdb21d8480333c4f9013d0d0deee825, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11353,7 +11382,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -11364,7 +11393,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 7237467832292902019, guid: c2ca41d095e54fe45a7bc6ef7b01d7b8, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -11570,7 +11599,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -8}
-  m_SizeDelta: {x: 120, y: 6}
+  m_SizeDelta: {x: 300, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3000000018
 MonoBehaviour:
@@ -11622,6 +11651,7 @@ GameObject:
   - component: {fileID: 3000000024}
   - component: {fileID: 3000000022}
   - component: {fileID: 3000000023}
+  - component: {fileID: 1255058462}
   m_Layer: 0
   m_Name: TurkishButton
   m_TagString: Untagged
@@ -11670,7 +11700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11277a3f23988ec47908362d708edaa8, type: 3}
+  m_Sprite: {fileID: -7570784611016581936, guid: 2fdb21d8480333c4f9013d0d0deee825, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11916,7 +11946,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -8}
-  m_SizeDelta: {x: 120, y: 6}
+  m_SizeDelta: {x: 300, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3000000031
 MonoBehaviour:
