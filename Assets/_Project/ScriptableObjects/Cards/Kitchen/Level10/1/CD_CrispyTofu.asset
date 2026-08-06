@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: crispy_tofu
   displayName: Crispy Tofu
   description: 
-  icon: {fileID: 3104608691571637240, guid: 0ef83ef27c967c04d8e904efcde3cd36, type: 3}
+  icon: {fileID: 3104608691571637240, guid: 0c4a9bf4e36f2354ebaa247e81824296, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

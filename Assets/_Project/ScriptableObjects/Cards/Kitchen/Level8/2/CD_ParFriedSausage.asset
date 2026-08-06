@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: par_fried_sausage
   displayName: Par-Fried Sausage
   description: 
-  icon: {fileID: 7718392441390982909, guid: 731acaceaef50ac48a3a50037450f875, type: 3}
+  icon: {fileID: -5101346582315769145, guid: e289dbc180339084782481c9161fde40, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: add0d462a4924354ea060a14e2cb4080, type: 2}

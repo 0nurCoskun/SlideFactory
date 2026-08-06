@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: risotto_rice
   displayName: Risotto Rice
   description: 
-  icon: {fileID: -6781825520859803445, guid: 0299803d7490206488f76099bd0c5415, type: 3}
+  icon: {fileID: -6781825520859803445, guid: 7057c380c6eae494986f409ee6157a9c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

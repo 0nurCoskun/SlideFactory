@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: charrded_pepper
   displayName: Charred Pepper
   description: 
-  icon: {fileID: -6831841925006050057, guid: 21c1510b374bffe4f98c806cab798226, type: 3}
+  icon: {fileID: -6831841925006050057, guid: 34845140178d6bb4586da2dcd580d032, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: fc78c59cc13595b4184f482a86b7cf66, type: 2}

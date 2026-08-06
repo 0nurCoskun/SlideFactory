@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: baked_foccacia
   displayName: Baked Focaccia
   description: 
-  icon: {fileID: -1196487920007557540, guid: 54a5dd08c31e6ef47b973ddeb0988717, type: 3}
+  icon: {fileID: -1196487920007557540, guid: 068be639887fd1240868c14dcd35606a, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 8d7095b9c9f01aa4fab4649fbc9601eb, type: 2}

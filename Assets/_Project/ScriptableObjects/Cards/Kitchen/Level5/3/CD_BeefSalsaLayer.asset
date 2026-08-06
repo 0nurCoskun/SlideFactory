@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: beefsalsa_layer
   displayName: Beef & Salsa Layer
   description: 
-  icon: {fileID: 741889833204544186, guid: 888eb7a05a4ff5e4ea0473eee753869d, type: 3}
+  icon: {fileID: -5519688207143685835, guid: 7d5ae5586edefb040ab26e504dc5232f, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 01a3314697bfac646aaac97e1a1eee77, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: spicy_beef_filling
   displayName: Spicy Beef Filling
   description: 
-  icon: {fileID: -8315752269421661088, guid: ec387f7ef4416b64eaed7fab058dd31b, type: 3}
+  icon: {fileID: -8315752269421661088, guid: 57414c9d36121f84e84b7e64ff30d57b, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 01a3314697bfac646aaac97e1a1eee77, type: 2}

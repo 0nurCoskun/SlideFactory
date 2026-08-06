@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: pastry_dough
   displayName: Pastry Dough
   description: 
-  icon: {fileID: 736644971566567550, guid: 9f8c1a3c86cb02f4fae65e5c2a1ff603, type: 3}
+  icon: {fileID: -8004773740332794079, guid: 5e4c38c42756c604e8dee7535734f69b, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

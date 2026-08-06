@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: seared_chicken
   displayName: Seared Chicken
   description: 
-  icon: {fileID: -3478808517335843010, guid: 2c44ce255ac32af4c9520351c0b4dd87, type: 3}
+  icon: {fileID: -3478808517335843010, guid: 8602aa634a2ce5245aaf6f88070bb845, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: da2590e0faa31784aae987afd331378c, type: 2}

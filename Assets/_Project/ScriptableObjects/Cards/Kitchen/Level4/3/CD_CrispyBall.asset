@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: crispy_ball
   displayName: Crispy Ball
   description: 
-  icon: {fileID: 3151167571747099375, guid: ae678ea2571f35d41b1df83bab821068, type: 3}
+  icon: {fileID: 3151167571747099375, guid: 44e6c80c1a547bd4089a72f720494225, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 74edb927d1a859041b23e74dc2596736, type: 2}

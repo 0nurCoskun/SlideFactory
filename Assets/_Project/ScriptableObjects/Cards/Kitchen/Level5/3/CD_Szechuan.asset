@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: szechuan
   displayName: Szechuan Stir-Fry
   description: 
-  icon: {fileID: -2157012092832848105, guid: 4bca0a605dc58af44bd48445f91f3346, type: 3}
+  icon: {fileID: 6821272348097319705, guid: 38e14312e34f3e341affcd261768ba34, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: f89a84cd1daaddd45855f839d4def6a2, type: 2}

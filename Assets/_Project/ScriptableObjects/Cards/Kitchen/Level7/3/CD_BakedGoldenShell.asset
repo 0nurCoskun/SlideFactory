@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: baked_golden_shell
   displayName: Baked Golden Shell
   description: 
-  icon: {fileID: -7182071816381899639, guid: e6fad65e1dd798d44b76d035ff0c0245, type: 3}
+  icon: {fileID: -6661164589372392348, guid: 69cfd4e09832127439aad53124ba61d5, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: bdc52c4eda4a0ca47a547eec7309a781, type: 2}

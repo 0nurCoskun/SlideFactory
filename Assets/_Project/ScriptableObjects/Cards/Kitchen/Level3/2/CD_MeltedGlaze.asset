@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: melted_glaze
   displayName: Melted Glaze
   description: 
-  icon: {fileID: 4007226007724021337, guid: fa2dec22f5fee234c9b8dd8ffadf2172, type: 3}
+  icon: {fileID: 4007226007724021337, guid: 187df86c146b09644b78c623fd9ebf0a, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 52c77bd68ab9b014e8ae6ba9f74fac25, type: 2}

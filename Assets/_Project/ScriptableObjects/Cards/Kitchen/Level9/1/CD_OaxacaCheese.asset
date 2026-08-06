@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: oaxaca_cheese
   displayName: Oaxaca Cheese
   description: 
-  icon: {fileID: 6478920281572177450, guid: 8faea254aa4e8bb4b8462c65d4f037ce, type: 3}
+  icon: {fileID: 6478920281572177450, guid: e7e887188262b0c42823461bcda09f59, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

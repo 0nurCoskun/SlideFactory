@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: aromatic_emulsion
   displayName: Aromatic Emulsion
   description: 
-  icon: {fileID: 4278552153587855729, guid: 82b2999d4ccf9f846808f0efc784832c, type: 3}
+  icon: {fileID: 4278552153587855729, guid: a363d584823d1cc4794c6edcef8d2859, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 8d7095b9c9f01aa4fab4649fbc9601eb, type: 2}

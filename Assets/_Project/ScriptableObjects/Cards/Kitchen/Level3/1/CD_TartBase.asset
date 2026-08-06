@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: tart_base
   displayName: Tart Base
   description: 
-  icon: {fileID: -8963638761322020610, guid: 600761453a352764594e93305299288b, type: 3}
+  icon: {fileID: -3388381929862018099, guid: 9454fbc336112454fbbf190f6ab41855, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

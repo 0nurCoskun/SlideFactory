@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: heavy_cream
   displayName: Heavy Cream
   description: 
-  icon: {fileID: 4189537800007821376, guid: 75eb8cfd2520b6649ac88d465cc12447, type: 3}
+  icon: {fileID: 4189537800007821376, guid: 228abc08f0e26de47a81ec6bb01b1e46, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: mince
   displayName: Mince
   description: 
-  icon: {fileID: -3485554599386364209, guid: 81f4409b5c5282b488913a8614c93ab2, type: 3}
+  icon: {fileID: -3485554599386364209, guid: 3f2a4d242974c284ba825c0a3635e4ff, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: bac706e74892bd04eb3bc9c19814ae04, type: 2}

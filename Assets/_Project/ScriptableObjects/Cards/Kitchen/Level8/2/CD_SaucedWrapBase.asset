@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: sauced_wrap_base
   displayName: Sauced Wrap Base
   description: 
-  icon: {fileID: -7571163060556667293, guid: 751fcdd6c54f7574a8b54653435a9da5, type: 3}
+  icon: {fileID: -7571163060556667293, guid: 3620e5c5546fb4d438dfab8253fae7a6, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 24f345c7e2f7cab4f919811c164e3850, type: 2}

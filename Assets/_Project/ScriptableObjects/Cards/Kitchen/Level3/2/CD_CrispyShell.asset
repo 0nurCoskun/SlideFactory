@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: crispy_shell
   displayName: Crispy Shell
   description: 
-  icon: {fileID: 3134111932325887156, guid: 1671e1bcbb39104428e3713064e8bd3f, type: 3}
+  icon: {fileID: 3134111932325887156, guid: a72fb66e2acbd11499011aae379f71bd, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: d8788f1bc1c8a274e9f5e77bf9764824, type: 2}

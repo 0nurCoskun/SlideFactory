@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: crispy_bacon
   displayName: Crispy Bacon
   description: 
-  icon: {fileID: 5223246892717258601, guid: c4824784916d2bf4ab54b8a2bd49375e, type: 3}
+  icon: {fileID: 5223246892717258601, guid: cc0d28ae890e4f94baef883a5e002b13, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: b647bd5482ec5ff44b4d6651cdd05f3d, type: 2}

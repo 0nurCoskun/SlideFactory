@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: marinated_ribs
   displayName: Marinated Ribs
   description: 
-  icon: {fileID: 9045834532770169874, guid: 0d50c4ef138ff5c4bb6614c63b204ac0, type: 3}
+  icon: {fileID: 9045834532770169874, guid: 44108689c8c7de14cbec7b3a8e0fa119, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

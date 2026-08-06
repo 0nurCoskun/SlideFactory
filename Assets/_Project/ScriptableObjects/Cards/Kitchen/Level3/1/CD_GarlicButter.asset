@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: garlic_butter
   displayName: Garlic Butter
   description: 
-  icon: {fileID: -1166422177858367107, guid: a7f84ed8aef3a324f983358cd74da27d, type: 3}
+  icon: {fileID: -1166422177858367107, guid: 4078fbfa70a72874fa722e846fa346f8, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

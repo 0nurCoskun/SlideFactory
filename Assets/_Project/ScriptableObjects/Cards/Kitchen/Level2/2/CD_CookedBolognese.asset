@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: cooked_bolognese
   displayName: Cooked Bolognese
   description: 
-  icon: {fileID: -4521124630962784650, guid: aaeaa38cc25575346a0a4002c6a6e623, type: 3}
+  icon: {fileID: -4521124630962784650, guid: 129f4ea571d63874e8bec6aaea95571c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 154721d83124f0b43b3ac49751c935f3, type: 2}

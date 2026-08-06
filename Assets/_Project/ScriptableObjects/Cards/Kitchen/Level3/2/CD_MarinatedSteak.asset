@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: marinated_steak
   displayName: MarinatedSteak
   description: 
-  icon: {fileID: 4419205502514493561, guid: 5c237fc677136fb499060a1dc611ae33, type: 3}
+  icon: {fileID: 4419205502514493561, guid: 77c3c648e6c6a144d8cb75eadae718cc, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: ed4b25cbb6f27a24c8812b21313b49de, type: 2}

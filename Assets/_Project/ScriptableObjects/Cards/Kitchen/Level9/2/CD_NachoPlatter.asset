@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: nacho_platter
   displayName: Nacho Platter
   description: 
-  icon: {fileID: 274264507708694992, guid: d451c02384e1d554ab397ad2fc64421a, type: 3}
+  icon: {fileID: 274264507708694992, guid: 473fd99a3f9ab8840859444c678f84a5, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 4de3f9839f30b3942a695c060ce88254, type: 2}

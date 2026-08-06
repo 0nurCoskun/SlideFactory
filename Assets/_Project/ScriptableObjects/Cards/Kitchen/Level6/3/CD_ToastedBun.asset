@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: toasted_bun
   displayName: Toasted Bun
   description: 
-  icon: {fileID: 7389328601560401509, guid: 928de0bd55fe2a84699221f7d1fc92f2, type: 3}
+  icon: {fileID: 7389328601560401509, guid: ab74869c376429144aaecc8e70a2f0b4, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 9464aac88ebeeaf4abcedfd322f129e4, type: 2}

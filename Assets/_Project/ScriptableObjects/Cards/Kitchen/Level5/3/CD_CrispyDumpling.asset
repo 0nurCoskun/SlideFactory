@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: crispy_dumpling
   displayName: Crispy Dumpling
   description: 
-  icon: {fileID: 5721769478973153979, guid: a9ab8d5b0c86a1d43b9fa5210944cf0e, type: 3}
+  icon: {fileID: -2716082562524721396, guid: 7072e698959ed5e448224bf0ff08549c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 0d19e9257c492e44c9725e5d77c48a26, type: 2}

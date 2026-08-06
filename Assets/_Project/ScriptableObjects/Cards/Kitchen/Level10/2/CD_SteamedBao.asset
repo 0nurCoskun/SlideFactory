@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: steamed_bao
   displayName: Steamed Bao
   description: 
-  icon: {fileID: -5401246687903383670, guid: 7f3162024113c51429652df859bc54da, type: 3}
+  icon: {fileID: -5401246687903383670, guid: 69ff863b93917a7458939d70e32c4c61, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: d96612dfc1f652349acc97e377f2d32c, type: 2}

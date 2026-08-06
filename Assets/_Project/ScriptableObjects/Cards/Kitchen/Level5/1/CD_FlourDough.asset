@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: flour_dough
   displayName: Flour Dough
   description: 
-  icon: {fileID: 736644971566567550, guid: 9f8c1a3c86cb02f4fae65e5c2a1ff603, type: 3}
+  icon: {fileID: -9058711285676815772, guid: a9cfd2035d680f846b38a1ce74ef8170, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: wheat
   displayName: Wheat Sack
   description: 
-  icon: {fileID: -5522299357396570900, guid: 1e20b50b3112ec5469d651ade6fbade4, type: 3}
+  icon: {fileID: -5522299357396570900, guid: 0abfce97aae01ba4285ea9b0efdac969, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
