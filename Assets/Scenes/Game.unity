@@ -1286,8 +1286,8 @@ MonoBehaviour:
   hideEase: 26
   chainIndexFormat: '<b>{0}.</b>  '
   cardNameFormat: <b>{0}</b>
-  stepSeparator: "  \u2192  "
-  stationWrapFormat: '[{0}]'
+  stepSeparator: "  <b>\u2192</b>  "
+  stationWrapFormat: '<color=#A6551A><b>[{0}]</b></color>'
   gameplayOnlyButtons:
   - {fileID: 363886609}
   - {fileID: 436602689}
@@ -2673,10 +2673,10 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 90
-    m_Bottom: 90
+    m_Top: 60
+    m_Bottom: 60
   m_ChildAlignment: 1
-  m_Spacing: 68
+  m_Spacing: 22
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
