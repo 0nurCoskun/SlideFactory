@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public event Action<CardInstance, CardData> OnCardProcessed;    // Kart bir üst aşamaya geçti (henüz final değil)
     public event Action<CardInstance> OnCardCompleted;              // Kart son ürüne dönüştü ve desteden düştü
     public event Action<SwipeDirection, StationData> OnInvalidSwipe; // Yanlış istasyona atıldı, kart Ham'a sıfırlandı
+    public event Action<SwipeDirection, StationData> OnValidSwipe;   // Doğru istasyona atıldı (çöp/normal/final farketmez)
     public event Action OnDeckEmptied;                               // Deste bitti (henüz "level kazanıldı" ile karıştırma - süre de kontrol edilir)
     public event Action<int> OnLevelWon;                             // Süre bitmeden deste tamamlandı - kaç yıldız kazanıldığını da taşır
     public event Action OnLevelFailed;                               // Süre bitti ama deste hâlâ dolu
@@ -227,6 +228,9 @@ public class GameManager : MonoBehaviour
             DrawNextCard();
             return;
         }
+
+        // Doğru istasyon: sonucu ne olursa olsun (çöp/normal/final) burası "isabet" sayılır.
+        OnValidSwipe?.Invoke(direction, targetStation);
 
         if (resultData == null)
         {
