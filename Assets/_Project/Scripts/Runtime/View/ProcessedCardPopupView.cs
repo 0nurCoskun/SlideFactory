@@ -48,6 +48,8 @@ public class ProcessedCardPopupView : MonoBehaviour
     [Tooltip("Desteye uçuş süresi - DeckShuffleView'daki 'kart deste konumuna uçuyor' animasyonuyla aynı hissi vermesi için o script'in perCardFlyDuration'ı ile aynı tutuldu.")]
     [SerializeField] private float flyDuration = 0.35f;
     [SerializeField] private Ease flyEase = Ease.OutQuad;
+    [Tooltip("Uçuş başlarken kartın rastgele bir açıyla eğilip düzelmesi - DeckShuffleView'daki maxEntryRotation ile aynı 'karışıyor' hissi.")]
+    [SerializeField] private float flyEntryRotation = 25f;
 
     private Canvas _canvas;
     private Dictionary<SwipeDirection, RectTransform> _anchorsByDirection;
@@ -128,7 +130,15 @@ public class ProcessedCardPopupView : MonoBehaviour
         sequence.AppendInterval(holdDuration);
         // Deste'ye uçuş - DeckShuffleView'daki karışma animasyonu gibi, ölçek/opaklık
         // SABİT kalıp (küçülerek erimek yerine) doğrudan hedefe uçup aniden kaybolsun.
+        // Uçuş başlarken rastgele bir açıyla eğilip, hedefe ulaşana kadar düzelmesi de
+        // aynı "karışıyor" hissini veriyor (DeckShuffleView.maxEntryRotation ile eşdeğer).
+        sequence.AppendCallback(() =>
+        {
+            float randomTilt = Random.Range(-flyEntryRotation, flyEntryRotation);
+            rect.localRotation = Quaternion.Euler(0f, 0f, randomTilt);
+        });
         sequence.Append(rect.DOAnchorPos(deckPos, flyDuration).SetEase(flyEase));
+        sequence.Join(rect.DOLocalRotate(Vector3.zero, flyDuration).SetEase(flyEase));
         sequence.OnComplete(() =>
         {
             if (popup != null) Destroy(popup.gameObject);

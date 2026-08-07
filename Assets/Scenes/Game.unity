@@ -3148,10 +3148,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1169301665}
   - {fileID: 247634392}
   - {fileID: 2000000002}
   - {fileID: 2000000011}
+  - {fileID: 1169301665}
   - {fileID: 1686834234}
   - {fileID: 994040656}
   - {fileID: 1391785558}
@@ -9963,8 +9963,10 @@ MonoBehaviour:
   rightSpawnOffset: {x: 0, y: 90}
   appearDelay: 0.3
   appearDuration: 0.25
+  appearEase: 27
   holdDuration: 0.5
   flyDuration: 0.35
+  flyEase: 6
 --- !u!1 &2013802486
 GameObject:
   m_ObjectHideFlags: 0
