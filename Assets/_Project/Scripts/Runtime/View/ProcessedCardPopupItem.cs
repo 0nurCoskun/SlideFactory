@@ -47,9 +47,9 @@ public class ProcessedCardPopupItem : MonoBehaviour
 
     /// <summary>
     /// Belirli bir karta bağlı olmayan düz bir metin mesajı gösterir (örn. "Tamamlandı!").
-    /// Kart çerçevesi/ikonu gizlenir - sadece metin görünür.
+    /// Kart çerçevesi/ikonu gizlenir - sadece metin görünür, istenirse renk override edilir.
     /// </summary>
-    public void SetupMessage(string message)
+    public void SetupMessage(string message, Color? color = null)
     {
         if (iconFrameImage != null) iconFrameImage.gameObject.SetActive(false);
         if (iconArtImage != null) iconArtImage.gameObject.SetActive(false);
@@ -57,6 +57,7 @@ public class ProcessedCardPopupItem : MonoBehaviour
         if (nameText != null)
         {
             nameText.text = message;
+            if (color.HasValue) nameText.color = color.Value;
             nameText.ForceMeshUpdate();
         }
     }

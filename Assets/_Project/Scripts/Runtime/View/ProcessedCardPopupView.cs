@@ -50,6 +50,10 @@ public class ProcessedCardPopupView : MonoBehaviour
     [Header("Final Ürün Mesajı")]
     [Tooltip("UI String Table'daki (UIStrings.json) anahtar - final ürün tamamlandığında gösterilir.")]
     [SerializeField] private string completedMessageKey = "ui_completed";
+    [Tooltip("İstasyon etiketleriyle çakışıp okunmaz olmasın diye, bu mesaj yön etiketlerinin YANINA değil, sabit bir ekran noktasına (popupParent'ın kendi merkezine göre) konur.")]
+    [SerializeField] private Vector2 completedMessagePosition = new Vector2(0f, 380f);
+    [Tooltip("Doğru istasyon feedback'indeki yeşille aynı renk (bkz. StationLabelsView.correctFlashColor).")]
+    [SerializeField] private Color completedMessageColor = new Color(0.49f, 0.82f, 0.48f, 1f);
 
     private Canvas _canvas;
     private Dictionary<SwipeDirection, RectTransform> _anchorsByDirection;
@@ -103,28 +107,30 @@ public class ProcessedCardPopupView : MonoBehaviour
     private void HandleCardProcessed(CardInstance instance, CardData resultData)
     {
         if (resultData == null) return;
+        if (!_anchorsByDirection.TryGetValue(_pendingDirection, out RectTransform anchor) || anchor == null) return;
 
-        ProcessedCardPopupItem popup = CreatePopup(_pendingDirection);
+        Vector2 spawnOffset = _spawnOffsetByDirection.TryGetValue(_pendingDirection, out Vector2 offset) ? offset : Vector2.zero;
+        Vector2 spawnPos = GetLocalPointInPopupParent(anchor) + spawnOffset;
+
+        ProcessedCardPopupItem popup = CreatePopup(spawnPos);
         if (popup != null) popup.Setup(resultData);
     }
 
     private void HandleCardCompleted(CardInstance instance)
     {
-        ProcessedCardPopupItem popup = CreatePopup(_pendingDirection);
-        if (popup != null) popup.SetupMessage(GameLocalization.GetUIString(completedMessageKey));
+        // İstasyon etiketinin yanı yerine sabit bir konumda göster - yön etiketiyle
+        // çakışıp okunmaz olmasın (bkz. completedMessagePosition).
+        ProcessedCardPopupItem popup = CreatePopup(completedMessagePosition);
+        if (popup != null) popup.SetupMessage(GameLocalization.GetUIString(completedMessageKey), completedMessageColor);
     }
 
     /// <summary>
-    /// İstasyon etiketinin yanında popup'ı yaratıp konumlandırır, görünüş/kayboluş
+    /// popupParent içinde verilen local noktada bir popup yaratır, görünüş/kayboluş
     /// animasyon zincirini kurar; içeriğini (kart mı, mesaj mı) çağıran taraf belirler.
     /// </summary>
-    private ProcessedCardPopupItem CreatePopup(SwipeDirection direction)
+    private ProcessedCardPopupItem CreatePopup(Vector2 spawnPos)
     {
         if (popupPrefab == null || popupParent == null) return null;
-        if (!_anchorsByDirection.TryGetValue(direction, out RectTransform anchor) || anchor == null) return null;
-
-        Vector2 spawnOffset = _spawnOffsetByDirection.TryGetValue(direction, out Vector2 offset) ? offset : Vector2.zero;
-        Vector2 spawnPos = GetLocalPointInPopupParent(anchor) + spawnOffset;
 
         ProcessedCardPopupItem popup = Instantiate(popupPrefab, popupParent);
 
