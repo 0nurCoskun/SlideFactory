@@ -4,9 +4,9 @@ using DG.Tweening;
 
 /// <summary>
 /// Doğru swipe sonrası, kartın dönüştüğü yeni hâlini (ikon + isim) o istasyonun
-/// etiketinin yanında kısaca gösterip sonra desteye (merkez kart konumuna) uçurarak
-/// yok eden "tatmin" animasyonu. Oyun kuralını bilmez, sadece GameManager event'lerini
-/// dinler (View katmanı sözleşmesi).
+/// etiketinin yanında (üstünde/altında) kısaca gösterip sonra AYNI YERDE
+/// küçülüp/solarak kaybolan "tatmin" animasyonu. Oyun kuralını bilmez, sadece
+/// GameManager event'lerini dinler (View katmanı sözleşmesi).
 ///
 /// GameManager.HandleSwipe() sırasında OnValidSwipe(direction, station) her zaman
 /// OnCardProcessed'dan HEMEN ÖNCE, aynı frame'de fırlatılır - bu yüzden yönü
@@ -24,8 +24,6 @@ public class ProcessedCardPopupView : MonoBehaviour
     [Header("Prefab / Konteyner")]
     [SerializeField] private ProcessedCardPopupItem popupPrefab;
     [SerializeField] private RectTransform popupParent;
-    [Tooltip("Kartın uçarak kayboldğu 'deste' noktası - gerçek Card'ın durduğu RectTransform ile aynısı.")]
-    [SerializeField] private RectTransform deckPosition;
 
     [Header("Yön Başına Ortaya Çıkış Noktası (istasyon etiketinin arka planı)")]
     [SerializeField] private RectTransform upAnchor;
@@ -45,11 +43,8 @@ public class ProcessedCardPopupView : MonoBehaviour
     [SerializeField] private float appearDuration = 0.25f;
     [SerializeField] private Ease appearEase = Ease.OutBack;
     [SerializeField] private float holdDuration = 0.5f;
-    [Tooltip("Desteye uçuş süresi - DeckShuffleView'daki 'kart deste konumuna uçuyor' animasyonuyla aynı hissi vermesi için o script'in perCardFlyDuration'ı ile aynı tutuldu.")]
-    [SerializeField] private float flyDuration = 0.35f;
-    [SerializeField] private Ease flyEase = Ease.OutQuad;
-    [Tooltip("Uçuş başlarken kartın rastgele bir açıyla eğilip düzelmesi - DeckShuffleView'daki maxEntryRotation ile aynı 'karışıyor' hissi.")]
-    [SerializeField] private float flyEntryRotation = 25f;
+    [SerializeField] private float disappearDuration = 0.25f;
+    [SerializeField] private Ease disappearEase = Ease.InBack;
 
     private Canvas _canvas;
     private Dictionary<SwipeDirection, RectTransform> _anchorsByDirection;
@@ -105,13 +100,12 @@ public class ProcessedCardPopupView : MonoBehaviour
 
     private void SpawnPopup(SwipeDirection direction, CardData cardData)
     {
-        if (popupPrefab == null || popupParent == null || deckPosition == null) return;
+        if (popupPrefab == null || popupParent == null) return;
         if (cardData == null) return;
         if (!_anchorsByDirection.TryGetValue(direction, out RectTransform anchor) || anchor == null) return;
 
         Vector2 spawnOffset = _spawnOffsetByDirection.TryGetValue(direction, out Vector2 offset) ? offset : Vector2.zero;
         Vector2 spawnPos = GetLocalPointInPopupParent(anchor) + spawnOffset;
-        Vector2 deckPos = GetLocalPointInPopupParent(deckPosition);
 
         ProcessedCardPopupItem popup = Instantiate(popupPrefab, popupParent);
         popup.Setup(cardData);
@@ -128,17 +122,10 @@ public class ProcessedCardPopupView : MonoBehaviour
         sequence.Append(rect.DOScale(Vector3.one, appearDuration).SetEase(appearEase));
         sequence.Join(canvasGroup.DOFade(1f, appearDuration));
         sequence.AppendInterval(holdDuration);
-        // Deste'ye uçuş - DeckShuffleView'daki karışma animasyonu gibi, ölçek/opaklık
-        // SABİT kalıp (küçülerek erimek yerine) doğrudan hedefe uçup aniden kaybolsun.
-        // Uçuş başlarken rastgele bir açıyla eğilip, hedefe ulaşana kadar düzelmesi de
-        // aynı "karışıyor" hissini veriyor (DeckShuffleView.maxEntryRotation ile eşdeğer).
-        sequence.AppendCallback(() =>
-        {
-            float randomTilt = Random.Range(-flyEntryRotation, flyEntryRotation);
-            rect.localRotation = Quaternion.Euler(0f, 0f, randomTilt);
-        });
-        sequence.Append(rect.DOAnchorPos(deckPos, flyDuration).SetEase(flyEase));
-        sequence.Join(rect.DOLocalRotate(Vector3.zero, flyDuration).SetEase(flyEase));
+        // Aynı yerde küçülüp solarak kaybolsun - istasyon etiketinin yanından
+        // hiçbir yere uçmuyor, tamamen orada belirip orada kayboluyor.
+        sequence.Append(rect.DOScale(Vector3.zero, disappearDuration).SetEase(disappearEase));
+        sequence.Join(canvasGroup.DOFade(0f, disappearDuration));
         sequence.OnComplete(() =>
         {
             if (popup != null) Destroy(popup.gameObject);

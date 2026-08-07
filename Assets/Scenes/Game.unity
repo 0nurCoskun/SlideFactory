@@ -9952,7 +9952,6 @@ MonoBehaviour:
   gameManager: {fileID: 415136257}
   popupPrefab: {fileID: 1000000004, guid: 92b3c6777e162929b9176f7676ff4a75, type: 3}
   popupParent: {fileID: 2000000002}
-  deckPosition: {fileID: 1852288289}
   upAnchor: {fileID: 1638529927}
   downAnchor: {fileID: 1179891388}
   leftAnchor: {fileID: 1809359179}
@@ -9965,8 +9964,6 @@ MonoBehaviour:
   appearDuration: 0.25
   appearEase: 27
   holdDuration: 0.5
-  flyDuration: 0.35
-  flyEase: 6
 --- !u!1 &2013802486
 GameObject:
   m_ObjectHideFlags: 0
