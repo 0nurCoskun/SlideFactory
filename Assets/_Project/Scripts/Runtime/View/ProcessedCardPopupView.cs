@@ -51,9 +51,11 @@ public class ProcessedCardPopupView : MonoBehaviour
     [Tooltip("UI String Table'daki (UIStrings.json) anahtar - final ürün tamamlandığında gösterilir.")]
     [SerializeField] private string completedMessageKey = "ui_completed";
     [Tooltip("Bu mesaj, doğru swipe'ın yapıldığı istasyon etiketinin HER ZAMAN ÜSTÜNDE gösterilir (kart popup'larındaki yöne göre üst/alt ofsetinden farklı olarak, yön farketmeksizin sabit bu ofset kullanılır) - etiketin metniyle çakışıp okunmaz olmasın.")]
-    [SerializeField] private Vector2 completedMessageOffset = new Vector2(0f, 90f);
+    [SerializeField] private Vector2 completedMessageOffset = new Vector2(0f, 160f);
     [Tooltip("Doğru istasyon feedback'indeki yeşille aynı renk (bkz. StationLabelsView.correctFlashColor).")]
     [SerializeField] private Color completedMessageColor = new Color(0.49f, 0.82f, 0.48f, 1f);
+    [Tooltip("Mesajın kart popup'larına göre ne kadar büyük görüneceği - okunabilirlik için kart isimlerinden daha büyük.")]
+    [SerializeField] private float completedMessageScale = 1.5f;
 
     private Canvas _canvas;
     private Dictionary<SwipeDirection, RectTransform> _anchorsByDirection;
@@ -124,7 +126,7 @@ public class ProcessedCardPopupView : MonoBehaviour
         // hangi istasyon olursa olsun HER ZAMAN etiketin üstünde beliriyor.
         Vector2 spawnPos = GetLocalPointInPopupParent(anchor) + completedMessageOffset;
 
-        ProcessedCardPopupItem popup = CreatePopup(spawnPos);
+        ProcessedCardPopupItem popup = CreatePopup(spawnPos, completedMessageScale);
         if (popup != null) popup.SetupMessage(GameLocalization.GetUIString(completedMessageKey), completedMessageColor);
     }
 
@@ -132,7 +134,7 @@ public class ProcessedCardPopupView : MonoBehaviour
     /// popupParent içinde verilen local noktada bir popup yaratır, görünüş/kayboluş
     /// animasyon zincirini kurar; içeriğini (kart mı, mesaj mı) çağıran taraf belirler.
     /// </summary>
-    private ProcessedCardPopupItem CreatePopup(Vector2 spawnPos)
+    private ProcessedCardPopupItem CreatePopup(Vector2 spawnPos, float targetScale = 1f)
     {
         if (popupPrefab == null || popupParent == null) return null;
 
@@ -140,6 +142,7 @@ public class ProcessedCardPopupView : MonoBehaviour
 
         RectTransform rect = popup.RectTransform;
         CanvasGroup canvasGroup = popup.CanvasGroup;
+        Vector3 fullScale = Vector3.one * targetScale;
 
         rect.anchoredPosition = spawnPos;
         rect.localScale = Vector3.zero;
@@ -147,7 +150,7 @@ public class ProcessedCardPopupView : MonoBehaviour
 
         Sequence sequence = DOTween.Sequence();
         sequence.AppendInterval(appearDelay);
-        sequence.Append(rect.DOScale(Vector3.one, appearDuration).SetEase(appearEase));
+        sequence.Append(rect.DOScale(fullScale, appearDuration).SetEase(appearEase));
         sequence.Join(canvasGroup.DOFade(1f, appearDuration));
         sequence.AppendInterval(holdDuration);
         // Aynı yerde küçülüp solarak kaybolsun - istasyon etiketinin yanından
