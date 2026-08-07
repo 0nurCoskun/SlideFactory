@@ -50,8 +50,10 @@ public class ProcessedCardPopupView : MonoBehaviour
     [Header("Final Ürün Mesajı")]
     [Tooltip("UI String Table'daki (UIStrings.json) anahtar - final ürün tamamlandığında gösterilir.")]
     [SerializeField] private string completedMessageKey = "ui_completed";
-    [Tooltip("Bu mesaj, doğru swipe'ın yapıldığı istasyon etiketinin HER ZAMAN ÜSTÜNDE gösterilir (kart popup'larındaki yöne göre üst/alt ofsetinden farklı olarak, yön farketmeksizin sabit bu ofset kullanılır) - etiketin metniyle çakışıp okunmaz olmasın.")]
+    [Tooltip("Bu mesaj, doğru swipe'ın yapıldığı istasyon etiketinin HER ZAMAN ÜSTÜNDE gösterilir (kart popup'larındaki yöne göre üst/alt ofsetinden farklı olarak, yön farketmeksizin sabit bu ofset kullanılır) - Aşağı istasyonu HARİÇ, o downCompletedMessageOffset kullanır (bkz. aşağıdaki alan) - etiketin metniyle çakışıp okunmaz olmasın.")]
     [SerializeField] private Vector2 completedMessageOffset = new Vector2(0f, 300f);
+    [Tooltip("SADECE Aşağı istasyonu için: mesaj etiketin üstünde değil ALTINDA gösterilsin (kartla çakışmasın).")]
+    [SerializeField] private Vector2 downCompletedMessageOffset = new Vector2(0f, -300f);
     [Tooltip("Doğru istasyon feedback'indeki yeşille aynı renk (bkz. StationLabelsView.correctFlashColor).")]
     [SerializeField] private Color completedMessageColor = new Color(0.49f, 0.82f, 0.48f, 1f);
     [Tooltip("Mesajın kart popup'larına göre ne kadar büyük görüneceği - okunabilirlik için kart isimlerinden daha büyük.")]
@@ -123,8 +125,10 @@ public class ProcessedCardPopupView : MonoBehaviour
         if (!_anchorsByDirection.TryGetValue(_pendingDirection, out RectTransform anchor) || anchor == null) return;
 
         // Kart popup'larından farklı olarak yöne göre üst/alt seçmiyoruz - bu mesaj
-        // hangi istasyon olursa olsun HER ZAMAN etiketin üstünde beliriyor.
-        Vector2 spawnPos = GetLocalPointInPopupParent(anchor) + completedMessageOffset;
+        // her istasyonda HER ZAMAN etiketin üstünde beliriyor, TEK istisna Aşağı
+        // istasyonu: orada üstte kartla çakışacağı için etiketin altında gösteriyoruz.
+        Vector2 offset = _pendingDirection == SwipeDirection.Down ? downCompletedMessageOffset : completedMessageOffset;
+        Vector2 spawnPos = GetLocalPointInPopupParent(anchor) + offset;
 
         ProcessedCardPopupItem popup = CreatePopup(spawnPos, completedMessageScale);
         if (popup != null) popup.SetupMessage(GameLocalization.GetUIString(completedMessageKey), completedMessageColor);
