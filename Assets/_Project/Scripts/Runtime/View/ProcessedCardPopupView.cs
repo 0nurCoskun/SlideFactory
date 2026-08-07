@@ -12,9 +12,10 @@ using DG.Tweening;
 /// OnCardProcessed'dan HEMEN ÖNCE, aynı frame'de fırlatılır - bu yüzden yönü
 /// OnValidSwipe'da yakalayıp, hemen ardından gelen OnCardProcessed'da kullanıyoruz.
 ///
-/// SADECE ara aşamaya geçen kartlar (OnCardProcessed) popup gösterir. Final ürün
-/// (OnCardCompleted) ve "çöp" sonucu (resultData yok) için popup ATLANIR - final ürün
-/// zaten desteden tamamen ayrılıyor, "desteye dönüyor" hissi vermek yanlış olurdu.
+/// Ara aşamaya geçen kartlar (OnCardProcessed) kendi ikon+ismini gösterir. Final ürün
+/// (OnCardCompleted) için ise kart değil, sadece localize edilmiş "Tamamlandı!" mesajı
+/// gösterilir - aynı görünüş/kayboluş animasyonuyla. "Çöp" sonucu (resultData yok) için
+/// popup ATLANIR, gösterilecek bir şey yok.
 /// </summary>
 public class ProcessedCardPopupView : MonoBehaviour
 {
@@ -45,6 +46,10 @@ public class ProcessedCardPopupView : MonoBehaviour
     [SerializeField] private float holdDuration = 0.5f;
     [SerializeField] private float disappearDuration = 0.25f;
     [SerializeField] private Ease disappearEase = Ease.InBack;
+
+    [Header("Final Ürün Mesajı")]
+    [Tooltip("UI String Table'daki (UIStrings.json) anahtar - final ürün tamamlandığında gösterilir.")]
+    [SerializeField] private string completedMessageKey = "ui_completed";
 
     private Canvas _canvas;
     private Dictionary<SwipeDirection, RectTransform> _anchorsByDirection;
@@ -78,6 +83,7 @@ public class ProcessedCardPopupView : MonoBehaviour
 
         gameManager.OnValidSwipe += HandleValidSwipe;
         gameManager.OnCardProcessed += HandleCardProcessed;
+        gameManager.OnCardCompleted += HandleCardCompleted;
     }
 
     private void OnDisable()
@@ -86,6 +92,7 @@ public class ProcessedCardPopupView : MonoBehaviour
 
         gameManager.OnValidSwipe -= HandleValidSwipe;
         gameManager.OnCardProcessed -= HandleCardProcessed;
+        gameManager.OnCardCompleted -= HandleCardCompleted;
     }
 
     private void HandleValidSwipe(SwipeDirection direction, StationData station)
@@ -95,20 +102,31 @@ public class ProcessedCardPopupView : MonoBehaviour
 
     private void HandleCardProcessed(CardInstance instance, CardData resultData)
     {
-        SpawnPopup(_pendingDirection, resultData);
+        if (resultData == null) return;
+
+        ProcessedCardPopupItem popup = CreatePopup(_pendingDirection);
+        if (popup != null) popup.Setup(resultData);
     }
 
-    private void SpawnPopup(SwipeDirection direction, CardData cardData)
+    private void HandleCardCompleted(CardInstance instance)
     {
-        if (popupPrefab == null || popupParent == null) return;
-        if (cardData == null) return;
-        if (!_anchorsByDirection.TryGetValue(direction, out RectTransform anchor) || anchor == null) return;
+        ProcessedCardPopupItem popup = CreatePopup(_pendingDirection);
+        if (popup != null) popup.SetupMessage(GameLocalization.GetUIString(completedMessageKey));
+    }
+
+    /// <summary>
+    /// İstasyon etiketinin yanında popup'ı yaratıp konumlandırır, görünüş/kayboluş
+    /// animasyon zincirini kurar; içeriğini (kart mı, mesaj mı) çağıran taraf belirler.
+    /// </summary>
+    private ProcessedCardPopupItem CreatePopup(SwipeDirection direction)
+    {
+        if (popupPrefab == null || popupParent == null) return null;
+        if (!_anchorsByDirection.TryGetValue(direction, out RectTransform anchor) || anchor == null) return null;
 
         Vector2 spawnOffset = _spawnOffsetByDirection.TryGetValue(direction, out Vector2 offset) ? offset : Vector2.zero;
         Vector2 spawnPos = GetLocalPointInPopupParent(anchor) + spawnOffset;
 
         ProcessedCardPopupItem popup = Instantiate(popupPrefab, popupParent);
-        popup.Setup(cardData);
 
         RectTransform rect = popup.RectTransform;
         CanvasGroup canvasGroup = popup.CanvasGroup;
@@ -130,6 +148,8 @@ public class ProcessedCardPopupView : MonoBehaviour
         {
             if (popup != null) Destroy(popup.gameObject);
         });
+
+        return popup;
     }
 
     /// <summary>

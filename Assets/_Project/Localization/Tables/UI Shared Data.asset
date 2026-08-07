@@ -167,6 +167,10 @@ MonoBehaviour:
     m_Key: ui_language_turkish
     m_Metadata:
       m_Items: []
+  - m_Id: 2084585509
+    m_Key: ui_completed
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

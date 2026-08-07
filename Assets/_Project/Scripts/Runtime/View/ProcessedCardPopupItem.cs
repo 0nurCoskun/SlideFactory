@@ -11,6 +11,7 @@ using TMPro;
 [RequireComponent(typeof(RectTransform), typeof(CanvasGroup))]
 public class ProcessedCardPopupItem : MonoBehaviour
 {
+    [SerializeField] private Image iconFrameImage;
     [SerializeField] private Image iconArtImage;
     [SerializeField] private TMP_Text nameText;
 
@@ -23,9 +24,12 @@ public class ProcessedCardPopupItem : MonoBehaviour
         CanvasGroup = GetComponent<CanvasGroup>();
     }
 
+    /// <summary>İşlenmiş kartın ikonunu + ismini gösterir (kart çerçevesi görünür).</summary>
     public void Setup(CardData data)
     {
         if (data == null) return;
+
+        if (iconFrameImage != null) iconFrameImage.gameObject.SetActive(true);
 
         if (iconArtImage != null)
         {
@@ -37,6 +41,22 @@ public class ProcessedCardPopupItem : MonoBehaviour
         if (nameText != null)
         {
             nameText.text = GameLocalization.GetCardName(data);
+            nameText.ForceMeshUpdate();
+        }
+    }
+
+    /// <summary>
+    /// Belirli bir karta bağlı olmayan düz bir metin mesajı gösterir (örn. "Tamamlandı!").
+    /// Kart çerçevesi/ikonu gizlenir - sadece metin görünür.
+    /// </summary>
+    public void SetupMessage(string message)
+    {
+        if (iconFrameImage != null) iconFrameImage.gameObject.SetActive(false);
+        if (iconArtImage != null) iconArtImage.gameObject.SetActive(false);
+
+        if (nameText != null)
+        {
+            nameText.text = message;
             nameText.ForceMeshUpdate();
         }
     }

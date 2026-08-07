@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d17c2b5857a636c1a6739e7ced47787, type: 3}
   m_Name:
   m_EditorClassIdentifier:
+  iconFrameImage: {fileID: 1000000013}
   iconArtImage: {fileID: 1000000023}
   nameText: {fileID: 1000000033}
 --- !u!1 &1000000010

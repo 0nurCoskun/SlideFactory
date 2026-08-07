@@ -64,5 +64,6 @@
   "ui_alchemist": { "en": "Alchemist", "tr": "Simyacı" },
   "ui_language": { "en": "Language", "tr": "Dil" },
   "ui_language_english": { "en": "English", "tr": "English" },
-  "ui_language_turkish": { "en": "Turkish", "tr": "Türkçe" }
+  "ui_language_turkish": { "en": "Turkish", "tr": "Türkçe" },
+  "ui_completed": { "en": "Completed!", "tr": "Tamamlandı!" }
 }

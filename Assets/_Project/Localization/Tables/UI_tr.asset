@@ -173,6 +173,10 @@ MonoBehaviour:
     m_Localized: "T\xFCrk\xE7e"
     m_Metadata:
       m_Items: []
+  - m_Id: 2084585509
+    m_Localized: "Tamamlandı!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
