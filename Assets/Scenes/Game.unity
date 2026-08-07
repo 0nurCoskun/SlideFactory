@@ -9962,10 +9962,14 @@ MonoBehaviour:
   rightSpawnOffset: {x: 0, y: 90}
   appearDelay: 0.3
   appearDuration: 0.25
-  appearEase: 27
-  holdDuration: 0.25
+  appearEase: 18
+  holdDuration: 0.4
   disappearDuration: 0.25
-  disappearEase: 26
+  disappearEase: 17
+  completedMessageKey: ui_completed
+  completedMessageOffset: {x: 0, y: 340}
+  completedMessageColor: {r: 0.15276171, g: 0.4415095, b: 0.14244927, a: 1}
+  completedMessageScale: 2
 --- !u!1 &2013802486
 GameObject:
   m_ObjectHideFlags: 0

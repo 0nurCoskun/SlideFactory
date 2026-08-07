@@ -51,7 +51,7 @@ public class ProcessedCardPopupView : MonoBehaviour
     [Tooltip("UI String Table'daki (UIStrings.json) anahtar - final ürün tamamlandığında gösterilir.")]
     [SerializeField] private string completedMessageKey = "ui_completed";
     [Tooltip("Bu mesaj, doğru swipe'ın yapıldığı istasyon etiketinin HER ZAMAN ÜSTÜNDE gösterilir (kart popup'larındaki yöne göre üst/alt ofsetinden farklı olarak, yön farketmeksizin sabit bu ofset kullanılır) - etiketin metniyle çakışıp okunmaz olmasın.")]
-    [SerializeField] private Vector2 completedMessageOffset = new Vector2(0f, 160f);
+    [SerializeField] private Vector2 completedMessageOffset = new Vector2(0f, 300f);
     [Tooltip("Doğru istasyon feedback'indeki yeşille aynı renk (bkz. StationLabelsView.correctFlashColor).")]
     [SerializeField] private Color completedMessageColor = new Color(0.49f, 0.82f, 0.48f, 1f);
     [Tooltip("Mesajın kart popup'larına göre ne kadar büyük görüneceği - okunabilirlik için kart isimlerinden daha büyük.")]
