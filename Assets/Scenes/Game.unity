@@ -9956,14 +9956,16 @@ MonoBehaviour:
   downAnchor: {fileID: 1179891388}
   leftAnchor: {fileID: 1809359179}
   rightAnchor: {fileID: 727789077}
-  upSpawnOffset: {x: 0, y: -90}
-  downSpawnOffset: {x: 0, y: 90}
+  upSpawnOffset: {x: 0, y: 90}
+  downSpawnOffset: {x: 0, y: -90}
   leftSpawnOffset: {x: 0, y: 90}
   rightSpawnOffset: {x: 0, y: 90}
   appearDelay: 0.3
   appearDuration: 0.25
   appearEase: 27
-  holdDuration: 0.5
+  holdDuration: 0.25
+  disappearDuration: 0.25
+  disappearEase: 26
 --- !u!1 &2013802486
 GameObject:
   m_ObjectHideFlags: 0
