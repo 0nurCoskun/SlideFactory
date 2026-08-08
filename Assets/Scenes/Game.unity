@@ -1539,7 +1539,7 @@ MonoBehaviour:
   swipeInputManager: {fileID: 1313664592}
   stationAssignmentManager: {fileID: 1614334976}
   levelTimerManager: {fileID: 1667566281}
-  fallbackLevelData: {fileID: 11400000, guid: e720e925023cafd41898ddd489aef40e, type: 2}
+  fallbackLevelData: {fileID: 11400000, guid: f283f351a41dc184b80405d4b35097c7, type: 2}
 --- !u!1 &431172784
 GameObject:
   m_ObjectHideFlags: 0
