@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SwipeInputManager swipeInputManager;
     [SerializeField] private StationAssignmentManager stationAssignmentManager;
     [SerializeField] private LevelTimerManager levelTimerManager;
+    [Tooltip("Puan/combo sistemi. Yıldızlar bunun ürettiği skora göre hesaplanır - " +
+             "boş bırakılırsa ESKİ kurala (kalan süre oranı) düşer ve Console'a uyarı yazılır.")]
+    [SerializeField] private ScoreManager scoreManager;
 
     [Header("Level Verisi")]
     [Tooltip("Level Select ekranından gelen seçim varsa o kullanılır. " +
@@ -282,6 +285,16 @@ public class GameManager : MonoBehaviour
         stationAssignmentManager?.StopAssigning();
         levelTimerManager?.StopTimer();
 
+        // SIRA KRİTİK: süre bonusu ve rekor işleme, CalculateStars()'tan VE
+        // OnLevelWon/OnLevelFailed'dan ÖNCE olmak ZORUNDA - LevelResultView paneli
+        // açtığı anda skorun NİHAİ halini okuyor. StopTimer() kalan süreyi KORUDUĞU
+        // (sıfırlamadığı) için RemainingTime burada hâlâ geçerli.
+        bool isTutorialLevel = _activeLevel != null && _activeLevel.isTutorial;
+        scoreManager?.FinalizeScore(
+            _activeLevel,
+            levelTimerManager != null ? levelTimerManager.RemainingTime : 0f,
+            persist: won && !isTutorialLevel);
+
         if (won)
         {
             int stars = CalculateStars();
@@ -301,13 +314,40 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Kalan sürenin toplam süreye oranına göre 1-3 arası yıldız hesaplar.
-    /// Bu metod sadece won=true durumunda çağrıldığı için her zaman EN AZ 1 yıldız garantiler.
+    /// Toplanan puanın par skoruna (kusursuz oynanışın temel puanı) oranına göre
+    /// 1-3 arası yıldız hesaplar. Bu metod sadece won=true durumunda çağrıldığı için
+    /// her zaman EN AZ 1 yıldız garantiler.
+    ///
+    /// Artık yıldız sadece "ne kadar hızlı bitirdin"e değil, "ne kadar İYİ oynadın"a
+    /// bakıyor: kalan süre de skorun içinde bir bonus olarak duruyor (bkz.
+    /// ScoreManager.ApplyEndOfLevelTimeBonus), yani hız hâlâ ödüllendiriliyor.
+    ///
+    /// YEDEK KURAL: scoreManager atanmamışsa ya da par hesaplanamıyorsa (par <= 0,
+    /// örn. destesi tek bir çöp karttan oluşan bir tutorial) ESKİ kalan-süre kuralına
+    /// düşer - LevelData.threeStarRemainingRatio/twoStarRemainingRatio bu yüzden
+    /// hâlâ duruyor.
     /// </summary>
     private int CalculateStars()
     {
-        if (levelTimerManager == null || _activeLevel == null || _activeLevel.levelDuration <= 0f)
+        if (_activeLevel == null) return 1;
+
+        int par = scoreManager != null ? scoreManager.ParScore : 0;
+
+        if (scoreManager != null && par > 0)
+        {
+            float scoreRatio = (float)scoreManager.TotalScore / par;
+
+            if (scoreRatio >= _activeLevel.threeStarScoreRatio) return 3;
+            if (scoreRatio >= _activeLevel.twoStarScoreRatio) return 2;
             return 1;
+        }
+
+        // Sessizce eski kurala dönmek, Inspector'da atanmayı bekleyen bir referansı
+        // gizler - o yüzden bilerek gürültü çıkarıyoruz.
+        Debug.LogWarning("[GameManager] ScoreManager atanmamış ya da par skoru 0 - " +
+                          "yıldızlar YEDEK kurala (kalan süre oranı) göre hesaplanıyor.");
+
+        if (levelTimerManager == null || _activeLevel.levelDuration <= 0f) return 1;
 
         float remainingRatio = levelTimerManager.RemainingTime / _activeLevel.levelDuration;
 

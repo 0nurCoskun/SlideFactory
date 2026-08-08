@@ -29,10 +29,24 @@ public class LevelData : ScriptableObject
     [Tooltip("Bölümün toplam süresi (saniye).")]
     public float levelDuration = 90f;
 
-    [Header("Yıldız Eşikleri (kalan sürenin toplam süreye oranı)")]
-    [Tooltip("Kalan süre oranı bu değerin ÜSTÜNDEYSE 3 yıldız verilir. Örn: 0.5 = süresinin yarısından fazlası kalmışsa.")]
+    [Header("Yıldız Eşikleri (skorun par skoruna oranı) - ASIL KURAL")]
+    [Tooltip("Skor / par skoru oranı bu değerin ÜSTÜNDEYSE 3 yıldız verilir.\n\n" +
+             "Par skoru = kusursuz bir koşunun (hiç hata yapmadan, çarpanı hiç düşürmeden) " +
+             "toplayacağı temel puan. ScoreManager bunu destedeki üretim zincirlerinden " +
+             "OTOMATİK hesaplar - elle sayı girmen gerekmez.\n\n" +
+             "Range 0-1 DEĞİL 0-2: level sonundaki kalan süre bonusu par skoruna DAHİL " +
+             "EDİLMEDİĞİ için toplam skor par'ın üstüne çıkabilir.")]
+    [Range(0f, 2f)] public float threeStarScoreRatio = 0.85f;
+    [Tooltip("Skor / par oranı bu değerin ÜSTÜNDEYSE (ama 3 yıldız eşiğinin altındaysa) 2 yıldız verilir.")]
+    [Range(0f, 2f)] public float twoStarScoreRatio = 0.55f;
+
+    [Header("Yıldız Eşikleri (kalan süre oranı) - YEDEK KURAL")]
+    [Tooltip("YEDEK: Sahnede ScoreManager atanmamışsa ya da par skoru hesaplanamıyorsa " +
+             "(par <= 0) yıldızlar bu ESKİ kurala göre hesaplanır. Normal oynanışta " +
+             "kullanılmaz - asıl kural yukarıdaki skor oranıdır.\n\n" +
+             "Kalan süre oranı bu değerin ÜSTÜNDEYSE 3 yıldız. Örn: 0.5 = süresinin yarısından fazlası kalmışsa.")]
     [Range(0f, 1f)] public float threeStarRemainingRatio = 0.5f;
-    [Tooltip("Kalan süre oranı bu değerin ÜSTÜNDEYSE (ama 3 yıldız eşiğinin altındaysa) 2 yıldız verilir.")]
+    [Tooltip("YEDEK: Kalan süre oranı bu değerin ÜSTÜNDEYSE (ama 3 yıldız eşiğinin altındaysa) 2 yıldız verilir.")]
     [Range(0f, 1f)] public float twoStarRemainingRatio = 0.2f;
 
     [Header("İstasyon Karışması")]

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using TMPro;
 
 /// <summary>
 /// GameManager'ın OnLevelWon / OnLevelFailed event'lerini dinler, ilgili paneli
@@ -13,6 +14,9 @@ public class LevelResultView : MonoBehaviour
 {
     [Header("Bağımlılık")]
     [SerializeField] private GameManager gameManager;
+    [Tooltip("Kazanılan puanı ve rekoru göstermek için. Boş bırakılırsa puan alanları " +
+             "sessizce boş kalır, panel yine normal çalışır.")]
+    [SerializeField] private ScoreManager scoreManager;
 
     [Header("Paneller (başlangıçta inactive olmalı)")]
     [SerializeField] private GameObject winPanel;
@@ -42,15 +46,44 @@ public class LevelResultView : MonoBehaviour
     [Tooltip("Sadece KAZANILAN yıldızlar patladığında çalınır (boş yıldızlar sessiz belirir).")]
     [SerializeField] private AudioClip starPopSound;
 
+    [Header("Skor (WinPanel)")]
+    [SerializeField] private TMP_Text winScoreText;
+    [Tooltip("Bu level'daki en yüksek puan. Zorunlu değil.")]
+    [SerializeField] private TMP_Text winBestScoreText;
+    [Tooltip("Sadece GERÇEKTEN yeni rekor kırıldığında, sayım animasyonu BİTTİKTEN sonra belirir. " +
+             "Sahnede inactive bırakılabilir - Awake zaten kapatıyor.")]
+    [SerializeField] private GameObject newRecordBadge;
+
+    [Header("Skor (LosePanel)")]
+    [Tooltip("Kaybedilen denemede de toplanan puan gösterilir (koşu boşa gitmiş gibi " +
+             "hissettirmemek için) ama ASLA kaydedilmez.")]
+    [SerializeField] private TMP_Text loseScoreText;
+    [SerializeField] private TMP_Text loseBestScoreText;
+
+    [Header("Skor Sayım Animasyonu")]
+    [Tooltip("Puanın 0'dan nihai değere akma süresi. Yıldızlar bittikten SONRA başlar.")]
+    [SerializeField] private float scoreCountUpDuration = 0.9f;
+    [SerializeField] private Ease scoreCountUpEase = Ease.OutCubic;
+    [SerializeField] private AudioClip scoreCountUpSound;
+    [SerializeField] private AudioClip newRecordSound;
+
     [Header("Sahne İsimleri")]
     [Tooltip("Restart'a basınca mevcut sahne yeniden yüklenir - bu alanı doldurmana gerek yok.")]
     [SerializeField] private string mainMenuSceneName = "MainMenu";
+
+    // Yıldız + skor sayımı AYNI zaman çizgisinde ilerlediği için tek bir sequence.
+    // Sahne yeniden yüklenirken (Restart) öldürülmek zorunda - yoksa DOTween yok olmuş
+    // transform'lar için "target is missing" uyarısı basıyor.
+    private Sequence _resultSequence;
 
     private void Awake()
     {
         // Baştan emin ol - Inspector'da yanlışlıkla aktif bırakılmış olabilir.
         if (winPanel != null) winPanel.SetActive(false);
         if (losePanel != null) losePanel.SetActive(false);
+
+        // Rozet, sayım bitmeden görünmemeli - yoksa rekor kırılmadan "YENİ REKOR" yazar.
+        if (newRecordBadge != null) newRecordBadge.SetActive(false);
     }
 
     private void OnEnable()
@@ -69,6 +102,8 @@ public class LevelResultView : MonoBehaviour
             gameManager.OnLevelWon -= HandleLevelWon;
             gameManager.OnLevelFailed -= HandleLevelFailed;
         }
+
+        _resultSequence?.Kill();
     }
 
     private void HandleLevelWon(int stars)
@@ -77,42 +112,95 @@ public class LevelResultView : MonoBehaviour
         if (gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.isTutorial) return;
 
         ShowPanel(winPanel);
-        AnimateStars(stars);
+        PlayWinTimeline(stars);
 
         bool hasNextLevel = gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.nextLevel != null;
         if (nextLevelButton != null) nextLevelButton.SetActive(hasNextLevel);
     }
 
     /// <summary>
-    /// Doğru sprite'ı (dolu/boş) hemen atar ama görsel olarak scale 0'da gizli tutar,
-    /// sonra panel pop animasyonu bitince yıldızları tek tek (staggered) "patlatır".
-    /// Kazanılan yıldızlar patlarken ayrıca starPopSound çalınır.
+    /// Win panelinin tüm giriş koreografisi TEK bir zaman çizgisinde:
+    /// panel pop -> yıldızlar tek tek patlar -> puan 0'dan sayılır -> (varsa) rekor rozeti.
+    /// Hepsinin aynı sequence'te olması ZORUNLU, yoksa iki bağımsız animasyon
+    /// birbiriyle yarışır ve sıra her seferinde farklı görünür.
+    ///
+    /// Yıldız sprite'ları (dolu/boş) hemen atanır ama scale 0'da gizli tutulur.
     /// </summary>
-    private void AnimateStars(int stars)
+    private void PlayWinTimeline(int stars)
     {
-        if (starImages == null) return;
+        // Skor değerleri BURADA yerel değişkene alınıyor: GameManager.EndLevel,
+        // OnLevelWon'dan ÖNCE FinalizeScore'u çağırdığı için bu değerler artık NİHAİ.
+        // Ayrıca closure'ların içinden scoreManager'ı tekrar okumak, sahne yıkımı
+        // sırasında null'a düşme riski taşır.
+        int finalScore = scoreManager != null ? scoreManager.TotalScore : 0;
+        int previousBest = scoreManager != null ? scoreManager.PreviousBestScore : 0;
+        bool isNewRecord = scoreManager != null && scoreManager.IsNewBestScore;
 
-        Sequence starSequence = DOTween.Sequence();
+        // Rekor zaten kaydedilmiş olabilir; gösterilecek değer ikisinin büyüğü.
+        int bestToShow = Mathf.Max(previousBest, finalScore);
 
-        for (int i = 0; i < starImages.Length; i++)
+        // Sayım 0'dan başlayacak - panel açılır açılmaz bir önceki koşunun sayısı
+        // tek kare için görünmesin diye metni HEMEN sıfırla.
+        if (winScoreText != null)
+            winScoreText.text = GameLocalization.GetUIString("ui_score_value", "0");
+
+        if (winBestScoreText != null)
+            winBestScoreText.text = GameLocalization.GetUIString("ui_best_score", bestToShow.ToString("N0"));
+
+        _resultSequence?.Kill();
+        _resultSequence = DOTween.Sequence();
+
+        // --- Yıldızlar: mevcut mutlak zamanlı Insert şeması korunuyor ---
+        float starsEndTime = popDuration + starStartDelay;
+
+        if (starImages != null)
         {
-            UnityEngine.UI.Image starImage = starImages[i];
-            if (starImage == null) continue;
-
-            bool earned = i < stars;
-            starImage.sprite = earned ? filledStarSprite : emptyStarSprite;
-
-            Transform starTransform = starImage.transform;
-            starTransform.DOKill();
-            starTransform.localScale = Vector3.zero;
-
-            float startTime = popDuration + starStartDelay + i * starStagger;
-            starSequence.Insert(startTime, starTransform.DOScale(Vector3.one, starPopDuration).SetEase(starPopEase));
-
-            if (earned)
+            for (int i = 0; i < starImages.Length; i++)
             {
-                starSequence.InsertCallback(startTime, () => AudioManager.Instance?.PlaySFX(starPopSound));
+                UnityEngine.UI.Image starImage = starImages[i];
+                if (starImage == null) continue;
+
+                bool earned = i < stars;
+                starImage.sprite = earned ? filledStarSprite : emptyStarSprite;
+
+                Transform starTransform = starImage.transform;
+                starTransform.DOKill();
+                starTransform.localScale = Vector3.zero;
+
+                float startTime = popDuration + starStartDelay + i * starStagger;
+                _resultSequence.Insert(startTime, starTransform.DOScale(Vector3.one, starPopDuration).SetEase(starPopEase));
+
+                if (earned)
+                {
+                    _resultSequence.InsertCallback(startTime, () => AudioManager.Instance?.PlaySFX(starPopSound));
+                }
+
+                // Kademelemenin GERÇEK bitişini takip et - sabit bir değer yazmak,
+                // yıldız sayısı/süreleri Inspector'dan değişince yanlış olurdu.
+                starsEndTime = Mathf.Max(starsEndTime, startTime + starPopDuration);
             }
+        }
+
+        // --- Puan sayımı: yıldızlar bittikten SONRA, aynı zaman çizgisinde ---
+        if (winScoreText != null)
+        {
+            _resultSequence.InsertCallback(starsEndTime, () => AudioManager.Instance?.PlaySFX(scoreCountUpSound));
+            _resultSequence.Insert(starsEndTime,
+                DOVirtual.Int(0, finalScore, scoreCountUpDuration,
+                        value => winScoreText.text = GameLocalization.GetUIString("ui_score_value", value.ToString("N0")))
+                    .SetEase(scoreCountUpEase));
+        }
+
+        // --- Rekor rozeti: sayım bittikten sonra ---
+        if (isNewRecord && newRecordBadge != null)
+        {
+            _resultSequence.InsertCallback(starsEndTime + scoreCountUpDuration, () =>
+            {
+                newRecordBadge.SetActive(true);
+                newRecordBadge.transform.localScale = Vector3.zero;
+                newRecordBadge.transform.DOScale(Vector3.one, popDuration).SetEase(popEase);
+                AudioManager.Instance?.PlaySFX(newRecordSound);
+            });
         }
     }
 
@@ -122,6 +210,19 @@ public class LevelResultView : MonoBehaviour
         if (gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.isTutorial) return;
 
         ShowPanel(losePanel);
+
+        // Kayıpta puan GÖSTERİLİR ama ASLA kaydedilmez (bkz. ScoreProgress ve
+        // GameManager.EndLevel'daki persist parametresi). PreviousBestScore,
+        // FinalizeScore(persist:false) tarafından yine dolduruluyor - bu yüzden
+        // mevcut rekoru hiçbir şey yazmadan gösterebiliyoruz.
+        int score = scoreManager != null ? scoreManager.TotalScore : 0;
+        int best = scoreManager != null ? scoreManager.PreviousBestScore : 0;
+
+        if (loseScoreText != null)
+            loseScoreText.text = GameLocalization.GetUIString("ui_score_value", score.ToString("N0"));
+
+        if (loseBestScoreText != null)
+            loseBestScoreText.text = GameLocalization.GetUIString("ui_best_score", best.ToString("N0"));
     }
 
     private void ShowPanel(GameObject panel)
