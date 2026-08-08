@@ -65,5 +65,13 @@
   "ui_language": { "en": "Language", "tr": "Dil" },
   "ui_language_english": { "en": "English", "tr": "English" },
   "ui_language_turkish": { "en": "Turkish", "tr": "Türkçe" },
-  "ui_completed": { "en": "Completed!", "tr": "Tamamlandı!" }
+  "ui_completed": { "en": "Completed!", "tr": "Tamamlandı!" },
+  "ui_score": { "en": "Score", "tr": "Puan" },
+  "ui_score_value": { "en": "Score: {0}", "tr": "Puan: {0}" },
+  "ui_best_score": { "en": "Best: {0}", "tr": "Rekor: {0}" },
+  "ui_new_record": { "en": "NEW RECORD!", "tr": "YENİ REKOR!" },
+  "ui_combo_multiplier": { "en": "x{0}", "tr": "x{0}" },
+  "ui_combo_streak": { "en": "{0} Combo!", "tr": "{0} Combo!" },
+  "level_info_three_star_score": { "en": ": score {0}% of par", "tr": ": par skorun %{0}'i" },
+  "level_info_two_star_score": { "en": ": score {0}% of par", "tr": ": par skorun %{0}'i" }
 }

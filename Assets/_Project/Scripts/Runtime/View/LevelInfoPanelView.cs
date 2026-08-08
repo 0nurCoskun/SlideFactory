@@ -105,20 +105,24 @@ public class LevelInfoPanelView : MonoBehaviour
             totalDurationText.text = GameLocalization.GetUIString("level_info_time_limit", FormatSeconds(level.levelDuration));
         }
 
-        // Yıldız eşiği "kalan süre oranı" olarak tutuluyor (LevelData'da), burada
-        // oyuncuya daha anlamlı gelecek şekilde "kaç saniyeDE bitirmesi gerekiyor"a çeviriyoruz.
+        // Yıldız eşiği ARTIK süreye değil, toplanan puanın par skoruna oranına bakıyor
+        // (bkz. GameManager.CalculateStars). Bu yüzden burada eskiden yazan "şu kadar
+        // saniyede bitir" ifadesi YANLIŞ olurdu: hızlı bitiren ama kötü oynayan bir
+        // oyuncu sözü tutulmamış sanıp hata olduğunu düşünürdü.
+        //
+        // Par skoru bu sahnede HESAPLANAMAZ - puan ayarları ScoreManager
+        // MonoBehaviour'ında duruyor ve o sadece Game sahnesinde var. Ama yüzde
+        // göstermek için par'a hiç ihtiyaç yok: oran zaten LevelData'da.
         if (threeStarTimeText != null)
         {
-            float maxRemainingForThreeStars = level.levelDuration * level.threeStarRemainingRatio;
-            float timeLimitForThreeStars = level.levelDuration - maxRemainingForThreeStars;
-            threeStarTimeText.text = GameLocalization.GetUIString("level_info_three_star_finish", FormatSeconds(timeLimitForThreeStars));
+            threeStarTimeText.text = GameLocalization.GetUIString(
+                "level_info_three_star_score", Mathf.RoundToInt(level.threeStarScoreRatio * 100f));
         }
 
         if (twoStarTimeText != null)
         {
-            float maxRemainingForTwoStars = level.levelDuration * level.twoStarRemainingRatio;
-            float timeLimitForTwoStars = level.levelDuration - maxRemainingForTwoStars;
-            twoStarTimeText.text = GameLocalization.GetUIString("level_info_two_star_finish", FormatSeconds(timeLimitForTwoStars));
+            twoStarTimeText.text = GameLocalization.GetUIString(
+                "level_info_two_star_score", Mathf.RoundToInt(level.twoStarScoreRatio * 100f));
         }
     }
 
