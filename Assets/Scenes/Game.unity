@@ -1815,7 +1815,7 @@ MonoBehaviour:
   stationAssignmentManager: {fileID: 1614334976}
   levelTimerManager: {fileID: 1667566281}
   scoreManager: {fileID: 415136258}
-  fallbackLevelData: {fileID: 11400000, guid: e720e925023cafd41898ddd489aef40e, type: 2}
+  fallbackLevelData: {fileID: 11400000, guid: f283f351a41dc184b80405d4b35097c7, type: 2}
 --- !u!114 &415136258
 MonoBehaviour:
   m_ObjectHideFlags: 0
