@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
@@ -43,8 +43,10 @@ public class RecipePreviewView : MonoBehaviour
     [Header("Görünüm")]
     [SerializeField] private string chainIndexFormat = "<b>{0}.</b>  "; // her zincirin başına 1., 2., ... eklenir - oyuncu zincirleri birbirinden kolayca ayırsın
     [SerializeField] private string cardNameFormat = "<b>{0}</b>";
-    [SerializeField] private string stepSeparator = "  <b><size=115%>→</size></b>  ";
+    [SerializeField] private string stepSeparator = "  <b>→</b>  ";
     [SerializeField] private string stationWrapFormat = "<color=#A6551A><b>[{0}]</b></color>"; // istasyon ismini köşeli parantez içine alır, vurgu rengiyle
+    [Tooltip("Aynı zincirin adımları arasındaki satır boşluğuna EK olarak, farklı zincirler arasına konan boşluk (piksel).")]
+    [SerializeField] private float spaceBetweenChains = 40f;
 
     [Header("Panel Açıkken Gizlenecek Butonlar")]
     [Tooltip("Pause ve Show Recipe (?) butonları gibi - panel açıkken gizlenip, kapanınca tekrar gösterilir.")]
@@ -183,48 +185,56 @@ public class RecipePreviewView : MonoBehaviour
         // bu durumda zinciri sadece BİR KERE göstermek yeterli, 3 kere tekrar etmesin.
         HashSet<CardData> alreadyShown = new HashSet<CardData>();
         int chainNumber = 1;
+        bool isFirstChain = true;
 
         foreach (CardData rawCard in level.initialDeck)
         {
             if (rawCard == null || alreadyShown.Contains(rawCard)) continue;
             alreadyShown.Add(rawCard);
 
-            List<ProductionChainUtility.ChainStep> steps = ProductionChainUtility.BuildChain(rawCard);
-            string line = BuildChainDisplayText(steps, chainNumber);
-            chainNumber++;
+            // Zincirler arasına, aynı zincirin adımlarından daha büyük bir boşluk
+            // koyuyoruz ki oyuncu farklı tarifleri satır satır kolayca ayırt edebilsin.
+            if (!isFirstChain) InstantiateChainSpacer();
+            isFirstChain = false;
 
-            TMP_Text row = Instantiate(chainRowPrefab, chainListContainer);
-            row.text = line;
-            row.gameObject.SetActive(true);
+            List<ProductionChainUtility.ChainStep> steps = ProductionChainUtility.BuildChain(rawCard);
+            InstantiateChainRows(steps, chainNumber);
+            chainNumber++;
         }
 
         _hasPopulatedOnce = true;
     }
 
-    private string BuildChainDisplayText(List<ProductionChainUtility.ChainStep> steps, int chainNumber)
+    /// <summary>
+    /// Bir üretim zincirinin HER adımını kendi satırına (kendi TMP_Text'ine) yerleştirir,
+    /// böylece autosize her satırı bağımsız hesaplar - uzun bir adım kısa adımları
+    /// küçültmez, tek bir zincir tek bir bloktaymış gibi orantısız küçülme olmaz.
+    /// </summary>
+    private void InstantiateChainRows(List<ProductionChainUtility.ChainStep> steps, int chainNumber)
     {
-        StringBuilder sb = new StringBuilder();
-        sb.Append(string.Format(chainIndexFormat, chainNumber));
-
         for (int i = 0; i < steps.Count; i++)
         {
             string cardName = steps[i].Card != null ? GameLocalization.GetCardName(steps[i].Card) : "???";
-            sb.Append(string.Format(cardNameFormat, cardName));
+            string line = i == 0 ? string.Format(chainIndexFormat, chainNumber) : "";
+            line += string.Format(cardNameFormat, cardName);
 
             if (steps[i].StationToNext != null)
             {
-                sb.Append(stepSeparator);
-                sb.Append(string.Format(stationWrapFormat, GameLocalization.GetStationName(steps[i].StationToNext)));
+                line += stepSeparator;
+                line += string.Format(stationWrapFormat, GameLocalization.GetStationName(steps[i].StationToNext));
             }
 
-            // Son adım değilse, bir sonraki adımı YENİ SATIRA (ve zincirin numarasıyla hizalı girintiye) yaz.
-            if (i < steps.Count - 1)
-            {
-                sb.Append('\n');
-                sb.Append("      ");
-            }
+            TMP_Text row = Instantiate(chainRowPrefab, chainListContainer);
+            row.text = line;
+            row.gameObject.SetActive(true);
         }
+    }
 
-        return sb.ToString();
+    /// <summary>Farklı zincirler arasına ekstra boşluk bırakan, görünmez bir layout satırı oluşturur.</summary>
+    private void InstantiateChainSpacer()
+    {
+        GameObject spacer = new GameObject("ChainSpacer", typeof(RectTransform), typeof(LayoutElement));
+        spacer.transform.SetParent(chainListContainer, false);
+        spacer.GetComponent<LayoutElement>().minHeight = spaceBetweenChains;
     }
 }
