@@ -357,6 +357,78 @@ MonoBehaviour:
     m_Localized: ': par skorun %{0}''i'
     m_Metadata:
       m_Items: []
+  - m_Id: 1863268914184192
+    m_Localized: "Simyac\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863268939350016
+    m_Localized: Puan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863268939350017
+    m_Localized: 'Puan: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863268939350018
+    m_Localized: 'Rekor: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863268939350019
+    m_Localized: "YEN\u0130 REKOR!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863268939350020
+    m_Localized: x{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863268939350021
+    m_Localized: '{0} Combo!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863268939350022
+    m_Localized: ': par skorun %{0}''i'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1863268939350023
+    m_Localized: ': par skorun %{0}''i'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866234979172352
+    m_Localized: "Simyac\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866235004338176
+    m_Localized: Puan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866235004338177
+    m_Localized: 'Puan: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866235004338178
+    m_Localized: 'Rekor: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866235004338179
+    m_Localized: "YEN\u0130 REKOR!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866235004338180
+    m_Localized: x{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866235004338181
+    m_Localized: '{0} Combo!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866235004338182
+    m_Localized: ': par skorun %{0}''i'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1866235004338183
+    m_Localized: ': par skorun %{0}''i'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
