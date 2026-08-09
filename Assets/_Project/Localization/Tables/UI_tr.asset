@@ -177,291 +177,39 @@ MonoBehaviour:
     m_Localized: "Tamamland\u0131!"
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512954515456
+  - m_Id: 2024595754336256
     m_Localized: "Simyac\u0131"
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512975486976
+  - m_Id: 2024595771113472
     m_Localized: Puan
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512979681280
+  - m_Id: 2024595771113473
     m_Localized: 'Puan: {0}'
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512979681281
+  - m_Id: 2024595771113474
     m_Localized: 'Rekor: {0}'
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512979681282
+  - m_Id: 2024595771113475
     m_Localized: "YEN\u0130 REKOR!"
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512979681283
+  - m_Id: 2024595771113476
     m_Localized: x{0}
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512979681284
+  - m_Id: 2024595771113477
     m_Localized: '{0} Combo!'
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512979681285
+  - m_Id: 2024595771113478
     m_Localized: ': par skorun %{0}''i'
     m_Metadata:
       m_Items: []
-  - m_Id: 1784512979681286
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093369139200
-    m_Localized: "Simyac\u0131"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093394305024
-    m_Localized: Puan
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093394305025
-    m_Localized: 'Puan: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093394305026
-    m_Localized: 'Rekor: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093394305027
-    m_Localized: "YEN\u0130 REKOR!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093394305028
-    m_Localized: x{0}
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093394305029
-    m_Localized: '{0} Combo!'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093394305030
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1796093394305031
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212124884992
-    m_Localized: "Simyac\u0131"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212145856512
-    m_Localized: Puan
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212145856513
-    m_Localized: 'Puan: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212145856514
-    m_Localized: 'Rekor: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212145856515
-    m_Localized: "YEN\u0130 REKOR!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212145856516
-    m_Localized: x{0}
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212145856517
-    m_Localized: '{0} Combo!'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212145856518
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814212145856519
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236971941888
-    m_Localized: "Simyac\u0131"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236992913408
-    m_Localized: Puan
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236992913409
-    m_Localized: 'Puan: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236992913410
-    m_Localized: 'Rekor: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236992913411
-    m_Localized: "YEN\u0130 REKOR!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236992913412
-    m_Localized: x{0}
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236992913413
-    m_Localized: '{0} Combo!'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236992913414
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1814236992913415
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140970057728
-    m_Localized: "Simyac\u0131"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140999417856
-    m_Localized: Puan
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140999417857
-    m_Localized: 'Puan: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140999417858
-    m_Localized: 'Rekor: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140999417859
-    m_Localized: "YEN\u0130 REKOR!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140999417860
-    m_Localized: x{0}
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140999417861
-    m_Localized: '{0} Combo!'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140999417862
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1822140999417863
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268914184192
-    m_Localized: "Simyac\u0131"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268939350016
-    m_Localized: Puan
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268939350017
-    m_Localized: 'Puan: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268939350018
-    m_Localized: 'Rekor: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268939350019
-    m_Localized: "YEN\u0130 REKOR!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268939350020
-    m_Localized: x{0}
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268939350021
-    m_Localized: '{0} Combo!'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268939350022
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1863268939350023
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866234979172352
-    m_Localized: "Simyac\u0131"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866235004338176
-    m_Localized: Puan
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866235004338177
-    m_Localized: 'Puan: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866235004338178
-    m_Localized: 'Rekor: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866235004338179
-    m_Localized: "YEN\u0130 REKOR!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866235004338180
-    m_Localized: x{0}
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866235004338181
-    m_Localized: '{0} Combo!'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866235004338182
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1866235004338183
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611420073984
-    m_Localized: "Simyac\u0131"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611436851200
-    m_Localized: Puan
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611436851201
-    m_Localized: 'Puan: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611436851202
-    m_Localized: 'Rekor: {0}'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611436851203
-    m_Localized: "YEN\u0130 REKOR!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611436851204
-    m_Localized: x{0}
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611449434112
-    m_Localized: '{0} Combo!'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611449434113
-    m_Localized: ': par skorun %{0}''i'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2005611449434114
+  - m_Id: 2024595771113479
     m_Localized: ': par skorun %{0}''i'
     m_Metadata:
       m_Items: []

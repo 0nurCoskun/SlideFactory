@@ -45,6 +45,18 @@ public static class LocalizationSetup
         int levelCount = PopulateFromLevelData(levelNames, english, turkish);
         int uiCount = PopulateUiTable(ui, english, turkish);
 
+        // KRİTİK: AddEntry() yeni bir anahtar eklerken id'yi SharedTableData'ya yazar,
+        // ama SharedTableData'yı dirty İŞARETLEMEZSE SaveAssets() bu değişikliği diske
+        // yazmaz. Sonraki Editor oturumunda SharedTableData eski haline (yeni anahtar
+        // YOK) döner, halbuki UI_en/UI_tr tabloları o anahtarın id'sini hâlâ taşır -
+        // GetLocalizedString id'yi SharedTableData'da bulamayıp "No translation found"
+        // uyarısı basar. Bu script her çalıştırıldığında da aynı anahtar için YENİ bir
+        // id üretilip tekrar kaybolur, tabloya sürekli yetim (orphan) satır birikir.
+        EditorUtility.SetDirty(cardNames.SharedData);
+        EditorUtility.SetDirty(stationNames.SharedData);
+        EditorUtility.SetDirty(levelNames.SharedData);
+        EditorUtility.SetDirty(ui.SharedData);
+
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
