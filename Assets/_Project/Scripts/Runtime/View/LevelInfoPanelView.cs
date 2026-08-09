@@ -37,6 +37,7 @@ public class LevelInfoPanelView : MonoBehaviour
     [SerializeField] private TMP_Text totalDurationText;
     [SerializeField] private TMP_Text threeStarTimeText;
     [SerializeField] private TMP_Text twoStarTimeText;
+    [SerializeField] private TMP_Text bestScoreText;
 
     [Header("Sahne")]
     [SerializeField] private string gameSceneName = "Game";
@@ -123,6 +124,15 @@ public class LevelInfoPanelView : MonoBehaviour
         {
             twoStarTimeText.text = GameLocalization.GetUIString(
                 "level_info_two_star_score", Mathf.RoundToInt(level.twoStarScoreRatio * 100f));
+        }
+
+        // ScoreProgress puanı ScoreManager gibi ScoreManager MonoBehaviour'ına değil,
+        // PlayerPrefs'e KALICI olarak yazıyor - o yüzden bu sahnede (Game sahnesi
+        // hiç açılmamışken bile) doğrudan okunabiliyor.
+        if (bestScoreText != null)
+        {
+            int bestScore = ScoreProgress.GetBestScore(level);
+            bestScoreText.text = GameLocalization.GetUIString("ui_best_score", bestScore.ToString("N0"));
         }
     }
 

@@ -171,6 +171,42 @@ MonoBehaviour:
     m_Key: ui_completed
     m_Metadata:
       m_Items: []
+  - m_Id: 2024595754336256
+    m_Key: ui_alchemist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2024595771113472
+    m_Key: ui_score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2024595771113473
+    m_Key: ui_score_value
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2024595771113474
+    m_Key: ui_best_score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2024595771113475
+    m_Key: ui_new_record
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2024595771113476
+    m_Key: ui_combo_multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2024595771113477
+    m_Key: ui_combo_streak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2024595771113478
+    m_Key: level_info_three_star_score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2024595771113479
+    m_Key: level_info_two_star_score
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
