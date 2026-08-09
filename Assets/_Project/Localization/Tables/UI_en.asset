@@ -429,6 +429,42 @@ MonoBehaviour:
     m_Localized: ': score {0}% of par'
     m_Metadata:
       m_Items: []
+  - m_Id: 2005611420073984
+    m_Localized: Alchemist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851200
+    m_Localized: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851201
+    m_Localized: 'Score: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851202
+    m_Localized: 'Best: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851203
+    m_Localized: NEW RECORD!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851204
+    m_Localized: x{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611449434112
+    m_Localized: '{0} Combo!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611449434113
+    m_Localized: ': score {0}% of par'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611449434114
+    m_Localized: ': score {0}% of par'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

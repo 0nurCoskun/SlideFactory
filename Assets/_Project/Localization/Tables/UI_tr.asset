@@ -429,6 +429,42 @@ MonoBehaviour:
     m_Localized: ': par skorun %{0}''i'
     m_Metadata:
       m_Items: []
+  - m_Id: 2005611420073984
+    m_Localized: "Simyac\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851200
+    m_Localized: Puan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851201
+    m_Localized: 'Puan: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851202
+    m_Localized: 'Rekor: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851203
+    m_Localized: "YEN\u0130 REKOR!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611436851204
+    m_Localized: x{0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611449434112
+    m_Localized: '{0} Combo!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611449434113
+    m_Localized: ': par skorun %{0}''i'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2005611449434114
+    m_Localized: ': par skorun %{0}''i'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
