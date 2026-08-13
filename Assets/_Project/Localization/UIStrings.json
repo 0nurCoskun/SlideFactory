@@ -47,6 +47,7 @@
   "ui_music": { "en": "Music", "tr": "Müzik" },
   "ui_sfx": { "en": "SFX", "tr": "Efekt" },
   "ui_reset_progress": { "en": "Reset Progress", "tr": "İlerlemeyi Sıfırla" },
+  "ui_unlock_all_levels": { "en": "Unlock All Levels", "tr": "Tüm Levelleri Aç" },
   "ui_recipes": { "en": "Recipes", "tr": "Tarifler" },
   "ui_close": { "en": "Close", "tr": "Kapat" },
   "ui_next_level": { "en": "Next Level", "tr": "Sonraki Seviye" },

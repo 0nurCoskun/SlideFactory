@@ -146,6 +146,26 @@ MonoBehaviour:
     m_Localized: Beginner 10
     m_Metadata:
       m_Items: []
+  - m_Id: 3483943395409920
+    m_Localized: Orta Seviye 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943412187136
+    m_Localized: Orta Seviye 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943412187137
+    m_Localized: Orta Seviye 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943412187138
+    m_Localized: Orta Seviye 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943412187139
+    m_Localized: Orta Seviye 5
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
