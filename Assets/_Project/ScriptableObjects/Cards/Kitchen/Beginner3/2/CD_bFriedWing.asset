@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_fried_wing
   displayName: Fried Wing
   description:
-  icon: {fileID: 0}
+  icon: {fileID: 7656106158968777865, guid: bc1c6295425f1e647a953d9549b74d8d, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: c83191057ae042bea95619a75c4f89c8, type: 2}

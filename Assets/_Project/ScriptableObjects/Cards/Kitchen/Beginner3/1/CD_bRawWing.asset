@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_raw_wing
   displayName: Raw Wing
   description:
-  icon: {fileID: 0}
+  icon: {fileID: 9015658740378598388, guid: 0e6ff1ede3e0e764db643ddf5733c037, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

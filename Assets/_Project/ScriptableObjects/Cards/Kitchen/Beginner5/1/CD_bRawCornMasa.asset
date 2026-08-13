@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_raw_corn_masa
   displayName: Raw Corn Masa
   description:
-  icon: {fileID: 0}
+  icon: {fileID: 4716349384259283326, guid: 08353888773c2b947bfe5a4cacd086f7, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_proofed_dough
   displayName: Proofed Dough
   description:
-  icon: {fileID: 0}
+  icon: {fileID: 736644971566567550, guid: b5f8d8467c9a7ed4d9059815cfd0e866, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: f8fcc6427c254b97ba569b29e9b1b3c4, type: 2}

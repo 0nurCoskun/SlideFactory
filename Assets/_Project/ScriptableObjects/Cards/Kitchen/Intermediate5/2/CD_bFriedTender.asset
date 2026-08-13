@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_fried_tender
   displayName: Fried Tender
   description:
-  icon: {fileID: 0}
+  icon: {fileID: 3906846368824687616, guid: 5b362c9141270ba41894e0f487b42571, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 9874629b91e64880836984db73ac64d6, type: 2}

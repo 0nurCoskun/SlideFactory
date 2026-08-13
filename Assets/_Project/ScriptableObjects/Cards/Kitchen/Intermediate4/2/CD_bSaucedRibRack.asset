@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_sauced_rib_rack
   displayName: Sauced Rib Rack
   description:
-  icon: {fileID: 0}
+  icon: {fileID: 9045834532770169874, guid: 44108689c8c7de14cbec7b3a8e0fa119, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 0134fd8a7f044d7084085e942333d73c, type: 2}

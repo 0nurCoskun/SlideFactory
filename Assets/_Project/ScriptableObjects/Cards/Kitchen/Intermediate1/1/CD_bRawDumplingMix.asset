@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_raw_dumpling_mix
   displayName: Raw Dumpling Mix
   description:
-  icon: {fileID: 0}
+  icon: {fileID: -4666638725765203731, guid: 4942c393a6ed11d4f9dbe4326ba6e6c4, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

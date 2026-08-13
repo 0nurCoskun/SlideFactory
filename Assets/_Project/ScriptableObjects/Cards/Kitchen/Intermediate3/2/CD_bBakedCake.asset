@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_baked_cake
   displayName: Baked Cake
   description:
-  icon: {fileID: 0}
+  icon: {fileID: -8963638761322020610, guid: 36ad8633152f10e49864e4ed2df82469, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: c8d7f778c70c47ec912effe7ffcd13be, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_crispy_stir_fried_parcel
   displayName: Crispy Stir-Fried Parcel
   description:
-  icon: {fileID: 0}
+  icon: {fileID: -2716082562524721396, guid: 7072e698959ed5e448224bf0ff08549c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 1
   rawStageVersion: {fileID: 0}

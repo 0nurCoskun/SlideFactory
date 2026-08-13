@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_raw_pizza_dough
   displayName: Raw Pizza Dough
   description:
-  icon: {fileID: 0}
+  icon: {fileID: 5161184757264026452, guid: d075ef9cacd8c2449b1718cd7f6cef38, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

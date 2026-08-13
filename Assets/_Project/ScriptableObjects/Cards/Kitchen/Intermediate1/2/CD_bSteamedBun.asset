@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: b_steamed_bun
   displayName: Steamed Bun
   description:
-  icon: {fileID: 0}
+  icon: {fileID: -5401246687903383670, guid: 69ff863b93917a7458939d70e32c4c61, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: fc21dd4293174adcba179d0cabed8d9f, type: 2}
