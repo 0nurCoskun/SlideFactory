@@ -962,6 +962,138 @@ MonoBehaviour:
     m_Localized: "Ku\u015Fatma Manc\u0131n\u0131\u011F\u0131"
     m_Metadata:
       m_Items: []
+  - m_Id: 3470174443290624
+    m_Localized: "\xC7i\u011F Etli B\xF6rek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456448
+    m_Localized: "M\xFCh\xFCrlenmi\u015F Etli B\xF6rek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456449
+    m_Localized: "F\u0131r\u0131nlanm\u0131\u015F Etli B\xF6rek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456450
+    m_Localized: "Ham Bal\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456451
+    m_Localized: "Ham \u015Ei\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456452
+    m_Localized: "Pi\u015Fmi\u015F \u015Ei\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456453
+    m_Localized: "Fileto Bal\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456454
+    m_Localized: "Izgara Bal\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456455
+    m_Localized: "Tabaklanm\u0131\u015F \u015Ei\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456456
+    m_Localized: Ham Patates
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456457
+    m_Localized: Ham Kanat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456458
+    m_Localized: "Do\u011Franm\u0131\u015F Patates"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456459
+    m_Localized: "K\u0131zarm\u0131\u015F Kanat"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456460
+    m_Localized: "Patates K\u0131zartmas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456461
+    m_Localized: Soslu Kanat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456462
+    m_Localized: Ham Hamur Topu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456463
+    m_Localized: "Ham Eri\u015Fte Kar\u0131\u015F\u0131m\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456464
+    m_Localized: "Mayalanm\u0131\u015F Hamur"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456465
+    m_Localized: "Sote Eri\u015Fte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456466
+    m_Localized: "F\u0131r\u0131nlanm\u0131\u015F Somun"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456467
+    m_Localized: "Izgara Eri\u015Fte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456468
+    m_Localized: "Ham M\u0131s\u0131r Hamuru"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456469
+    m_Localized: "Ham Bah\xE7e Salatas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456470
+    m_Localized: "Paketlenmi\u015F Salata"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456471
+    m_Localized: "Preslenmi\u015F Tortilla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456472
+    m_Localized: "So\u011Futulmu\u015F Salata"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456473
+    m_Localized: Sote Tortilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456474
+    m_Localized: "Ham Mant\u0131 Kar\u0131\u015F\u0131m\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456475
+    m_Localized: Ham Karides
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456476
+    m_Localized: "Marine Edilmi\u015F Karides"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456477
+    m_Localized: "\u015Eekillendirilmi\u015F Mant\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456478
+    m_Localized: Izgara Karides
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470174468456479
+    m_Localized: "Buharda Pi\u015Fmi\u015F Mant\u0131"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_bCutPotato
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: b_cut_potato
+  displayName: Cut Potato
+  description:
+  icon: {fileID: 0}
+  fontAsset: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: e5e1c9dd06d8400a875be0e125ce116a, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: 9a1bc71d44577a24fa0b3dc9bb7d8f21, type: 2}
+    resultCard: {fileID: 11400000, guid: 3352d84e945243a793eeeb9382b59245, type: 2}

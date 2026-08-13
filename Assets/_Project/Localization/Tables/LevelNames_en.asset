@@ -106,6 +106,30 @@ MonoBehaviour:
     m_Localized: Tutorial
     m_Metadata:
       m_Items: []
+  - m_Id: 3470170475479040
+    m_Localized: Beginner 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450560
+    m_Localized: Beginner 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450561
+    m_Localized: Beginner 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450562
+    m_Localized: Beginner 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450563
+    m_Localized: Beginner 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450564
+    m_Localized: Beginner 6
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
