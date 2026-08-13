@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: raw_chicken_slice
   displayName: Raw Chicken Slice
   description: 
-  icon: {fileID: 6759398742555690241, guid: fb015ebdda3699c499657d712b6e1fed, type: 3}
+  icon: {fileID: 21300000, guid: fb015ebdda3699c499657d712b6e1fed, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

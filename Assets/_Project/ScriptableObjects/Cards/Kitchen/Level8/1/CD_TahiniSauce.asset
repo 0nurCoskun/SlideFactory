@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: tahini_sauce
   displayName: Tahini Sauce
   description: 
-  icon: {fileID: 1853605496029356300, guid: 0f19cd6e28d83c8419844f402a932994, type: 3}
+  icon: {fileID: 21300000, guid: 0f19cd6e28d83c8419844f402a932994, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

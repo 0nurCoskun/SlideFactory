@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: fiesta_nachos
   displayName: Fiesta Nachos
   description: 
-  icon: {fileID: -1057550997211446162, guid: a8d691244e7c03849a3764f06cb85ab4, type: 3}
+  icon: {fileID: 21300000, guid: a8d691244e7c03849a3764f06cb85ab4, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 1
   rawStageVersion: {fileID: 0}

@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: lava_dust
   displayName: Lava Dust
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2a2a55c946244774eaf3d25bb13a44cd, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 7484ade94cd579341a812e256889783a, type: 2}
   outcomes:

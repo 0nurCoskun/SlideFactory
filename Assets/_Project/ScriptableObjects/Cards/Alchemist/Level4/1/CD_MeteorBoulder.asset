@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: meteor
   displayName: Meteor Boulder
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 077ab76258141fe45a8e31037dd803a8, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

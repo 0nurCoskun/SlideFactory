@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: chicken_tender
   displayName: Chicken Tender
   description: 
-  icon: {fileID: 1073433804205243321, guid: 6b2f0b05a51457c458b4ae399e8e5426, type: 3}
+  icon: {fileID: 21300000, guid: 6b2f0b05a51457c458b4ae399e8e5426, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

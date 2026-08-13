@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: raw_meat
   displayName: Raw Meat
   description: 
-  icon: {fileID: 2494269248803344630, guid: c13b8e74af9f634439cb2b35dfee4d8c, type: 3}
+  icon: {fileID: 21300000, guid: c13b8e74af9f634439cb2b35dfee4d8c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

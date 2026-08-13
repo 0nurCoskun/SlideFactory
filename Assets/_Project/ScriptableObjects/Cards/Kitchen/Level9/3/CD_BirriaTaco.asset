@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: birria_taco
   displayName: Birria Taco
   description: 
-  icon: {fileID: 665015515478562680, guid: c5004e6aadc18d3469326d38bafe2059, type: 3}
+  icon: {fileID: 21300000, guid: c5004e6aadc18d3469326d38bafe2059, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 1
   rawStageVersion: {fileID: 0}

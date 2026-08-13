@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: sliced_tomato
   displayName: Sliced Tomato
   description: 
-  icon: {fileID: -3929747427173822907, guid: 40d0ab4a828db6e49b301953aa7a433c, type: 3}
+  icon: {fileID: 21300000, guid: 40d0ab4a828db6e49b301953aa7a433c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: ce8f20a69adbd53428eb4ef53db9ad2a, type: 2}

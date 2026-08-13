@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: crispy_katsu
   displayName: Crispy Katsu
   description: 
-  icon: {fileID: -7898854239767137892, guid: be740022fcf53354cacf3a64a8d171d8, type: 3}
+  icon: {fileID: 21300000, guid: be740022fcf53354cacf3a64a8d171d8, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: da2590e0faa31784aae987afd331378c, type: 2}

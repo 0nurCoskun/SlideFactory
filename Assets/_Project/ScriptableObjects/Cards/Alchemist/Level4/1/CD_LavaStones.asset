@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: lava_stones
   displayName: Lava Stones
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 426a8a99e1cb64a499665e5d428e97ac, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

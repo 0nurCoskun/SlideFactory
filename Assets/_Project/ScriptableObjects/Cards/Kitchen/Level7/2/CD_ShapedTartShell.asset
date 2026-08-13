@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: shaped_tart_shell
   displayName: Shaped Tart Shell
   description: 
-  icon: {fileID: 8452055243875427794, guid: 019674c5a14ab6146b143286fb5b35ca, type: 3}
+  icon: {fileID: 21300000, guid: 019674c5a14ab6146b143286fb5b35ca, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: bdc52c4eda4a0ca47a547eec7309a781, type: 2}

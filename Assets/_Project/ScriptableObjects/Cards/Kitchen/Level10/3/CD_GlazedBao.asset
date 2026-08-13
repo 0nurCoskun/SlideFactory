@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: glazed_bao
   displayName: Glazed Bao
   description: 
-  icon: {fileID: -2731086581792561589, guid: 3564dbe1a156e8342b8762622d63a16a, type: 3}
+  icon: {fileID: 21300000, guid: 3564dbe1a156e8342b8762622d63a16a, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: d96612dfc1f652349acc97e377f2d32c, type: 2}

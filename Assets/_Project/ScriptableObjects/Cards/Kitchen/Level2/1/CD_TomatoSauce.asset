@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: tomato_sauce
   displayName: Tomato Sauce
   description: 
-  icon: {fileID: -2166188948959795005, guid: c5fecd90cb0379d43a1faf4d6ec5d6b9, type: 3}
+  icon: {fileID: 21300000, guid: c5fecd90cb0379d43a1faf4d6ec5d6b9, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

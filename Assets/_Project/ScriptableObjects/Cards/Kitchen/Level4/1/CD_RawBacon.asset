@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: raw_bacon
   displayName: Raw Bacon
   description: 
-  icon: {fileID: 8792403389764818364, guid: 5e213b41c71daa14a95598f66246b189, type: 3}
+  icon: {fileID: 21300000, guid: 5e213b41c71daa14a95598f66246b189, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
