@@ -213,6 +213,14 @@ MonoBehaviour:
     m_Localized: ': par skorun %{0}''i'
     m_Metadata:
       m_Items: []
+  - m_Id: 3526002961563648
+    m_Localized: "T\xFCm Levelleri A\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3526002978340864
+    m_Localized: '{0}/{1} kart'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

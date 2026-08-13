@@ -12,6 +12,7 @@ public static class LevelProgress
     private const string StarsKeyPrefix = "level_stars_";
     private const string PendingStarRevealKeyPrefix = "level_stars_pending_reveal_";
     private const string LastPlayedLevelKey = "level_last_played_id";
+    private const string UnlockAllLevelsKey = "debug_unlock_all_levels";
 
     /// <summary>
     /// Her LevelData'nın kayıt için kullanacağı benzersiz kimlik. levelId boşsa asset ismini kullanır.
@@ -92,15 +93,29 @@ public static class LevelProgress
     }
 
     /// <summary>
-    /// Bir level'ın oynanabilir olup olmadığını hesaplar. requiredPreviousLevel boşsa
-    /// (genelde ilk level) her zaman true döner. Değilse, o önceki level'ın
-    /// tamamlanmış olması gerekir.
+    /// Bir level'ın oynanabilir olup olmadığını hesaplar. Önce debug "tümünü aç"
+    /// bayrağına bakar - o açıksa tamamlama kaydına hiç bakmadan true döner.
+    /// Değilse: requiredPreviousLevel boşsa (genelde ilk level) her zaman true,
+    /// aksi halde o önceki level'ın tamamlanmış olması gerekir.
     /// </summary>
     public static bool IsLevelUnlocked(LevelData level)
     {
         if (level == null) return false;
+        if (PlayerPrefs.GetInt(UnlockAllLevelsKey, 0) == 1) return true;
         if (level.requiredPreviousLevel == null) return true;
         return IsLevelCompleted(level.requiredPreviousLevel);
+    }
+
+    /// <summary>
+    /// Test/debug amaçlı - tamamlama/yıldız kayıtlarına DOKUNMADAN tüm level'ları
+    /// kilitsiz say. IsLevelUnlocked bu bayrağı ResetAllProgress ile aynı
+    /// PlayerPrefs.DeleteAll çağrısıyla otomatik temizlenir, ayrı bir "kilitle"
+    /// fonksiyonuna gerek yok.
+    /// </summary>
+    public static void UnlockAllLevels()
+    {
+        PlayerPrefs.SetInt(UnlockAllLevelsKey, 1);
+        PlayerPrefs.Save();
     }
 
     /// <summary>

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_bBoxedTender
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: b_boxed_tender
+  displayName: Boxed Tender
+  description:
+  icon: {fileID: 7656106158968777865, guid: bc1c6295425f1e647a953d9549b74d8d, type: 3}
+  fontAsset: {fileID: 0}
+  isFinalProduct: 1
+  rawStageVersion: {fileID: 0}
+  outcomes: []

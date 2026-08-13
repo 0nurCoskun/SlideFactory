@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_bRawJerkyStrip
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: b_raw_jerky_strip
+  displayName: Raw Jerky Strip
+  description:
+  icon: {fileID: 0}
+  fontAsset: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000}
+  outcomes:
+  - station: {fileID: 11400000, guid: f7ca008935ce7f8479016c8461ae0a48, type: 2}
+    resultCard: {fileID: 11400000, guid: 6238089dc7824e5ca411ced36ec09a53, type: 2}

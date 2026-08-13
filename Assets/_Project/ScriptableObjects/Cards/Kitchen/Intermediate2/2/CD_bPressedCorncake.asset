@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
+  m_Name: CD_bPressedCorncake
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardId: b_pressed_corncake
+  displayName: Pressed Corncake
+  description:
+  icon: {fileID: 5040811751942244991, guid: d4cd0192289f254448b868eba9c802ff, type: 3}
+  fontAsset: {fileID: 0}
+  isFinalProduct: 0
+  rawStageVersion: {fileID: 11400000, guid: a4e91bbdd8fd442da51cfd05861fa13b, type: 2}
+  outcomes:
+  - station: {fileID: 11400000, guid: c96dfc000a2e14a4eae3b2092db6832e, type: 2}
+    resultCard: {fileID: 11400000, guid: 08c232172272471ca4b68119d3ebe543, type: 2}

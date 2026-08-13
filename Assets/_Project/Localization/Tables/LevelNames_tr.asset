@@ -106,6 +106,66 @@ MonoBehaviour:
     m_Localized: "\xD6\u011Fretici"
     m_Metadata:
       m_Items: []
+  - m_Id: 3470170475479040
+    m_Localized: Beginner 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450560
+    m_Localized: Beginner 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450561
+    m_Localized: Beginner 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450562
+    m_Localized: Beginner 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450563
+    m_Localized: Beginner 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3470170496450564
+    m_Localized: Beginner 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472402461769728
+    m_Localized: Beginner 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472402474352640
+    m_Localized: Beginner 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472402482741248
+    m_Localized: Beginner 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472402482741249
+    m_Localized: Beginner 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943395409920
+    m_Localized: Orta Seviye 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943412187136
+    m_Localized: Orta Seviye 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943412187137
+    m_Localized: Orta Seviye 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943412187138
+    m_Localized: Orta Seviye 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3483943412187139
+    m_Localized: Orta Seviye 5
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
