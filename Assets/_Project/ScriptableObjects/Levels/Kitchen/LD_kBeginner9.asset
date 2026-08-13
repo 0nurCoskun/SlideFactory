@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5073be1ff16d1654ebc8b3cbcd923edf, type: 3}
-  m_Name: LD_kBeginner6
+  m_Name: LD_kBeginner9
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelId: levelb6k
-  displayName: Beginner 6
-  requiredPreviousLevel: {fileID: 11400000, guid: 33bd33c1fb6348458a22553fb3234a8e, type: 2}
-  nextLevel: {fileID: 11400000, guid: 0a5fe6c863f64a0abdcfc869dc7ab14b, type: 2}
+  levelId: levelb9k
+  displayName: Beginner 9
+  requiredPreviousLevel: {fileID: 11400000, guid: 78fc6c15691e44e28d5f31d6f2fdb64e, type: 2}
+  nextLevel: {fileID: 11400000, guid: c70b7ae3852341119f6bacdcf862a439, type: 2}
   initialDeck:
-  - {fileID: 11400000, guid: 1a4f031fcdbc402cb22d60b6618d3151, type: 2}
-  - {fileID: 11400000, guid: b4e25b624d6348629380361f62520bb1, type: 2}
-  - {fileID: 11400000, guid: 1a4f031fcdbc402cb22d60b6618d3151, type: 2}
-  - {fileID: 11400000, guid: b4e25b624d6348629380361f62520bb1, type: 2}
-  - {fileID: 11400000, guid: 1a4f031fcdbc402cb22d60b6618d3151, type: 2}
-  - {fileID: 11400000, guid: b4e25b624d6348629380361f62520bb1, type: 2}
+  - {fileID: 11400000, guid: 432d4c0c103b473e94de90490d171d37, type: 2}
+  - {fileID: 11400000, guid: eb49efe5897c45c5a2cc914c7449ba67, type: 2}
+  - {fileID: 11400000, guid: 432d4c0c103b473e94de90490d171d37, type: 2}
+  - {fileID: 11400000, guid: eb49efe5897c45c5a2cc914c7449ba67, type: 2}
+  - {fileID: 11400000, guid: 432d4c0c103b473e94de90490d171d37, type: 2}
+  - {fileID: 11400000, guid: eb49efe5897c45c5a2cc914c7449ba67, type: 2}
   levelDuration: 60
   threeStarScoreRatio: 0.85
   twoStarScoreRatio: 0.55
@@ -30,8 +30,8 @@ MonoBehaviour:
   twoStarRemainingRatio: 0.3
   stationsForLevel:
   - {fileID: 11400000, guid: 43946c5dd86880c4c95a41c27ba73dd5, type: 2}
-  - {fileID: 11400000, guid: c9b2849251967104a9caa7aef7b22a04, type: 2}
   - {fileID: 11400000, guid: d3c5a44c7e5b00047a19d8d750c79e78, type: 2}
+  - {fileID: 11400000, guid: 47f96ea30de42b24496b9eb3ee0bd4f6, type: 2}
   - {fileID: 11400000, guid: 19ebe9ceb7d97964d85b5efd7d5c260a, type: 2}
   minStationShuffleInterval: 8
   maxStationShuffleInterval: 10
