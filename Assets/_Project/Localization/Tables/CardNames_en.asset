@@ -1094,6 +1094,102 @@ MonoBehaviour:
     m_Localized: Steamed Dumpling
     m_Metadata:
       m_Items: []
+  - m_Id: 3472406412804096
+    m_Localized: Raw Corn Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775616
+    m_Localized: Raw Sausage Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775617
+    m_Localized: Pressed Corncake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775618
+    m_Localized: Shaped Sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775619
+    m_Localized: Plated Corncake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775620
+    m_Localized: Smoked Sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775621
+    m_Localized: Raw Cake Batter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775622
+    m_Localized: Raw Dumpling Parcel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775623
+    m_Localized: Baked Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775624
+    m_Localized: Steamed Parcel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775625
+    m_Localized: Crispy Stir-Fried Parcel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775626
+    m_Localized: Frosted Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775627
+    m_Localized: Raw Flatbread Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775628
+    m_Localized: Raw Veggie Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775629
+    m_Localized: Baked Flatbread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775630
+    m_Localized: Chopped Veggie Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775631
+    m_Localized: Grilled Flatbread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775632
+    m_Localized: Sauced Veggie Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775633
+    m_Localized: Raw Chicken Tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775634
+    m_Localized: Raw Pizza Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775635
+    m_Localized: Fried Tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775636
+    m_Localized: Stretched Pizza Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775637
+    m_Localized: Boxed Tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472406433775638
+    m_Localized: Grilled Pizza
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

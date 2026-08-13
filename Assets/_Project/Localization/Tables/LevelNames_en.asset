@@ -130,6 +130,22 @@ MonoBehaviour:
     m_Localized: Beginner 6
     m_Metadata:
       m_Items: []
+  - m_Id: 3472402461769728
+    m_Localized: Beginner 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472402474352640
+    m_Localized: Beginner 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472402482741248
+    m_Localized: Beginner 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3472402482741249
+    m_Localized: Beginner 10
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
