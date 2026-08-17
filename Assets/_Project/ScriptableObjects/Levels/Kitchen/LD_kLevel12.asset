@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5073be1ff16d1654ebc8b3cbcd923edf, type: 3}
-  m_Name: LD_kLevel2
+  m_Name: LD_kLevel12
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelId: level2k
-  displayName: Level 2
+  levelId: level12k
+  displayName: Level 12
   requiredPreviousLevel: {fileID: 11400000, guid: 24c403dd03c1cfb4cbef8ecdaa40386f, type: 2}
   nextLevel: {fileID: 11400000, guid: 5336ec0f8ea658742a125c12cf8e05cf, type: 2}
   initialDeck:

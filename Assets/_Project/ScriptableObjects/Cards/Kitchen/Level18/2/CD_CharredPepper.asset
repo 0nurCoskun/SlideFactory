@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
   m_Name: CD_CharredPepper
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: charrded_pepper
+  cardId: charred_pepper
   displayName: Charred Pepper
   description: 
-  icon: {fileID: -6831841925006050057, guid: 34845140178d6bb4586da2dcd580d032, type: 3}
+  icon: {fileID: 21300000, guid: 34845140178d6bb4586da2dcd580d032, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: fc78c59cc13595b4184f482a86b7cf66, type: 2}

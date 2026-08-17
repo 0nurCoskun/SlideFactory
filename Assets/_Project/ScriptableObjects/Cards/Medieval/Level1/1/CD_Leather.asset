@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: leather
   displayName: Leather
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c3989c64b00438449af4875477130afe, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:
