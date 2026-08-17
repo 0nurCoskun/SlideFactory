@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5073be1ff16d1654ebc8b3cbcd923edf, type: 3}
-  m_Name: LD_kLevel3
+  m_Name: LD_kBeginner3
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelId: level3k
-  displayName: Level 3
-  requiredPreviousLevel: {fileID: 11400000, guid: ed60be4d3a9230448a4a992d2bb0e4b0, type: 2}
-  nextLevel: {fileID: 11400000, guid: 72ecb5df2eac74d4c8ebbebabcf35848, type: 2}
+  levelId: levelb3k
+  displayName: Beginner 3
+  requiredPreviousLevel: {fileID: 11400000, guid: 2efded3554f24a4381ae1d94fbcfc407, type: 2}
+  nextLevel: {fileID: 11400000, guid: 05c90361ddb6411b8646946c44318ca4, type: 2}
   initialDeck:
-  - {fileID: 11400000, guid: 52c77bd68ab9b014e8ae6ba9f74fac25, type: 2}
-  - {fileID: 11400000, guid: ed4b25cbb6f27a24c8812b21313b49de, type: 2}
-  - {fileID: 11400000, guid: d8788f1bc1c8a274e9f5e77bf9764824, type: 2}
-  - {fileID: 11400000, guid: 52c77bd68ab9b014e8ae6ba9f74fac25, type: 2}
-  - {fileID: 11400000, guid: ed4b25cbb6f27a24c8812b21313b49de, type: 2}
-  - {fileID: 11400000, guid: d8788f1bc1c8a274e9f5e77bf9764824, type: 2}
-  - {fileID: 11400000, guid: 52c77bd68ab9b014e8ae6ba9f74fac25, type: 2}
-  - {fileID: 11400000, guid: ed4b25cbb6f27a24c8812b21313b49de, type: 2}
-  - {fileID: 11400000, guid: d8788f1bc1c8a274e9f5e77bf9764824, type: 2}
-  levelDuration: 100
+  - {fileID: 11400000, guid: e5e1c9dd06d8400a875be0e125ce116a, type: 2}
+  - {fileID: 11400000, guid: c83191057ae042bea95619a75c4f89c8, type: 2}
+  - {fileID: 11400000, guid: e5e1c9dd06d8400a875be0e125ce116a, type: 2}
+  - {fileID: 11400000, guid: c83191057ae042bea95619a75c4f89c8, type: 2}
+  - {fileID: 11400000, guid: e5e1c9dd06d8400a875be0e125ce116a, type: 2}
+  - {fileID: 11400000, guid: c83191057ae042bea95619a75c4f89c8, type: 2}
+  levelDuration: 60
+  threeStarScoreRatio: 0.85
+  twoStarScoreRatio: 0.55
   threeStarRemainingRatio: 0.5
   twoStarRemainingRatio: 0.3
   stationsForLevel:
   - {fileID: 11400000, guid: c96dfc000a2e14a4eae3b2092db6832e, type: 2}
-  - {fileID: 11400000, guid: 67c12031cdc434441bb62c367a6aed9c, type: 2}
-  - {fileID: 11400000, guid: 6c440264f3d19d64694d09d2acc8e62f, type: 2}
-  - {fileID: 11400000, guid: aa8b306249a2e18419740ed4bf84f7eb, type: 2}
-  minStationShuffleInterval: 3
-  maxStationShuffleInterval: 4
+  - {fileID: 11400000, guid: 9a1bc71d44577a24fa0b3dc9bb7d8f21, type: 2}
+  - {fileID: 11400000, guid: d3c5a44c7e5b00047a19d8d750c79e78, type: 2}
+  - {fileID: 11400000, guid: f7ca008935ce7f8479016c8461ae0a48, type: 2}
+  minStationShuffleInterval: 8
+  maxStationShuffleInterval: 10
+  isTutorial: 0

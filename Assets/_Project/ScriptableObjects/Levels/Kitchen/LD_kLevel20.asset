@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5073be1ff16d1654ebc8b3cbcd923edf, type: 3}
+  m_Name: LD_kLevel10
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  levelId: level10k
+  displayName: Level 10
+  requiredPreviousLevel: {fileID: 11400000, guid: efda2c6d46412cc4f9f56c96b4804031, type: 2}
+  nextLevel: {fileID: 11400000, guid: f283f351a41dc184b80405d4b35097c7, type: 2}
+  initialDeck:
+  - {fileID: 11400000, guid: 62cfa752d9f80d744ad7436b17232ce0, type: 2}
+  - {fileID: 11400000, guid: 8285dbf9de34e27438d66ca2e59c7384, type: 2}
+  - {fileID: 11400000, guid: da2590e0faa31784aae987afd331378c, type: 2}
+  - {fileID: 11400000, guid: d96612dfc1f652349acc97e377f2d32c, type: 2}
+  - {fileID: 11400000, guid: d96612dfc1f652349acc97e377f2d32c, type: 2}
+  - {fileID: 11400000, guid: da2590e0faa31784aae987afd331378c, type: 2}
+  - {fileID: 11400000, guid: 8285dbf9de34e27438d66ca2e59c7384, type: 2}
+  - {fileID: 11400000, guid: 62cfa752d9f80d744ad7436b17232ce0, type: 2}
+  - {fileID: 11400000, guid: 62cfa752d9f80d744ad7436b17232ce0, type: 2}
+  - {fileID: 11400000, guid: 8285dbf9de34e27438d66ca2e59c7384, type: 2}
+  - {fileID: 11400000, guid: da2590e0faa31784aae987afd331378c, type: 2}
+  - {fileID: 11400000, guid: d96612dfc1f652349acc97e377f2d32c, type: 2}
+  - {fileID: 11400000, guid: 62cfa752d9f80d744ad7436b17232ce0, type: 2}
+  - {fileID: 11400000, guid: 8285dbf9de34e27438d66ca2e59c7384, type: 2}
+  - {fileID: 11400000, guid: da2590e0faa31784aae987afd331378c, type: 2}
+  - {fileID: 11400000, guid: d96612dfc1f652349acc97e377f2d32c, type: 2}
+  levelDuration: 285
+  threeStarRemainingRatio: 0.5
+  twoStarRemainingRatio: 0.3
+  stationsForLevel:
+  - {fileID: 11400000, guid: d3c5a44c7e5b00047a19d8d750c79e78, type: 2}
+  - {fileID: 11400000, guid: 9a1bc71d44577a24fa0b3dc9bb7d8f21, type: 2}
+  - {fileID: 11400000, guid: bb1253f6b0f2bef4988da40fd57f4b07, type: 2}
+  - {fileID: 11400000, guid: c9b2849251967104a9caa7aef7b22a04, type: 2}
+  minStationShuffleInterval: 3
+  maxStationShuffleInterval: 4

@@ -10,32 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5073be1ff16d1654ebc8b3cbcd923edf, type: 3}
-  m_Name: LD_kLevel9
+  m_Name: LD_kIntermediate4
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  levelId: level9k
-  displayName: Level 9
-  requiredPreviousLevel: {fileID: 11400000, guid: e720e925023cafd41898ddd489aef40e, type: 2}
-  nextLevel: {fileID: 11400000, guid: 1e597c50382f20044986d8afd5a2815f, type: 2}
+  levelId: intermediate4k
+  displayName: Intermediate 4
+  requiredPreviousLevel: {fileID: 11400000, guid: 78fc6c15691e44e28d5f31d6f2fdb64e, type: 2}
+  nextLevel: {fileID: 11400000, guid: c70b7ae3852341119f6bacdcf862a439, type: 2}
   initialDeck:
-  - {fileID: 11400000, guid: 798fd9f71b314ee44a5d6717b25f1d91, type: 2}
-  - {fileID: 11400000, guid: 4037665c2953ad2489901888751a3650, type: 2}
-  - {fileID: 11400000, guid: 4de3f9839f30b3942a695c060ce88254, type: 2}
-  - {fileID: 11400000, guid: 88b61687870d90341bd0c322c8a79ebb, type: 2}
-  - {fileID: 11400000, guid: 798fd9f71b314ee44a5d6717b25f1d91, type: 2}
-  - {fileID: 11400000, guid: 4037665c2953ad2489901888751a3650, type: 2}
-  - {fileID: 11400000, guid: 4de3f9839f30b3942a695c060ce88254, type: 2}
-  - {fileID: 11400000, guid: 88b61687870d90341bd0c322c8a79ebb, type: 2}
-  - {fileID: 11400000, guid: 798fd9f71b314ee44a5d6717b25f1d91, type: 2}
-  - {fileID: 11400000, guid: 4037665c2953ad2489901888751a3650, type: 2}
-  - {fileID: 11400000, guid: 4de3f9839f30b3942a695c060ce88254, type: 2}
-  - {fileID: 11400000, guid: 88b61687870d90341bd0c322c8a79ebb, type: 2}
-  levelDuration: 145
+  - {fileID: 11400000, guid: 432d4c0c103b473e94de90490d171d37, type: 2}
+  - {fileID: 11400000, guid: 0134fd8a7f044d7084085e942333d73c, type: 2}
+  - {fileID: 11400000, guid: eb49efe5897c45c5a2cc914c7449ba67, type: 2}
+  - {fileID: 11400000, guid: 432d4c0c103b473e94de90490d171d37, type: 2}
+  - {fileID: 11400000, guid: 0134fd8a7f044d7084085e942333d73c, type: 2}
+  - {fileID: 11400000, guid: eb49efe5897c45c5a2cc914c7449ba67, type: 2}
+  - {fileID: 11400000, guid: 432d4c0c103b473e94de90490d171d37, type: 2}
+  - {fileID: 11400000, guid: 0134fd8a7f044d7084085e942333d73c, type: 2}
+  - {fileID: 11400000, guid: eb49efe5897c45c5a2cc914c7449ba67, type: 2}
+  levelDuration: 60
+  threeStarScoreRatio: 0.85
+  twoStarScoreRatio: 0.55
   threeStarRemainingRatio: 0.5
   twoStarRemainingRatio: 0.3
   stationsForLevel:
-  - {fileID: 11400000, guid: 80b5193110689bc488daf296e0b922f6, type: 2}
+  - {fileID: 11400000, guid: 43946c5dd86880c4c95a41c27ba73dd5, type: 2}
   - {fileID: 11400000, guid: d3c5a44c7e5b00047a19d8d750c79e78, type: 2}
+  - {fileID: 11400000, guid: 47f96ea30de42b24496b9eb3ee0bd4f6, type: 2}
   - {fileID: 11400000, guid: 19ebe9ceb7d97964d85b5efd7d5c260a, type: 2}
-  - {fileID: 11400000, guid: f7ca008935ce7f8479016c8461ae0a48, type: 2}
-  minStationShuffleInterval: 3
-  maxStationShuffleInterval: 4
+  minStationShuffleInterval: 8
+  maxStationShuffleInterval: 10
+  isTutorial: 0
