@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: crystal_core
   displayName: Resonating Crystal Core
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: aa69215ad2083f747b6ef3cff5a2bb7c, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 6f739973701d03c40880a5c52a2cfcda, type: 2}
   outcomes:

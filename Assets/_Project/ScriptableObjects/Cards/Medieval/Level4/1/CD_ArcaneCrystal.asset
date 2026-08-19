@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
   m_Name: CD_ArcaneCrystal
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: raw_arcane_crystal
+  cardId: arcane_crystal
   displayName: Raw Arcane Crystal
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 07f415052a88f1042aac3c9ae40e5f2d, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

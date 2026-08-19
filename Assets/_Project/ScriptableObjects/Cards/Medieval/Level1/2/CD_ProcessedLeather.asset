@@ -15,9 +15,10 @@ MonoBehaviour:
   cardId: processed_leather
   displayName: Processed Leather
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f7ca691237c720242a4b3125e6e87cdf, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 0}
+  rawStageVersion: {fileID: 11400000, guid: f782fa5cb225d81418a74251cf25fca9, type: 2}
   outcomes:
   - station: {fileID: 11400000, guid: 7e8d9034e35fe6048b20dd19328126fa, type: 2}
     resultCard: {fileID: 11400000, guid: 824a324e41c94284fb071ee28ec24923, type: 2}

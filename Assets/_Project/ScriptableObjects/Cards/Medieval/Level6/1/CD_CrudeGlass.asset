@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: crude_glass
   displayName: Crude Glass
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f078ca0519e791e4f9b54f36a2921142, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

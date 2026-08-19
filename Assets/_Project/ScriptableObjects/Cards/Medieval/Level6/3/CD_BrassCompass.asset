@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: brass_compass
   displayName: Brass Compass
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0f15074caa2678a4fbad83861c13eca3, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: e6b46188e3bfcfa418b6f0a3a4ab42e4, type: 2}

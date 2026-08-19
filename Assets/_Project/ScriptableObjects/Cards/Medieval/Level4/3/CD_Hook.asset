@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: hook
   displayName: Winch-Mounted Hook
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5d608b5a3c8254e44b5078f1613054af, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: be24a2c0d9a85a244a61684c5b7a5ee8, type: 2}
   outcomes:

@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: raw_hide
   displayName: Raw Hide
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 36e098c2a0694e344b2a83c2bebf429a, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

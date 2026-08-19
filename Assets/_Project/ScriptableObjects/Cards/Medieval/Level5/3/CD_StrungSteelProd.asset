@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: strung_steel_prod
   displayName: Strung Steel Prod
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: cc62cd9abb6fc454ca54f3a010c6dda2, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 66a256ca099bd8a4b9204bbdf31f5709, type: 2}
   outcomes:

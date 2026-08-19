@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: iron_grip
   displayName: Iron Grip
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f1fe26dda04055344874ab0170b6f395, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 2bfd12053b7215543ab4f5438dd22c7c, type: 2}
   outcomes:

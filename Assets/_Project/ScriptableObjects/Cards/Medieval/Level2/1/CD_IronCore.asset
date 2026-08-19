@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: iron_core
   displayName: Iron Inner Core
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: bb5acc537b85a234c93d2cf0d6039247, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

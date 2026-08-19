@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: brass_signet
   displayName: Brass Signet
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: dcea7560a26ec734697da86f3e9cd998, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 0054b781d1c290449b2e374d6908c4c8, type: 2}

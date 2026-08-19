@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: raw_granite
   displayName: Raw Granite Slab
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e1c598de29fa00c4580b75296a83615a, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

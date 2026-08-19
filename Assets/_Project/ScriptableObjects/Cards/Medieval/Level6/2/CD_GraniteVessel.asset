@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: granite_vessel
   displayName: Granite Vessel
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: db7229561ff02bd4a838a298456bdf5c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: d4fcb878f922e9e40ae79431fcfcb65c, type: 2}

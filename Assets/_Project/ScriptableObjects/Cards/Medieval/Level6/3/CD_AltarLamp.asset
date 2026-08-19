@@ -15,7 +15,7 @@ MonoBehaviour:
   cardId: altar_lamp
   displayName: Altar Lamp
   description: 
-  icon: {fileID: 21300000, guid: fc31b9c2ce68f0f408458fa7ea600f77, type: 3}
+  icon: {fileID: 21300000, guid: 85b9468aba63bdf4ba363a12e103fa54, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: d4fcb878f922e9e40ae79431fcfcb65c, type: 2}

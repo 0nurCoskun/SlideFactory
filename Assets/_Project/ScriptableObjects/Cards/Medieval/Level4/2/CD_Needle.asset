@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: CD_Needle
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardId: needle
-  displayName: Copper Fertilizer Needle
+  displayName: Copper Needle
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 30b143e482dffd546b801b000acba46e, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 92ad40d2a3c2ce14bb620c235303c9f5, type: 2}
   outcomes:

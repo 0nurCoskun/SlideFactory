@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: raw_marble
   displayName: Raw Marble Block
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2fb9efb0088e14948a797be851a33885, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:
