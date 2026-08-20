@@ -393,6 +393,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.yucchiy.unicli-server": {
+      "version": "https://github.com/yucchiy/UniCli.git?path=src/UniCli.Unity/Packages/com.yucchiy.unicli-server#v1.6.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "297c28ec9e8b1117df6aba607d6238f1addf8209"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
