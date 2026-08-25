@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: peeled_log
   displayName: Peeled Log
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 635fc00241b3ed948bf4d477008d24bf, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 337f661449aaf1f4cb02da1ca4e18d0c, type: 2}
   outcomes:

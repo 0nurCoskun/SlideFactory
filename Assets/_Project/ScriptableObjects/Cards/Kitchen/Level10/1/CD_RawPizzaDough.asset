@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bRawPizzaDough
+  m_Name: CD_RawPizzaDough
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_raw_pizza_dough
+  cardId: raw_pizza_dough
   displayName: Raw Pizza Dough
-  description:
-  icon: {fileID: 5161184757264026452, guid: d075ef9cacd8c2449b1718cd7f6cef38, type: 3}
+  description: 
+  icon: {fileID: 21300000, guid: 47f1d588f2fec30489291172f8919aa8, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

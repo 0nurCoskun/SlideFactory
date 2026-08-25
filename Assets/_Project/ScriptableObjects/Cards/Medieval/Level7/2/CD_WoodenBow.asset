@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: wooden_bow
   displayName: Wooden Bow
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6e5d694f0f20b3747af06ca7b258751e, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: cd59ba2f78a8e6a439fd754ff2d8324c, type: 2}
   outcomes:

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bFriedWing
+  m_Name: CD_FriedWing
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_fried_wing
+  cardId: fried_wing
   displayName: Fried Wing
-  description:
-  icon: {fileID: 7656106158968777865, guid: bc1c6295425f1e647a953d9549b74d8d, type: 3}
+  description: 
+  icon: {fileID: 21300000, guid: 021536a95ba89aa42a00216f20e2fbfc, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: c83191057ae042bea95619a75c4f89c8, type: 2}

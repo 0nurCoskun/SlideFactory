@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bPackedSnackMix
+  m_Name: CD_PackedSnackMix
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_packed_snack_mix
+  cardId: packed_snack_mix
   displayName: Packed Snack Mix
-  description:
-  icon: {fileID: 0}
+  description: 
+  icon: {fileID: 21300000, guid: dfa6da3f808400d45bde489c7a5d0610, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 94bed597709746b983579a9e039bab1d, type: 2}

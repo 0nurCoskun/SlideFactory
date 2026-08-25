@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: tar_swab
   displayName: Tar Swab
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9ab51550d1fecae4c97e1ef53f9b3a8b, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 08801f6ea35d0e54ca90c10b424f2d24, type: 2}
   outcomes:

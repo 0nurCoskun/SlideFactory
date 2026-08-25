@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: metal_buckle
   displayName: Metal Buckle
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 42dcbad5c3c14674f9367f1fd4bd68da, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

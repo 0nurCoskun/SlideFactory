@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bRawBun
+  m_Name: CD_RawBun
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_raw_bun
+  cardId: raw_bun
   displayName: Raw Bun
-  description:
-  icon: {fileID: 5848005285421614229, guid: 01627c70735cd9b498b4a442301b333c, type: 3}
+  description: 
+  icon: {fileID: 21300000, guid: 680e3c9912b669f4fad557dd703a1cd8, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

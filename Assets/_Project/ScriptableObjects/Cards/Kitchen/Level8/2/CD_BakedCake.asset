@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bBakedCake
+  m_Name: CD_BakedCake
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_baked_cake
+  cardId: baked_cake
   displayName: Baked Cake
-  description:
-  icon: {fileID: -8963638761322020610, guid: 36ad8633152f10e49864e4ed2df82469, type: 3}
+  description: 
+  icon: {fileID: 21300000, guid: 951b52dee2d0b614f8569daafe84abca, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: c8d7f778c70c47ec912effe7ffcd13be, type: 2}

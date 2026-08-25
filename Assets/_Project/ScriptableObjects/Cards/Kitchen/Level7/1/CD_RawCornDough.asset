@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bRawCornDough
+  m_Name: CD_RawCornDough
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_raw_corn_dough
+  cardId: raw_corn_dough
   displayName: Raw Corn Dough
-  description:
-  icon: {fileID: 4716349384259283326, guid: 08353888773c2b947bfe5a4cacd086f7, type: 3}
+  description: 
+  icon: {fileID: 21300000, guid: c8ad920e6c2dc2146aeb0e1d4577c86a, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

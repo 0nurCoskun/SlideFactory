@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bSaucedRibRack
+  m_Name: CD_SaucedRibRack
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_sauced_rib_rack
+  cardId: sauced_rib_rack
   displayName: Sauced Rib Rack
-  description:
-  icon: {fileID: 9045834532770169874, guid: 44108689c8c7de14cbec7b3a8e0fa119, type: 3}
+  description: 
+  icon: {fileID: 21300000, guid: ccd977862fd495546bdcb154df409b27, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 0134fd8a7f044d7084085e942333d73c, type: 2}

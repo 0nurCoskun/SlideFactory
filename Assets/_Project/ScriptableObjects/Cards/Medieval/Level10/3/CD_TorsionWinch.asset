@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: torsion_winch
   displayName: Torsion Winch
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e5c5b668ae681c948860470aa1dee163, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: a832823063b9f2949910680343f7b814, type: 2}
   outcomes:

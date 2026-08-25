@@ -15,9 +15,10 @@ MonoBehaviour:
   cardId: harness_straps
   displayName: Harness Straps
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a12475fe78f2e8449aad4b085cdd357d, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
-  rawStageVersion: {fileID: 0}
+  rawStageVersion: {fileID: 11400000, guid: ad6c919b66c7e1e469c7d8065810ec47, type: 2}
   outcomes:
   - station: {fileID: 11400000, guid: 450563fd54e330047ac60666bcd65732, type: 2}
     resultCard: {fileID: 11400000, guid: 28e6b3304620cdd4b9a10bef5dc55c73, type: 2}

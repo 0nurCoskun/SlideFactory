@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: iron_ore
   displayName: Iron Ore
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 05df1cad516edb94e833ea3ec47a4f69, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bChoppedVeggieMix
+  m_Name: CD_ChoppedVeggieMix
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_chopped_veggie_mix
+  cardId: chopped_veggie_mix
   displayName: Chopped Veggie Mix
   description: 
-  icon: {fileID: 21300000, guid: 65b34b96e88734b48ae17df859f16d3c, type: 3}
+  icon: {fileID: 21300000, guid: 01101474a0ef00a41b1f1de11a0e586c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 432d4c0c103b473e94de90490d171d37, type: 2}

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bGrilledPizza
+  m_Name: CD_GrilledPizza
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_grilled_pizza
+  cardId: grilled_pizza
   displayName: Grilled Pizza
   description:
   icon: {fileID: 0}

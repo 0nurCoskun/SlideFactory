@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: iron_rim
   displayName: Iron Rim
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a1b567a91e9be84408123fb94fec0e43, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 1c759942143e0ce46a6af142df86b6c9, type: 2}
   outcomes:

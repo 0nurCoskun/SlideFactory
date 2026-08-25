@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bRawRibRack
+  m_Name: CD_RawRibRack
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_raw_rib_rack
+  cardId: raw_rib_rack
   displayName: Raw Rib Rack
-  description:
-  icon: {fileID: 0}
+  description: 
+  icon: {fileID: 21300000, guid: d07e99f07291a554ba15ddf9ac4ad8de, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

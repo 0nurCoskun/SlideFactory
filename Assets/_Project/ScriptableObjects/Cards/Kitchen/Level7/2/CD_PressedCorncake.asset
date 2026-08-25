@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bPressedCorncake
+  m_Name: CD_PressedCorncake
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_pressed_corncake
+  cardId: pressed_corncake
   displayName: Pressed Corncake
-  description:
-  icon: {fileID: 5040811751942244991, guid: d4cd0192289f254448b868eba9c802ff, type: 3}
+  description: 
+  icon: {fileID: 21300000, guid: 3ab169248e9346740b4191ba7ff83ecd, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: a4e91bbdd8fd442da51cfd05861fa13b, type: 2}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bPackedSalad
+  m_Name: CD_PackedSalad
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_packed_salad
+  cardId: packed_salad
   displayName: Packed Salad
-  description:
-  icon: {fileID: 0}
+  description: 
+  icon: {fileID: 21300000, guid: 84f40d7c69d190747b77a1e1fe716992, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 54efde73394042cfa348ce6c8408b7dd, type: 2}

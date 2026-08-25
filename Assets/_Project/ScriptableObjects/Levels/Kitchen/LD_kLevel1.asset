@@ -17,12 +17,12 @@ MonoBehaviour:
   requiredPreviousLevel: {fileID: 0}
   nextLevel: {fileID: 11400000, guid: 2efded3554f24a4381ae1d94fbcfc407, type: 2}
   initialDeck:
-  - {fileID: 11400000, guid: ce8f20a69adbd53428eb4ef53db9ad2a, type: 2}
   - {fileID: 11400000, guid: 614c99df757542dab319b47b24f2adeb, type: 2}
-  - {fileID: 11400000, guid: ce8f20a69adbd53428eb4ef53db9ad2a, type: 2}
+  - {fileID: 11400000, guid: 35a38c380f5544a2bf67b3e073614c71, type: 2}
   - {fileID: 11400000, guid: 614c99df757542dab319b47b24f2adeb, type: 2}
-  - {fileID: 11400000, guid: ce8f20a69adbd53428eb4ef53db9ad2a, type: 2}
+  - {fileID: 11400000, guid: 35a38c380f5544a2bf67b3e073614c71, type: 2}
   - {fileID: 11400000, guid: 614c99df757542dab319b47b24f2adeb, type: 2}
+  - {fileID: 11400000, guid: 35a38c380f5544a2bf67b3e073614c71, type: 2}
   levelDuration: 60
   threeStarScoreRatio: 0.85
   twoStarScoreRatio: 0.55

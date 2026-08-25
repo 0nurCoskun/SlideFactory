@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bStirFriedNoodle
+  m_Name: CD_StirFriedNoodle
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_stir_fried_noodle
+  cardId: stir_fried_noodle
   displayName: Stir-Fried Noodle
-  description:
-  icon: {fileID: 0}
+  description: 
+  icon: {fileID: 21300000, guid: 70ea5a0dd8693624b93169347423598f, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: e035a77e71b241d683e05d43248131b2, type: 2}

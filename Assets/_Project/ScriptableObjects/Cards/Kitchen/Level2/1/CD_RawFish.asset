@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bRawFish
+  m_Name: CD_RawFish
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_raw_fish
+  cardId: raw_fish
   displayName: Raw Fish
-  description:
-  icon: {fileID: 0}
+  description: 
+  icon: {fileID: 21300000, guid: 727d61d4bf96700458d206d0d5cc357c, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

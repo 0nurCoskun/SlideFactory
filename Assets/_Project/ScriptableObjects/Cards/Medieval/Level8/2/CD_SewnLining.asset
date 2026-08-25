@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: sewn_lining
   displayName: Sewn Lining
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 88abf83c46c4c784fbfca4cac7025d5d, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 06b1e9d4b984a4b45be50bf4d7e5fc1c, type: 2}
   outcomes:

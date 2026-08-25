@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bRawJerkyStrip
+  m_Name: CD_RawJerkyStrip
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_raw_jerky_strip
+  cardId: raw_jerky_strip
   displayName: Raw Jerky Strip
-  description:
-  icon: {fileID: 0}
+  description: 
+  icon: {fileID: 21300000, guid: 7cf9d36ef2c652543a1252245f2688ea, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bSteamedBun
+  m_Name: CD_SteamedBun
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_steamed_bun
+  cardId: steamed_bun
   displayName: Steamed Bun
-  description:
-  icon: {fileID: -5401246687903383670, guid: 69ff863b93917a7458939d70e32c4c61, type: 3}
+  description: 
+  icon: {fileID: 21300000, guid: 70aad13e515567a419c52aedde2ca889, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: fc21dd4293174adcba179d0cabed8d9f, type: 2}

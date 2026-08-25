@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bChilledPudding
+  m_Name: CD_ChilledPudding
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_chilled_pudding
+  cardId: chilled_pudding
   displayName: Chilled Pudding
   description: 
-  icon: {fileID: 21300000, guid: d387091a832dd384992ad5b8376e23a8, type: 3}
+  icon: {fileID: 21300000, guid: c6d76834bb4b29a48a18a7734cd81bd2, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 148a0691c509421da6ea8ba23b61f144, type: 2}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bSteamedParcel
+  m_Name: CD_SteamedParcel
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_steamed_parcel
+  cardId: steamed_parcel
   displayName: Steamed Parcel
-  description:
-  icon: {fileID: 0}
+  description: 
+  icon: {fileID: 21300000, guid: 12babe8f3e8c703428df606320781ae2, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: d1c2702b6e6d4780934b1a2bb98625eb, type: 2}

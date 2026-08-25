@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe1f63bfb236c04184ca5348aeb8fcc, type: 3}
-  m_Name: CD_bPressedTortilla
+  m_Name: CD_PressedTortilla
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardId: b_pressed_tortilla
+  cardId: pressed_tortilla
   displayName: Pressed Tortilla
-  description:
-  icon: {fileID: 0}
+  description: 
+  icon: {fileID: 21300000, guid: 050c6e3cb9e2d6b4684b9eedfcd00c78, type: 3}
   fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: 603f183fee794780911cdd712bf01168, type: 2}

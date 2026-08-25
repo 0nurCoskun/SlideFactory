@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: thread_needle
   displayName: Thread & Needle
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 00a7b55ae6754944eb81502f4cae2f6f, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:

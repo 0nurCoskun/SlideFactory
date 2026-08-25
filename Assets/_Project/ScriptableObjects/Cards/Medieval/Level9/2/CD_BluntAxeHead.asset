@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: blunt_axe_head
   displayName: Blunt Axe Head
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: fd8f16b1f719dab49baccffa6c83ee43, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000, guid: af310263932a016489c2181d23ce5e21, type: 2}
   outcomes:
