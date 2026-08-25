@@ -15,7 +15,8 @@ MonoBehaviour:
   cardId: bronze_scrap
   displayName: Bronze Scrap
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2eadff7cfa7aad444bb4dda4b0f672a1, type: 3}
+  fontAsset: {fileID: 0}
   isFinalProduct: 0
   rawStageVersion: {fileID: 11400000}
   outcomes:
