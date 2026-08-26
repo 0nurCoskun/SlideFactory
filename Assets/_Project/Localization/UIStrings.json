@@ -51,6 +51,7 @@
   "ui_recipes": { "en": "Recipes", "tr": "Tarifler" },
   "ui_close": { "en": "Close", "tr": "Kapat" },
   "ui_next_level": { "en": "Next Level", "tr": "Sonraki Seviye" },
+  "ui_watch_ad_continue": { "en": "Watch Ad: Continue", "tr": "Reklam İzle: Devam Et" },
   "ui_win_text": { "en": "Well done!", "tr": "Tebrikler!" },
   "ui_lose_text": { "en": "Time's Out!", "tr": "Süre Doldu!" },
   "ui_ingredients": { "en": "Ingredients", "tr": "Malzemeler" },
