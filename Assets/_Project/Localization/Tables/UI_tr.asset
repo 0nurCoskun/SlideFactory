@@ -22,21 +22,6 @@ MonoBehaviour:
     m_Localized: "\xD6\u011Fretici tamamland\u0131! Art\u0131k ger\xE7ek oyuna haz\u0131rs\u0131n."
     m_Metadata:
       m_Items: []
-  - m_Id: 2084585472
-    m_Localized: "Kart\u0131, o kenarda g\xF6sterilen istasyona do\u011Fru kayd\u0131r.
-      Yanl\u0131\u015F istasyon mu? Sorun de\u011Fil - kart sadece s\u0131f\u0131rlan\u0131r!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585473
-    m_Localized: "Hata! Yanl\u0131\u015F istasyon - kart ham haline geri d\xF6nd\xFC.
-      \u0130stasyon etiketlerini takip et!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585474
-    m_Localized: "Harika! Do\u011Fru kayd\u0131rmalar kart\u0131 ilerletir. \u0130stasyonlar
-      zamanla yer de\u011Fi\u015Ftirir, dikkatli ol!"
-    m_Metadata:
-      m_Items: []
   - m_Id: 2084585475
     m_Localized: 'Ham Madde: {0}'
     m_Metadata:
@@ -223,6 +208,37 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8192240841146368
     m_Localized: "Reklam \u0130zle: Devam Et"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253326213120
+    m_Localized: "Bu, destede ka\xE7 kart kald\u0131\u011F\u0131n\u0131 g\xF6sterir.
+      S\xFCre bitmeden bunu s\u0131f\u0131ra indirirsen kazan\u0131rs\u0131n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990336
+    m_Localized: "Hangi kart\u0131n hangi istasyona gitmesi gerekti\u011Fini g\xF6rmek
+      i\xE7in buna istedi\u011Fin an dokunabilirsin - hi\xE7bir \u015Feyi durdurmaz,
+      swipe atarken de kullanabilirsin."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990337
+    m_Localized: "Ekran\u0131n her kenar\u0131 bir istasyon. Zamanla yer de\u011Fi\u015Ftirirler,
+      bu y\xFCzden kayd\u0131rmadan \xF6nce etikete mutlaka bak!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990338
+    m_Localized: "Art arda do\u011Fru kayd\u0131rmalar burada bir kombo \xE7arpan\u0131
+      biriktirir ve skorunu art\u0131r\u0131r - yanl\u0131\u015F bir kayd\u0131rma
+      \xE7arpan\u0131 d\xFC\u015F\xFCr\xFCr."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990339
+    m_Localized: "Bu, b\xF6l\xFCm s\xFCren. S\xFCre s\u0131f\u0131rlanmadan \xF6nce
+      b\xFCt\xFCn desteyi bitirmelisin!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990340
+    m_Localized: "Devam etmek i\xE7in ekrana dokun"
     m_Metadata:
       m_Items: []
   references:

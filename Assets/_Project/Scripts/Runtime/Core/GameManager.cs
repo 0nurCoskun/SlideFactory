@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public event Action OnDeckEmptied;                               // Deste bitti (henüz "level kazanıldı" ile karıştırma - süre de kontrol edilir)
     public event Action<int> OnLevelWon;                             // Süre bitmeden deste tamamlandı - kaç yıldız kazanıldığını da taşır
     public event Action OnLevelFailed;                               // Süre bitti ama deste hâlâ dolu
+    public event Action OnLevelBegun;                                // BeginLevelPlay() fiilen çalıştı (deste kuruldu, süre/istasyon karışması başladı)
 
     /// <summary>
     /// Geçerli bir swipe algılandığında (sonucu ne olursa olsun: doğru/yanlış/final)
@@ -150,6 +151,11 @@ public class GameManager : MonoBehaviour
 
         levelTimerManager?.Configure(_activeLevel.levelDuration);
         levelTimerManager?.StartTimer();
+
+        // TutorialSpotlightView gibi dinleyiciler, UI artık gerçek başlangıç değerleriyle
+        // (deste sayısı, süre, istasyon etiketleri) dolu olduğu için bu noktadan sonra
+        // devreye girebilir - PauseLevel() ile hemen durdurup kılavuzlu turu başlatabilirler.
+        OnLevelBegun?.Invoke();
     }
 
     /// <summary>
