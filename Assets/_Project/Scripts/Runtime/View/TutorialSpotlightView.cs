@@ -50,6 +50,8 @@ public class TutorialSpotlightView : MonoBehaviour
     [SerializeField] private TMP_FontAsset captionFont;
     [SerializeField] private float captionFontSize = 52f;
     [SerializeField] private Color captionTextColor = Color.white;
+    [Tooltip("Açıklama metninin arkasındaki panelin rengi - okunabilirlik için backdropColor'dan bile koyu olmalı, çünkü bu panel deliğin İÇİNDEN GÖRÜNEN gerçek oyun görselinin üstünde durur.")]
+    [SerializeField] private Color captionBackgroundColor = new Color(0f, 0f, 0f, 0.9f);
 
     private bool _isTutorialActive;
     private readonly List<SpotlightStep> _steps = new List<SpotlightStep>();
@@ -207,7 +209,7 @@ public class TutorialSpotlightView : MonoBehaviour
         captionPanelRect.sizeDelta = new Vector2(referenceResolution.x - 120f, 340f);
         captionPanelRect.anchoredPosition = new Vector2(0f, 160f);
         Image captionBg = captionPanelGO.AddComponent<Image>();
-        captionBg.color = new Color(0f, 0f, 0f, 0.55f);
+        captionBg.color = captionBackgroundColor;
         captionBg.raycastTarget = false;
 
         _captionText = CreateCaptionText(captionPanelRect, "CaptionText", captionFontSize, 0.62f);
