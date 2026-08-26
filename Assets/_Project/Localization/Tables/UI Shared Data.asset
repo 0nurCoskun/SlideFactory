@@ -19,18 +19,6 @@ MonoBehaviour:
     m_Key: tutorial_completion
     m_Metadata:
       m_Items: []
-  - m_Id: 2084585472
-    m_Key: tutorial_hint_first_card
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585473
-    m_Key: tutorial_hint_wrong_swipe
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585474
-    m_Key: tutorial_hint_correct_swipe
-    m_Metadata:
-      m_Items: []
   - m_Id: 2084585475
     m_Key: level_info_raw_materials
     m_Metadata:
@@ -217,6 +205,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8192240841146368
     m_Key: ui_watch_ad_continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253326213120
+    m_Key: tutorial_explain_deck_count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990336
+    m_Key: tutorial_explain_show_recipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990337
+    m_Key: tutorial_explain_stations
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990338
+    m_Key: tutorial_explain_score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990339
+    m_Key: tutorial_explain_timer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272253342990340
+    m_Key: tutorial_tap_to_continue
     m_Metadata:
       m_Items: []
   m_Metadata:
