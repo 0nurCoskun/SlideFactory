@@ -1250,6 +1250,334 @@ MonoBehaviour:
     m_Localized: "Sar\u0131lm\u0131\u015F At\u0131\u015Ft\u0131rmal\u0131k Kar\u0131\u015F\u0131m\u0131"
     m_Metadata:
       m_Items: []
+  - m_Id: 8192245115142144
+    m_Localized: Raw Cheese Block
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473792
+    m_Localized: Raw Meat Pie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473793
+    m_Localized: Diced Cheese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473794
+    m_Localized: Seared Meat Pie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473795
+    m_Localized: Baked Meat Pie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473796
+    m_Localized: Cheese Filling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473797
+    m_Localized: Raw Fish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473798
+    m_Localized: Raw Skewer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473799
+    m_Localized: Cooked Skewer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473800
+    m_Localized: Filleted Fish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473801
+    m_Localized: Grilled Fish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473802
+    m_Localized: Plated Skewer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473803
+    m_Localized: Raw Potato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473804
+    m_Localized: Raw Wing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473805
+    m_Localized: Cut Potato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473806
+    m_Localized: Fried Wing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473807
+    m_Localized: French Fries
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473808
+    m_Localized: Sauced Wing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473809
+    m_Localized: Raw Dough Ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473810
+    m_Localized: Raw Noodle Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473811
+    m_Localized: Proofed Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473812
+    m_Localized: Stir-Fried Noodle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473813
+    m_Localized: Baked Loaf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473814
+    m_Localized: Grilled Noodle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473815
+    m_Localized: Raw Corn Masa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473816
+    m_Localized: Raw Garden Salad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473817
+    m_Localized: Packed Salad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473818
+    m_Localized: Pressed Tortilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473819
+    m_Localized: Chilled Salad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245165473820
+    m_Localized: Sauteed Tortilla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862400
+    m_Localized: Raw Bun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862401
+    m_Localized: Raw Dumpling Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862402
+    m_Localized: Raw Shrimp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862403
+    m_Localized: Marinated Shrimp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862404
+    m_Localized: Shaped Dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862405
+    m_Localized: Steamed Bun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862406
+    m_Localized: Grilled Shrimp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862407
+    m_Localized: Sauced Bun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862408
+    m_Localized: Steamed Dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862409
+    m_Localized: Raw Corn Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862410
+    m_Localized: Raw Jerky Strip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862411
+    m_Localized: Raw Sausage Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862412
+    m_Localized: Pressed Corncake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862413
+    m_Localized: Shaped Sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862414
+    m_Localized: Smoked Jerky Strip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862415
+    m_Localized: Plated Corncake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862416
+    m_Localized: Smoked Sausage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862417
+    m_Localized: Wrapped Jerky
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862418
+    m_Localized: Raw Cake Batter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862419
+    m_Localized: Raw Dumpling Parcel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862420
+    m_Localized: Raw Pudding Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862421
+    m_Localized: Baked Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245173862422
+    m_Localized: Chilled Pudding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056704
+    m_Localized: Steamed Parcel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056705
+    m_Localized: Crispy Stir-Fried Parcel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056706
+    m_Localized: Frosted Cake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056707
+    m_Localized: Steamed Pudding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056708
+    m_Localized: Raw Flatbread Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056709
+    m_Localized: Raw Rib Rack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056710
+    m_Localized: Raw Veggie Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056711
+    m_Localized: Baked Flatbread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056712
+    m_Localized: Chopped Veggie Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056713
+    m_Localized: Sauced Rib Rack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056714
+    m_Localized: Baked Rib Rack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056715
+    m_Localized: Grilled Flatbread
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056716
+    m_Localized: Sauced Veggie Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056717
+    m_Localized: Raw Chicken Tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056718
+    m_Localized: Raw Pizza Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056719
+    m_Localized: Raw Snack Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056720
+    m_Localized: Fried Tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056721
+    m_Localized: Packed Snack Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056722
+    m_Localized: Stretched Pizza Dough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056723
+    m_Localized: Boxed Tender
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056724
+    m_Localized: Grilled Pizza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056725
+    m_Localized: Wrapped Snack Mix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056726
+    m_Localized: Tomato Crate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056727
+    m_Localized: Wheat Sack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056728
+    m_Localized: Raw Dumpling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245178056729
+    m_Localized: Raw Tortilla Strips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245224194048
+    m_Localized: Charred Pepper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245224194049
+    m_Localized: Raw Arcane Crystal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8192245236776960
+    m_Localized: Braided Hemp Cord
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

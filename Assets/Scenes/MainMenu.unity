@@ -4589,6 +4589,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
   clipOverride: {fileID: 0}
+--- !u!1 &882279671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882279673}
+  - component: {fileID: 882279672}
+  m_Layer: 0
+  m_Name: _AdManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &882279672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882279671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea9db0798297d14e8bd7e1e082335bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SlideFactory.Runtime::AdManager
+  androidAppKey: 25b63cf85
+  iosAppKey: 25c43a4a5
+  androidRewardedAdUnitId: syz3d8ekts22q0or
+  iosRewardedAdUnitId: l1quzz1xmmdhw5er
+  androidInterstitialAdUnitId: h3xw38h9214adgxo
+  iosInterstitialAdUnitId: obg6ohwts3y690ks
+  levelsBetweenInterstitials: 3
+  verboseLogging: 1
+--- !u!4 &882279673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882279671}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &885490237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12189,3 +12241,4 @@ SceneRoots:
   - {fileID: 1906120450}
   - {fileID: 900000102}
   - {fileID: 3100000002}
+  - {fileID: 882279673}

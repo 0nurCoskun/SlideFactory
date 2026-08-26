@@ -60,6 +60,22 @@ public class LevelResultView : MonoBehaviour
     [SerializeField] private TMP_Text loseScoreText;
     [SerializeField] private TMP_Text loseBestScoreText;
 
+    [Header("Reklamla Devam Et (LosePanel)")]
+    [Tooltip("Rewarded reklam izlenince GameManager.ReviveWithExtraTime'a verilecek ekstra süre (saniye).")]
+    [SerializeField] private float continueExtraSeconds = 15f;
+    [Tooltip("LosePanel içindeki 'İzle ve Devam Et' butonu. Reklam hazır değilken, " +
+             "reklamlar kaldırılmışken ya da bu denemede zaten kullanılmışken OTOMATİK gizlenir - " +
+             "Inspector'da aktif bırakılabilir.")]
+    [SerializeField] private GameObject continueWithAdButton;
+
+    // Bir DENEME (= bir sahne ömrü, Restart/Next Level sahneyi baştan yüklüyor) başına
+    // en fazla BİR reklamlı devam hakkı - yoksa oyuncu süresiz reklam izleyip level'ı
+    // asla kaybetmezdi. SADECE Awake()'te sıfırlanır - HandleLevelFailed'da SIFIRLAMA,
+    // ReviveWithExtraTime sonrası gelecek İKİNCİ bir süre bitişi bu bayrağı tekrar açıp
+    // hakkı sınırsız tekrarlatır (bkz. Awake() içindeki not). Sahne başına statik
+    // DEĞİL - ScoreManager'daki NOT ile aynı gerekçe.
+    private bool _hasUsedContinueThisAttempt;
+
     [Header("Skor Sayım Animasyonu")]
     [Tooltip("Puanın 0'dan nihai değere akma süresi. Yıldızlar bittikten SONRA başlar.")]
     [SerializeField] private float scoreCountUpDuration = 0.9f;
@@ -84,6 +100,13 @@ public class LevelResultView : MonoBehaviour
 
         // Rozet, sayım bitmeden görünmemeli - yoksa rekor kırılmadan "YENİ REKOR" yazar.
         if (newRecordBadge != null) newRecordBadge.SetActive(false);
+
+        // BİR KEZ, sahne yüklendiğinde: "bir deneme" burada bir SAHNE ÖMRÜ demek
+        // (Restart/Next Level sahneyi baştan yüklüyor). HandleLevelFailed İÇİNDE
+        // sıfırlanırsa, ReviveWithExtraTime sonrası ikinci bir süre bitişi bu bayrağı
+        // GERİ AÇAR ve oyuncu sınırsız reklam izleyip level'ı asla kaybetmez - tam da
+        // _hasUsedContinueThisAttempt'in var oluş sebebini bozar.
+        _hasUsedContinueThisAttempt = false;
     }
 
     private void OnEnable()
@@ -93,6 +116,11 @@ public class LevelResultView : MonoBehaviour
             gameManager.OnLevelWon += HandleLevelWon;
             gameManager.OnLevelFailed += HandleLevelFailed;
         }
+
+        // AdManager sahneler arası DontDestroyOnLoad singleton - MainMenu'den geçmeden
+        // doğrudan Game sahnesi Editor'de açılırsa Instance null olabilir, o yüzden hepsi ?.
+        if (AdManager.Instance != null)
+            AdManager.Instance.OnRewardedAdReadyChanged += HandleRewardedAdReadyChanged;
     }
 
     private void OnDisable()
@@ -102,6 +130,9 @@ public class LevelResultView : MonoBehaviour
             gameManager.OnLevelWon -= HandleLevelWon;
             gameManager.OnLevelFailed -= HandleLevelFailed;
         }
+
+        if (AdManager.Instance != null)
+            AdManager.Instance.OnRewardedAdReadyChanged -= HandleRewardedAdReadyChanged;
 
         _resultSequence?.Kill();
     }
@@ -223,6 +254,62 @@ public class LevelResultView : MonoBehaviour
 
         if (loseBestScoreText != null)
             loseBestScoreText.text = GameLocalization.GetUIString("ui_best_score", best.ToString("N0"));
+
+        UpdateContinueButtonVisibility();
+    }
+
+    private void HandleRewardedAdReadyChanged(bool ready)
+    {
+        // LosePanel açık DEĞİLKEN de tetiklenebilir (reklam arka planda yüklenir) -
+        // UpdateContinueButtonVisibility zararsız, panel kapalıyken buton zaten görünmez.
+        UpdateContinueButtonVisibility();
+    }
+
+    /// <summary>
+    /// Butonu sadece GERÇEKTEN bir devam hakkı sunulabilecekken gösterir: bu denemede
+    /// henüz kullanılmamış, reklam SDK'sı hazır ve "Reklamları Kaldır" satın alınmamış.
+    /// Reklamları kaldıran oyuncu için reklamla devam mantıksız olurdu - onlara bir
+    /// devam yolu sunmak istenirse bu AYRI bir mekanik (ör. jeton) olmalı, şimdilik yok.
+    /// </summary>
+    private void UpdateContinueButtonVisibility()
+    {
+        if (continueWithAdButton == null) return;
+
+        bool canContinue = !_hasUsedContinueThisAttempt
+            && AdManager.Instance != null
+            && AdManager.Instance.IsRewardedAdReady
+            && !AdManager.Instance.AdsRemoved;
+
+        continueWithAdButton.SetActive(canContinue);
+    }
+
+    /// <summary>LosePanel içindeki "İzle ve Devam Et" butonuna bağlanacak.</summary>
+    public void OnContinueWithAdButtonPressed()
+    {
+        if (_hasUsedContinueThisAttempt || gameManager == null || AdManager.Instance == null) return;
+
+        // Reklam gösterilirken çift tıklamayı engelle - kapanınca sonucuna göre
+        // ya tamamen gizli kalır (devam hakkı kullanıldı) ya da geri gelir (izlenmedi).
+        if (continueWithAdButton != null) continueWithAdButton.SetActive(false);
+
+        AdManager.Instance.ShowRewardedAd(rewardGranted =>
+        {
+            if (!rewardGranted)
+            {
+                UpdateContinueButtonVisibility();
+                return;
+            }
+
+            _hasUsedContinueThisAttempt = true;
+
+            if (losePanel != null)
+            {
+                losePanel.transform.DOKill();
+                losePanel.SetActive(false);
+            }
+
+            gameManager.ReviveWithExtraTime(continueExtraSeconds);
+        });
     }
 
     private void ShowPanel(GameObject panel)

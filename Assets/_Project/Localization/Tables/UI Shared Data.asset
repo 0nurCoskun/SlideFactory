@@ -215,6 +215,10 @@ MonoBehaviour:
     m_Key: ui_cards_remaining
     m_Metadata:
       m_Items: []
+  - m_Id: 8192240841146368
+    m_Key: ui_watch_ad_continue
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

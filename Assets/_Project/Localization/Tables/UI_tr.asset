@@ -221,6 +221,10 @@ MonoBehaviour:
     m_Localized: '{0}/{1} kart'
     m_Metadata:
       m_Items: []
+  - m_Id: 8192240841146368
+    m_Localized: "Reklam \u0130zle: Devam Et"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

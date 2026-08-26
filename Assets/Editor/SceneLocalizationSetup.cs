@@ -49,6 +49,7 @@ public static class SceneLocalizationSetup
         { "Recipes", "ui_recipes" },
         { "Close", "ui_close" },
         { "Next Level", "ui_next_level" },
+        { "Watch Ad: Continue", "ui_watch_ad_continue" },
         { "Welldone!", "ui_win_text" },
         { "Well done!", "ui_win_text" },
         { "Time's Out!", "ui_lose_text" },

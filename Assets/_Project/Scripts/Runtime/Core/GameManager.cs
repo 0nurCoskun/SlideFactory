@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
     private CardInstance _currentCard;
     private bool _levelEnded;
 
+    /// <summary>Son EndLevel çağrısı bir KAYIP mıydı? ReviveWithExtraTime'ın yanlışlıkla
+    /// bir KAZANMAYI "geri almasını" engelleyen ek güvenlik katmanı - UI zaten bu
+    /// aksiyonu sadece LosePanel'de sunuyor.</summary>
+    private bool _endedWithLoss;
+
     public CardInstance CurrentCard => _currentCard;
     public int RemainingCardCount => _deck.Count + (_currentCard != null ? 1 : 0);
 
@@ -116,6 +121,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _levelEnded = false;
+        _endedWithLoss = false;
         _hasBegun = false;
         _isPaused = false;
 
@@ -282,6 +288,7 @@ public class GameManager : MonoBehaviour
         if (_levelEnded) return;
 
         _levelEnded = true;
+        _endedWithLoss = !won;
         stationAssignmentManager?.StopAssigning();
         levelTimerManager?.StopTimer();
 
@@ -311,6 +318,29 @@ public class GameManager : MonoBehaviour
         {
             OnLevelFailed?.Invoke();
         }
+    }
+
+    /// <summary>
+    /// Rewarded reklam karşılığında bir KAYBI geri alır: level süre bitmeden hemen
+    /// önceki haline döner - deste/mevcut kart AYNEN kalır, çünkü EndLevel zaten
+    /// bunlara hiç dokunmuyordu. Sayaca extraSeconds kadar YENİ bir geri sayım
+    /// başlatılır, istasyon karışması kaldığı yerden (ResumeAssigning ile, ANINDA
+    /// yeniden karışmadan) devam eder.
+    ///
+    /// GameManager reklamların VARLIĞINI bilmiyor - sadece "bir kayıp geri alınsın"
+    /// komutunu biliyor (bkz. sınıf başı Dependency Inversion notu). Sadece
+    /// LevelResultView'ın "Reklam İzle: Devam Et" butonu çağırır.
+    /// </summary>
+    public void ReviveWithExtraTime(float extraSeconds)
+    {
+        if (!_levelEnded || !_endedWithLoss || _activeLevel == null) return;
+
+        _levelEnded = false;
+        _endedWithLoss = false;
+
+        levelTimerManager?.Configure(extraSeconds);
+        levelTimerManager?.StartTimer();
+        stationAssignmentManager?.ResumeAssigning();
     }
 
     /// <summary>
