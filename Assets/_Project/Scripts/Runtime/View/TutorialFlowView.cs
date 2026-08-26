@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
@@ -24,10 +25,17 @@ public class TutorialFlowView : MonoBehaviour
 
     [Header("Animasyon")]
     [SerializeField] private float fadeDuration = 0.25f;
-    [SerializeField] private float hintDisplayDuration = 4.5f;
+    [Tooltip("Alt banttaki ipucu metinlerinin (ilk kart/yanlış/doğru swipe) kaç saniye ekranda kalacağı - " +
+             "oyuncunun okuyabilmesi için kısa tutulmamalı.")]
+    [SerializeField] private float hintDisplayDuration = 6.5f;
 
     [Header("Tamamlanma")]
-    [SerializeField] private float delayBeforeReturn = 1.8f;
+    [Tooltip("'Tebrikler' metni gösterildikten kaç saniye sonra (oyuncu erken dokunmazsa) ana menüye dönülür. " +
+             "Bu metin autoHide:false ile gösterildiği için ekrandan hiç kaybolmaz - sadece sahne geçişini geciktirir.")]
+    [SerializeField] private float delayBeforeReturn = 6.5f;
+    [Tooltip("Opsiyonel: tam ekran görünmez bir buton atanırsa, oyuncu tamamlanma metnini okuduktan sonra " +
+             "beklemeden dokunup ana menüye geçebilir. Boş bırakılırsa sadece delayBeforeReturn süresi beklenir.")]
+    [SerializeField] private Button completionTapCatcher;
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
     // İpucu metinleri artık "UI" String Table'dan (Assets/_Project/Localization/UIStrings.json
@@ -127,11 +135,31 @@ public class TutorialFlowView : MonoBehaviour
     private void HandleLevelWon(int stars)
     {
         ShowHint(GameLocalization.GetUIString("tutorial_completion"), autoHide: false);
+
+        if (completionTapCatcher != null)
+        {
+            completionTapCatcher.gameObject.SetActive(true);
+            completionTapCatcher.onClick.AddListener(HandleCompletionTapped);
+        }
+
         Invoke(nameof(ReturnToMainMenu), delayBeforeReturn);
+    }
+
+    /// <summary>Oyuncu completionTapCatcher'a dokununca beklemeden ana menüye geçer.</summary>
+    private void HandleCompletionTapped()
+    {
+        CancelInvoke(nameof(ReturnToMainMenu));
+        ReturnToMainMenu();
     }
 
     private void ReturnToMainMenu()
     {
+        if (completionTapCatcher != null)
+        {
+            completionTapCatcher.onClick.RemoveListener(HandleCompletionTapped);
+            completionTapCatcher.gameObject.SetActive(false);
+        }
+
         LevelSession.ReturnFromTutorialToMenu = true;
 
         if (SceneFader.Instance != null)

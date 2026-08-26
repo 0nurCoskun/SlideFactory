@@ -76,5 +76,29 @@
   "ui_combo_multiplier": { "en": "x{0}", "tr": "x{0}" },
   "ui_combo_streak": { "en": "{0} Combo!", "tr": "{0} Combo!" },
   "level_info_three_star_score": { "en": ": score {0}% of par", "tr": ": par skorun %{0}'i" },
-  "level_info_two_star_score": { "en": ": score {0}% of par", "tr": ": par skorun %{0}'i" }
+  "level_info_two_star_score": { "en": ": score {0}% of par", "tr": ": par skorun %{0}'i" },
+  "tutorial_explain_deck_count": {
+    "en": "This shows how many cards are left in your deck. Get it to zero before time runs out to win!",
+    "tr": "Bu, destede kaç kart kaldığını gösterir. Süre bitmeden bunu sıfıra indirirsen kazanırsın!"
+  },
+  "tutorial_explain_show_recipe": {
+    "en": "Tap here anytime to re-check which station each card needs - it pauses nothing, so use it while you swipe.",
+    "tr": "Hangi kartın hangi istasyona gitmesi gerektiğini görmek için buna istediğin an dokunabilirsin - hiçbir şeyi durdurmaz, swipe atarken de kullanabilirsin."
+  },
+  "tutorial_explain_stations": {
+    "en": "Each edge of the screen is a station. They swap places over time, so always check the label before you swipe!",
+    "tr": "Ekranın her kenarı bir istasyon. Zamanla yer değiştirirler, bu yüzden kaydırmadan önce etikete mutlaka bak!"
+  },
+  "tutorial_explain_score": {
+    "en": "Correct swipes in a row build a combo multiplier here, boosting your score - a wrong swipe knocks it back down.",
+    "tr": "Art arda doğru kaydırmalar burada bir kombo çarpanı biriktirir ve skorunu artırır - yanlış bir kaydırma çarpanı düşürür."
+  },
+  "tutorial_explain_timer": {
+    "en": "This is your level timer. Finish the whole deck before it hits zero!",
+    "tr": "Bu, bölüm süren. Süre sıfırlanmadan önce bütün desteyi bitirmelisin!"
+  },
+  "tutorial_tap_to_continue": {
+    "en": "Tap anywhere to continue",
+    "tr": "Devam etmek için ekrana dokun"
+  }
 }

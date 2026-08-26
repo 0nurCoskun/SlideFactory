@@ -5648,8 +5648,8 @@ MonoBehaviour:
   hintCanvasGroup: {fileID: 900000212}
   hintText: {fileID: 900000217}
   fadeDuration: 0.25
-  hintDisplayDuration: 4.5
-  delayBeforeReturn: 1.8
+  hintDisplayDuration: 6.5
+  delayBeforeReturn: 6.5
   mainMenuSceneName: MainMenu
   showRecipeButtonTransform: {fileID: 436602690}
   shakeDuration: 0.5
