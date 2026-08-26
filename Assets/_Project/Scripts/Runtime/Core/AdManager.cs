@@ -92,6 +92,13 @@ public class AdManager : MonoBehaviour
 
     private void Start()
     {
+        // Awake()'te bu bir kopyaysa Destroy(gameObject) çağrılmıştı, ama Destroy()
+        // yıkımı bu frame'in SONUNA erteler - Start() yine de çalışır. Bu kontrol
+        // olmazsa kopya, SDK'yı İKİNCİ KEZ ilklendirir (ör. MainMenu sahnesine her
+        // dönüşte): LevelPlay.Init tekrar çağrılır ve OnInitSuccess/OnInitFailed'a
+        // artık var olmayan bir instance için kalıcı bir abonelik eklenir.
+        if (Instance != this) return;
+
         InitializeSdk();
     }
 

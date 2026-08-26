@@ -68,9 +68,12 @@ public class LevelResultView : MonoBehaviour
              "Inspector'da aktif bırakılabilir.")]
     [SerializeField] private GameObject continueWithAdButton;
 
-    // Bir kayıp başına en fazla BİR reklamlı devam hakkı - yoksa oyuncu süresiz reklam
-    // izleyip level'ı asla kaybetmezdi. Her Restart/Next Level sahneyi yeniden yüklediği
-    // için (ScoreManager'daki NOT ile aynı gerekçe) statik DEĞİL, sıfırdan başlıyor.
+    // Bir DENEME (= bir sahne ömrü, Restart/Next Level sahneyi baştan yüklüyor) başına
+    // en fazla BİR reklamlı devam hakkı - yoksa oyuncu süresiz reklam izleyip level'ı
+    // asla kaybetmezdi. SADECE Awake()'te sıfırlanır - HandleLevelFailed'da SIFIRLAMA,
+    // ReviveWithExtraTime sonrası gelecek İKİNCİ bir süre bitişi bu bayrağı tekrar açıp
+    // hakkı sınırsız tekrarlatır (bkz. Awake() içindeki not). Sahne başına statik
+    // DEĞİL - ScoreManager'daki NOT ile aynı gerekçe.
     private bool _hasUsedContinueThisAttempt;
 
     [Header("Skor Sayım Animasyonu")]
@@ -97,6 +100,13 @@ public class LevelResultView : MonoBehaviour
 
         // Rozet, sayım bitmeden görünmemeli - yoksa rekor kırılmadan "YENİ REKOR" yazar.
         if (newRecordBadge != null) newRecordBadge.SetActive(false);
+
+        // BİR KEZ, sahne yüklendiğinde: "bir deneme" burada bir SAHNE ÖMRÜ demek
+        // (Restart/Next Level sahneyi baştan yüklüyor). HandleLevelFailed İÇİNDE
+        // sıfırlanırsa, ReviveWithExtraTime sonrası ikinci bir süre bitişi bu bayrağı
+        // GERİ AÇAR ve oyuncu sınırsız reklam izleyip level'ı asla kaybetmez - tam da
+        // _hasUsedContinueThisAttempt'in var oluş sebebini bozar.
+        _hasUsedContinueThisAttempt = false;
     }
 
     private void OnEnable()
@@ -245,7 +255,6 @@ public class LevelResultView : MonoBehaviour
         if (loseBestScoreText != null)
             loseBestScoreText.text = GameLocalization.GetUIString("ui_best_score", best.ToString("N0"));
 
-        _hasUsedContinueThisAttempt = false;
         UpdateContinueButtonVisibility();
     }
 

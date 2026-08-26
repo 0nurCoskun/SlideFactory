@@ -16,6 +16,15 @@ public class AdTriggerView : MonoBehaviour
     [Header("Bağımlılık")]
     [SerializeField] private GameManager gameManager;
 
+    // GameManager.ReviveWithExtraTime bir kaybı geri aldığında AYNI deneme ikinci kez
+    // OnLevelWon/OnLevelFailed fırlatabilir (kayıp -> reklamla devam -> kazanma/tekrar
+    // kayıp). Bu bayrak olmazsa NotifyLevelEnded() tek bir level denemesi için İKİ KEZ
+    // çağrılır ve interstitial sıklık sayacı (AdManager.levelsBetweenInterstitials)
+    // olması gerekenin iki katı hızda dolar. Sahne başına bir kez sıfırlanır (bu obje
+    // her Restart/Next Level'da yeniden yaratılıyor) - LevelResultView'daki
+    // _hasUsedContinueThisAttempt ile birebir aynı "bir deneme = bir sahne ömrü" gerekçesi.
+    private bool _hasNotifiedThisAttempt;
+
     private void OnEnable()
     {
         if (gameManager == null) return;
@@ -34,11 +43,19 @@ public class AdTriggerView : MonoBehaviour
 
     private void HandleLevelEnded(int stars)
     {
-        AdManager.Instance?.NotifyLevelEnded();
+        NotifyOnce();
     }
 
     private void HandleLevelFailed()
     {
+        NotifyOnce();
+    }
+
+    private void NotifyOnce()
+    {
+        if (_hasNotifiedThisAttempt) return;
+        _hasNotifiedThisAttempt = true;
+
         AdManager.Instance?.NotifyLevelEnded();
     }
 }
