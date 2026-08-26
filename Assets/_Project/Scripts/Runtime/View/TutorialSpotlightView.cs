@@ -212,12 +212,13 @@ public class TutorialSpotlightView : MonoBehaviour
         captionBg.color = captionBackgroundColor;
         captionBg.raycastTarget = false;
 
-        // NOT: anchorYBottom + 0.42 panelin KENDİ üst kenarını (1.0) AŞMAMALI, aksi halde metin
-        // dikdörtgeni koyu arka plan panelinin dışına taşar ve metin, panelin ARKASINDAKİ gerçek
-        // oyun görselinin/etiketlerin üstünde arka plansız kalır - tam olarak "arka plan yazıyla
-        // uyuşmuyor" okunabilirlik şikayetine yol açan asıl sebep buydu.
-        _captionText = CreateCaptionText(captionPanelRect, "CaptionText", captionFontSize, 0.56f);
-        _tapHintText = CreateCaptionText(captionPanelRect, "TapHintText", captionFontSize * 0.55f, 0.14f);
+        // Açıklama metnine (uzun İngilizce/Türkçe cümleler 4-5 satıra sarabiliyor) daha fazla dikey
+        // alan ayrılıyor, tap-hint'e daha az - ikisi de auto-sizing ile donatılıyor ki hiçbir
+        // lokalizasyon dizesi kendi kutusunun (ve dolayısıyla koyu arka planının) DIŞINA TAŞMASIN.
+        // Anchor aralıkları artık AÇIKÇA min/max olarak veriliyor (bir önceki "anchorYBottom + sabit
+        // span" formülü 1.0'ı aşıp metnin panel dışına, arka plansız kalmasına sebep olmuştu).
+        _captionText = CreateCaptionText(captionPanelRect, "CaptionText", captionFontSize, 0.30f, 0.98f);
+        _tapHintText = CreateCaptionText(captionPanelRect, "TapHintText", captionFontSize * 0.55f, 0.04f, 0.26f);
         _tapHintText.color = new Color(captionTextColor.r, captionTextColor.g, captionTextColor.b, 0.75f);
         _tapHintText.fontStyle = FontStyles.Italic;
     }
@@ -250,23 +251,29 @@ public class TutorialSpotlightView : MonoBehaviour
         return rt;
     }
 
-    private TMP_Text CreateCaptionText(RectTransform parent, string name, float fontSize, float anchorYBottom)
+    private TMP_Text CreateCaptionText(RectTransform parent, string name, float maxFontSize, float anchorYMin, float anchorYMax)
     {
         GameObject go = new GameObject(name, typeof(RectTransform));
         go.transform.SetParent(parent, false);
         RectTransform rt = go.GetComponent<RectTransform>();
-        rt.anchorMin = new Vector2(0.05f, anchorYBottom);
-        rt.anchorMax = new Vector2(0.95f, anchorYBottom + 0.42f);
+        rt.anchorMin = new Vector2(0.05f, anchorYMin);
+        rt.anchorMax = new Vector2(0.95f, anchorYMax);
         rt.offsetMin = Vector2.zero;
         rt.offsetMax = Vector2.zero;
 
         TMP_Text text = go.AddComponent<TextMeshProUGUI>();
         if (captionFont != null) text.font = captionFont;
-        text.fontSize = fontSize;
         text.color = captionTextColor;
         text.alignment = TextAlignmentOptions.Center;
         text.enableWordWrapping = true;
         text.raycastTarget = false;
+
+        // Auto-sizing GÜVENLİK AĞI: yerelleştirilmiş metin (TR/EN uzunlukları çok farklı olabiliyor)
+        // ne kadar uzun olursa olsun, kendi RectTransform yüksekliğinin dışına taşıp arka plansız
+        // kalmak yerine önce küçülür - yukarıdaki anchor alanları da zaten yeterince geniş tutuldu.
+        text.enableAutoSizing = true;
+        text.fontSizeMax = maxFontSize;
+        text.fontSizeMin = maxFontSize * 0.5f;
 
         return text;
     }
