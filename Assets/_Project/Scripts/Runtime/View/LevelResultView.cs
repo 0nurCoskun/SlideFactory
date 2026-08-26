@@ -22,6 +22,13 @@ public class LevelResultView : MonoBehaviour
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
 
+    [Tooltip("Oyun ekranındaki kalıcı Pause butonu. WinPanel/LosePanel bunun bir PARÇASI " +
+             "DEĞİL (aynı Canvas'ta kardeş obje) - o yüzden panel açılışları bu butonu " +
+             "otomatik kapatmıyor, burada elle yönetiyoruz. Level bittiyse oyuncunun pause " +
+             "menüsünü açmasının hiçbir anlamı yok (GameManager zaten IsLevelEnded'i true " +
+             "yapmış oluyor ama buton yine de tıklanabilir kalırdı).")]
+    [SerializeField] private GameObject pauseButton;
+
     [Header("Next Level Butonu (WinPanel içinde)")]
     [Tooltip("Son level'da otomatik gizlenir (LevelData.nextLevel boşsa).")]
     [SerializeField] private GameObject nextLevelButton;
@@ -142,6 +149,8 @@ public class LevelResultView : MonoBehaviour
         // Tutorial level'da Win paneli gösterilmez - TutorialFlowView kendi tamamlanma akışını yönetir.
         if (gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.isTutorial) return;
 
+        if (pauseButton != null) pauseButton.SetActive(false);
+
         ShowPanel(winPanel);
         PlayWinTimeline(stars);
 
@@ -240,6 +249,8 @@ public class LevelResultView : MonoBehaviour
         // Tutorial'da bu event zaten tetiklenmemeli (GameManager engelliyor) ama ekstra güvenlik katmanı.
         if (gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.isTutorial) return;
 
+        if (pauseButton != null) pauseButton.SetActive(false);
+
         ShowPanel(losePanel);
 
         // Kayıpta puan GÖSTERİLİR ama ASLA kaydedilmez (bkz. ScoreProgress ve
@@ -307,6 +318,10 @@ public class LevelResultView : MonoBehaviour
                 losePanel.transform.DOKill();
                 losePanel.SetActive(false);
             }
+
+            // Oyun gerçekten devam ediyor artık - Pause butonu HandleLevelFailed'da
+            // kapatılmıştı, geri açılmazsa oyuncu canlanan level'da hiç duraklatamaz.
+            if (pauseButton != null) pauseButton.SetActive(true);
 
             gameManager.ReviveWithExtraTime(continueExtraSeconds);
         });

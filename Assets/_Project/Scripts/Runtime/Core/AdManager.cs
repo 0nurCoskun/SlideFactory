@@ -59,6 +59,15 @@ public class AdManager : MonoBehaviour
     private Action<bool> _pendingRewardedCallback;
     private bool _pendingRewardGranted;
 
+    // ÖNEMLİ: OnAdClosed'ı görür görmez callback'i ÇAĞIRMIYORUZ. Gerçek ağlarda
+    // OnAdRewarded, OnAdClosed'dan ÖNCE gelir ama LevelPlay'in Editor mock reklamı
+    // (RewardedPrefab.HideAd, paket kaynağı) bunun TAM TERSİni yapıyor: OnAdClosed'ı
+    // OnAdRewarded'dan ÖNCE invoke ediyor (aynı frame içinde, art arda). Karar bu
+    // yüzden bir sonraki Update'e ERTELENİYOR - iki sıralama da o ana kadar kesinleşmiş
+    // olur. Bu erteleme olmadan Editor'de test edilen rewarded reklam HİÇBİR ZAMAN
+    // ödül vermiş gibi görünmez, izlese de izlemese de.
+    private bool _rewardedAdPendingResolution;
+
     /// <summary>SDK başarıyla ilklendirildi mi.</summary>
     public bool IsSdkInitialized { get; private set; }
 
@@ -269,6 +278,19 @@ public class AdManager : MonoBehaviour
 
     private void HandleRewardedAdClosed(LevelPlayAdInfo info)
     {
+        // Callback'i BURADA çağırma - bkz. _rewardedAdPendingResolution üzerindeki not.
+        _rewardedAdPendingResolution = true;
+
+        // Gösterilen reklam tek kullanımlık - bir sonraki gösterim için hemen yeniden yükle.
+        SetRewardedReady(false);
+        _rewardedAd?.LoadAd();
+    }
+
+    private void Update()
+    {
+        if (!_rewardedAdPendingResolution) return;
+        _rewardedAdPendingResolution = false;
+
         Action<bool> callback = _pendingRewardedCallback;
         bool granted = _pendingRewardGranted;
 
@@ -276,10 +298,6 @@ public class AdManager : MonoBehaviour
         _pendingRewardGranted = false;
 
         callback?.Invoke(granted);
-
-        // Gösterilen reklam tek kullanımlık - bir sonraki gösterim için hemen yeniden yükle.
-        SetRewardedReady(false);
-        _rewardedAd?.LoadAd();
     }
 
     private void SetRewardedReady(bool ready)
