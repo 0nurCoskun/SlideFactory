@@ -5649,7 +5649,6 @@ MonoBehaviour:
   hintCanvasGroup: {fileID: 900000212}
   hintText: {fileID: 900000217}
   fadeDuration: 0.25
-  hintDisplayDuration: 6.5
   delayBeforeReturn: 6.5
   completionTapCatcher: {fileID: 0}
   mainMenuSceneName: MainMenu
@@ -10490,7 +10489,7 @@ MonoBehaviour:
   fadeDuration: 0.3
   overlaySortingOrder: 500
   referenceResolution: {x: 1080, y: 1920}
-  captionFont: {fileID: 0}
+  captionFont: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   captionFontSize: 52
   captionTextColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1852288288

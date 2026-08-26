@@ -5,14 +5,12 @@ using TMPro;
 using DG.Tweening;
 
 /// <summary>
-/// Tutorial level oynanırken GameManager event'lerine göre kısa, tek seferlik ipuçları
-/// gösteren küçük bir alt bant. Level "isTutorial" değilse (normal level) bu bileşen
+/// Tutorial level oynanırken deste bitince gösterilen tamamlanma bandı. UI elemanlarını
+/// (deste sayacı, tarif butonu, istasyon etiketleri, skor, süre) anlatan eski oynanış-içi
+/// ipuçları (ilk kart/yanlış/doğru swipe) artık TutorialSpotlightView'in level başlamadan
+/// önceki kılavuzlu turuna taşındığı için buradan kaldırıldı - aynı bilgiyi iki kez, iki
+/// farklı yerde göstermemek için. Level "isTutorial" değilse (normal level) bu bileşen
 /// kendini tamamen devre dışı bırakır - sahnede her zaman durabilir, zararsızdır.
-///
-/// Adım adım anlatım "Next" tuşuna basılan bir sihirbaz DEĞİL - oyuncu gerçekten
-/// oynarken (ilk kart geldiğinde, ilk yanlış/doğru swipe'ta, deste bitince) tetiklenir.
-/// RecipePreviewView zaten üretim zincirini (ham -> istasyon -> ürün) oynanışdan ÖNCE
-/// gösteriyor - bu "0. adım" hiç değiştirilmeden aynen kullanılıyor.
 /// </summary>
 public class TutorialFlowView : MonoBehaviour
 {
@@ -25,9 +23,6 @@ public class TutorialFlowView : MonoBehaviour
 
     [Header("Animasyon")]
     [SerializeField] private float fadeDuration = 0.25f;
-    [Tooltip("Alt banttaki ipucu metinlerinin (ilk kart/yanlış/doğru swipe) kaç saniye ekranda kalacağı - " +
-             "oyuncunun okuyabilmesi için kısa tutulmamalı.")]
-    [SerializeField] private float hintDisplayDuration = 6.5f;
 
     [Header("Tamamlanma")]
     [Tooltip("'Tebrikler' metni gösterildikten kaç saniye sonra (oyuncu erken dokunmazsa) ana menüye dönülür. " +
@@ -38,9 +33,8 @@ public class TutorialFlowView : MonoBehaviour
     [SerializeField] private Button completionTapCatcher;
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
-    // İpucu metinleri artık "UI" String Table'dan (Assets/_Project/Localization/UIStrings.json
-    // kaynaklı) GameLocalization.GetUIString ile çekiliyor - bkz. tutorial_completion,
-    // tutorial_hint_first_card, tutorial_hint_wrong_swipe, tutorial_hint_correct_swipe.
+    // Tamamlanma metni "UI" String Table'dan (Assets/_Project/Localization/UIStrings.json
+    // kaynaklı) GameLocalization.GetUIString ile çekiliyor - bkz. tutorial_completion.
 
     [Header("Tarif ('?') Butonu Shake Uyarısı")]
     [Tooltip("Yanlış swipe'ta dikkat çekmesi için sallanacak 'Show Recipe (?)' butonu. Oyuncu butona her bastığında (StopRecipeButtonShake Inspector'da OnClick'e bağlanmalı) sallanma durur; sonraki yanlış swipe'ta tekrar başlar.")]
@@ -50,9 +44,6 @@ public class TutorialFlowView : MonoBehaviour
     [SerializeField] private int shakeVibrato = 10;
 
     private bool _isTutorialActive;
-    private bool _hasShownFirstCardHint;
-    private bool _hasShownWrongHint;
-    private bool _hasShownCorrectHint;
     private Sequence _hintSequence;
 
     private Vector2 _showRecipeButtonRestPos;
@@ -76,10 +67,7 @@ public class TutorialFlowView : MonoBehaviour
     {
         if (!_isTutorialActive || gameManager == null) return;
 
-        gameManager.OnCardChanged += HandleCardChanged;
         gameManager.OnInvalidSwipe += HandleInvalidSwipe;
-        gameManager.OnCardProcessed += HandleCardProcessed;
-        gameManager.OnCardCompleted += HandleCardCompleted;
         gameManager.OnLevelWon += HandleLevelWon;
     }
 
@@ -87,54 +75,21 @@ public class TutorialFlowView : MonoBehaviour
     {
         if (gameManager == null) return;
 
-        gameManager.OnCardChanged -= HandleCardChanged;
         gameManager.OnInvalidSwipe -= HandleInvalidSwipe;
-        gameManager.OnCardProcessed -= HandleCardProcessed;
-        gameManager.OnCardCompleted -= HandleCardCompleted;
         gameManager.OnLevelWon -= HandleLevelWon;
 
         _hintSequence?.Kill();
         _showRecipeButtonShakeTween?.Kill();
     }
 
-    private void HandleCardChanged(CardInstance card)
-    {
-        if (_hasShownFirstCardHint) return;
-        _hasShownFirstCardHint = true;
-        ShowHint(GameLocalization.GetUIString("tutorial_hint_first_card"));
-    }
-
     private void HandleInvalidSwipe(SwipeDirection direction, StationData station)
     {
-        if (!_hasShownWrongHint)
-        {
-            _hasShownWrongHint = true;
-            ShowHint(GameLocalization.GetUIString("tutorial_hint_wrong_swipe"));
-        }
-
         TriggerRecipeButtonShake();
-    }
-
-    private void HandleCardProcessed(CardInstance card, CardData resultData)
-    {
-        TryShowCorrectSwipeHint();
-    }
-
-    private void HandleCardCompleted(CardInstance card)
-    {
-        TryShowCorrectSwipeHint();
-    }
-
-    private void TryShowCorrectSwipeHint()
-    {
-        if (_hasShownCorrectHint) return;
-        _hasShownCorrectHint = true;
-        ShowHint(GameLocalization.GetUIString("tutorial_hint_correct_swipe"));
     }
 
     private void HandleLevelWon(int stars)
     {
-        ShowHint(GameLocalization.GetUIString("tutorial_completion"), autoHide: false);
+        ShowHint(GameLocalization.GetUIString("tutorial_completion"));
 
         if (completionTapCatcher != null)
         {
@@ -207,7 +162,8 @@ public class TutorialFlowView : MonoBehaviour
         showRecipeButtonTransform.anchoredPosition = _showRecipeButtonRestPos;
     }
 
-    private void ShowHint(string text, bool autoHide = true)
+    /// <summary>Şu an tek kullanım yeri tamamlanma metni - autoHide YOK, sadece sahne geçişini geciktirir.</summary>
+    private void ShowHint(string text)
     {
         if (hintCanvasGroup == null || hintText == null) return;
 
@@ -216,11 +172,5 @@ public class TutorialFlowView : MonoBehaviour
         _hintSequence?.Kill();
         _hintSequence = DOTween.Sequence();
         _hintSequence.Append(hintCanvasGroup.DOFade(1f, fadeDuration));
-
-        if (autoHide)
-        {
-            _hintSequence.AppendInterval(hintDisplayDuration);
-            _hintSequence.Append(hintCanvasGroup.DOFade(0f, fadeDuration));
-        }
     }
 }

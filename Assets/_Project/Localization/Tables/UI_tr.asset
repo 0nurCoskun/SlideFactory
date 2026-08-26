@@ -22,21 +22,6 @@ MonoBehaviour:
     m_Localized: "\xD6\u011Fretici tamamland\u0131! Art\u0131k ger\xE7ek oyuna haz\u0131rs\u0131n."
     m_Metadata:
       m_Items: []
-  - m_Id: 2084585472
-    m_Localized: "Kart\u0131, o kenarda g\xF6sterilen istasyona do\u011Fru kayd\u0131r.
-      Yanl\u0131\u015F istasyon mu? Sorun de\u011Fil - kart sadece s\u0131f\u0131rlan\u0131r!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585473
-    m_Localized: "Hata! Yanl\u0131\u015F istasyon - kart ham haline geri d\xF6nd\xFC.
-      \u0130stasyon etiketlerini takip et!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585474
-    m_Localized: "Harika! Do\u011Fru kayd\u0131rmalar kart\u0131 ilerletir. \u0130stasyonlar
-      zamanla yer de\u011Fi\u015Ftirir, dikkatli ol!"
-    m_Metadata:
-      m_Items: []
   - m_Id: 2084585475
     m_Localized: 'Ham Madde: {0}'
     m_Metadata:

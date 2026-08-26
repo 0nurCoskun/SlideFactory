@@ -19,18 +19,6 @@ MonoBehaviour:
     m_Key: tutorial_completion
     m_Metadata:
       m_Items: []
-  - m_Id: 2084585472
-    m_Key: tutorial_hint_first_card
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585473
-    m_Key: tutorial_hint_wrong_swipe
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585474
-    m_Key: tutorial_hint_correct_swipe
-    m_Metadata:
-      m_Items: []
   - m_Id: 2084585475
     m_Key: level_info_raw_materials
     m_Metadata:

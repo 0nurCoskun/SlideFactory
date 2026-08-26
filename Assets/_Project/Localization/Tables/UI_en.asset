@@ -22,21 +22,6 @@ MonoBehaviour:
     m_Localized: Tutorial complete! You're ready to play for real.
     m_Metadata:
       m_Items: []
-  - m_Id: 2084585472
-    m_Localized: Swipe the card toward the station shown on that edge. Wrong station?
-      No worries - it just resets!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585473
-    m_Localized: Oops! Wrong station - the card went back to raw. Watch the station
-      labels!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2084585474
-    m_Localized: Nice! Correct swipes move the card forward. Stations reshuffle over
-      time, so stay alert!
-    m_Metadata:
-      m_Items: []
   - m_Id: 2084585475
     m_Localized: 'Raw Materials: {0}'
     m_Metadata:

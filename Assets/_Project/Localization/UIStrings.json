@@ -3,18 +3,6 @@
     "en": "Tutorial complete! You're ready to play for real.",
     "tr": "Öğretici tamamlandı! Artık gerçek oyuna hazırsın."
   },
-  "tutorial_hint_first_card": {
-    "en": "Swipe the card toward the station shown on that edge. Wrong station? No worries - it just resets!",
-    "tr": "Kartı, o kenarda gösterilen istasyona doğru kaydır. Yanlış istasyon mu? Sorun değil - kart sadece sıfırlanır!"
-  },
-  "tutorial_hint_wrong_swipe": {
-    "en": "Oops! Wrong station - the card went back to raw. Watch the station labels!",
-    "tr": "Hata! Yanlış istasyon - kart ham haline geri döndü. İstasyon etiketlerini takip et!"
-  },
-  "tutorial_hint_correct_swipe": {
-    "en": "Nice! Correct swipes move the card forward. Stations reshuffle over time, so stay alert!",
-    "tr": "Harika! Doğru kaydırmalar kartı ilerletir. İstasyonlar zamanla yer değiştirir, dikkatli ol!"
-  },
   "level_info_raw_materials": {
     "en": "Raw Materials: {0}",
     "tr": "Ham Madde: {0}"
