@@ -24,8 +24,8 @@ public static class ComboScoreWiringTool
         StringBuilder log = new StringBuilder();
         log.AppendLine("===== WIRE BEGIN =====");
 
-        GameManager gameManager = Object.FindFirstObjectByType<GameManager>(FindObjectsInactive.Include);
-        LevelResultView resultView = Object.FindFirstObjectByType<LevelResultView>(FindObjectsInactive.Include);
+        GameManager gameManager = Object.FindAnyObjectByType<GameManager>(FindObjectsInactive.Include);
+        LevelResultView resultView = Object.FindAnyObjectByType<LevelResultView>(FindObjectsInactive.Include);
 
         if (gameManager == null || resultView == null)
         {
@@ -34,7 +34,7 @@ public static class ComboScoreWiringTool
         }
 
         // --- 1) ScoreManager: GameManager ile AYNI objeye (her zaman aktif) ---
-        ScoreManager scoreManager = Object.FindFirstObjectByType<ScoreManager>(FindObjectsInactive.Include);
+        ScoreManager scoreManager = Object.FindAnyObjectByType<ScoreManager>(FindObjectsInactive.Include);
         if (scoreManager == null)
         {
             scoreManager = gameManager.gameObject.AddComponent<ScoreManager>();
@@ -83,7 +83,7 @@ public static class ComboScoreWiringTool
         }
 
         // --- 3) Oynanış HUD'ı: Timer objesini klonlayıp stil/yerleşimi devral ---
-        LevelTimerView timerView = Object.FindFirstObjectByType<LevelTimerView>(FindObjectsInactive.Include);
+        LevelTimerView timerView = Object.FindAnyObjectByType<LevelTimerView>(FindObjectsInactive.Include);
         if (timerView != null)
         {
             BuildHud(timerView, gameManager, scoreManager, log);
@@ -331,7 +331,7 @@ public static class ComboScoreWiringTool
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("===== VERIFY BEGIN =====");
 
-        LevelResultView resultView = Object.FindFirstObjectByType<LevelResultView>(FindObjectsInactive.Include);
+        LevelResultView resultView = Object.FindAnyObjectByType<LevelResultView>(FindObjectsInactive.Include);
         GameObject[] panels = { GetRefObject(resultView, "winPanel"), GetRefObject(resultView, "losePanel") };
 
         string[] newNames = { "ScoreText", "BestScoreText", "NewRecordBadge" };
@@ -378,7 +378,7 @@ public static class ComboScoreWiringTool
         }
 
         sb.AppendLine("--- HUD ---");
-        ScoreHudView hud = Object.FindFirstObjectByType<ScoreHudView>(FindObjectsInactive.Include);
+        ScoreHudView hud = Object.FindAnyObjectByType<ScoreHudView>(FindObjectsInactive.Include);
         if (hud == null)
         {
             sb.AppendLine("  !! ScoreHudView YOK");
@@ -389,7 +389,7 @@ public static class ComboScoreWiringTool
             foreach (TMP_Text t in hud.GetComponentsInChildren<TMP_Text>(true))
                 sb.AppendLine($"    {t.name,-16} size={t.fontSize} {RectInfo(t.rectTransform)}");
 
-            LevelTimerView timer = Object.FindFirstObjectByType<LevelTimerView>(FindObjectsInactive.Include);
+            LevelTimerView timer = Object.FindAnyObjectByType<LevelTimerView>(FindObjectsInactive.Include);
             if (timer != null)
             {
                 RectTransform timerRoot = timer.transform.parent as RectTransform;
@@ -408,10 +408,10 @@ public static class ComboScoreWiringTool
 
     private static void DumpAllRefs(StringBuilder sb)
     {
-        GameManager gm = Object.FindFirstObjectByType<GameManager>(FindObjectsInactive.Include);
-        ScoreManager sm = Object.FindFirstObjectByType<ScoreManager>(FindObjectsInactive.Include);
-        LevelResultView rv = Object.FindFirstObjectByType<LevelResultView>(FindObjectsInactive.Include);
-        ScoreHudView hud = Object.FindFirstObjectByType<ScoreHudView>(FindObjectsInactive.Include);
+        GameManager gm = Object.FindAnyObjectByType<GameManager>(FindObjectsInactive.Include);
+        ScoreManager sm = Object.FindAnyObjectByType<ScoreManager>(FindObjectsInactive.Include);
+        LevelResultView rv = Object.FindAnyObjectByType<LevelResultView>(FindObjectsInactive.Include);
+        ScoreHudView hud = Object.FindAnyObjectByType<ScoreHudView>(FindObjectsInactive.Include);
 
         if (gm != null) DumpObjectRef(new SerializedObject(gm), "scoreManager", sb);
         if (sm != null) DumpObjectRef(new SerializedObject(sm), "gameManager", sb);
@@ -473,7 +473,7 @@ public static class ComboScoreWiringTool
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("===== MEASURE BEGIN =====");
 
-        LevelResultView resultView = Object.FindFirstObjectByType<LevelResultView>(FindObjectsInactive.Include);
+        LevelResultView resultView = Object.FindAnyObjectByType<LevelResultView>(FindObjectsInactive.Include);
         GameObject[] panels = { GetRefObject(resultView, "winPanel"), GetRefObject(resultView, "losePanel") };
 
         foreach (GameObject panel in panels)
@@ -518,7 +518,7 @@ public static class ComboScoreWiringTool
         StringBuilder sb = new StringBuilder();
         sb.AppendLine("===== REPOSITION BEGIN =====");
 
-        LevelResultView resultView = Object.FindFirstObjectByType<LevelResultView>(FindObjectsInactive.Include);
+        LevelResultView resultView = Object.FindAnyObjectByType<LevelResultView>(FindObjectsInactive.Include);
         GameObject winPanel = GetRefObject(resultView, "winPanel");
         GameObject losePanel = GetRefObject(resultView, "losePanel");
 
@@ -535,7 +535,7 @@ public static class ComboScoreWiringTool
 
         // HUD: çarpan metni skor metniyle AYNI kutuyu doldurduğu için üst üste biniyordu.
         // Kutunun tamamı kadar aşağı indirip skorun hemen ALTINA, kutunun dışına al.
-        ScoreHudView hud = Object.FindFirstObjectByType<ScoreHudView>(FindObjectsInactive.Include);
+        ScoreHudView hud = Object.FindAnyObjectByType<ScoreHudView>(FindObjectsInactive.Include);
         if (hud != null)
         {
             RectTransform hudRect = hud.GetComponent<RectTransform>();
@@ -616,7 +616,7 @@ public static class ComboScoreWiringTool
         AppendFound<Canvas>(sb);
 
         sb.AppendLine("--- LevelResultView SERIALIZED REFS ---");
-        LevelResultView resultView = Object.FindFirstObjectByType<LevelResultView>(FindObjectsInactive.Include);
+        LevelResultView resultView = Object.FindAnyObjectByType<LevelResultView>(FindObjectsInactive.Include);
         if (resultView == null)
         {
             sb.AppendLine("  !! LevelResultView BULUNAMADI");
@@ -636,7 +636,7 @@ public static class ComboScoreWiringTool
         }
 
         sb.AppendLine("--- GameManager SERIALIZED REFS ---");
-        GameManager gm = Object.FindFirstObjectByType<GameManager>(FindObjectsInactive.Include);
+        GameManager gm = Object.FindAnyObjectByType<GameManager>(FindObjectsInactive.Include);
         if (gm == null)
         {
             sb.AppendLine("  !! GameManager BULUNAMADI");
@@ -650,7 +650,7 @@ public static class ComboScoreWiringTool
         }
 
         sb.AppendLine("--- EXISTING TMP TEXTS (font/style kopyalamak icin aday) ---");
-        foreach (TMP_Text t in Object.FindObjectsByType<TMP_Text>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach (TMP_Text t in Object.FindObjectsByType<TMP_Text>(FindObjectsInactive.Include))
         {
             sb.AppendLine($"  {GetPath(t.transform)}  | font={(t.font != null ? t.font.name : "null")} size={t.fontSize} text=\"{Truncate(t.text)}\"");
         }
@@ -690,7 +690,7 @@ public static class ComboScoreWiringTool
 
     private static void AppendFound<T>(StringBuilder sb) where T : Component
     {
-        T[] found = Object.FindObjectsByType<T>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        T[] found = Object.FindObjectsByType<T>(FindObjectsInactive.Include);
         if (found.Length == 0)
         {
             sb.AppendLine($"  {typeof(T).Name}: YOK");
