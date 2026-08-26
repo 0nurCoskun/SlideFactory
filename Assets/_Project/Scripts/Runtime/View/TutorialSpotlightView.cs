@@ -212,7 +212,11 @@ public class TutorialSpotlightView : MonoBehaviour
         captionBg.color = captionBackgroundColor;
         captionBg.raycastTarget = false;
 
-        _captionText = CreateCaptionText(captionPanelRect, "CaptionText", captionFontSize, 0.62f);
+        // NOT: anchorYBottom + 0.42 panelin KENDİ üst kenarını (1.0) AŞMAMALI, aksi halde metin
+        // dikdörtgeni koyu arka plan panelinin dışına taşar ve metin, panelin ARKASINDAKİ gerçek
+        // oyun görselinin/etiketlerin üstünde arka plansız kalır - tam olarak "arka plan yazıyla
+        // uyuşmuyor" okunabilirlik şikayetine yol açan asıl sebep buydu.
+        _captionText = CreateCaptionText(captionPanelRect, "CaptionText", captionFontSize, 0.56f);
         _tapHintText = CreateCaptionText(captionPanelRect, "TapHintText", captionFontSize * 0.55f, 0.14f);
         _tapHintText.color = new Color(captionTextColor.r, captionTextColor.g, captionTextColor.b, 0.75f);
         _tapHintText.fontStyle = FontStyles.Italic;
