@@ -253,6 +253,14 @@ public class ScoreManager : MonoBehaviour
 
         PreviousBestScore = ScoreProgress.GetBestScore(level);
         IsNewBestScore = persist && !isTutorial && ScoreProgress.SetBestScoreIfHigher(level, TotalScore);
+
+        // Play Games skor tablosuna gönderim - ScoreProgress'ten AYRI, best-effort bir katman.
+        // Sunucu zaten mevcut rekordan düşük skorları kendisi eliyor, o yüzden IsNewBestScore
+        // şartı aranmadan her persist edilen (kaybedilmeyen, tutorial olmayan) koşuda gönderilir.
+        if (persist && !isTutorial)
+        {
+            LeaderboardManager.Instance?.SubmitScore(level, TotalScore);
+        }
     }
 
     /// <summary>Kalan süreyi puana çevirir. Negatif süreye karşı korumalı.</summary>
