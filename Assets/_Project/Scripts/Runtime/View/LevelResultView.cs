@@ -33,6 +33,12 @@ public class LevelResultView : MonoBehaviour
     [Tooltip("Son level'da otomatik gizlenir (LevelData.nextLevel boşsa).")]
     [SerializeField] private GameObject nextLevelButton;
 
+    [Header("Skor Tablosu Butonu (WinPanel içinde)")]
+    [Tooltip("Play Games'in native skor tablosu ekranını açar. LevelData.leaderboardId " +
+             "boşsa (tutorial gibi) otomatik gizlenir - skor zaten sadece kazanılınca " +
+             "gönderildiği için bu buton yalnızca WinPanel'de anlamlı.")]
+    [SerializeField] private GameObject leaderboardButton;
+
     [Header("Yıldız Görselleri (WinPanel içinde, soldan sağa 1-2-3 sırasıyla)")]
     [SerializeField] private UnityEngine.UI.Image[] starImages;
     [SerializeField] private Sprite filledStarSprite;
@@ -156,6 +162,10 @@ public class LevelResultView : MonoBehaviour
 
         bool hasNextLevel = gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.nextLevel != null;
         if (nextLevelButton != null) nextLevelButton.SetActive(hasNextLevel);
+
+        bool hasLeaderboard = gameManager != null && gameManager.ActiveLevel != null
+            && !string.IsNullOrEmpty(gameManager.ActiveLevel.leaderboardId);
+        if (leaderboardButton != null) leaderboardButton.SetActive(hasLeaderboard);
     }
 
     /// <summary>
@@ -357,5 +367,11 @@ public class LevelResultView : MonoBehaviour
 
         LevelSession.SelectedLevel = next;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    /// <summary>WinPanel içindeki Skor Tablosu butonuna bağlanacak.</summary>
+    public void OnLeaderboardButtonPressed()
+    {
+        LeaderboardManager.Instance?.ShowLeaderboardUI(gameManager?.ActiveLevel);
     }
 }
