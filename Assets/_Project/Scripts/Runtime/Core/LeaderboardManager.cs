@@ -2,7 +2,6 @@ using System;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 /// <summary>
 /// Google Play Games Services (Play Console'daki "Play Oyun Hizmetleri") ile giriş ve
@@ -78,7 +77,9 @@ public class LeaderboardManager : MonoBehaviour
             return;
         }
 
-        Social.ReportScore(score, level.leaderboardId, success =>
+        // Social.ReportScore yerine bilerek PlayGamesPlatform.Instance.ReportScore kullanılıyor -
+        // Unity'nin ISocialPlatform/Social API'si (UnityEngine.SocialPlatforms) obsolete işaretli.
+        PlayGamesPlatform.Instance.ReportScore(score, level.leaderboardId, success =>
         {
             if (!success)
                 Debug.Log($"[LeaderboardManager] Skor gönderimi başarısız: {level.leaderboardId}");
