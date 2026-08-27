@@ -29,6 +29,11 @@ public class LevelResultView : MonoBehaviour
              "yapmış oluyor ama buton yine de tıklanabilir kalırdı).")]
     [SerializeField] private GameObject pauseButton;
 
+    [Tooltip("Oyun ekranındaki kalıcı 'Reçeteyi Göster' (?) butonu. pauseButton ile AYNI " +
+             "sebep: WinPanel/LosePanel'in bir parçası değil, level bitince elle kapatılması " +
+             "gerekiyor - yoksa oyuncu sonuç panelinin üzerinde anlamsızca durmaya devam eder.")]
+    [SerializeField] private GameObject showRecipeButton;
+
     [Header("Next Level Butonu (WinPanel içinde)")]
     [Tooltip("Son level'da otomatik gizlenir (LevelData.nextLevel boşsa).")]
     [SerializeField] private GameObject nextLevelButton;
@@ -156,6 +161,7 @@ public class LevelResultView : MonoBehaviour
         if (gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.isTutorial) return;
 
         if (pauseButton != null) pauseButton.SetActive(false);
+        if (showRecipeButton != null) showRecipeButton.SetActive(false);
 
         ShowPanel(winPanel);
         PlayWinTimeline(stars);
@@ -260,6 +266,7 @@ public class LevelResultView : MonoBehaviour
         if (gameManager != null && gameManager.ActiveLevel != null && gameManager.ActiveLevel.isTutorial) return;
 
         if (pauseButton != null) pauseButton.SetActive(false);
+        if (showRecipeButton != null) showRecipeButton.SetActive(false);
 
         ShowPanel(losePanel);
 
