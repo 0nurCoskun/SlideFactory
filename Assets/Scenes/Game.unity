@@ -3311,6 +3311,7 @@ MonoBehaviour:
   winPanel: {fileID: 994040655}
   losePanel: {fileID: 1391785557}
   pauseButton: {fileID: 363886609}
+  showRecipeButton: {fileID: 436602689}
   nextLevelButton: {fileID: 1817286642}
   leaderboardButton: {fileID: 1260159163}
   starImages:
@@ -3526,7 +3527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -260}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 980, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599565579
