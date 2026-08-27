@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelId: level10m
   displayName: Level 10
+  leaderboardId: CgkI6fbRhMcNEAIQHg
   requiredPreviousLevel: {fileID: 11400000, guid: 971bec14e539fa547a146f51580efb78, type: 2}
   nextLevel: {fileID: 11400000, guid: 0275b885ff7a4414e9ef27f33380c579, type: 2}
   initialDeck:
@@ -34,6 +35,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a477a2b95fb96a479064e5f8bbec459, type: 2}
   - {fileID: 11400000, guid: 337f661449aaf1f4cb02da1ca4e18d0c, type: 2}
   levelDuration: 285
+  threeStarScoreRatio: 0.85
+  twoStarScoreRatio: 0.55
   threeStarRemainingRatio: 0.5
   twoStarRemainingRatio: 0.3
   stationsForLevel:

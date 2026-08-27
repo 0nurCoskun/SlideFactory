@@ -1,5 +1,7 @@
 ﻿<Solution>
   <Project Path="SlideFactory.Runtime.csproj" />
+  <Project Path="Google.Play.Games.Editor.csproj" />
+  <Project Path="Google.Play.Games.csproj" />
   <Project Path="DOTween.Modules.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />

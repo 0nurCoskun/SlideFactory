@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelId: level3k
   displayName: Level 3
+  leaderboardId: CgkI6fbRhMcNEAIQAw
   requiredPreviousLevel: {fileID: 11400000, guid: 2efded3554f24a4381ae1d94fbcfc407, type: 2}
   nextLevel: {fileID: 11400000, guid: 05c90361ddb6411b8646946c44318ca4, type: 2}
   initialDeck:

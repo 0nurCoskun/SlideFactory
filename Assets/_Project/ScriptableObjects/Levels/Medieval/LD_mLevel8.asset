@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   levelId: level8m
   displayName: Level 8
+  leaderboardId: CgkI6fbRhMcNEAIQHA
   requiredPreviousLevel: {fileID: 11400000, guid: a2606cb55a86b494ea21a6626ca4c2d5, type: 2}
   nextLevel: {fileID: 11400000, guid: 971bec14e539fa547a146f51580efb78, type: 2}
   initialDeck:
@@ -30,6 +31,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 25193fa05d2971f4dbd571bfab83bae7, type: 2}
   - {fileID: 11400000, guid: 75fd5fc41cdb9524294ce5dbbcdaf535, type: 2}
   levelDuration: 125
+  threeStarScoreRatio: 0.85
+  twoStarScoreRatio: 0.55
   threeStarRemainingRatio: 0.5
   twoStarRemainingRatio: 0.3
   stationsForLevel:
@@ -39,3 +42,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bd7d43a3c5f014949a1d5ac224d1de25, type: 2}
   minStationShuffleInterval: 4
   maxStationShuffleInterval: 6
+  isTutorial: 0
