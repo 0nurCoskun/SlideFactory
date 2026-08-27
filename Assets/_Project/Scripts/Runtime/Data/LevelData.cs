@@ -12,6 +12,12 @@ public class LevelData : ScriptableObject
     public string levelId;
     public string displayName;
 
+    [Header("Skor Tablosu")]
+    [Tooltip("Google Play Games Services skor tablosu ID'si (Play Console > Play Oyun Hizmetleri > " +
+             "Skor tabloları'ndan alınır, örn. CgkI6fbRhMcNEAIQAQ). Boş bırakılırsa bu level için " +
+             "skor tablosuna gönderim yapılmaz - tutorial level'larda böyle bırakılmalı.")]
+    public string leaderboardId;
+
     [Header("İlerleme / Kilit")]
     [Tooltip("Bu level'ın açılması için hangi level'ın tamamlanmış olması gerekiyor? " +
              "Boş bırakılırsa (ilk level için) her zaman açık olur.")]
