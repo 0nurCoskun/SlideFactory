@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "389871119297",
+    "project_id": "slidefactory-9e2aa",
+    "storage_bucket": "slidefactory-9e2aa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389871119297:android:21e756709cc0ed3009dd40",
+        "android_client_info": {
+          "package_name": "com.onurcoskun.swipefactory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD20rLOelr29DXOUpkXfAVtle5DH0XcEmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
