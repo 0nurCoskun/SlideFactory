@@ -2038,7 +2038,6 @@ GameObject:
   - component: {fileID: 415136257}
   - component: {fileID: 415136258}
   - component: {fileID: 530908410}
-  - component: {fileID: 184657159}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3089,18 +3088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: SlideFactory.Runtime::AnalyticsEventLogger
   gameManager: {fileID: 415136257}
   scoreManager: {fileID: 415136258}
---- !u!114 &184657159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415136255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e319a7d4a4497412fd6bf82a21103be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SlideFactory.Runtime::FirebaseDebugTestHarness
 --- !u!1 &551861754
 GameObject:
   m_ObjectHideFlags: 0
