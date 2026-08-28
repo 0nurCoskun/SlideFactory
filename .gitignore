@@ -82,6 +82,11 @@ mono_crash.*
 *.unitypackage.meta
 *.app
 
+# Android signing keystores - never commit, keep outside the repo instead
+*.keystore
+*.jks
+*.pfx
+
 # Crashlytics generated file
 crashlytics-build.properties
 
