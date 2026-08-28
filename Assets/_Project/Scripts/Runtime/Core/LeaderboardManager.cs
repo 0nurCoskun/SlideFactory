@@ -94,4 +94,16 @@ public class LeaderboardManager : MonoBehaviour
 
         PlayGamesPlatform.Instance.ShowLeaderboardUI(level.leaderboardId);
     }
+
+    /// <summary>
+    /// Play Games'in TÜM skor tablolarını listeleyen native UI'ını açar (belirli bir level'a
+    /// bağlı değil). Level Select ve Ayarlar ekranındaki leaderboard butonu için - oyuncunun
+    /// mutlaka bir level bitirip WinPanel'e gelmesi gerekmesin diye.
+    /// </summary>
+    public void ShowAllLeaderboardsUI()
+    {
+        if (!IsAuthenticated) return;
+
+        PlayGamesPlatform.Instance.ShowLeaderboardUI();
+    }
 }

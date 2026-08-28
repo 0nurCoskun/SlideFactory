@@ -34,6 +34,11 @@ public class LevelResultView : MonoBehaviour
              "gerekiyor - yoksa oyuncu sonuç panelinin üzerinde anlamsızca durmaya devam eder.")]
     [SerializeField] private GameObject showRecipeButton;
 
+    [Tooltip("Oyun ekranındaki kalıcı 'Kalan Kart' göstergesi. pauseButton/showRecipeButton ile " +
+             "AYNI sebep: WinPanel/LosePanel'in bir parçası değil, level bitince elle kapatılması " +
+             "gerekiyor - yoksa deste sayısı sonuç panelinin üzerinde anlamsızca görünmeye devam eder.")]
+    [SerializeField] private GameObject deckCountDisplay;
+
     [Header("Next Level Butonu (WinPanel içinde)")]
     [Tooltip("Son level'da otomatik gizlenir (LevelData.nextLevel boşsa).")]
     [SerializeField] private GameObject nextLevelButton;
@@ -162,6 +167,7 @@ public class LevelResultView : MonoBehaviour
 
         if (pauseButton != null) pauseButton.SetActive(false);
         if (showRecipeButton != null) showRecipeButton.SetActive(false);
+        if (deckCountDisplay != null) deckCountDisplay.SetActive(false);
 
         ShowPanel(winPanel);
         PlayWinTimeline(stars);
@@ -267,6 +273,7 @@ public class LevelResultView : MonoBehaviour
 
         if (pauseButton != null) pauseButton.SetActive(false);
         if (showRecipeButton != null) showRecipeButton.SetActive(false);
+        if (deckCountDisplay != null) deckCountDisplay.SetActive(false);
 
         ShowPanel(losePanel);
 
@@ -336,9 +343,11 @@ public class LevelResultView : MonoBehaviour
                 losePanel.SetActive(false);
             }
 
-            // Oyun gerçekten devam ediyor artık - Pause butonu HandleLevelFailed'da
-            // kapatılmıştı, geri açılmazsa oyuncu canlanan level'da hiç duraklatamaz.
+            // Oyun gerçekten devam ediyor artık - Pause butonu ve deste sayacı
+            // HandleLevelFailed'da kapatılmıştı, geri açılmazlarsa oyuncu canlanan
+            // level'da hiç duraklatamaz / kalan kart sayısını göremez.
             if (pauseButton != null) pauseButton.SetActive(true);
+            if (deckCountDisplay != null) deckCountDisplay.SetActive(true);
 
             gameManager.ReviveWithExtraTime(continueExtraSeconds);
         });

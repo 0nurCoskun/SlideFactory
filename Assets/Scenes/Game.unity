@@ -3372,6 +3372,7 @@ MonoBehaviour:
   losePanel: {fileID: 1391785557}
   pauseButton: {fileID: 363886609}
   showRecipeButton: {fileID: 436602689}
+  deckCountDisplay: {fileID: 85268191}
   nextLevelButton: {fileID: 1817286642}
   leaderboardButton: {fileID: 1260159163}
   starImages:
