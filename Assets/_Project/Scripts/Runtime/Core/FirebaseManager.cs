@@ -46,6 +46,17 @@ public class FirebaseManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        // Firebase C++ SDK'nın masaüstü native binary'leri (FirebaseCppApp-*.dll) projeye hiç
+        // eklenmemiş — sadece Android/iOS/tvOS native'leri var. Editor'de bu native çağrı
+        // DllNotFoundException ile patlar. IsReady zaten false kalıp tüm public metotlar
+        // sessizce no-op/fallback döndüğü için Editor'de init'i baştan atlamak yeterli;
+        // cihaz/gerçek build'lerde davranış değişmez.
+        if (Application.isEditor)
+        {
+            Debug.LogWarning("[FirebaseManager] Editor'de masaüstü native Firebase binary'leri yok, init atlanıyor.");
+            return;
+        }
+
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(HandleDependencyCheck);
     }
 
