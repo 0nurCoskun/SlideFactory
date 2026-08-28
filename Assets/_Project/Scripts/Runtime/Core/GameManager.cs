@@ -316,6 +316,10 @@ public class GameManager : MonoBehaviour
             {
                 LevelProgress.MarkLevelCompleted(_activeLevel);
                 LevelProgress.SetStarsIfHigher(_activeLevel, stars);
+
+                // Play Games "Kaydedilmiş Oyunlar" senkronu - LevelProgress/ScoreProgress'e
+                // yazıldıktan HEMEN SONRA, best-effort. Giriş yoksa/katalog atanmamışsa sessizce çıkar.
+                CloudSaveManager.Instance?.SyncNow();
             }
 
             OnLevelWon?.Invoke(stars);
