@@ -118,6 +118,20 @@ public class MainMenuController : MonoBehaviour
         SlideTransition(settingsPanel, mainMenuPanel, Vector2.down);
     }
 
+    /// <summary>
+    /// Leaderboard butonuna bağlanacak (MainMenu ve Ayarlar paneli). Sahnedeki
+    /// _LeaderboardManager nesnesine DOĞRUDAN değil, LeaderboardManager.Instance üzerinden
+    /// çağrı yapar - MainMenu sahnesi bir level'dan dönüşte yeniden yüklendiğinde bu sahnenin
+    /// KENDİ _LeaderboardManager kopyası (DontDestroyOnLoad singleton'ı zaten var olduğu için)
+    /// Awake()'te kendini Destroy eder; buton Inspector'da doğrudan o (artık yok olan) nesneye
+    /// bağlıysa tıklama sessizce hiçbir şey yapmaz. Instance her zaman güncel/canlı singleton'ı
+    /// gösterdiği için bu sorunu önler.
+    /// </summary>
+    public void OnLeaderboardButtonPressed()
+    {
+        LeaderboardManager.Instance?.ShowAllLeaderboardsUI();
+    }
+
     /// <summary>Quit butonuna bağlanacak. Editor'de test ederken Play modundan çıkar.</summary>
     public void OnQuitButtonPressed()
     {
