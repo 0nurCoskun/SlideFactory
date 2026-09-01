@@ -85,7 +85,7 @@ public class LevelResultView : MonoBehaviour
 
     [Header("Reklamla Devam Et (LosePanel)")]
     [Tooltip("Rewarded reklam izlenince GameManager.ReviveWithExtraTime'a verilecek ekstra süre (saniye).")]
-    [SerializeField] private float continueExtraSeconds = 15f;
+    [SerializeField] private float continueExtraSeconds = 30f;
     [Tooltip("LosePanel içindeki 'İzle ve Devam Et' butonu. Reklam hazır değilken, " +
              "reklamlar kaldırılmışken ya da bu denemede zaten kullanılmışken OTOMATİK gizlenir - " +
              "Inspector'da aktif bırakılabilir.")]
